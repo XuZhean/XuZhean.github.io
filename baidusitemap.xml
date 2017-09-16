@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>https://xuzhean.github.io/2017/07/01/Hello-World!/</loc>
+    <lastmod>2017-09-16T06:49:09.539Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World!</title>
+        <pubTime>2017-06-30T16:00:00.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://xuzhean.github.io/2017/09/04/Training-CF-Round2/</loc>
-    <lastmod>2017-09-16T03:17:54.071Z</lastmod>
+    <lastmod>2017-09-16T04:45:31.198Z</lastmod>
     <data>
         <display>
         <title>CodeForces泛做第二轮</title>
@@ -46,23 +63,6 @@
         <pubTime>2017-08-27T02:00:00.000Z</pubTime>
         
         <tag>图论</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/01/Hello-World!/</loc>
-    <lastmod>2017-09-09T09:11:35.507Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World!</title>
-        <pubTime>2017-06-30T16:00:00.000Z</pubTime>
-        
-        <tag>随笔</tag>
          
          
            

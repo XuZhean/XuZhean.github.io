@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>CodeForces泛做第二轮 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 未完成:">
+  <meta name="description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 UPD 2017.9.15 感觉#200+的Div1的题质量很低啊，做来做去都是GCD，贪心，DP。所以，，之后就要做比较新的题啦。。 未完成:">
 <meta name="keywords" content="训练">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CodeForces泛做第二轮">
 <meta property="og:url" content="https://xuzhean.github.io/2017/09/04/Training-CF-Round2/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 未完成:">
-<meta property="og:updated_time" content="2017-09-16T03:17:54.071Z">
+<meta property="og:description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 UPD 2017.9.15 感觉#200+的Div1的题质量很低啊，做来做去都是GCD，贪心，DP。所以，，之后就要做比较新的题啦。。 未完成:">
+<meta property="og:updated_time" content="2017-09-16T04:45:31.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces泛做第二轮">
-<meta name="twitter:description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 未完成:">
+<meta name="twitter:description" content="时间: 2017.9.4~ 由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。 UPD 2017.9.15 感觉#200+的Div1的题质量很低啊，做来做去都是GCD，贪心，DP。所以，，之后就要做比较新的题啦。。 未完成:">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -187,6 +187,7 @@
       
         <p><strong>时间: 2017.9.4~</strong></p>
 <p>由于博主深知自己太弱了，所以又开了一个坑。作为文化课划水选手，还是坚持每天刷个2~3题吧。。</p>
+<p><strong>UPD 2017.9.15 感觉#200+的Div1的题质量很低啊，做来做去都是GCD，贪心，DP。所以，，之后就要做比较新的题啦。。</strong></p>
 <font color="red">未完成: </font>
 
 <a id="more"></a>
@@ -295,6 +296,44 @@
 <p>CF356A。有$n$个骑士进行$m$轮PK。对于第$i$论，$xi$站在台上，将$[li,ri]$的骑士都打败。如果一个骑士被打败，就出局。输出每个骑士是被哪个骑士打败的。胜利者输出0。$n&lt;=3\times 10 ^5$</p>
 </blockquote>
 <p><strong>Set。</strong>用set维护未打败的骑士集合，每次lower_bound和upper_bound找出区间。由于每个只会被删除一次，所以复杂度为$O(n\log n)$</p>
+<blockquote>
+<p>CF356B。给定$n,m$，和两个串$x,y$。由$x$重复出现$n$次得到串$a$，由$y$重复出现$m$次得到串$b$。问存在多少个$i$，满足$a[i]\not =b[i]$。$n,m&lt;=10^{12},lenX,lenY&lt;=10^6,n\times lenX = m\times lenY$</p>
+</blockquote>
+<p><strong>GCD。</strong>注意到我们只需要考虑$lcm(lenX, lenY)$的答案。令$g=\gcd (lenX, lenY)$。</p>
+<p>注意到对于$i,j$，当且仅当$i \equiv j \pmod g$，$x[i],y[j]$才有可能产生贡献。同时，注意到$\gcd (lenX/g, lenY/g)=1$，也就是说<strong>$x[i]=y[j]$时，恰好在$lcm$中出现一次。</strong></p>
+<h5 id="Codeforces-Round-210-Div-1"><a href="#Codeforces-Round-210-Div-1" class="headerlink" title="Codeforces Round #210 (Div. 1)"></a><a href="http://codeforces.com/contest/360" target="_blank" rel="external">Codeforces Round #210 (Div. 1)</a></h5><blockquote>
+<p>CF360A。有一个长度为$n$的数组$ai$，两种操作：$1,l,r,d$，令区间$[l,r]$内的数增加$d$。$2,l,r$，询问区间$[l,r]$内的最大值。 现在给定所有操作，和询问$2$的结果。请还原数组$ai$。$n,m&lt;=5000 $</p>
+</blockquote>
+<p><strong>贪心，模拟。</strong>考虑时光倒流，倒序处理所有询问，于是我们可以得到每个位置初始的<strong>最大值</strong>。于是我们再对这些初始数进行模拟，如果能完全符合回答的，则一定可以，否则一定不存在。</p>
+<p>为什么说，不符合就一定不存在呢？因为我们一开始求出的是最大值，如果不符合，那么一定是没有达到最大值。如果再使得初始的序列变小，肯定也会不符合。</p>
+<blockquote>
+<p>CF360B。给定一个长度为$n$的数组$ai$，可以修改至多$k$个数。令$c(a)=\max(|a[i+1]-a[i]|)$，求$c(a)$的最小值。$n,K&lt;=2000$</p>
+</blockquote>
+<p><strong>二分答案，DP。</strong>首先显然需要二分答案，通过DP来判定。</p>
+<p>一种比较套路的定义方式为，定义$f[i]$表示，以第$i$个数结尾且不改变时，相邻绝对值都不超过$limit$的最小操作次数。转移的时候，只需要枚举上一个不改变的数$j$，只要满足$|a[i]-a[j]|&lt;=limit*(i-j)$就能转移。</p>
+<blockquote>
+<p>CF360C。给定一个长度为$n$的字符串$s$和$K$。一个字符串$t$(长度为$n$)的美丽度定义为：存在多少对$i,j(i<j)$，使得$t[i..j]> s[i..j]$(以字典序比较)。求存在多少字符串的美丽度为$K$。$n,K&lt;=2000$</j)$，使得$t[i..j]></p>
+</blockquote>
+<p><strong>DP好题，前缀和优化，调和级数。</strong>很好的DP题啊<del>，我太弱了，抄一波官方题解。。</del></p>
+<p>首先考虑$t$确定时，$t[i]$与$s[i]$对答案的贡献。</p>
+<ul>
+<li>若$t[i]&lt;s[i]$, $0$</li>
+<li>若$t[i]&gt;s[i]$, $n-i$</li>
+<li>若$t[i]=s[i]$, 找到最小的$k(k&gt;i)$满足$t[i]\not =s[i]$</li>
+<li><ul>
+<li>若$t[k]&lt;s[k]$,$0$</li>
+<li>若$t[k]&gt;s[k]$, $n-k$</li>
+</ul>
+</li>
+</ul>
+<p>也就是说，<strong>若$t[i]&gt;s[i]$，对答案贡献了$(pre+1)(n-i)$</strong>。其中，$pre$是$s[1..i-1], t[1..i-1]$的最长公共后缀。</p>
+<p>$f[i][sum]$表示$s[i]\not =t[i]$时，前$i$个对答案贡献$sum$的方案数。(如果$s[i]=t[i]$，则枚举$pre$时得到错误的贡献，正是状态定义精妙之处)，枚举$pre$进行转移，于是有：</p>
+<p>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum]<em>(s[i]-‘a’)$<br>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum-(pre+1)</em>(n-i)]*(‘z’-s[i])$</p>
+<p>前一部分可以通过前缀和优化，而对于后面一部分，$pre$枚举量为$O(k/1+k/2+..+k/k)=O(k \log k)$。所以，总的时间复杂度为$O(k(n+k log k))$。</p>
+<h5 id="Codeforces-Round-213-Div-1"><a href="#Codeforces-Round-213-Div-1" class="headerlink" title="Codeforces Round #213 (Div. 1)"></a><a href="http://codeforces.com/contest/364" target="_blank" rel="external">Codeforces Round #213 (Div. 1)</a></h5><blockquote>
+<p>CF364A。给定一个长度为$n$的数组$s$，和数字$a$。构造矩阵$B$，其中$B[i][j]=s[i]*s[j]$。求矩阵$B$存在多少子矩阵，子矩阵的和为$a$。</p>
+</blockquote>
+<p><strong>前缀和。</strong>没啥好说的，注意$a=0$的情况。</p>
 
       
 
@@ -379,8 +418,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/08/27/Training-CF-Graphs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForces乱做-图论</div>
+    <a href="/2017/08/27/Training-CF-DP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CodeForces乱做-动态规划</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -509,11 +548,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,19 +564,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +580,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
