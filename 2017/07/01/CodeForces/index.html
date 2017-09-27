@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>CodeForces比赛记录&amp;题解 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 比赛记录2017年   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   Codeforces Round #423">
+  <meta name="description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 应该会一直开坑。。 未完成: 828F 835F  比赛记录   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   C">
 <meta name="keywords" content="比赛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CodeForces比赛记录&amp;题解">
 <meta property="og:url" content="https://xuzhean.github.io/2017/07/01/CodeForces/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 比赛记录2017年   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   Codeforces Round #423">
-<meta property="og:updated_time" content="2017-09-23T03:46:28.998Z">
+<meta property="og:description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 应该会一直开坑。。 未完成: 828F 835F  比赛记录   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   C">
+<meta property="og:updated_time" content="2017-09-27T12:33:16.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces比赛记录&amp;题解">
-<meta name="twitter:description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 比赛记录2017年   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   Codeforces Round #423">
+<meta name="twitter:description" content="唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。 应该会一直开坑。。 未完成: 828F 835F  比赛记录   比赛名称 AC/提交/总数 Rank     Educational Codeforces Round 24 4/5/7 144   (虚拟) Codeforces Round #422 (Div. 2) 4/4/6 111   C">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -186,7 +186,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><del>唔。。题解都没补。似乎除了Educational Codeforces Round都要补一补QAQ。</del></p>
-<h2 id="比赛记录"><a href="#比赛记录" class="headerlink" title="比赛记录"></a>比赛记录</h2><h4 id="2017年"><a href="#2017年" class="headerlink" title="2017年"></a>2017年</h4><table>
+<p><del>应该会一直开坑。。</del></p>
+<font color="red">未完成: 828F 835F</font>
+
+<h2 id="比赛记录"><a href="#比赛记录" class="headerlink" title="比赛记录"></a>比赛记录</h2><table>
 <thead>
 <tr>
 <th style="text-align:center">比赛名称</th>
@@ -351,9 +354,9 @@
 <td style="text-align:center">60</td>
 </tr>
 <tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">Manthan, Codefest 17</td>
+<td style="text-align:center">4/4/7</td>
+<td style="text-align:center">175</td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
@@ -367,7 +370,75 @@
 </tbody>
 </table>
 <a id="more"></a>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h5 id="Codeforces-Round-422-Div-2"><a href="#Codeforces-Round-422-Div-2" class="headerlink" title="Codeforces Round #422 (Div. 2)"></a><a href="http://codeforces.com/contest/822" target="_blank" rel="external">Codeforces Round #422 (Div. 2)</a></h5><blockquote>
+<p>CF822E。给定长度为$n$的字符串$s$，长度为$m$的字符串$t$（$m&lt;=n$）。问是否能在$s$中分割出不超过$x$段<strong>不相交的连续子串</strong>，使得<strong>不打乱顺序</strong>后，能够组成字符串$t$？$n&lt;=10^5,x&lt;=30$</p>
+</blockquote>
+<p><strong>DP，贪心，HASH+二分求LCP。</strong>注意到一个事实，假设已经匹配到$s[i]$，那么我们一定要让已匹配的长度尽可能长，又由于$x$的取值并不大，由此得到状态的定义：定义$f[i][j]$表示$s[1..i]$划分为$j$段后，能在$t$中匹配的最长前缀。</p>
+<p>假设$f[i][j]=k$，$l$为$s[i+1..n],t[k+1..m]$的$LCP$。考虑向后转移。</p>
+<ul>
+<li>一种是不匹配，$f[i+1][j]=max(f[i+1][j],f[i][j])$。</li>
+<li>一种是匹配，$f[i+tmp][j+1]=max(f[i+tmp][j+1],f[i][j]+tmp)$，$tmp$不大于$l$。</li>
+</ul>
+<p>可是，这里的第二种转移是$O(n)$的，考虑如何优化。注意到，对于$tmp&lt;=l$，$i+LCP(i+1,f[i][j]+1)=i+tmp+LCP(i+tmp+1,f[i+tmp][j]+1)$。所以从$f[i]$向后转移一定比从$f[tmp]$向后转移更优（或是相等，需要划分的段更少）。因此，我们只需要转移到$f[i+l][j+1]$即可。</p>
+<p>$LCP$可以通过<del>后缀数组（窝不会）</del>或者经典的$HASH$+二分求出。</p>
+<p><a href="http://codeforces.com/contest/822/submission/30713406" target="_blank" rel="external">Code</a></p>
+<blockquote>
+<p>CF 822F。给定一棵树，每个节点有一个秒表，可以选择若干条不相交路径。对于一条路径，$a1,a2,a3…,ak$，选择边$(ai,ai+1)$上距离$ai$为$x$的位置出发。先一直走到$ak$，然后再返回到$a1$，如此往复。每秒钟走一条边。当点到达某个节点时，会把节点的秒表置$0$。请构造一种方案，使得节点$1$秒表的最大值最小，如果相同，使得$2$的最大值最小，以此类推。$n&lt;=100$</p>
+</blockquote>
+<p><strong>贪心，构造。</strong>题意比较鬼畜，可能比较奇怪？注意到，一定是把所有单独的边作为路径最优。这样所有的运动就是以$2$为周期的。对于节点$i$，假设它的度为$d[i]$，我们将时间$2$划分为$d[i]$段，让$d[i]$条边上的点以$\large \frac 2 {d[i]}$为周期访问$i$。所以说因为这样的最优值唯一，所以和字典序无关。</p>
+<p>算法用DFS实现，注意父节点向子节点的传递。</p>
+<p><a href="http://codeforces.com/contest/822/submission/30659802" target="_blank" rel="external">Code</a></p>
+<h5 id="Codeforces-Round-423-Div-2-rated-based-on-VK-Cup-Finals"><a href="#Codeforces-Round-423-Div-2-rated-based-on-VK-Cup-Finals" class="headerlink" title="Codeforces Round #423 (Div. 2, rated, based on VK Cup Finals)"></a><a href="http://codeforces.com/contest/828" target="_blank" rel="external">Codeforces Round #423 (Div. 2, rated, based on VK Cup Finals)</a></h5><blockquote>
+<p>CF828D。请构造一棵包含$n$个节点，$k$叶子节点的<strong>无根树</strong>。使得叶子节点的距离的最大值最小。$n&lt;=2 \times 10 ^ 5$</p>
+</blockquote>
+<p><strong>贪心，构造。</strong>以$1$为根，分出$k$个分支，答案一定是最优的。为什么呢？如果不这么做，达到相同的距离需要的边数会更少，增加边数后，答案一定更劣。<del>三个月前的Cyani好傻逼啊。</del> </p>
+<p><a href="http://codeforces.com/contest/828/submission/30660657" target="_blank" rel="external">Code</a></p>
+<blockquote>
+<p>CF828F。给定一个连通图，对于每条边求出它的最大权值，使其在图的<strong>所有</strong>最小生成树上（不改变其他边的权值）。$n,m&lt;=10^5$</p>
+</blockquote>
+<p><strong>最小生成树，倍增。</strong> 非常套路的题，首先求出MST（也一定是最小瓶颈树），然倍增搞一搞就好了。分为两种情况：</p>
+<ul>
+<li>这条边不在MST中。直接倍增求路径的$\max$。（如果想要更小的常数，可以并查集按秩合并，不过不能修改？？）</li>
+<li>这条边$(u,v)$在MST中。取连接$u,v$两端的非MST边，$(u,v)$一定要比最小值还要小，似乎要枚举每一条边？<del>Cyani好傻逼啊</del>。其实一开始用非MST边，更新路径的最小值即可。</li>
+</ul>
+<p>嘴巴上AC很容易啊。<del>既然是嘴巴选手，那么我就先不写。。</del></p>
+<h5 id="Codeforces-Round-427-Div-2"><a href="#Codeforces-Round-427-Div-2" class="headerlink" title="Codeforces Round #427 (Div. 2)"></a><a href="http://codeforces.com/contest/835" target="_blank" rel="external">Codeforces Round #427 (Div. 2)</a></h5><blockquote>
+<p>CF835E，<strong>交互题。</strong>已知存在$n$个数，只有两个数是$y$，其他的数都是$x(x\not=y)$。您可以询问任意一个子集的$xor$和。求出$y$所在的两个位置。询问数不得超过$19$。</p>
+</blockquote>
+<p><strong>构造好题，异或性质利用，二分查找。</strong>非常巧妙的一道题啊，考虑一个问题：如果只存在一个数为$x$，应该怎么做？很显然只要二分查找，不断缩小范围。关键在于如何区分两个$y$，</p>
+<p>一开始的想法是随一半的位置，直到两个$y$存在不同的集合之中？应该不超过7,8就好了，很显然会被卡。由于数据组数过多，不能使用概率算法。</p>
+<p>假设两个位置分别为$a,b$。考虑一个难以发现的性质，我们只需要不超过$10$次询问，询问强制某一位为0的子集，确定$a,b$在这一位是否相同。就能得到$a \oplus b$的值。然后我们对$a$进行二分搜索即可。可是，似乎这样仍然需要$20$次？</p>
+<p>注意到$a,b$的顺序是无关对，对于某一位$a \oplus b=1$（显然一定存在），只要强制$a$的那一位为$0$就好了。好妙啊。</p>
+<p>一个有趣的事实，官方题解说不存在算法能够小于$19$次来解决这个问题（随机乱搞当然不算啊）。为什么呢？？题解没说。蒟蒻Cyani来口胡一下：对于每一个询问，实际上只能得到$2$种回复，偶数个或是奇数个$1$。总共的情况数为$C(1000,2)&lt;2^{19}$，所以说至少$19$次询问才能对应唯一一种情况。</p>
+<p><a href="http://codeforces.com/contest/835/submission/30749428" target="_blank" rel="external">Code</a></p>
+<blockquote>
+<p>CF835F。给定一个有$n$个节点和$n$条边的图，任意两点相互联通，无自环，无重边，求删掉一条边形成的树的直径的最小值。$n&lt;=2 \times 10 ^ 5$</p>
+</blockquote>
+<p><strong>环套树，树的直径。</strong>显然是一个环套树，假设环上有$k$个点。首先假设每个点对应的最大深度为$di$，断开$(i,i+1)$。那么有三种情况，$[1,i]$直径最大的点，$[i+1,k]$直径最大的点，$[1,i]$到$1$的最优距离$+1$到$k$的边$+[i+1,k]$到$k$的最长距离，取三者的最大值，来更新最小值。显然这$4$都可以$O(n)$预处理。</p>
+<p><strong>注意外向树的直径！</strong></p>
+<p><del>貌似成为一名嘴巴选手了QAQ，代码周末补吧。。</del></p>
+<h5 id="Codeforces-Round-428-Div-2"><a href="#Codeforces-Round-428-Div-2" class="headerlink" title="Codeforces Round #428 (Div. 2)"></a><a href="http://codeforces.com/contest/839" target="_blank" rel="external">Codeforces Round #428 (Div. 2)</a></h5><blockquote>
+<p>CF839D。给定一个集合，包含一些整数$ai$。一个子集$s={a[i1],a[i2],a[i3],…,a[ik]}$的力量定义为$k\times \gcd{s}$。求所有子集的力量总和。$n&lt;=100000$</p>
+</blockquote>
+<p><strong>数论，容斥原理。</strong>考虑每个$gcd$的贡献。定义$f[i]$为大小为$i$的集合的所有子集，的大小之和，显然有$f[i]=2f[i-1]+2^{i-1}$。但是这样会算重，由此想到容斥原理。</p>
+<p>假设集合中$k$的倍数有$cnt$个，$f[cnt]$可以得到，$\gcd$是$k$的倍数的贡献。考虑从$k$从大到小枚举，减去被数的个数，由此可以的得到$\gcd = k$的个数。</p>
+<p><a href="http://codeforces.com/contest/839/submission/29418816" target="_blank" rel="external">Code</a></p>
+<blockquote>
+<p>CF839E。给出$n(n≤40)$个点的邻接矩阵，要求给每个点赋值，使得点的权值和为$K$，每条边权值为两端点点权的乘积，最大化边的权值和。</p>
+</blockquote>
+<p><strong>最大团问题。</strong>不会做啊，CF的Div2竟然有论文题！！！<a href="http://blog.csdn.net/hzoi_ztx/article/details/77151474" target="_blank" rel="external">题解</a>，有时间再补。</p>
+<h5 id="Codeforces-Round-424-Div-2-rated-based-on-VK-Cup-Finals"><a href="#Codeforces-Round-424-Div-2-rated-based-on-VK-Cup-Finals" class="headerlink" title="Codeforces Round #424 (Div. 2, rated, based on VK Cup Finals)"></a><a href="http://codeforces.com/contest/831" target="_blank" rel="external">Codeforces Round #424 (Div. 2, rated, based on VK Cup Finals)</a></h5><blockquote>
+<p>CF831F。有$n$棵竹子，竹子每天长$1m$，每个竹子都有一个临界高度$ai$，每$d$天去看竹子，如果有竹子的高度超过了对应的临界高度，就它砍断(不会再长高)，然后把高于$ai$的部分收集起来现在求一个最大的$d$，满足最后收集到的竹子长度小于等于给定的$k$。</p>
+<p>$n&lt;=100,k&lt;=10^{11},ai&lt;=10^9$</p>
+</blockquote>
+<p><strong>数论，分块好题。</strong>假设隔$d$天看一次竹子，那么得到的长度为：</p>
+<p>$$\large \sum_{i=1}^n \left( d\times \lceil\frac {ai} d \rceil - ai \right)$$</p>
+<p>又需要满足条件，得到不等数，再两端再同除以$d$，整理得到，（$sum$表示$k$与$ai$之和）</p>
+<p>$$\large \sum_{i=1}^n  \lceil \frac { ai } {d} \rceil &lt;= \lfloor \frac {sum} d \rfloor$$</p>
+<p>考虑按照$\large \lfloor \frac {sum} {d} \rfloor$来分块，如果存在$d1,d2(d1&lt;d2)$满足：</p>
+<p>$\large \lfloor \frac {sum} {d1} \rfloor = \lfloor \frac {sum} {d1} \rfloor$</p>
+<p>如果$d1$满足，那么$d2$一定满足。所以，我们只要对于块内的最大值进行check。复杂度$O(n\sqrt{sum})$。</p>
+
       
 
       
@@ -594,7 +665,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,23 +673,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">泛做</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,11 +681,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
             
             <div class="clearfix"></div>
