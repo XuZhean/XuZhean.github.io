@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/08/27/Training-CF-Graphs/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="嗯，图论么？我知道，就是dalao口中的简单题罢了。">
-<meta property="og:updated_time" content="2017-09-09T09:13:34.597Z">
+<meta property="og:updated_time" content="2017-10-03T06:37:10.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-图论">
 <meta name="twitter:description" content="嗯，图论么？我知道，就是dalao口中的简单题罢了。">
@@ -192,7 +192,7 @@
 <p>这是一些CF上的simple??的图论题。QAQ</p>
 <p><strong>第一波-2017.8.27</strong></p>
 <blockquote>
-<p>CF208C。给定一个有$n$个节点的无向图。选一个点成为特殊点，与特殊点相连的边称之为特殊边。求，对于所有$1 \rightarrow n$的最短路，经过的特殊边数量的平均值，的最大值。$n&lt;=100, m&lt;=n(n-1)/2$</p>
+<p>CF208C。给定一个有$n$个节点的无向图。选一个点成为特殊点，与特殊点相连的边称之为特殊边。求，对于所有$1 \rightarrow n$的最短路，经过的特殊边数量的平均值，的最大值。$n \leq 100, m \leq n(n-1)/2$</p>
 </blockquote>
 <p><strong>最短路，拓扑图的DP。</strong>考虑到有两种情况，一种是$1$或$n$成为了特殊点，此时答案一定为$1$。否则我们可以求出经过每个点的最短路条数，即可。<strong>在BFS之后，按照距离来排序就完成了拓扑排序。</strong></p>
 <blockquote>
@@ -291,18 +291,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/04/Training-CF-Round2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/27/Training-CF-DP/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CodeForces泛做第二轮
+          CodeForces乱做-动态规划
         
       </div>
     </a>
   
   
-    <a href="/2017/08/27/Training-CF-DP/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForces乱做-动态规划</div>
+    <a href="/2017/08/26/Training-CF-Data-Structures/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CodeForces乱做-数据结构</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -431,11 +431,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,10 +448,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,6 +468,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

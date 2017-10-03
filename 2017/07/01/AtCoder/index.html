@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/07/01/AtCoder/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="题解都没补 未完成: ARC#078F, AGC#018B/C/D/E/F, ARC#079F ARC#080E/F ARC#081E/F  比赛记录2017年   比赛名称 AC/提交/总数 Rank     AtCoder Regular Contest 077 2/3/4 144   AtCoder Regular Contest 078 2/2/4 477   AtCoder Grand">
-<meta property="og:updated_time" content="2017-08-29T12:00:44.521Z">
+<meta property="og:updated_time" content="2017-10-03T06:34:58.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AtCoder比赛记录&amp;题解">
 <meta name="twitter:description" content="题解都没补 未完成: ARC#078F, AGC#018B/C/D/E/F, ARC#079F ARC#080E/F ARC#081E/F  比赛记录2017年   比赛名称 AC/提交/总数 Rank     AtCoder Regular Contest 077 2/3/4 144   AtCoder Regular Contest 078 2/2/4 477   AtCoder Grand">
@@ -245,21 +245,21 @@
 </table>
 <a id="more"></a>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h5 id="AtCoder-Regular-Contest-077"><a href="#AtCoder-Regular-Contest-077" class="headerlink" title="AtCoder Regular Contest 077"></a>AtCoder Regular Contest 077</h5><blockquote>
-<p><strong>D - 11</strong> 给定$n$和长度为$n+1$的子序列，每个数都在$[1,n]$，且恰有一个数出现两次。对于$k=1,2,…,n+1$，求出长度为$k$的互异子序列个数。$n&lt;=10^5$</p>
+<p><strong>D - 11</strong> 给定$n$和长度为$n+1$的子序列，每个数都在$[1,n]$，且恰有一个数出现两次。对于$k=1,2,…,n+1$，求出长度为$k$的互异子序列个数。$n \leq 10^5$</p>
 </blockquote>
 <p>首先找出相同的两个数$x$的位置$l,r$，可以发现剩下的数都是等价的。对于每个$k$，分类讨论计数。按照选取$x$个数，就是$C<em>{n-1}^k+2C</em>{n-1}^{k-1}+C<em>{n-1}^{k-2}$。注意到，如果在$(l,r)$内没有选数，选择$l$和选择$r$会被当作同一情况，于是答案还要减去$C</em>{u+v}^{k-1}$。</p>
 <blockquote>
-<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a<em>1$，接下来$n-1$次，你需要将亮度从$a</em>{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m&lt;=10^5$</p>
+<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a<em>1$，接下来$n-1$次，你需要将亮度从$a</em>{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m \leq 10^5$</p>
 </blockquote>
 <p>记$f(x_0)$为：当$x=x_0$时，需要调节的总次数。考虑亮度$s\Rightarrow t$ 对$f(x)$的贡献（假设$s&lt;t$， 其他情况同样处理）。</p>
 <ul>
-<li>对于$x&lt;=s$，$f(x)+=t-s$</li>
-<li>对于$s&lt;x&lt;=t$， $f(x)+=t-x+1$</li>
+<li>对于$x \leq s$，$f(x)+=t-s$</li>
+<li>对于$s&lt;x \leq t$， $f(x)+=t-x+1$</li>
 <li>对于$t&lt;x$，$f(x)+=t-s$</li>
 </ul>
 <p>发现是区间操作，并且只有在最后查询。于是考虑差分，特别的，需要分为常数部分和系数部分。</p>
 <blockquote>
-<p><strong>F - SS</strong> 定义“双串”，由两个相同的字符串拼接而成。定义$f(S)$，在双串S后追加最少字符得到的双串。给定$S0S0$和$l,r$。求$f^{10^{100}}(S0S0)$在$[l,r]$内，26个字母分别出现的个数。$|S|&lt;=2*10^5,l,r&lt;=10^{18}$</p>
+<p><strong>F - SS</strong> 定义“双串”，由两个相同的字符串拼接而成。定义$f(S)$，在双串S后追加最少字符得到的双串。给定$S0S0$和$l,r$。求$f^{10^{100}}(S0S0)$在$[l,r]$内，26个字母分别出现的个数。$|S|&lt;=2*10^5,l,r \leq 10^{18}$</p>
 </blockquote>
 <p><strong><em>有待更深入理解。</em></strong>用KMP预处理Next[]，可以的到S0的最短相同前后缀T，设$f(S0S0)=STST$。通过画图发现，若$|T|$是$|S|$的因数，那么S就是由一些T拼成的，$f(STST)=STTSTT$。否则，$f(STST)=STSTST$。设$g(S)g(S)=f(SS)$ ，能得到$g^{i+2}(S)=g^{i+1}(S)+g^i(S)$（显然，对于$i$无限大时也满足第一种情况）。考虑求出前缀的贡献，按照类似fib数列的递推方式计算即可。</p>
 <h5 id="AtCoder-Regular-Contest-078"><a href="#AtCoder-Regular-Contest-078" class="headerlink" title="AtCoder Regular Contest 078"></a>AtCoder Regular Contest 078</h5><blockquote>
@@ -490,11 +490,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,10 +507,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,6 +527,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

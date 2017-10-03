@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/08/25/Training-CF-Tree/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="听dalao说，树能吃。">
-<meta property="og:updated_time" content="2017-08-29T12:08:06.552Z">
+<meta property="og:updated_time" content="2017-10-03T06:37:38.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-树相关">
 <meta name="twitter:description" content="听dalao说，树能吃。">
@@ -191,17 +191,17 @@
 
 <p>这是一些CF上的simple??的树相关的题。QAQ</p>
 <h5 id="第一波-2017-8-25-26"><a href="#第一波-2017-8-25-26" class="headerlink" title="第一波-2017.8.25~26"></a>第一波-2017.8.25~26</h5><blockquote>
-<p>CF543D。输入给出$N$和一些边的关系$(p2，p3，p4,…,pn)$表示$i$和$pi$有连边。对于以任意$i$为根时，把树边黑白染色，使得任意点走到根的路径上不超过一条黑边，输出染色的方案数。$n&lt;=200000$</p>
+<p>CF543D。输入给出$N$和一些边的关系$(p2，p3，p4,…,pn)$表示$i$和$pi$有连边。对于以任意$i$为根时，把树边黑白染色，使得任意点走到根的路径上不超过一条黑边，输出染色的方案数。$n \leq 200000$</p>
 </blockquote>
 <p><strong>树形DP，DFS转移。</strong>考虑以$1$为根的情况，定义$f[i]$表示以$i$为根的方案数，于是有$f[i] = \prod (f[j]+1)$。</p>
 <p>那么，如何将答案转移到子节点上呢？假设$u$的祖先（非子树）的方案为$x$，需要转移到$u$的子节点$v$。假设$u$到$v$的边的颜色为黑色，显然只有一种；为白色时，有$\large \frac {x \times f[u]} {f[v]+1}$种方案。两者之和作为新的$x’$转移到子节点即可。每个节点的答案为$x \times f[u]$。</p>
 <p>值得注意的是，由于涉及到除法和取余，所以需要我们计算逆元。但是，特别的，如果$f[v]+1=MOD$，则不存在逆元，所以需要我们暴力重新计算。</p>
 <blockquote>
-<p>CF396C。给定以$1$为根的树，从节点$2$开始给出每个节点的父节点。$m$次操作，操作分为两种，$1\  u, x, k$，表示在以$u$为根的子树上，对于所有其它与$u$节点的距离为$i$的点$v$，加上$x-i\times k$。$2\ v$，查询节点$v$值。$n,m&lt;=300000$</p>
+<p>CF396C。给定以$1$为根的树，从节点$2$开始给出每个节点的父节点。$m$次操作，操作分为两种，$1\  u, x, k$，表示在以$u$为根的子树上，对于所有其它与$u$节点的距离为$i$的点$v$，加上$x-i\times k$。$2\ v$，查询节点$v$值。$n,m \leq 300000$</p>
 </blockquote>
 <p><strong>DFS序，树状数组。</strong>从$x-i\times k$这个式子入手，显然$x$可以用DFS序来维护，那么如何处理后一个数字呢？考虑拆开：$x-i \times k = x - (d[v] - d[u]) \times k = (x + d[u] \times k) + d[v] \times k$。可以发现，我们将答案分为了两部分，一部分与$v$的深度无关，可以用树状数组维护。另一部分与$v$的深度有关，于是维护$k$之和即可。区间修改可以差分化，然后用树状数组维护。</p>
 <blockquote>
-<p>CF696B。给定一棵以$1$为根的树，在时刻$1,2,3…$访问节点。一开始在$1$，之后以随机的方式$DFS$（保证不重复访问）求对于每个节点，访问它的期望时间。$n&lt;=100000$</p>
+<p>CF696B。给定一棵以$1$为根的树，在时刻$1,2,3…$访问节点。一开始在$1$，之后以随机的方式$DFS$（保证不重复访问）求对于每个节点，访问它的期望时间。$n \leq 100000$</p>
 </blockquote>
 <p><strong>期望的线性性，树形DP。</strong>假设一个节点$u$已经知道访问父节点$fa$的期望时间$ans[fa]$，那么这个节点$u$的期望时间为多少？考虑到，$u$的兄弟节点各有$50\%$在$u$的前面访问，而且需要的代价为整颗子树的$size$。由此我们可以得到在子树$fa$访问$u$的期望时间。再根据<strong>期望的线性性</strong>，于是，</p>
 <p>$\large ans[u]=ans[fa] + 0.5 \times (size[fa] - size[u] - 1) + 1$</p>
@@ -428,11 +428,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,10 +445,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,6 +465,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/08/23/Training-CF-Number-theory/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="膜一膜欧拉，您就能把这道数论题A了！">
-<meta property="og:updated_time" content="2017-09-14T11:13:48.802Z">
+<meta property="og:updated_time" content="2017-10-03T06:37:20.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-数论">
 <meta name="twitter:description" content="膜一膜欧拉，您就能把这道数论题A了！">
@@ -191,18 +191,18 @@
 
 <p>这是一些CF上的simple??的数论题。QAQ</p>
 <h5 id="第一波-2017-8-23"><a href="#第一波-2017-8-23" class="headerlink" title="第一波-2017.8.23"></a>第一波-2017.8.23</h5><blockquote>
-<p>CF222C 给出两个集合，第一个集合数的乘积是分子，第二个集合的数的乘积是分母，要求够造一个同样大小的集合，但是得到的分数是化简过的。$1≤n,m≤10^5,ai,bi&lt;=10^7$</p>
+<p>CF222C 给出两个集合，第一个集合数的乘积是分子，第二个集合的数的乘积是分母，要求够造一个同样大小的集合，但是得到的分数是化简过的。$1≤n,m≤10^5,ai,bi \leq 10^7$</p>
 </blockquote>
 <p><strong>质因数分解，构造。</strong>考虑首先筛出$10^7$内的所有素数，然后对所有数质因数分解。最后暴力消除即可。为了保证一定能存在答案，只需要在原来数的基础上消除即可。</p>
 <blockquote>
-<p>CF446C 给定$n$个元素的数组$a[]$。操作$1, l, r$。要求对于$l&lt;=i&lt;=r$，$a[i] += f[i-l+1]$。询问$2,l,r$。返回$\sum_{i=l}^{r} a[i]$，对$10^9+9$取模。其中$f[i]$为斐波那契数列，$f[1]=1,f[2]=1$。$n,m&lt;=300000$</p>
+<p>CF446C 给定$n$个元素的数组$a[]$。操作$1, l, r$。要求对于$l \leq i \leq r$，$a[i] += f[i-l+1]$。询问$2,l,r$。返回$\sum_{i=l}^{r} a[i]$，对$10^9+9$取模。其中$f[i]$为斐波那契数列，$f[1]=1,f[2]=1$。$n,m \leq 300000$</p>
 </blockquote>
 <p><strong>斐波那契数列，线段树维护等比数列。</strong>本题似乎无从下手，因为每一个数增加的值不同。事实上，我们可以利用斐波那契数列的的通项公式<del>（可以用母函数证明，是线性常系数其次递推关系，可窝不会）。</del></p>
 <p>$$\large fib(i) = \frac {1} {\sqrt{5}} \left( \left(\frac {1+\sqrt{5}} {2}\right)^n + \left( \frac {1-\sqrt{5}} {2} \right)^n \right)$$</p>
 <p>令$\large q1= \frac {1+\sqrt{5}} {2}, q2 = \frac {1-\sqrt{5}} {2}$，于是我们只需要维护两个等比数列即可，由于公比是$q1,q2$不变，所以直接利用等比数列求和即可，用线段树维护区间和。注意，本题需要得到$q1,q2$在模意义下的值，只需要暴力算出$\sqrt5$即可。</p>
 <p>顺便提一下，我们需要利用等比数列求和公式$\large \frac {q^n-1} {q-1}$ ，但是本题中$q1,q2$满足$q^2-q-1=0$，就是说$rev(q-1)=q$，原来的公式就变为了$q^{n+1}-q$，足以见得斐波那契数列的神奇。</p>
 <blockquote>
-<p>CF711E,2A。给定$n,k$，已知一年有$2^n$天，选取$k$个人，两个人的生日是在同一天的的概率。要求答案写成最简分数。$n,k&lt;=10^{18}$</p>
+<p>CF711E,2A。给定$n,k$，已知一年有$2^n$天，选取$k$个人，两个人的生日是在同一天的的概率。要求答案写成最简分数。$n,k \leq 10^{18}$</p>
 </blockquote>
 <p><strong>欧拉定理降幂，组合相关。</strong>首先需要特判一个情况，就是$k&gt;2^n$概率就是$1$。从反面情况入手，总共生日的方案数为$A=2^{nk}$，所有人的生日互不相同的情况为$B=A_{2^n}^{k}$。答案即为$\large \frac {A-B} A$ 。注意到，$A$的质因数仅有$2$，所以我们需要知道$B$中质因数$2$的个数即可。考虑其展开式，</p>
 <p>$$\large B = A_{2^n}^k = 2^n \times (2^n-1) \times (2^n-2) \times … \times (2^n-k+1)$$</p>
@@ -211,16 +211,16 @@
 <p>$$\large a^{\varphi(m)}\equiv a^{0}  \pmod m$$</p>
 <p>所以<strong>指数对$\varphi(m)$取模即可</strong>。</p>
 <blockquote>
-<p>CF121C,1A。对于一个数，如果它仅包含$4$或$7$，则称之为幸运数。求$[1,n]$的第$K$个置换，有多少幸运数位于的位置也是幸运数。$n,k&lt;=10^9$</p>
+<p>CF121C,1A。对于一个数，如果它仅包含$4$或$7$，则称之为幸运数。求$[1,n]$的第$K$个置换，有多少幸运数位于的位置也是幸运数。$n,k \leq 10^9$</p>
 </blockquote>
 <p><strong>观察，求第$K$排列。</strong>注意到$k$很小，当$n&gt;=14$时，最前面的$n-13$位是不发生改变的。而且$10^9$内的幸运数只有$1023$个，所以，对于前面的数字，我们暴力计算，后面的，暴力求出第$K$排列即可。</p>
 <blockquote>
-<p>CF772C,1A。给定$m$和$n$个整数$ai(0&lt;=ai&lt;=m-1)$，请您构造一个最长的序列，满足对于所有前缀积对$m$取模，它们互不相同，且不等于任意一个$ai$。$n,m&lt;=200,000$</p>
+<p>CF772C,1A。给定$m$和$n$个整数$ai(0 \leq ai \leq m-1)$，请您构造一个最长的序列，满足对于所有前缀积对$m$取模，它们互不相同，且不等于任意一个$ai$。$n,m \leq 200,000$</p>
 </blockquote>
 <p><strong>GCD，DAG最长路。</strong>考虑最后一个数与$m$的$\gcd\ t$，可以注意到，这个数通过乘与$m$互质的数，可以得到任意一个与$m$的$\gcd$为$t$。<strong>同样我们也可以乘上一个与$m$不互质的数，得到与$m$的$\gcd$为$kt$的数。</strong>DP得到最长路后，dfs输出答案即可。</p>
 <p>考虑证明这一点。其中$kax \equiv bcx \pmod m$，$x$是原来最后一个数与$m$的$gcd$（所以$a$与$m$互质），$cx$是新的$gcd$，由乘上一个$k$得到。然后$ka \equiv bc \pmod {\frac m x}$ ，因为$a$与$m$互质，所以一定存在$k$。</p>
 <blockquote>
-<p>CF396B,1A。定义函数$v(n)$为不大于$n$的最大素数。定义函数$u(n)$为大于$n$的最小素数。求$\large \sum \frac 1 {v(i) \times u(i)}(2&lt;=i&lt;=n)$。$T&lt;=500,n&lt;=1e9$</p>
+<p>CF396B,1A。定义函数$v(n)$为不大于$n$的最大素数。定义函数$u(n)$为大于$n$的最小素数。求$\large \sum \frac 1 {v(i) \times u(i)}(2 \leq i \leq n)$。$T \leq 500,n \leq 1e9$</p>
 </blockquote>
 <p><strong>裂项，素数判断。</strong>思路很巧妙，考虑到，</p>
 <p>$$ (u(n)-v(n)) \times \frac 1 {v(n) \times u(n)} = \frac 1 {v(n)} - \frac 1{u(n)}$$</p>
@@ -228,7 +228,7 @@
 <p>$Ans = 1/2 -1/3 + 1/3 - 1/5 + …….. -1/v + \frac 1 {v\times u\times (n-v+1)}$</p>
 <p>消掉，约分即可。</p>
 <blockquote>
-<p>CF283D。对于$(x,y)$，如果满足$x$可以表示为连续$y$个整数之和，则它是酷的。如果$(a1,a2),(a2,a3),..,(an-1,an)$都是酷的。那么整个序列就是酷的。给定长度为$n$的序列，求最少改变几个数字，使得整个序列是酷的。$n&lt;=5000$</p>
+<p>CF283D。对于$(x,y)$，如果满足$x$可以表示为连续$y$个整数之和，则它是酷的。如果$(a1,a2),(a2,a3),..,(an-1,an)$都是酷的。那么整个序列就是酷的。给定长度为$n$的序列，求最少改变几个数字，使得整个序列是酷的。$n \leq 5000$</p>
 </blockquote>
 <p><strong>数论，动态规划。</strong>首先考虑$(x,y)$符合要求的条件，根据等差数列求和公式，可以知道：当$y$为奇数时，只要$x$是$y$的倍数；当$y$为偶数时，只要$2x$是$y$的奇数倍即可。<strong>观察第二个条件，也就是说$x$质因数$2$的个数比$y$质因数$2$的个数少$1$，对于其它部分$x’$是$y’$的倍数。</strong>受此启发考虑令$a[i]=2^{x[i]}\times y[i]$，以方便状态的转移。</p>
 <p>定义$f[i]$表示$i$是不变的，以$i$结尾的序列，需要满足条件，可以不改变的最长子序列。于是对于一个状态$i$我们寻找$j$同样是不改变的。</p>
@@ -241,24 +241,24 @@
 </ul>
 <p>至此，问题得到完整的解决。注意一点，我们可以在序列的最后增加一个数$1$使得之前所有状态的答案会聚到这一状态。</p>
 <blockquote>
-<p>CF172D。给定$a,n$，求$[a,a+n-1]$所有数的贡献总和。一个数的贡献是其除掉所有平方因子后的部分。$n&lt;=10^7$</p>
+<p>CF172D。给定$a,n$，求$[a,a+n-1]$所有数的贡献总和。一个数的贡献是其除掉所有平方因子后的部分。$n \leq 10^7$</p>
 </blockquote>
 <p><strong>莫比乌斯函数。</strong>考虑求出$[1,x]$的贡献，考虑首先$O(\sqrt x)$枚举所有平方因子$p^2$。于是我们就需要知道$[1,\frac x {p^2}]$中不是完全平方数的倍数的数之和，于是可以$O(\sqrt {\frac x {p^2}})$的容斥求出答案，容斥的系数就是莫比乌斯函数。复杂度$O(n)$。</p>
 <blockquote>
-<p>CF451E。有$n$种颜色的❀，第$i$种❀有$fi$朵。求选出$s$朵❀的不同方案。$n&lt;=20,s&lt;=10^{14},fi&lt;=10^{12}$</p>
+<p>CF451E。有$n$种颜色的❀，第$i$种❀有$fi$朵。求选出$s$朵❀的不同方案。$n \leq 20,s \leq 10^{14},fi \leq 10^{12}$</p>
 </blockquote>
 <p><strong>容斥原理，卢卡斯定理。</strong>考虑如果有$a$种颜色，选$b$朵，那么方案数就是$C(a+b-1,b)$。但是本题中❀数量的限制，所以考虑容斥。答案即为至少0个超过-至少1个超过+至少2个超过-…。</p>
 <p>比如至少1个超过的是$i$，那么我们强制选择$i$所有的❀。组合数的计算可以利用卢卡斯定理。</p>
 <blockquote>
-<p>CF448E。给出一个$x,k$，每次操作都会将$x$分解因数，得到新的序列，然后每次再分解序列中的每一个数，按照每一个数分解因数从小到大排，整体顺序不做调整。$x&lt;=10^{12}, k&lt;=10^{18}$</p>
+<p>CF448E。给出一个$x,k$，每次操作都会将$x$分解因数，得到新的序列，然后每次再分解序列中的每一个数，按照每一个数分解因数从小到大排，整体顺序不做调整。$x \leq 10^{12}, k \leq 10^{18}$</p>
 </blockquote>
 <p><strong>DFS+剪枝。</strong>为了加速分解，我们可以预处理$x$的所有因数。DFS(x,k)表示将$x$分解$k$次，只要枚举$x$的因数，如果可以整除继续DFS，如果超过$x$直接跳出。加了这个优化以后就很快了。</p>
 <blockquote>
-<p>CF216E。给定一个进制$k$和一位数$b$。以及长度为$n$的序列（均小于$k$）求这个序列存在多少子序列，能通过变换变为$b$？这里的变换指的是，每次将k进制数x的每一位相加（k进制加法）得到一个新的数$x’$，直到最后得到一个一位数。$0&lt;=b&lt;k&lt;=1e9, n&lt;=100000$</p>
+<p>CF216E。给定一个进制$k$和一位数$b$。以及长度为$n$的序列（均小于$k$）求这个序列存在多少子序列，能通过变换变为$b$？这里的变换指的是，每次将k进制数x的每一位相加（k进制加法）得到一个新的数$x’$，直到最后得到一个一位数。$0 \leq b&lt;k \leq 1e9, n \leq 100000$</p>
 </blockquote>
 <p><strong>$k$进制下模$k-1$的性质。</strong>注意到一个性质：对于一个$k$进之下的数，模$k-1$后的余数等于，各个数码之和模$k-1$的余数。考虑用$ans[i]$表示前$i$个数之和模$k-1$后的余数，若满足$ans[i]-ans[j-1]$模$k-1=b$则$[j,i]$是符合答案的，于是在扫描过程中记录一个数组$cnt[i]$表示$ans[j] \mod k-1=i$的$j$的个数。注意特殊处理$b=0,k-1$的情况。</p>
 <blockquote>
-<p>CF703E。给定$n,k$，和$n$个数$a[]$。求任意一个最短的序列${i}$满足$a[i1]\times a[i2] \times … \times a[im]$是$k$的倍数。输出方案，当存在多种方案时，选择$\sum i$最小的序列。$n&lt;=1000,k&lt;=10^{12}$。</p>
+<p>CF703E。给定$n,k$，和$n$个数$a[]$。求任意一个最短的序列${i}$满足$a[i1]\times a[i2] \times … \times a[im]$是$k$的倍数。输出方案，当存在多种方案时，选择$\sum i$最小的序列。$n \leq 1000,k \leq 10^{12}$。</p>
 </blockquote>
 <p><strong>GCD,动态规划。</strong>考虑到对于一个$10^{12}$数量级的数，其因数个数不超过$10^4$，而且本题中$a[]$是否满足条件是其乘积与$k$的GCD决定的。首先，预处理出所有$k$的因数$d[]$，定义状态$f[i][j]$表示前$i$个数中，乘积与$k$的GCD为$d[j]$所需要选择的最少数字。按照$i+1$是否选择转移即可。</p>
 
@@ -484,11 +484,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,10 +501,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,6 +521,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

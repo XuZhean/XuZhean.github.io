@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/08/26/Training-CF-Data-Structures/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="听说学数据结构会学傻？">
-<meta property="og:updated_time" content="2017-08-29T12:03:52.506Z">
+<meta property="og:updated_time" content="2017-10-03T06:36:32.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-数据结构">
 <meta name="twitter:description" content="听说学数据结构会学傻？">
@@ -196,20 +196,20 @@
 <p><strong>$k$叉堆的性质，调和级数，树状数组。</strong>注意到一个性质<strong>$k$叉堆的父亲只有$n/k$</strong>，也就是说父亲的总数不会超过$O(n(1+1/2+1/3+…+1/n))=O(n\log n)$。这就成为了本题的突破口。</p>
 <p>考虑从小到大加入每一个数到树状数组，可以枚举这个点作为$k$叉堆的父亲。由于属于它的儿子一定是一个区间，所以我们可以用树状数组在$O(\log )$的时间内统计出贡献。总的复杂度为$O(n \log^2 n)$。</p>
 <blockquote>
-<p>CF101B。给定$n,m$。需要从$0$到$n$，有$m$种公交车。第$i$辆公交车从$si$走到$ti$（可以在中途上车），问有多少种方案可以选择。注意人只能坐车，不可以走。$m&lt;=100000$</p>
+<p>CF101B。给定$n,m$。需要从$0$到$n$，有$m$种公交车。第$i$辆公交车从$si$走到$ti$（可以在中途上车），问有多少种方案可以选择。注意人只能坐车，不可以走。$m \leq 100000$</p>
 </blockquote>
 <p><strong>动态规划，树状数组。</strong>首先离散化，按$t$来排序，我们可以$DP$。注意到可以转移的状态是一段区间，所以直接用树状数组即可。</p>
 <blockquote>
-<p>CF677D。给定一个$n\times m$的地图，标有数字$[1,p]$。需要从$1$出发，依次经过一个$2,3,4…$直到$p$。求最少所需要的步数。$n,m&lt;=300$</p>
+<p>CF677D。给定一个$n\times m$的地图，标有数字$[1,p]$。需要从$1$出发，依次经过一个$2,3,4…$直到$p$。求最少所需要的步数。$n,m \leq 300$</p>
 </blockquote>
 <p><strong>二维树状数组。</strong>考虑从数字$k-1$走到$k$的转移。存在四种转移的方向，以从左上角转移为例。于是转移方程即为$f[i][j]=f[x][y]+i-x+j-y$ ，可以拆开使得与$i,j$无关。$f[x][y]-x-y$于是把这个东西放在树状数组里，询问二维前缀最小值即可。<strong>细节较多，代码较长QAQ</strong></p>
 <blockquote>
-<p>CF372C。有$n$个点，$m$个烟花要放。给定放的地点$a[i]$、时间$t[i]$，如果你当时在$x$，那么可以获得$b[i]-|a[i]-x|$的高兴值。每个单位时间可以移动不超过$d$，初始位置是任意的，求通过移动能获取到的最大的值。$$n&lt;=150000, m&lt;=300$$</p>
+<p>CF372C。有$n$个点，$m$个烟花要放。给定放的地点$a[i]$、时间$t[i]$，如果你当时在$x$，那么可以获得$b[i]-|a[i]-x|$的高兴值。每个单位时间可以移动不超过$d$，初始位置是任意的，求通过移动能获取到的最大的值。$$n \leq 150000, m \leq 300$$</p>
 </blockquote>
 <p><strong>DP+单调队列。</strong>设$f[i][j]$表示在放第$i$个烟花的时候，站在位置$j$能得到的最多的高兴值。于是有状态转移方程：$f[i][j]=\max(f[i-1][k])+b[i]-|a[i]-j|$，其中，$\max(1,j-td)&lt;=k&lt;=\min(n,j+td)(t是两次烟花的时间差)$。这个复杂度是$O(n^2m)$。</p>
 <p>考虑优化，发现每一次转移的$k$都是一个区间，于是我们可以用单调队列维护。注意使用滚动数组。</p>
 <blockquote>
-<p>CF827C。给定一个只包含$A,T,C,G$的字符串$S$,有如下两种操作。1)$\ x,c$，修改第$x$个字母为$c$。2)$\ l,r$,字符串$e$，生成一个由$e$重复组成的新串，像$eee…$，问$[L,R]$中有几个字母跟这个新的字符串对？$|S|,Q&lt;=100000，|e|&lt;=10$</p>
+<p>CF827C。给定一个只包含$A,T,C,G$的字符串$S$,有如下两种操作。1)$\ x,c$，修改第$x$个字母为$c$。2)$\ l,r$,字符串$e$，生成一个由$e$重复组成的新串，像$eee…$，问$[L,R]$中有几个字母跟这个新的字符串对？$|S|,Q \leq 100000，|e|&lt;=10$</p>
 </blockquote>
 <p><strong>树状数组，剩余类。</strong>考虑对$S$为$4$个字符，分别建立$10\times 10$的树状数组。表示第$i$个字符在位置$x$满足$x\%j=k$的个数之和。看上去很暴力，对吧？接下来分析复杂度。对于一个修改操作，我们需要修改在$O(|e|)$个树状数组中的值，每次修改的代价为$O(\log n)$。对于一个询问操作，我们需要询问$O(|e|)$询问的代价为$O(\log n)$。所以总体的复杂度为$O(Q\times \log |S| \times |e|)$。</p>
 
@@ -295,11 +295,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/27/Training-CF-DP/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/27/Training-CF-Graphs/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CodeForces乱做-动态规划
+          CodeForces乱做-图论
         
       </div>
     </a>
@@ -435,11 +435,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,10 +452,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,6 +472,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

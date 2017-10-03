@@ -18,7 +18,7 @@
 <meta property="og:description" content="组合？？不就是一群无聊的数学家在数数吗？">
 <meta property="og:image" content="https://xuzhean.github.io/img/CF15E2.PNG">
 <meta property="og:image" content="https://xuzhean.github.io/img/CF15E.PNG">
-<meta property="og:updated_time" content="2017-08-29T12:03:06.338Z">
+<meta property="og:updated_time" content="2017-10-03T06:36:22.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-组合计数">
 <meta name="twitter:description" content="组合？？不就是一群无聊的数学家在数数吗？">
@@ -195,15 +195,15 @@
 <p>首先，安利一篇博文，<a href="http://blog.miskcoo.com/2015/06/codeforces-combinatorics-and-probabilities-problem" target="_blank" rel="external">Codeforces 上的一些组合计数问题</a>。 </p>
 <p>这是一些CF上的simple??的组合计数题。QAQ</p>
 <h5 id="第一波-2017-8-24"><a href="#第一波-2017-8-24" class="headerlink" title="第一波-2017.8.24"></a>第一波-2017.8.24</h5><blockquote>
-<p>CF57C。给定$n$，求存在多少长度为$n$的序列满足：所有数在$1$到$n$之间，这个序列是<strong>非递增</strong>或<strong>非递减的</strong>。$n&lt;=100000$</p>
+<p>CF57C。给定$n$，求存在多少长度为$n$的序列满足：所有数在$1$到$n$之间，这个序列是<strong>非递增</strong>或<strong>非递减的</strong>。$n \leq 100000$</p>
 </blockquote>
 <p><strong>组合数的格路模型。</strong>不失一般性，我们考虑序列是非递减的方案数。可以注意到，假设最后一个数字是$n$，<strong>其等价于从$(0,0)$走到$(n-1,n-1)$的方案数。</strong>为什么呢？我们可以把向右走看作是到下一个数，向上走可以看成是当前位置的数$+1$，并且，序列的数是非递增的。最后一个数可以是$[1,n]$，同理求出。</p>
 <blockquote>
-<p>CF689E。给定$n$和$K$，然后给定$n$个区间，在$n$个区间中选择$K$个，求它们的交集总和。$n&lt;=100000$</p>
+<p>CF689E。给定$n$和$K$，然后给定$n$个区间，在$n$个区间中选择$K$个，求它们的交集总和。$n \leq 100000$</p>
 </blockquote>
 <p><strong>离散化，贡献。</strong>本题似乎难以直接穷举所有的情况，考虑<strong>离散化</strong>，并计算每一条线段被多少个区间覆盖。假设某一段被$x$条线段覆盖，那么，我们只需要从这$x$条中选取$K$个，就会对答案产生贡献。即为$len \times C_{x} ^{K}$。</p>
 <blockquote>
-<p>CF28C。有$n$个人等概率随机进入$m$个房间，一个房间可以有多个人，第$i$个房间有$ai$个水龙头，在一个房间的人要去排队装水，他们会使得最长的队尽可能小，求所有房间中最长队列长度的期望。$n,m&lt;=50$</p>
+<p>CF28C。有$n$个人等概率随机进入$m$个房间，一个房间可以有多个人，第$i$个房间有$ai$个水龙头，在一个房间的人要去排队装水，他们会使得最长的队尽可能小，求所有房间中最长队列长度的期望。$n,m \leq 50$</p>
 </blockquote>
 <p><strong>概率，动态规划。</strong>注意到，一个房间内原来有多少人到达最长是无法记录在状态中的，所以直接求概率十分困难。考虑<strong>概率的原始定义：方案数除以总方案数</strong>。也就是说我们求出状态的方案数即可。</p>
 <p>用$f(i,j,l)$表示已经分配了前$i$个房间和$j$个人，最长队列长度为$l$的方案数。首先$f(i,0,0)=1$。</p>
@@ -213,7 +213,7 @@
 <blockquote>
 <p>CF15E。给定一个整数$N$，当$N=12$的时候是这样一幅图：</p>
 <p><img src="\img\CF15E2.PNG" alt="CF15E2"></p>
-<p>然后你要从最上面的$H$点出发，走一条道路，这条道路中间不包括任何灰色三角形，最后回到$H$。$N$是偶数，$n&lt;=10^6$，问有多少情况，答案对$1e9+9$取模。</p>
+<p>然后你要从最上面的$H$点出发，走一条道路，这条道路中间不包括任何灰色三角形，最后回到$H$。$N$是偶数，$n \leq 10^6$，问有多少情况，答案对$1e9+9$取模。</p>
 </blockquote>
 <p><strong>递推。</strong>为了方便起见，我们以下图所示的阶段划分。</p>
 <p><img src="\img\CF15E.PNG" alt="CF15E"></p>
@@ -469,11 +469,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,10 +486,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +506,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

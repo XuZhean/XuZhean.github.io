@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/08/27/Training-CF-DP/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="专治数据结构学傻。">
-<meta property="og:updated_time" content="2017-08-29T13:06:10.544Z">
+<meta property="og:updated_time" content="2017-10-03T06:36:45.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeForces乱做-动态规划">
 <meta name="twitter:description" content="专治数据结构学傻。">
@@ -195,7 +195,7 @@
 </blockquote>
 <p><strong>最长上升子序列。</strong>考虑两两相交的条件，对于第一行一些点$(a,b,c,..)$，如果它们的线段互相相交，则在第二行一定是以$(..,c,d,a)$的顺序出现。将第二行倒序，就变成了裸的LIS问题。</p>
 <blockquote>
-<p>CF398B。给出$n$和$m$，在一个$n\times n$的平面上有$n\times n$个瓷砖，其中有$m$块已经涂色。现在随机选中一块进行涂色（如果已经涂色跳过，也消耗时间），消耗$1$个时间。终止条件为每行每列都有至少有一块瓷砖被涂色。问说涂成满意的情况需要时间的期望。$n&lt;=2000$</p>
+<p>CF398B。给出$n$和$m$，在一个$n\times n$的平面上有$n\times n$个瓷砖，其中有$m$块已经涂色。现在随机选中一块进行涂色（如果已经涂色跳过，也消耗时间），消耗$1$个时间。终止条件为每行每列都有至少有一块瓷砖被涂色。问说涂成满意的情况需要时间的期望。$n \leq 2000$</p>
 </blockquote>
 <p><strong>期望DP。</strong>定义状态$f[i][j]$表示剩余$i$行和$j$列没有涂色，直到满足条件的期望时间。划分为四类转移即可。</p>
 <blockquote>
@@ -203,6 +203,10 @@
 </blockquote>
 <p><strong>巧妙的状态转移。</strong>注意到一个性质，<strong>一定是在中间一行往回走的。</strong>类似与$S$形的路线。同时可以知道，<strong>一定至多往回走一次，因为往回走多次都可以等效地代替。</strong></p>
 <p>考虑$f[i][j]$表示走到第$i$行第$j$列时，权值的最大值。于是从$f[i][j]$可以转移到$f[k][j]$，只要加上经过的若干个权值。同样的，如果我们往回走一次，可以从$f[1][j]$转移到$f[3][j+2]$，从$f[3][j]$转移到$f[1][j+2]$。 </p>
+<h5 id="第二波-2017-10"><a href="#第二波-2017-10" class="headerlink" title="第二波-2017.10"></a>第二波-2017.10</h5><p>膜一膜敦爷的题单Orz。</p>
+<blockquote>
+<p>446A,463D,455A,467C,392B,383D,404D,429B,459E,479E,348D,403D</p>
+</blockquote>
 
       
 
@@ -286,18 +290,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/27/Training-CF-Graphs/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/04/Training-CF-Round2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CodeForces乱做-图论
+          CodeForces泛做第二轮
         
       </div>
     </a>
   
   
-    <a href="/2017/08/26/Training-CF-Data-Structures/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForces乱做-数据结构</div>
+    <a href="/2017/08/27/Training-CF-Graphs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CodeForces乱做-图论</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -426,11 +430,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,10 +447,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,6 +467,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
