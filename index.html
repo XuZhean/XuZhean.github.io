@@ -165,6 +165,253 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Contest-NOIP2017" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/Contest-NOIP2017/">NOIP2017总复习</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/27/Contest-NOIP2017/" class="archive-article-date">
+  	<time datetime="2017-10-27T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p><strong>折半搜索。</strong>状态可合并（有时配合组合计数/指针单调扫描）。</p>
+<h4 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h4><h4 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h4><p><strong>等价性的利用。</strong>经典模型：蚂蚁相撞后各自掉头，等价于彼此穿过。</p>
+<p><strong>行列无关。</strong> 分别处理。</p>
+<h4 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h4><p><strong>二分答案。</strong>转化为判定性问题，常与贪心，DP结合。</p>
+<h4 id="三分"><a href="#三分" class="headerlink" title="三分"></a>三分</h4><h4 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h4><h4 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h4><h4 id="扫描线"><a href="#扫描线" class="headerlink" title="扫描线"></a>扫描线</h4><p><strong>常与线段树结合。</strong>POJ1177。</p>
+<h4 id="前缀和-amp-差分"><a href="#前缀和-amp-差分" class="headerlink" title="前缀和&amp;差分"></a>前缀和&amp;差分</h4><p><strong>两者往往相互转化。</strong>修改区间的前缀和/差分值，等价于交换/修改单点的前缀和/差分值。</p>
+<h4 id="倍增"><a href="#倍增" class="headerlink" title="倍增"></a>倍增</h4><h4 id="离线"><a href="#离线" class="headerlink" title="离线"></a>离线</h4><h4 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h4><h4 id="打表"><a href="#打表" class="headerlink" title="打表"></a>打表</h4><p><strong>分段打表。</strong> 防止表过大。</p>
+<h4 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h4><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p><strong>改变阶段。</strong>使得不存在后效性。</p>
+<p><strong>滚动数组。</strong><del>小心MLE</del></p>
+<p><strong>分成两次DP。</strong>LA4394。</p>
+<p><strong>记录决策路径。</strong>DFS输出方案。</p>
+<p><strong>bool类型作为DP的值。</strong>标记状态是否可能到达。（POJ2134）</p>
+<p><strong>未来费用。</strong>提前计算。</p>
+<h4 id="普通-背包DP"><a href="#普通-背包DP" class="headerlink" title="普通/背包DP"></a>普通/背包DP</h4><p><strong>单调队列优化多重背包DP。</strong>POJ3260</p>
+<h4 id="序列-区间-环形DP"><a href="#序列-区间-环形DP" class="headerlink" title="序列/区间/环形DP"></a>序列/区间/环形DP</h4><p><strong>线段树优化。</strong>优化区间修改，最值查询。</p>
+<h4 id="状压DP"><a href="#状压DP" class="headerlink" title="状压DP"></a>状压DP</h4><p><strong>预处理转移。</strong></p>
+<p><strong>暴力枚举子集。</strong> $for\ (int\ i=S;\ i;\ i=(i-1)\ \&amp;\ S)$，复杂度变为$O(3^n)$。s</p>
+<h4 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h4><p><strong>求以所有节点为根时的解。</strong>DFS时，父节点向子节点转移信息。</p>
+<p><strong>背包DP转移。</strong>从子节点转移到父节点，使用背包DP。</p>
+<p><strong>二叉树。</strong>转化为序列的DP。</p>
+<h4 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h4><p><strong>DFS通用模版。</strong> </p>
+<p><strong>注意前缀0。</strong></p>
+<h4 id="环套树DP"><a href="#环套树DP" class="headerlink" title="环套树DP"></a>环套树DP</h4><p><strong>DFS找基环。</strong></p>
+<h3 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h3><h4 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h4><h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><p><strong>字典序最小。</strong>优先队列优化。</p>
+<h4 id="图的连通性"><a href="#图的连通性" class="headerlink" title="图的连通性"></a>图的连通性</h4><p><strong>DFS树。</strong>逆向边，横向边…</p>
+<h5 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h5><p><strong>缩点。</strong>原图变为DAG，在此基础上进行拓扑排序。</p>
+<h4 id="最短路"><a href="#最短路" class="headerlink" title="最短路"></a>最短路</h4><p><strong>Dijksta堆优化。</strong>滋瓷次短路。</p>
+<p><strong>附加状态，建立最短路模型。</strong></p>
+<p>经典模型：判断一个数$n$能否由若干个给定的数线性叠加得到。以最小的数$a0$为模，最短路求余数为$i$的能够组成的最小的数。（BZOJ2118）</p>
+<p><strong>分层图最短路。</strong></p>
+<p><strong>判断一条边是否属于最短路。</strong>最短路不等式取等。</p>
+<p><strong>差分约束系统。</strong>列出所有不等式（等价于最短路不等式），连边。SPFA求解，无解存在负环/正环。有时需要二分答案，注意需要满足二分的前提（POJ1275）。</p>
+<p><strong>状态图非DAG上的DP。</strong>使用SPFA的思想，迭代逼近最优解。</p>
+<h4 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h4><p><strong>Prim。</strong>似乎没用。</p>
+<p><strong>Kruskal。</strong>从小到大加边，并查集维护连通性。</p>
+<p><strong>次小生成树。</strong>预处理最小生成树，构造倍增数组，求路径最值。</p>
+<p><strong>最小生成树=最小瓶颈树。</strong></p>
+<h3 id="树相关"><a href="#树相关" class="headerlink" title="树相关"></a>树相关</h3><h4 id="直径，重心"><a href="#直径，重心" class="headerlink" title="直径，重心"></a>直径，重心</h4><p><strong>直径。</strong>树中最长的路径，通过两次$BFS$得到。</p>
+<h4 id="DFS序"><a href="#DFS序" class="headerlink" title="DFS序"></a>DFS序</h4><h4 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h4><p><strong>Tarjan。</strong>离线，并查集辅助。$O(n+Q)$。</p>
+<h4 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h4><h4 id="树上差分"><a href="#树上差分" class="headerlink" title="树上差分"></a>树上差分</h4><p><strong>优化链修改。</strong>拆分为$u \rightarrow lca, lca \rightarrow v$,需要离线。BZOJ3631。</p>
+<p><strong>DFS前后贡献作差。</strong>用同维护总贡献，作差算出子树贡献。NOIP2016D1T2。</p>
+<h4 id="树上倍增"><a href="#树上倍增" class="headerlink" title="树上倍增"></a>树上倍增</h4><h4 id="虚树"><a href="#虚树" class="headerlink" title="虚树"></a>虚树</h4><h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><p><strong>调和级数。</strong>$\large \sum _{i=1} ^{n} \frac 1 i = \ln (n+1) + γ$，常用于估算时间复杂度。</p>
+<p><strong>整数分块。</strong>整除时，枚举商。</p>
+<p><strong>快速乘。</strong>相乘爆$long\ long$时，使用$O(\log n)$的快速乘。</p>
+<p><strong>莫比乌斯函数。</strong>容斥系数。</p>
+<h4 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h4><h5 id="GCD的性质"><a href="#GCD的性质" class="headerlink" title="GCD的性质"></a>GCD的性质</h5><ul>
+<li>若$x$与$y$互质，则$x+ky$与$y$互质。BZOJ2186。</li>
+</ul>
+<h5 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h5><ul>
+<li>必须与模数<strong>互质</strong>。</li>
+</ul>
+<ul>
+<li>扩展GCD，求解。</li>
+<li>费马小定理，快速幂$power(x,MOD-2)$。需要保证$MOD$是质数。</li>
+<li>线性递推求逆元：</li>
+<li><ul>
+<li>设，$ki+r\equiv 0\pmod p$</li>
+<li>那么，$kr^{-1}+i^{-1} \equiv 0 \pmod p$</li>
+<li>移项，$i^{-1}≡-kr^{-1} \pmod p$</li>
+<li>于是，$i^{-1} \equiv - \lfloor \frac p i \rfloor \times (p\%i)^{-1} \pmod p$ </li>
+<li>结论；$rev[i] = -(p/i) \times rev[p\%i]\ \%\ p$</li>
+</ul>
+</li>
+</ul>
+<h5 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h5><p><strong>积性函数。</strong>对于两个互质的数$n,m$,有$\varphi(nm) = \varphi(n) \times \varphi(m)$。</p>
+<p>$\varphi(n) = n \times (1- \frac 1 {p[1]}) \times .. \times (1- \frac 1 {p[k]})$</p>
+<h5 id="欧拉筛"><a href="#欧拉筛" class="headerlink" title="欧拉筛"></a>欧拉筛</h5><h5 id="Lucas定理及扩展形式"><a href="#Lucas定理及扩展形式" class="headerlink" title="Lucas定理及扩展形式"></a>Lucas定理及扩展形式</h5><p>若模数$p$是质数，那么$C(n,m)=C(n/p,m/p) \times C(n\%p,m\%p) \bmod p$</p>
+<p>适用于模数较小，且$n,m$较大时的计算。</p>
+<h5 id="中国剩余定理及扩展形式"><a href="#中国剩余定理及扩展形式" class="headerlink" title="中国剩余定理及扩展形式"></a>中国剩余定理及扩展形式</h5><p>基本结论：</p>
+<p><strong>扩展形式。</strong>模数不互质。合并同余方程组。</p>
+<h5 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h5><p>求$a^x \equiv b \pmod p$的最小解。</p>
+<p>显然$x&lt;p$，每次令$x$增加$\sqrt p$。$exgcd$求出$a^{k\sqrt p+y} \equiv b \pmod p$的$a^y$，从预处理过的$HASH$表中查找即可。</p>
+<h4 id="组合计数"><a href="#组合计数" class="headerlink" title="组合计数"></a>组合计数</h4><p><strong>补集转换。</strong>方便计算。</p>
+<h5 id="组合数相关"><a href="#组合数相关" class="headerlink" title="组合数相关"></a>组合数相关</h5><p>$C(i,j)=C(i-1,j-1)+C(i-1,j)$，预处理组合数。</p>
+<p><strong>容斥原理。</strong></p>
+<p>形式一：所有条件必须满足。加上全集，减去至少一个条件不合法的，加上至少两个不合法的…</p>
+<p>形式二：至少满足一个条件。加上至少满足一个的（会多次计算），减去满足两个的…</p>
+<p>适用于概率的计算。</p>
+<h4 id="矩阵相关"><a href="#矩阵相关" class="headerlink" title="矩阵相关"></a>矩阵相关</h4><p><strong>不满足交换率。</strong>注意乘法顺序！</p>
+<p><strong>矩阵快速幂。</strong>优化<strong>线性</strong>递推。</p>
+<p><strong>循环矩阵。</strong>相乘后仍然是循环矩阵。只需保存第一行，乘法复杂度$O(n^2)$。BZOJ2510</p>
+<p><strong>Floyd矩阵。</strong>求$K$步后点对的最短路。满足结合律，故可以快速幂。</p>
+<h4 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h4><p><strong>全概率，全期望公式。</strong>分类。</p>
+<p><strong>数学期望的线性性。</strong>$E(kx+b)=kE(x)+b$。期望可线性叠加。</p>
+<p><strong>树上的概率/期望问题，且与父节点/根节点相关。序列上的问题，与某一个位置相关。</strong>列方程求解（待定系数）。HDU4089.4035,ZOJ3329。</p>
+<p><strong>DP。</strong>概率顺推，期望逆推。</p>
+<h4 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h4><h5 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h5><p>必输态为$0$，否则为非$0$。$SG(u)=mex{SG(v)}$，状态$u$能到达状态$v$。</p>
+<h5 id="组合游戏的和"><a href="#组合游戏的和" class="headerlink" title="组合游戏的和"></a>组合游戏的和</h5><p>若干个不不相关的组合游戏，总的$SG$等于各个字游戏$SG$的$xor$和。</p>
+<p><strong>打表。</strong>无法找出规律时，打表SG，找出规律。往往都是递归形式的。</p>
+<p><strong>暴力DP。</strong></p>
+<h4 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h4><p><strong>分解为若干个循环。</strong>每个循环是一个独立的环。置换的周期为所有环长的$lcm$。</p>
+<p><strong>求若干次之后的置换。</strong>倍增。</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p><strong>基准值。</strong>需要增加全局的数（或除去某个数），维护一个全局增量$\Delta$。</p>
+<h4 id="栈，队列"><a href="#栈，队列" class="headerlink" title="栈，队列"></a>栈，队列</h4><p><strong>单调栈。</strong>维护单调性。</p>
+<p><strong>单调队列。</strong>维护队列单调性，<em>转移限制距离</em>，从队首弹出。常用于优化DP。</p>
+<h4 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h4><p><strong>带权并查集。</strong> 维护与祖先的关系，路径压缩时合并。</p>
+<p><strong>时光倒流。</strong>支持分离。</p>
+<h4 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h4><p><strong>配合贪心，支持反悔操作。</strong>通过加入新收益-旧收益到堆中。有时配合双向链表。</p>
+<h4 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h4><p><strong>MAP/链表存储。</strong>映射到范围更小的值，插入链表。</p>
+<h4 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h4><p><strong>求逆序对。</strong></p>
+<p><strong>二维树状数组。</strong>外层再增加一个循环即可。</p>
+<p><strong>点查询与前缀修改。</strong>一般的树状数组能够支持点修改，前缀查询。通过改变$i$更新方向，可以交换询问和修改。（维护和时，也可以差分）。</p>
+<h4 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h4><p><strong>均摊复杂度分析。</strong>看似暴力的做法，复杂度正确。</p>
+<p><strong>一些模型。</strong></p>
+<ul>
+<li>维护等差数列：首项，末项，公差。HDU3340。</li>
+<li>保存前缀，后缀信息。</li>
+</ul>
+<p><strong>标记的奇妙合并。</strong>覆盖，等价性合并。BZOJ1858。</p>
+<h4 id="ST表"><a href="#ST表" class="headerlink" title="ST表"></a>ST表</h4><p>支持$O(n\log n)$的倍增预处理，$O(1)$离线查询。</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h4><p><strong>最小周期串。</strong>$n-next[n-1]$。 </p>
+<h4 id="Tire"><a href="#Tire" class="headerlink" title="Tire"></a>Tire</h4><h4 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h4><p><strong>配合DP。</strong>以位置作为状态（可以矩阵快速幂优化），有时配合状压记录是否访问病毒串。</p>
+<p><strong>fail指针。</strong>反向建树。BZOJ2434。</p>
+<h4 id="LCP"><a href="#LCP" class="headerlink" title="LCP"></a>LCP</h4><h3 id="计算几何"><a href="#计算几何" class="headerlink" title="计算几何"></a>计算几何</h3><h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><h4 id="叉积，点积"><a href="#叉积，点积" class="headerlink" title="叉积，点积"></a>叉积，点积</h4><p><strong>有向面积。</strong>向量构成的有向面积是叉积的一半。</p>
+<p><strong>判断两条线段是否相交。</strong>叉积判断。</p>
+<h4 id="凸包"><a href="#凸包" class="headerlink" title="凸包"></a>凸包</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/27/Contest-NOIP2017/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Algorithms-Flows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/15/Algorithms-Flows/">「学习笔记」网络流相关</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/15/Algorithms-Flows/" class="archive-article-date">
+  	<time datetime="2017-10-15T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今年NOIP2017提高的初赛考到的最小割。这是否意味着网络流进入NOIP考纲？</p>
+<p>蒟蒻Cyani发现，周围的同学都会网络流啊啊啊。蒟蒻也来学一学姿势。</p>
+<p>比较推荐LRJ的蓝书，关于模版和建模有比较详细的讲解。</p>
+<p>听说CF的网络流质量挺高的？</p>
+<p>还有<a href="http://blog.csdn.net/fzhvampire/article/details/49391337" target="_blank" rel="external">BZOJ的网络流。</a></p>
+<h3 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h3><h4 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h4><p>每次找到最短增广路径，最坏增广$O(nm)$次。所以时间复杂度取决于找最短增广路径的时间复杂度。</p>
+<p><strong>EK算法。</strong>直接暴力$BFS$，复杂度$O(nm^2)$。</p>
+<p><strong>Dinic算法。</strong>按照起点到$u$的距离分层，沿着分层网络上的边增广，直到$s$无法到达$t$。重复以上步骤。最多重复$O(n)$次，每次复杂度$O(nm)$。总的复杂度$O(n^2m)$。</p>
+<p><strong>ISAP算法。</strong>EK算法的改进版，做法类似于Dinic，维护每个点到终点的最大距离（没有暴力重新计算，而是增广过程中更新）。需要增加当前弧优化，GAP优化。复杂度$O(n^2m)$，常数比Dinic小。</p>
+<p>推荐ISAP，详见这篇<a href="http://www.renfei.org/blog/isap.html" target="_blank" rel="external">博文</a>。</p>
+<h4 id="最大流最小割定理"><a href="#最大流最小割定理" class="headerlink" title="最大流最小割定理"></a>最大流最小割定理</h4><p>一个图的割定义为，$s,t$分别所属两个点集$S,T=V-S$，代价定义为$S$到$T$所有边的代价总和。</p>
+<p>最大流=最小割。 </p>
+<h3 id="常见模型"><a href="#常见模型" class="headerlink" title="常见模型"></a>常见模型</h3><p><strong>多源多汇。</strong>增加超级源$s’$，超级汇$t’$，连上流量无穷的边。</p>
+<p><strong>节点容量。</strong>将一个点$u$拆成两个点$u1,u2$，$u1\rightarrow u2$连上节点容量的边，入边连上$u1$，出边连上$u2$。</p>
+<p><del><strong>无源无汇，有容量下界的可行流（所有节点满足入流等于出流）。</strong></del></p>
+<p>未完待续。</p>
+<h3 id="一些题目"><a href="#一些题目" class="headerlink" title="一些题目"></a>一些题目</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/15/Algorithms-Flows/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Training-CF-Round2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -229,67 +476,6 @@
 
 
   
-    <article id="post-Training-CF-DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/27/Training-CF-DP/">CodeForces乱做-动态规划</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/27/Training-CF-DP/" class="archive-article-date">
-  	<time datetime="2017-08-27T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>专治数据结构学傻。</p>
-        
-          <a class="article-more-a" href="/2017/08/27/Training-CF-DP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/27/Training-CF-DP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-Training-CF-Graphs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -337,6 +523,67 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/27/Training-CF-Graphs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Training-CF-DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/27/Training-CF-DP/">CodeForces乱做-动态规划</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/27/Training-CF-DP/" class="archive-article-date">
+  	<time datetime="2017-08-27T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>专治数据结构学傻。</p>
+        
+          <a class="article-more-a" href="/2017/08/27/Training-CF-DP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/27/Training-CF-DP/">展开全文 >></a>
         </p>
       
 
@@ -680,134 +927,9 @@
 
 
   
-    <article id="post-Algorithms-Generation-function" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/Algorithms-Generation-function/">组合数学-生成函数的应用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/13/Algorithms-Generation-function/" class="archive-article-date">
-  	<time datetime="2017-08-13T12:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <font color="red">更多的坑待填…</font>
-        
-          <a class="article-more-a" href="/2017/08/13/Algorithms-Generation-function/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/13/Algorithms-Generation-function/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Training-CF-Round1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/08/Training-CF-Round1/">CodeForces泛做第一轮</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/08/Training-CF-Round1/" class="archive-article-date">
-  	<time datetime="2017-08-08T00:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>完结，撒花~</strong></p>
-<p><strong>时间: 2017.8.8~2017.8.22</strong></p>
-<p>由于博主太弱了，所以在NOIP2017之前开了这么一个坑，差不多是#301到#360，中间还有一些非常规赛。就这样吧。。</p>
-<font color="red">未完成: 546E 568C/D 571B/D CF573D 578D 582D 594B 601D 603B 605A 611E 613B 613D(虚树) 638E 663B/D 666B 643C(斜率优化DP)/D 671C/D 676D/E</font>
-        
-          <a class="article-more-a" href="/2017/08/08/Training-CF-Round1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">训练</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/08/Training-CF-Round1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -922,11 +1044,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +1056,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,7 +1076,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -955,14 +1089,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
