@@ -7,19 +7,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>AtCoder泛做-ARC#068~076 | Cyani&#39;s Blog</title>
+  <title>Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="蒟蒻の口胡题解 系列 时间：2017.10.2~ 未完成:">
-<meta name="keywords" content="泛做">
+  <meta name="description" content="This Cyani&apos;s Bolg.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AtCoder泛做-ARC#068~076">
-<meta property="og:url" content="https://xuzhean.github.io/2017/07/15/Training-AGC-001-020/index.html">
+<meta property="og:title" content="Cyani&#39;s Blog">
+<meta property="og:url" content="https://xuzhean.github.io/2017/10/22/Training-AGC-001-020/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="蒟蒻の口胡题解 系列 时间：2017.10.2~ 未完成:">
-<meta property="og:updated_time" content="2017-10-27T11:20:24.878Z">
+<meta property="og:description" content="This Cyani&apos;s Bolg.">
+<meta property="og:updated_time" content="2017-11-01T13:55:24.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AtCoder泛做-ARC#068~076">
-<meta name="twitter:description" content="蒟蒻の口胡题解 系列 时间：2017.10.2~ 未完成:">
+<meta name="twitter:title" content="Cyani&#39;s Blog">
+<meta name="twitter:description" content="This Cyani&apos;s Bolg.">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -168,71 +167,9 @@
             <article id="post-Training-AGC-001-020" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      AtCoder泛做-ARC#068~076
-    </h1>
-  
-
-        
-        <a href="/2017/07/15/Training-AGC-001-020/" class="archive-article-date">
-  	<time datetime="2017-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p><del>蒟蒻の口胡题解 系列</del></p>
-<p><strong>时间：2017.10.2~</strong></p>
-<font color="red">未完成: </font>
-
-<a id="more"></a>
-<h5 id="AtCoder-Grand-Contest-001"><a href="#AtCoder-Grand-Contest-001" class="headerlink" title="AtCoder Grand Contest 001"></a>AtCoder Grand Contest 001</h5><p><strong>A题</strong>，水题。</p>
-<p><strong>B题</strong>，找规律，GCD相关。</p>
-<p><strong>C题</strong>，树的直径。暴力枚举直径中点，保留距离不大于$K/2$的点（可以证明一定是最优的）。</p>
-<blockquote>
-<p><strong>D - Arrays and Palindrome</strong> 有两个序列$a$和$b$，满足两个序列的所有元素之和都为$N$。且对于任意一个长度为$N$的字符串，如果满足：</p>
-<ul>
-<li>前$a[1]$个字符构成回文串，接下来的$a[2]$个字符也能构成回文，…</li>
-<li>前$b[1]$个字符构成回文串，接下来的$b[2]$个字符也能构成回文，…</li>
-</ul>
-<p>能够推出：所有的字符都是相同的。</p>
-<p>已知$a$是$A$的一个排列（长度为$m$，所有元素之和为$N$），求满足条件的$a$和$b$。</p>
-<p>$N \leq 10^5, m \leq 100$</p>
-</blockquote>
-<p><strong>构造好题。</strong>对于序列$a$，能得到的这个字符串中的等价关系，我们可以用边来连接。我们需要构造序列$b$，也就是添加一些新的边，使得所有点连通。注意到一个性质：<strong>对于一个长度为$2x+1$的回文串，我们会连$x$条边；对于一个长度为$2x$的，会连$x$条。</strong>而我们要使得图连通，就<strong>至少</strong>连$n-1$条。下面按照$N$的奇偶性分类讨论。</p>
-<p>当$N$为奇数时。显然，原来最多连$\lfloor \frac {N} 2 \rfloor$条边（$A$中只存在一个元素为奇数），新加入的边最多也为$\lfloor \frac {N} 2 \rfloor$，得到的总边数为$N-1$。也就是说，$A$中仅能存在一个元素为奇数。</p>
-<p>$N$为偶数时同样分析。可以得到奇数的个数为$0,2$个。</p>
-<p>考虑如何构造？对于长度为偶数的元素，可以令对应的元素相等，并且连的边错位。这样为偶数的元素就可以无限延伸。对于奇数，只要放置在两边即可。</p>
-<p><strong>E题</strong>，组合数转网格的路径数，暴力DP即可。</p>
-<blockquote>
-<p><strong>F - Wide Swap</strong> 有一个长为$N$的排列，$P[1],P[2]..P[N]$。可以做任意次操作，每次挑选两个位置$i,j$，满足$i - j &gt;= K,|P[i] - P[j]| = 1$， 然后交换$P[i]$和$P[j]$。求出排列$P$可能的最小字典序。<br>$N \leq 5 \times 10^5$</p>
-</blockquote>
-<p><strong>结论题，最小字典序拓扑排序，优化边数。</strong>首先%%%SYC灿爷的题解Orz。</p>
-<p><strong>结论</strong>：令$P$是初始排列，$P’$是最后的排列。如果$P[x]&lt;P[y],|x-y|&lt;K$，那么$P’[x] &lt; P’[y]$。这个是$P’$的充要条件。</p>
-<p><strong>证明</strong>：构造一个排列$Q$满足$Q[P[i]]=i$，最终的排列为$Q’$。</p>
-<p>一次操作等价于：在$Q$中选择两个相邻的元素，且满足元素的差至少为$K$。$P$的字典序最小等价于：排列$Q$中，$1$的位置尽可能靠前，其次$2$的位置尽可能靠前…</p>
-<p>注意到，如果$x&lt;y$且$|Q[x]-Q[y]|&lt;K$那么它们的相对位置在$Q’$中不变（否则无法交换）。这是个充要条件。</p>
-<p>对应到$P$和$P’$中，就得到了上述结论。</p>
-<p><strong>转化为一个图论问题。</strong>如果$|x-y|&lt;K$且$P[x]&lt;P[y]$，那么从$x$向$y$连一条边。所有拓扑序都是满足条件的$P’$。由于要求字典序最小，用优先队列维护即可。复杂度$O((n+m)\log n)$。</p>
-<p><strong>优化边数。</strong>考虑到$O(m)=O(n^2)$，实际上有些边是不用连接的。对于一个$x$，只需要考虑$[x-K+1,x-1]$和$[x+1,x+K-1]$中$P[x]$的后继即可，因为其他边都可以由若干条边来代替。</p>
-<p>总的时间复杂度$O(n \log n)$。</p>
-<h5 id="AtCoder-Grand-Contest-002"><a href="#AtCoder-Grand-Contest-002" class="headerlink" title="AtCoder Grand Contest 002"></a>AtCoder Grand Contest 002</h5><p><strong>A题。</strong>水题，按照$a,b$的正负讨论一波。</p>
-<p><strong>B题。</strong>水题，用一个数组记录哪些盒子可能包含红球。<strong>坑点</strong>：注意当一个盒子里不存在球后，则一定不存在红球。</p>
-<p><strong>C题。</strong>还是水题，考虑到最后必须解开相邻的绳，显然最后解开最长的绳是最优的。从两端开始解即可。</p>
-<blockquote>
-<p><strong>D - Stamp Rally</strong> 给定一个包含$n$个节点，$m$条边的无向图。有$Q$个询问，对于每个询问，给定$x,y,z$。从$x,y$出发，总共遍历$z$个点（重复的只算作一次）。使得经过的边的编号的最大值最小。<br>$n,m \leq 10^5$</p>
-</blockquote>
-<p><strong>整体二分。</strong>对于一个询问，考虑从小到大加边，用并查集维护联通和$size$域，直到$x,y$所在联通块的$size$到达$z$，显然会T。<br>很显然答案满足单调性，原来的暴力中，并查集需要多次重构。所以考虑整体二分。并查集可以按秩合并，方便删除。复杂度$O((n+Q)\log n \log Q)$。</p>
-<blockquote>
-<p><strong>E - Candy Piles</strong> $A$和$B$在玩一个游戏。共有$n$堆糖果，第$i$堆有$ai$个糖果。A和B轮流进行操作：①选择包含糖果最多的一堆，拿走所有糖果。②对于所有非空的堆，拿走一个糖果。无法操作的人<strong>胜</strong>。<br>$n \leq 10^5, ai \leq 10^9$</p>
-</blockquote>
-<p><strong>博弈，找规律。</strong>考虑用将所有堆从大到小排序，用$n$列，第$i$列高$ai$的方格来表示。对于操作1，相当于消除最左端一列，对于操作2，相当于消除最后一行。<br>于是操作就可以看作是左下角位置的转移（向上，或者向右）。最先接触到边界的玩家输。<br>易证，对于所有对角线，输赢的状态一定相同。想要知道左下角的输赢状态，只需要斜向上延伸，根据向右和向上的距离，就可以判断状态。<del>为什么感觉说不清楚呢QAQ</del></p>
-<p><strong>F</strong>。挖坑。</p>
-
+        
       
 
       
@@ -240,17 +177,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -301,7 +227,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/07/15/Training-AGC-001-020/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/10/22/Training-AGC-001-020/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +241,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/15/Training-ARC-068-076/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/27/Contest-NOIP2017/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          AtCoder泛做-ARC#068~076
+          NOIP2017总复习
         
       </div>
     </a>
   
   
-    <a href="/2017/07/02/2017.7-Training/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2017年7月NOIP集训总结</div>
+    <a href="/2017/10/15/Algorithms-Flows/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「学习笔记」网络流相关</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -467,11 +393,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,11 +401,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
