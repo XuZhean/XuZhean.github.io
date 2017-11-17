@@ -4,29 +4,14 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/10/22/Training-AGC-001-020/</loc>
-    <lastmod>2017-11-01T13:55:24.180Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/10/05/Algorithms-Flows/</loc>
+    <lastmod>2017-11-17T04:08:57.210Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2017-10-22T08:31:13.870Z</pubTime>
+        <title>「学习笔记」网络流相关</title>
+        <pubTime>2017-10-05T10:00:00.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/10/27/Contest-NOIP2017/</loc>
-    <lastmod>2017-10-29T02:54:50.751Z</lastmod>
-    <data>
-        <display>
-        <title>NOIP2017总复习</title>
-        <pubTime>2017-10-27T12:00:00.000Z</pubTime>
-        
-        <tag>复习</tag>
+        <tag>笔记</tag>
          
          
            
@@ -37,7 +22,7 @@
     
   <url>
     <loc>https://xuzhean.github.io/2017/07/01/CodeForces/</loc>
-    <lastmod>2017-10-22T07:42:16.149Z</lastmod>
+    <lastmod>2017-11-13T08:36:48.619Z</lastmod>
     <data>
         <display>
         <title>CodeForces比赛记录&题解</title>
@@ -53,14 +38,14 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/10/15/Algorithms-Flows/</loc>
-    <lastmod>2017-10-15T03:41:41.506Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/11/13/POI/</loc>
+    <lastmod>2017-11-12T22:48:50.437Z</lastmod>
     <data>
         <display>
-        <title>「学习笔记」网络流相关</title>
-        <pubTime>2017-10-15T10:00:00.000Z</pubTime>
+        <title>POI切题记</title>
+        <pubTime>2017-11-13T02:00:00.000Z</pubTime>
         
-        <tag>笔记</tag>
+        <tag>切题</tag>
          
          
            
@@ -71,13 +56,45 @@
     
   <url>
     <loc>https://xuzhean.github.io/2017/07/01/Hello-World!/</loc>
-    <lastmod>2017-10-15T00:07:59.037Z</lastmod>
+    <lastmod>2017-11-12T22:40:59.824Z</lastmod>
     <data>
         <display>
         <title>Hello World!</title>
         <pubTime>2017-06-30T16:00:00.000Z</pubTime>
         
-        <tag>随笔</tag>
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/08/22/Training-CF-Educational/</loc>
+    <lastmod>2017-11-12T22:40:25.038Z</lastmod>
+    <data>
+        <display>
+        <title>CodeForces-Educational-Round泛做&记录</title>
+        <pubTime>2017-08-22T02:00:00.000Z</pubTime>
+        
+        <tag>泛做</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/10/27/Contest-NOIP2017/</loc>
+    <lastmod>2017-11-12T22:39:53.149Z</lastmod>
+    <data>
+        <display>
+        <title>NOIP2017总复习</title>
+        <pubTime>2017-10-27T12:00:00.000Z</pubTime>
+        
+        <tag>复习</tag>
          
          
            
@@ -189,23 +206,6 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/08/22/Training-CF-Educational/</loc>
-    <lastmod>2017-10-03T06:36:59.276Z</lastmod>
-    <data>
-        <display>
-        <title>CodeForces-Educational-Round泛做&记录</title>
-        <pubTime>2017-08-22T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://xuzhean.github.io/2017/08/27/Training-CF-DP/</loc>
     <lastmod>2017-10-03T06:36:45.450Z</lastmod>
     <data>
@@ -274,7 +274,7 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/07/02/2017.7-Training/</loc>
+    <loc>https://xuzhean.github.io/2017/07/02/Training-2017.7/</loc>
     <lastmod>2017-10-03T06:34:34.289Z</lastmod>
     <data>
         <display>
