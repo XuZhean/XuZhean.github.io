@@ -165,6 +165,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Algorithms-Number-theory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/19/Algorithms-Number-theory/">「学习笔记」数论进阶</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/19/Algorithms-Number-theory/" class="archive-article-date">
+  	<time datetime="2017-11-19T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h1><h2 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>数论函数。</strong> 定义域为正整数的函数。所以以下默认所有数都是正整数。</p>
+<p><strong>积性函数。</strong> 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。</p>
+<p><strong>完全积性函数。</strong> 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><strong>线性筛求 $[1,n]$ 的积性函数。</strong> 令 $n = \prod p <em> {i} ^ {k</em> i}$ ,那么 $f(n) = \prod f(p <em> {i} ^ {k</em> i})$ 。</p>
+<p><strong>积性。</strong> 若 $f,g$ 为积性函数， 那么 $(fg)(n) = f(n)g(n), (\frac f g)(n) = \frac {f(n)} {g(n)}$  也都是积性函数。</p>
+<h3 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数"></a>常见的积性函数</h3><p><strong>欧拉函数，积性。</strong> $\varphi(n)$ 表示 $[1,n]$ 中与 $n$ 互质的数的个数。</p>
+<p><strong>莫比乌斯函数，积性。</strong> 当 $n$ 含有平方因子 $\mu(n) = 0$ , 否则 $n$ 为 $k$ 个不同的质因子乘积， $\mu(n) = -1 ^{k}$ 。</p>
+<p><strong>除数函数，积性。</strong> $\sigma _ {k} (n)$ 表示 $n$ 的所有因数的 $k$ 次幂之和。</p>
+<p>特别的，$d(n) = \sigma _ {0} (n)$ ，表示 $n$ 的因数个数。</p>
+<p>$\sigma _ {1} (n) = \sigma (n)$ ，表示 $n$ 的所有因数之和。</p>
+<p><strong>幂函数，完全积性。</strong> $ld _ {k} (n)$ ，表示 $n^k$ 。</p>
+<p>特别的， $ld _ {0} (n) = 1 (n) = 1$ 。</p>
+<p><strong>单位函数，完全积性。</strong> 当且仅当 $n=1$ 时， $e(n)=1$ ，否则 $e(n)=0$ 。</p>
+<h2 id="Dirichlet卷积"><a href="#Dirichlet卷积" class="headerlink" title="Dirichlet卷积"></a>Dirichlet卷积</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>两个数论函数 $f,g$ 的Dirichlet卷积。</p>
+<p>$$\large (f * g)(n) = \sum _ {d|n} f(d) \times g(\frac n d)$$</p>
+<h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><p><strong>定义。</strong> $(f+n)(n) = f(n) + g(n)$ .</p>
+<p><strong>交换律。</strong> $f <em> g = g </em> f$</p>
+<p><strong>结合律。</strong> $(f <em> g) </em> h = f <em> (g </em> h)$</p>
+<p><strong>分配率。</strong> $f <em> (g + h) = f</em>g + f * h$</p>
+<p><strong>单位元。</strong> $f * e = f$</p>
+<p>当 $f,g$ 为积性函数时， $f * g$ 也为积性函数。</p>
+<p>已知数论函数 $f,g$ ，则可以在 $O(n \log n)$ 的时间内计算出 $f*g$ 。</p>
+<h3 id="常见的Dirichlet卷积"><a href="#常见的Dirichlet卷积" class="headerlink" title="常见的Dirichlet卷积"></a>常见的Dirichlet卷积</h3><p>比较显然的两个</p>
+<p>$$d(n) = \sum _ {d|n} 1 \Leftrightarrow d = 1 * 1$$</p>
+<p>$$\sigma (n) = \sum _ {d|n} d \Leftrightarrow \sigma = d * 1$$</p>
+<p>可以由下面的莫比乌斯反演推出</p>
+<p>$$\varphi (n) = \sum _ {d|n} \mu (d) \times \frac n d \Leftrightarrow \varphi = \mu * ld$$</p>
+<p><strong><em>极其重要的，莫比乌斯反演的基础</em></strong></p>
+<p>$$\large \sum <em> {d|n} \mu(d) = \sum </em> {i=0} ^{k} (-1) ^{i} \times \binom k i = (1-1) ^{k} = e(n) \Longleftrightarrow e = \mu * 1$$</p>
+<p>##莫比乌斯反演</p>
+<p>如果两个数论函数 $f,g$ 满足 $f = g * 1$ ，也即</p>
+<p>$$\large f(n) = \sum _ {d|n} g(d)$$</p>
+<p>那么它们满足 $g = \mu * f$ ，也即</p>
+<p>$$\large g(n) = \sum _ {d|n} \mu (d) \times f(\frac n d)$$</p>
+<p><strong>考虑证明</strong> $f = g <em> 1 \Leftrightarrow g = \mu </em> f$</p>
+<p>已知</p>
+<p>$$\large f = g * 1$$</p>
+<p>两边都卷上 $\mu$ ,可得</p>
+<p>$$\large f <em> \mu = g </em> \mu <em> 1 = g </em> e = g$$</p>
+<p>已知</p>
+<p>$$\large f * \mu = g$$</p>
+<p>两边都卷上 $1$ ，可得</p>
+<p>$$\large g <em> 1 = f </em> \mu <em> 1 = f </em> e = f$$</p>
+<p><strong>本质？</strong> $1$ 与 $\mu$ 在 Dirichlet卷积意义下互为逆元。</p>
+<h2 id="小技巧汇总"><a href="#小技巧汇总" class="headerlink" title="小技巧汇总"></a>小技巧汇总</h2><p>###一</p>
+<blockquote>
+<p>有一个 <strong>积性函数</strong> $f$，它与恒等函数 $1$ 的Dirichlet卷积 $g = f*1$ 如何计算？</p>
+</blockquote>
+<p>假设 $n = \prod <em> {i=1} ^{t} p </em> {i} ^{ki}$ ，$g(n) = \sum _ {d|n} f(n)$ 。那么就有</p>
+<p>$$\large g(n) = \prod <em> {i=1} ^{t} \sum </em> {j=0} ^{ki} f(p _ {i} ^{j})$$</p>
+<p>###二</p>
+<p>整数分块技巧。求 $\sum _ {i=1} ^{n} f(i) \times \lfloor \frac n i \rfloor$</p>
+<p>注意到 $\large \lfloor \frac n i \rfloor$ 只有 $O(\sqrt n)$ 种取值。对于固定的 $\lfloor \frac n i \rfloor$ ， $i$ 的取值为 $\large \left[ \left \lfloor \frac n {\lfloor \frac n i \rfloor+1} \right \rfloor+1, \left \lfloor \frac n {\lfloor \frac n i \rfloor} \right \rfloor \right]$ 。</p>
+<p>对于相同的 $\lfloor \frac n i \rfloor$ ，我们只需要计算 $f(i)$ 的前缀和即可。</p>
+<p>##杜教筛</p>
+<p>###问题的一般形式</p>
+<p>给出一个奇怪的数论函数 $f(x)$ （simple一点像 $\mu, \varphi$ ）。接着给出了一个 $n$ ，一般有 $10^9,10^{10},10^{11},10^{12}$ 的范围。需要求 $S(n) = \sum _ {i=1} ^{n} f(i)$ 模一个大数的值。</p>
+<p>###构造</p>
+<p>求出 $S(n)$ 会非常困难，考虑找出另一个函数 $g(x)$ ，考虑 $(f*g)(x)$ 的前缀和。</p>
+<p>$$\large  \sum <em> {i=1} ^{n} \sum </em> {j|i} f(i) g(\frac i j) = \sum <em> {ij \leq n} f(i) g(j) = \sum </em> {i=1} ^{n} g(i) S(\lfloor \frac n i \rfloor) $$</p>
+<p>于是，</p>
+<p>$$\large g(1)S(n) = \sum <em> {i=1} ^{n} (f*g)(i) - \sum </em> {i=2} ^{n} g(i) S(\lfloor \frac n i \rfloor)$$</p>
+<p>###要求&amp;&amp;时间复杂度</p>
+<p>需要保证 $(f*g)(x),g(x)$ 的前缀和都比较容易计算。</p>
+<p>可以直接记忆化搜索，复杂度 $O(n^{\frac 3 4})$ 。</p>
+<p>可以预处理前 $k$ 个前缀和，复杂度 $O(k + \frac n {\sqrt k})$ 。取 $k=n^{\frac 2 3}$ 最优，复杂度 $O(n ^ {\frac 2 3})$ 。</p>
+<p>对于 $\mu(x),\varphi(x)$ 的前缀和，我们令 $g(x) = 1$ 即可。</p>
+<p>###复杂的基本形式</p>
+<p><a href="http://jiruyi910387714.is-programmer.com/posts/195270.html" target="_blank" rel="external">%%%jiry_2</a></p>
+<p>有时候， $f(x)$ 本身就是两个函数的积/Dirichlet卷积，通常令 $g(x) = 1$ ，而且可以进一步化简。</p>
+<p>嗯，，还是要多做题啊。。。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/19/Algorithms-Number-theory/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-POI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -697,67 +826,6 @@
 
 
   
-    <article id="post-Training-CF-Graphs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/27/Training-CF-Graphs/">CodeForces乱做-图论</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/27/Training-CF-Graphs/" class="archive-article-date">
-  	<time datetime="2017-08-27T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>嗯，图论么？我知道，就是dalao口中的简单题罢了。</p>
-        
-          <a class="article-more-a" href="/2017/08/27/Training-CF-Graphs/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/27/Training-CF-Graphs/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-Training-CF-DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -805,6 +873,67 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/27/Training-CF-DP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Training-CF-Graphs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/27/Training-CF-Graphs/">CodeForces乱做-图论</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/27/Training-CF-Graphs/" class="archive-article-date">
+  	<time datetime="2017-08-27T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>嗯，图论么？我知道，就是dalao口中的简单题罢了。</p>
+        
+          <a class="article-more-a" href="/2017/08/27/Training-CF-Graphs/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/27/Training-CF-Graphs/">展开全文 >></a>
         </p>
       
 
@@ -1002,67 +1131,6 @@
 
 
   
-    <article id="post-Training-CF-Number-theory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/Training-CF-Number-theory/">CodeForces乱做-数论</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/23/Training-CF-Number-theory/" class="archive-article-date">
-  	<time datetime="2017-08-23T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>膜一膜欧拉，您就能把这道数论题A了！</p>
-        
-          <a class="article-more-a" href="/2017/08/23/Training-CF-Number-theory/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/23/Training-CF-Number-theory/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1184,7 +1252,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,7 +1260,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1204,15 +1272,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1220,11 +1288,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图论</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>
