@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」数论进阶 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嗯，，公式经常挂QAQ。泥萌把代码复制到latex里看吧QAQ 数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \pr">
+  <meta name="description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」数论进阶">
 <meta property="og:url" content="https://xuzhean.github.io/2017/11/19/Algorithms-Number-theory/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="嗯，，公式经常挂QAQ。泥萌把代码复制到latex里看吧QAQ 数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \pr">
-<meta property="og:updated_time" content="2017-11-25T06:52:05.139Z">
+<meta property="og:description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
+<meta property="og:updated_time" content="2017-11-25T07:23:48.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」数论进阶">
-<meta name="twitter:description" content="嗯，，公式经常挂QAQ。泥萌把代码复制到latex里看吧QAQ 数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \pr">
+<meta name="twitter:description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -185,8 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>嗯，，公式经常挂QAQ。泥萌把代码复制到latex里看吧QAQ</p>
-<h1 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h1><h2 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>数论函数。</strong> 定义域为正整数的函数。所以以下默认所有数都是正整数。</p>
+        <h1 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h1><h2 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>数论函数。</strong> 定义域为正整数的函数。所以以下默认所有数都是正整数。</p>
 <p><strong>积性函数。</strong> 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。</p>
 <p><strong>完全积性函数。</strong> 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。</p>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><strong>线性筛求 $[1,n]$ 的积性函数。</strong> 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) = \prod f(p _ {i} ^ {k_ i})$ 。</p>
@@ -201,32 +200,32 @@
 <p>特别的， $id _ {0} (n) = 1 (n) = 1$ 。</p>
 <p><strong>单位函数，完全积性。</strong> 当且仅当 $n=1$ 时， $e(n)=1$ ，否则 $e(n)=0$ 。</p>
 <h2 id="Dirichlet卷积"><a href="#Dirichlet卷积" class="headerlink" title="Dirichlet卷积"></a>Dirichlet卷积</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>两个数论函数 $f,g$ 的Dirichlet卷积。</p>
-<p>$$\large (f * g)(n) = \sum _ {d|n} f(d) \times g(\frac n d)$$</p>
+<p>$$\large (f \ast g)(n) = \sum _ {d|n} f(d) \times g(\frac n d)$$</p>
 <h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><p><strong>定义。</strong> $(f+n)(n) = f(n) + g(n)$ .</p>
-<p><strong>交换律。</strong> $f _ g = g _ f$</p>
-<p><strong>结合律。</strong> $(f _ g) _ h = f _ (g _ h)$</p>
-<p><strong>分配率。</strong> $f _ (g + h) = f_g + f * h$</p>
-<p><strong>单位元。</strong> $f * e = f$</p>
-<p>当 $f,g$ 为积性函数时， $f * g$ 也为积性函数。</p>
-<p>已知数论函数 $f,g$ ，则可以在 $O(n \log n)$ 的时间内计算出 $f*g$ 。</p>
+<p><strong>交换律。</strong> $f \ast g = g \ast f$</p>
+<p><strong>结合律。</strong> $(f \ast g) * h = f \ast (g \ast h)$</p>
+<p><strong>分配率。</strong> $f \ast (g + h) = f \ast g + f \ast h$</p>
+<p><strong>单位元。</strong> $f \ast e = f$</p>
+<p>当 $f,g$ 为积性函数时， $f \ast g$ 也为积性函数。</p>
+<p>已知数论函数 $f,g$ ，则可以在 $O(n \log n)$ 的时间内计算出 $f \ast g$ 。</p>
 <h3 id="常见的Dirichlet卷积"><a href="#常见的Dirichlet卷积" class="headerlink" title="常见的Dirichlet卷积"></a>常见的Dirichlet卷积</h3><p>比较显然的两个</p>
-<p>$$d(n) = \sum _ {d|n} 1 \Leftrightarrow d = 1 * 1$$</p>
-<p>$$\sigma (n) = \sum _ {d|n} d \Leftrightarrow \sigma = d * 1$$</p>
+<p>$$d(n) = \sum _ {d|n} 1 \Leftrightarrow d = 1 \ast 1$$</p>
+<p>$$\sigma (n) = \sum _ {d|n} d \Leftrightarrow \sigma = d \ast 1$$</p>
 <p><strong>_极其重要的，莫比乌斯反演的基础_</strong></p>
 <p>$$\large \sum _ {d|n} \mu(d) = \sum _ {i=0} ^{k} (-1) ^{i} \times \binom k i = (1-1) ^{k} = e(n) \Longleftrightarrow e = \mu * 1$$</p>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>如果两个数论函数 $f,g$ 满足 $f = g * 1$ ，也即</p>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>如果两个数论函数 $f,g$ 满足 $f = g \ast 1$ ，也即</p>
 <p>$$\large f(n) = \sum _ {d|n} g(d)$$</p>
 <p>那么它们满足 $g = \mu * f$ ，也即</p>
 <p>$$\large g(n) = \sum _ {d|n} \mu (d) \times f(\frac n d)$$</p>
-<p><strong>考虑证明</strong> $f = g _ 1 \Leftrightarrow g = \mu _ f$</p>
+<p><strong>考虑证明</strong> $f = g \ast 1 \Leftrightarrow g = \mu \ast f$</p>
 <p>已知</p>
-<p>$$\large f = g * 1$$</p>
+<p>$$\large f = g \ast 1$$</p>
 <p>两边都卷上 $\mu$ ,可得</p>
-<p>$$\large f _ \mu = g _ \mu _ 1 = g _ e = g$$</p>
+<p>$$\large f \ast \mu = g \ast \mu \ast 1 = g \ast e = g$$</p>
 <p>已知</p>
-<p>$$\large f * \mu = g$$</p>
+<p>$$\large f \ast \mu = g$$</p>
 <p>两边都卷上 $1$ ，可得</p>
-<p>$$\large g _ 1 = f _ \mu _ 1 = f _ e = f$$</p>
+<p>$$\large g \ast 1 = f \ast \mu \ast 1 = f \ast e = f$$</p>
 <p><strong>本质？</strong> $1$ 与 $\mu$ 在 Dirichlet卷积意义下互为逆元。</p>
 <h2 id="小技巧汇总"><a href="#小技巧汇总" class="headerlink" title="小技巧汇总"></a>小技巧汇总</h2><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><blockquote>
 <p>有一个 <strong>积性函数</strong> $f$，它与恒等函数 $1$ 的Dirichlet卷积 $g = f*1$ 如何计算？</p>
@@ -239,16 +238,16 @@
 <h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>与 $n$ 互质的数的和：</p>
 <p>$$\large \sum _ {i=1} ^ {n} i \times e(\gcd (i, n)) = \frac {n \times \varphi(n) + e(n)} 2$$</p>
 <p>大致证明：当 $i$ 与 $n$ 互质时， $n-i$ 也与 $n$ 互质。</p>
-<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>假设 $a*b$ 已经是Dirichlet卷积，那么</p>
-<p>$$\large id _ {k} \times (a*b) = (id _ {k} \times a) * (id _ {k} \times b)$$</p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>假设 $a \ast b$ 已经是Dirichlet卷积，那么</p>
+<p>$$\large id _ {k} \times (a \ast b) = (id _ {k} \times a) \ast (id _ {k} \times b)$$</p>
 <h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><p>因为 （$\varphi(d)$ 表示与 $n$ 的最大公约数为 $\frac n d$ 的数的个数，它们的和显然为 $n$ ）：</p>
 <p>$$\large \sum _ {d|n} \varphi (d) = n$$</p>
 <p>所以有</p>
-<p>$$\large \varphi * 1 = id$$</p>
+<p>$$\large \varphi \ast 1 = id$$</p>
 <p>再根据 技巧四 <strong>$id$ 具有的分配率？</strong> ，$\varphi$ 是连接两个相邻 $id$ 的桥梁，即</p>
-<p>$$\large (\varphi \times id _ {k})* id _ {k} = id _ {k+1}$$</p>
+<p>$$\large (\varphi \times id _ {k}) \ast id _ {k} = id _ {k+1}$$</p>
 <h3 id="六"><a href="#六" class="headerlink" title="六"></a>六</h3><p>可以由下面的莫比乌斯反演推出</p>
-<p>$$\varphi (n) = \sum _ {d|n} \mu (d) \times \frac n d \Leftrightarrow \varphi = \mu * ld$$</p>
+<p>$$\varphi (n) = \sum _ {d|n} \mu (d) \times \frac n d \Leftrightarrow \varphi = \mu \ast ld$$</p>
 <h3 id="七"><a href="#七" class="headerlink" title="七"></a>七</h3><p>常见变换方式：约数与倍数的互换。</p>
 <p>脑部正确性， <strong>两种贡献</strong> 的思想。</p>
 <blockquote>
@@ -276,19 +275,20 @@
 <p><strong>51Nod1238 最小公倍数之和</strong> $\sum _ {i=1} ^{n} \sum _ {j=1} ^{n} lcm(i,j)$</p>
 </blockquote>
 <p>两维的嘛..要先拆开来啦..（第三步利用了技巧三）</p>
-<p>$$\large \begin{align_} f(n) &amp;= \sum _ {i=1} ^{n} lcm(n,i)\\ &amp;= n \times \sum _ {i=1} ^{n} \frac i {\gcd (i, n)}\\ &amp;= n \times \sum _ {d|n} ^{n} \sum _ {id \leq n} i \times e(\gcd (i, \frac n d))\\ &amp;= n \times \sum _ {d|n} ^{n} \frac 1 2 \times (e(d) + d \times \varphi(d))\\ &amp;= \frac n 2 + \frac 1 2 \times n \times \sum _ {d|n} d \times \varphi(d)\\ \end{align_}<br>$$<br>最主要是搞出 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 也就是 $id \times [(id \times \varphi) _ 1] = (id _ 2 \times \varphi) _ id$ （技巧四）的前缀和。考虑如何消去难以计算的 $\varphi$ 。</p>
-<p>我们需要卷上一个新的东西。考虑利用 $\varphi * 1 = id$ 来消去。考虑卷上 $id _ 2$ 来提出括号中的 $id _ 2$ ，于是</p>
-<p>$$\large id _ 2 * (id _ 2 \times \varphi) _ id = id _ 2 \times (1 _ \varphi) _ id = id _ 3 _ id$$</p>
+<p>$$\large {f(n) = \sum _ {i=1} ^{n} lcm(n,i)\\ = n \times \sum _ {i=1} ^{n} \frac i {\gcd (i, n)}\\ = n \times \sum _ {d|n} ^{n} \sum _ {id \leq n} i \times e(\gcd (i, \frac n d))\\ = n \times \sum _ {d|n} ^{n} \frac 1 2 \times (e(d) + d \times \varphi(d))\\ = \frac n 2 + \frac 1 2 \times n \times \sum _ {d|n} d \times \varphi(d)\\ }<br>$$</p>
+<p>最主要是搞出 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 也就是 $id \times [(id \times \varphi) \ast 1] = (id _ 2 \times \varphi) \ast id$ （技巧四）的前缀和。考虑如何消去难以计算的 $\varphi$ 。</p>
+<p>我们需要卷上一个新的东西。考虑利用 $\varphi \ast 1 = id$ 来消去。考虑卷上 $id _ 2$ 来提出括号中的 $id _ 2$ ，于是</p>
+<p>$$\large id _ 2 \ast (id _ 2 \times \varphi) \ast id = id _ 2 \times (1 * \varphi) \ast id = id _ 3 \ast id$$</p>
 <p>这个前缀和就比较好求辣。令 $h(i)$ 表示这个柿子的前缀和，于是（考虑展开后每个 $d$ 的贡献次数）</p>
 <p>$$\large h(n) = \sum _ {d=1} ^{n} d \sum _ {id \leq n} i ^ 3$$</p>
 <p>注意到不同 $i$ 的上限只有 $O(\sqrt n)$ 个，所以这个前缀和也可以分块！$g(x) = id _ 2$ 的前缀和也很容易计算。由于把 $S$ 划分为 $O(\sqrt n)$ 个子问题时也需要 $O(\sqrt n)$ 的时间复杂度，所以总的复杂度不变。仍然为 $O(n ^ {\frac 2 3})$ 。</p>
 <p>发现很神奇的， $ANS = s(n)$ 。</p>
 <p><strong>另一种方法。</strong> 得到 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 后，可以改变形式使得更容易筛。改为枚举 $i$ 是 $d$ 的多少倍。</p>
-<p>$$\large \begin{align_} S(n) &amp;= \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d) \\ &amp;= \sum _ {i=1} ^ n i \times \sum _ {d=1} ^ {\lfloor \frac n d \rfloor} d ^ 2 \times \varphi (d) \end{align_}<br>$$</p>
+<p>$$\large {S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d) \\ = \sum _ {i=1} ^ n i \times \sum _ {d=1} ^ {\lfloor \frac n d \rfloor} d ^ 2 \times \varphi (d)}<br>$$</p>
 <p>嗯，那么要求的就是 $id _ 2 \times \varphi$ 的前缀和，再分块。卷上 $id_ 2$ 。要求 $id_ 3$ 的前缀和。</p>
-<p><strong>题外话。</strong> <code>51Nod1227</code>也是同样的方法，只是一开始得到的为 $(\varphi \times id) * 1$ 。<code>51Nod1237</code>大致方向差不多，只是推的过程简单很多。</p>
+<p><strong>题外话。</strong> <code>51Nod1227</code>也是同样的方法，只是一开始得到的为 $(\varphi \times id) \ast 1$ 。<code>51Nod1237</code>大致方向差不多，只是推的过程简单很多。</p>
 <p>如果用方法二，卷起来得到了 $id _ 2$ ，十分容易计算！</p>
-<p>如果直接卷 $id$ 得到 $1 * id _ 2$ ，也可以应用方法一，里面套一层分块。</p>
+<p>如果直接卷 $id$ 得到 $1 \ast id _ 2$ ，也可以应用方法一，里面套一层分块。</p>
 <p><strong>似乎两种方法本质一样，都需要进行一次约数/倍数变换。分块在外面或者里面。</strong></p>
 
       
@@ -512,11 +512,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,7 +532,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
