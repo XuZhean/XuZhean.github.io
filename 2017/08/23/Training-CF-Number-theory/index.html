@@ -258,7 +258,7 @@
 </blockquote>
 <p><strong>$k$进制下模$k-1$的性质。</strong>注意到一个性质：对于一个$k$进之下的数，模$k-1$后的余数等于，各个数码之和模$k-1$的余数。考虑用$ans[i]$表示前$i$个数之和模$k-1$后的余数，若满足$ans[i]-ans[j-1]$模$k-1=b$则$[j,i]$是符合答案的，于是在扫描过程中记录一个数组$cnt[i]$表示$ans[j] \mod k-1=i$的$j$的个数。注意特殊处理$b=0,k-1$的情况。</p>
 <blockquote>
-<p>CF703E。给定$n,k$，和$n$个数$a[]$。求任意一个最短的序列${i}$满足$a[i1]\times a[i2] \times … \times a[im]$是$k$的倍数。输出方案，当存在多种方案时，选择$\sum i$最小的序列。$n \leq 1000,k \leq 10^{12}$。</p>
+<p>CF703E。给定$n,k$，和$n$个数$a[]$。求任意一个最短的序列$\{i\}$满足$a[i1]\times a[i2] \times … \times a[im]$是$k$的倍数。输出方案，当存在多种方案时，选择$\sum i$最小的序列。$n \leq 1000,k \leq 10^{12}$。</p>
 </blockquote>
 <p><strong>GCD,动态规划。</strong>考虑到对于一个$10^{12}$数量级的数，其因数个数不超过$10^4$，而且本题中$a[]$是否满足条件是其乘积与$k$的GCD决定的。首先，预处理出所有$k$的因数$d[]$，定义状态$f[i][j]$表示前$i$个数中，乘积与$k$的GCD为$d[j]$所需要选择的最少数字。按照$i+1$是否选择转移即可。</p>
 
@@ -488,11 +488,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">

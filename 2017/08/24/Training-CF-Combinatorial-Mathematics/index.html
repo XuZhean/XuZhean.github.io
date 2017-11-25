@@ -208,7 +208,7 @@
 <p><strong>概率，动态规划。</strong>注意到，一个房间内原来有多少人到达最长是无法记录在状态中的，所以直接求概率十分困难。考虑<strong>概率的原始定义：方案数除以总方案数</strong>。也就是说我们求出状态的方案数即可。</p>
 <p>用$f(i,j,l)$表示已经分配了前$i$个房间和$j$个人，最长队列长度为$l$的方案数。首先$f(i,0,0)=1$。</p>
 <p>状态可以有两种决策转移，一种是当前房间队列到达$l$，前面的房间任意；另一种是前面有房间队列到达$l$，但当前的房间任意，于是，</p>
-<p>$$\large f(i,j,l) = \sum <em>{k=0} ^{l}  \left( ^{n-j+p} </em>{\ \ \ \  p}  \right)  f(i-1,j-p,k) \ \large + \sum <em>{k=0} ^{\min p -1} \left( ^{n-j+k} </em>{\ \ \ \ \ k} \right) f(i-1,j-k,l)$$</p>
+<p>$$\large f(i,j,l) = \sum _{k=0} ^{l}  \left( ^{n-j+p} _{\ \ \ \  p}  \right)  f(i-1,j-p,k) \\ \large + \sum _{k=0} ^{\min p -1} \left( ^{n-j+k} _{\ \ \ \ \ k} \right) f(i-1,j-k,l)$$</p>
 <p>其中$p$为使得第$i$个房间队列长度为$l$的数的集合，需要枚举。</p>
 <blockquote>
 <p>CF15E。给定一个整数$N$，当$N=12$的时候是这样一幅图：</p>
@@ -473,11 +473,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">

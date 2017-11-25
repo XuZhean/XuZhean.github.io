@@ -292,7 +292,7 @@
 <blockquote>
 <p><strong>E - RGB Sequence</strong> 您需要构造一个长度为$n$， 由R,G,B构成的序列，满足以下$m$个限制。对于限制$i$，满足$[li,ri]$间不同的颜色种数恰好为$xi$。求满足条件的序列数。$n,m \leq 300$</p>
 </blockquote>
-<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max{R,G,B}$。考虑暴力转移，转以后判断是否冲突即可。</p>
+<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max\{R,G,B\}$。考虑暴力转移，转以后判断是否冲突即可。</p>
 <p><a href="http://arc074.contest.atcoder.jp/submissions/1482395" target="_blank" rel="external">Code</a></p>
 <h5 id="AtCoder-Regular-Contest-075"><a href="#AtCoder-Regular-Contest-075" class="headerlink" title="AtCoder Regular Contest 075"></a>AtCoder Regular Contest 075</h5><blockquote>
 <p><strong>D - Widespread</strong> 有$n$只怪兽，第$i$只怪兽初始血量$hi$。每次可以选定一只怪兽攻击，造成$A$点血量的伤害。同时其他怪兽受到$B$点血量的伤害。求最少的攻击次数。$n \leq 100000$</p>
@@ -392,11 +392,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/04/Algorithms-Tree-count/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/04/Algorithms-FWT/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图论-prufer序列与矩阵树定理
+          FWT(快速沃尔什变换)学习笔记
         
       </div>
     </a>
@@ -536,11 +536,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">

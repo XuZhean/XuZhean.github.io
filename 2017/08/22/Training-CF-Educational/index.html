@@ -208,7 +208,7 @@
 <p>E:【题意】给定$n$个数${a1,a2…}$和$k$，问存在多少有序数对$(x,y)$满足：删除前$x$个数和后$y$个数，剩下数的乘积是$k$的倍数。</p>
 <p>【题解】将k质因数分解（最多有10个不同的质因子），只要每个质因子的个数达到$k$拥有的就可以了。直接暴力枚举左端区间，发现右区间有单调性，直接维护一个滑动窗口就好了（比赛时写了二分233…）。</p>
 <p>F:【题意】<strong>很好玩的题。</strong> 有q组询问，每组询问给出数n。问n个节点最多能连多少条边，使得桥的数量不少于总边数的一半。</p>
-<p>【题解】有个很显然的结论：<strong><em>n个节点构成的图中桥不超过n-1个</em></strong>。因为无向图可以看一些树连一些边构成的，而n节点数恰好只有n-1个桥，连上的边一定不会成为桥。考虑这样构造：中间构造一个“K-完全图“，剩余的节点就往“完全图“上连单一的边，不难发现这样是存在k个桥时，边数最多的方案。</p>
+<p>【题解】有个很显然的结论：<strong>_n个节点构成的图中桥不超过n-1个_</strong>。因为无向图可以看一些树连一些边构成的，而n节点数恰好只有n-1个桥，连上的边一定不会成为桥。考虑这样构造：中间构造一个“K-完全图“，剩余的节点就往“完全图“上连单一的边，不难发现这样是存在k个桥时，边数最多的方案。</p>
 <p>实际上，内部的图最多只有$min(n-k, \frac{k(k-1)}{2}) $ 条边，于是总边数为$f(k)=n-k+min(n-k, \frac{k(k-1)}{2}) $ 发现这个函数$f(k)$ 是个单峰函数，用三分法求解（最值两边有严格单调性）即可。</p>
 <p><strong>三分法的正确姿势。</strong> ${Lmid=(2l+r)/3}~~~{Rmid=(l+2r)/3}$ ，当L和R差小于3后，暴力找出最值。</p>
 <p>(坑)G：网络流难题。</p>
@@ -440,11 +440,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -193,7 +193,7 @@
 <a id="more"></a>
 <h5 id="Codeforces-Round-301-Div-2"><a href="#Codeforces-Round-301-Div-2" class="headerlink" title="Codeforces Round #301 (Div. 2)"></a><a href="http://codeforces.com/contest/540" target="_blank" rel="external">Codeforces Round #301 (Div. 2)</a></h5><p>540C,4Y。<strong>BFS判连通。</strong>注意起始点与终点重合或相邻的情况，终点经过两次，只要有两个空格与终点相邻即可。</p>
 <p>540D,1Y。<strong>概率DP。</strong>乘上转移的概率即可。 </p>
-<p>540E,3Y。<strong>离散化+树状数组统计逆序对。</strong>设出现的数为${a}$，未出现的为${b}$，发现a-&gt;a，a-&gt;b，b-&gt;a有贡献，分类讨论即可。</p>
+<p>540E,3Y。<strong>离散化+树状数组统计逆序对。</strong>设出现的数为$\{a\}$，未出现的为$\{b\}$，发现a-&gt;a，a-&gt;b，b-&gt;a有贡献，分类讨论即可。</p>
 <p><strong>反思</strong> 把所有特殊情况考虑周全，仔细分类讨论。</p>
 <h5 id="Codeforces-Round-302-Div-2"><a href="#Codeforces-Round-302-Div-2" class="headerlink" title="Codeforces Round #302 (Div. 2)"></a><a href="http://codeforces.com/contest/544" target="_blank" rel="external">Codeforces Round #302 (Div. 2)</a></h5><p>544C,1Y。<strong>二维完全背包DP。</strong>其实挺套路的，要加个滚动数组。</p>
 <p>544D,1Y。<strong>暴力BFS。</strong>注意到两个点对的最短路径若存在交集，则一定是连续的一段。暴力枚举两点即可。</p>
@@ -266,8 +266,8 @@
 </blockquote>
 <p><strong>期望DP。</strong>考虑到直接求出小K的排名过于困难，按照定义，只要求出总分严格小于他的期望人数。于是就想到，用$f[i][j]$表示$i$场比赛之后总分为$j$的期望人数。故有$\large f[i][j]=\sum \frac{f[i-1][j-k]} {m-1} \ (1 \leq k \leq m, k\not = a[i])$观察式子，考虑到可以前缀和优化转移。</p>
 <h5 id="Codeforces-Round-334-Div-1"><a href="#Codeforces-Round-334-Div-1" class="headerlink" title="Codeforces Round #334 (Div. 1)"></a><a href="http://codeforces.com/contest/603" target="_blank" rel="external">Codeforces Round #334 (Div. 1)</a></h5><p>603A,1A。<strong>贪心，DP</strong>。观察到，一个位置对答案产生了贡献，当且仅当这个位置的数与前面一个数不同。又由于只能翻转连续一段，所以DP时定义三种状态即可。</p>
-<p>603C,3A。<strong>博弈论+SG函数。</strong>考虑引入SG函数，当$i$为奇数时，$SG[i]=mex{ SG[i-1]}$。当$i$为偶数时，能够进行第二种操作，$SG[i]=mex{SG[i-1], SG[i/2]\ xor\ SG[i/2]… }$，共有$k$个SG[i/2]的异或和，注意到这只和$k$的奇偶性有关。</p>
-<p>考虑寻找规律。当$k$为奇数时，由于$SG[i]=mex{ SG[i-1], 0}$，所以之后的$SG[i]$一定是0/1间隔出现的。当$k$为偶数时，$SG[i]=mex{ SG[i-1], SG[i/2]}$，并且注意到$i$为奇数时，$SG[i]=0$，所以只要$log\ a[i]$次递归调用即可。</p>
+<p>603C,3A。<strong>博弈论+SG函数。</strong>考虑引入SG函数，当$i$为奇数时，$SG[i]=mex\{ SG[i-1]\}$。当$i$为偶数时，能够进行第二种操作，$SG[i]=mex\{SG[i-1], SG[i/2]\ xor\ SG[i/2]… \}$，共有$k$个SG[i/2]的异或和，注意到这只和$k$的奇偶性有关。</p>
+<p>考虑寻找规律。当$k$为奇数时，由于$SG[i]=mex\{ SG[i-1], 0\}$，所以之后的$SG[i]$一定是0/1间隔出现的。当$k$为偶数时，$SG[i]=mex\{ SG[i-1], SG[i/2]\}$，并且注意到$i$为奇数时，$SG[i]=0$，所以只要$log\ a[i]$次递归调用即可。</p>
 <h5 id="Codeforces-Round-335-Div-1"><a href="#Codeforces-Round-335-Div-1" class="headerlink" title="Codeforces Round #335 (Div. 1)"></a><a href="http://codeforces.com/contest/605" target="_blank" rel="external">Codeforces Round #335 (Div. 1)</a></h5><blockquote>
 <p>605A,1A。题意：给定$n$的一个排列，每次可以把一个数放到开头或末尾，求变为升序的最少步骤。</p>
 </blockquote>
@@ -465,7 +465,7 @@
 <blockquote>
 <p>CF641D,1A。有两个不同的骰子，点数$[1,n]$。得到每个点数的概率可能不同（总和一定是$1$）。掷出这两个骰子，得到点数$a,b$。取$\max(a,b), \min(a,b)$。给出$\max(a,b)=c$的概率分布，和$\min(a,b)=c$的概率分布。还原两个骰子点数的概率分布，所有概率之和为$1$。$n \leq 100,000$</p>
 </blockquote>
-<p><strong>概率，数学。</strong>假设第一个骰子的概率分别为$x[i]$，第二个$y[i]$。考虑位置$p$，不难注意到，$P(p\ is\ \min)+P(p\ is\ \max) = x[p]+y[p]$。而根据$1$是最大值的概率，得到$x[1] \times y[1]$，能知道$x[1]$和$y[1]$。然后逐个处理每个位置$p$。根据$x[p] \times \sum <em>{i=1} ^{p-1} y[i] + y[p] \times \sum </em>{i=1} ^{p-1}  x[i] + x[p] \times y[p] = P(p\ is\ \max)$ ，就可以推出所有的$x[p],y[p]$了，需要维护$x[],y[]$的前缀和。</p>
+<p><strong>概率，数学。</strong>假设第一个骰子的概率分别为$x[i]$，第二个$y[i]$。考虑位置$p$，不难注意到，$P(p\ is\ \min)+P(p\ is\ \max) = x[p]+y[p]$。而根据$1$是最大值的概率，得到$x[1] \times y[1]$，能知道$x[1]$和$y[1]$。然后逐个处理每个位置$p$。根据$x[p] \times \sum _{i=1} ^{p-1} y[i] + y[p] \times \sum _{i=1} ^{p-1}  x[i] + x[p] \times y[p] = P(p\ is\ \max)$ ，就可以推出所有的$x[p],y[p]$了，需要维护$x[],y[]$的前缀和。</p>
 <blockquote>
 <p>CF641E,2A。有三种操作。$1\ x\ y$，在第$x$秒插入一个$y$。$2\ x\ y$，在第$x$秒移走一个$y$。$3\ x\ y$， ，问第$x$秒有多少个$y$。$n \leq 100000$</p>
 </blockquote>
@@ -734,11 +734,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">

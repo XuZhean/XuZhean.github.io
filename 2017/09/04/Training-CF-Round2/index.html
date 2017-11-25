@@ -213,7 +213,7 @@
 <h5 id="Codeforces-Round-201-Div-1"><a href="#Codeforces-Round-201-Div-1" class="headerlink" title="Codeforces Round #201 (Div. 1)"></a><a href="http://codeforces.com/contest/346" target="_blank" rel="external">Codeforces Round #201 (Div. 1)</a></h5><blockquote>
 <p>CF346A。给定$n$个数，有$A,B$两个玩家轮流操作。选择集合中的数$x,y$，如果$|x-y|$没有在集合中出现，则将$|x-y|$加入集合。无法进行操作的人输。 </p>
 </blockquote>
-<p><strong>GCD。</strong>假设$g=\gcd{ai}$，那么对于所有小于等于$\max{ai}$的$g$的倍数，以后一定都能在集合中出现。只要判断当前未在最终集合出现的数的个数的奇偶性即可。</p>
+<p><strong>GCD。</strong>假设$g=\gcd\{ai\}$，那么对于所有小于等于$\max\{ai\}$的$g$的倍数，以后一定都能在集合中出现。只要判断当前未在最终集合出现的数的个数的奇偶性即可。</p>
 <p>考虑为什么这个操作不会中断。对于每一种状态，通过类似<strong>辗转相减</strong>的方式，一定能操作。在某一刻一定能得到$g$，通过每个数和$g$相减就能填补完剩下的数。</p>
 <blockquote>
 <p>CF346B。给定两个字符串$s1$和$s2$，以及一个病毒串$v$。求$s1$与$s2$的最长公共子序列，使得<strong>病毒串不是它的子串</strong>。$|s1|,|s2|,|v|&lt;=100 $</p>
@@ -233,7 +233,7 @@
 <p>CF348B。给定一颗树，和所有叶子的权值。需要对于所有节点$u$，$u$所有儿子$v$的权值都相等。一个节点的权值是所有叶子的权值之和。问最少减少多少叶子的权值。$n \leq 10^5$</p>
 </blockquote>
 <p><strong>GCD，树相关，贪心。</strong>考虑转化为最多保留多少权值。</p>
-<p>考虑节点$u$和他的所有子节点$vi$（共$k$个）。对于每一个字节点，首先求出至少保留多少权值，记为$f[vi]$，为了使$u$满足条件，所有子节点的权值都要变为$lcm{f[vi]}$。那么，$f[u]=k\times lcm{f[vi]}$。 </p>
+<p>考虑节点$u$和他的所有子节点$vi$（共$k$个）。对于每一个字节点，首先求出至少保留多少权值，记为$f[vi]$，为了使$u$满足条件，所有子节点的权值都要变为$lcm\{f[vi]\}$。那么，$f[u]=k\times lcm\{f[vi]\}$。 </p>
 <p>之后再进行第二次DFS。记$s[i]$为当前$i$子树中的节点数，对于$u$，我们需要选取最小$s[v]$，把所有$s[vi]$都变成$s[v]/(f[u]/k)*(f[u]/k)$。DFS过程中记录删除的总和即可。</p>
 <blockquote>
 <p>CF348C。给定一个包含$n$个数的数组$ai$，和$m$个集合$S1,S2,..,Sm$。每个集合包含若干下标$S<a href="1 \leq S[k,i]&lt;=n">k,i</a>$。有两种询问：对于集合$Sk$，求$S[k,i]$所对应的$a[S[k,i]]$之和。对于集合$Sk$，使得$S[k,i]$所对应的$a[S[k,i]]$都加上$x$。对于询问$1$，输出答案。</p>
@@ -328,7 +328,7 @@
 </ul>
 <p>也就是说，<strong>若$t[i]&gt;s[i]$，对答案贡献了$(pre+1)(n-i)$</strong>。其中，$pre$是$s[1..i-1], t[1..i-1]$的最长公共后缀。</p>
 <p>$f[i][sum]$表示$s[i]\not =t[i]$时，前$i$个对答案贡献$sum$的方案数。(如果$s[i]=t[i]$，则枚举$pre$时得到错误的贡献，正是状态定义精妙之处)，枚举$pre$进行转移，于是有：</p>
-<p>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum]<em>(s[i]-‘a’)$<br>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum-(pre+1)</em>(n-i)]*(‘z’-s[i])$</p>
+<p>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum]_(s[i]-‘a’)$<br>当$t[i]&lt;s[i]$时，$f[i][sum]+=f[i-1-pre][sum-(pre+1)_(n-i)]*(‘z’-s[i])$</p>
 <p>前一部分可以通过前缀和优化，而对于后面一部分，$pre$枚举量为$O(k/1+k/2+..+k/k)=O(k \log k)$。所以，总的时间复杂度为$O(k(n+k log k))$。</p>
 <h5 id="Codeforces-Round-213-Div-1"><a href="#Codeforces-Round-213-Div-1" class="headerlink" title="Codeforces Round #213 (Div. 1)"></a><a href="http://codeforces.com/contest/364" target="_blank" rel="external">Codeforces Round #213 (Div. 1)</a></h5><blockquote>
 <p>CF364A。给定一个长度为$n$的数组$s$，和数字$a$。构造矩阵$B$，其中$B[i][j]=s[i]*s[j]$。求矩阵$B$存在多少子矩阵，子矩阵的和为$a$。</p>
@@ -561,11 +561,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
