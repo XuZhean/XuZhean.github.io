@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」网络流相关 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，对偶图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 前言今年NOIP2017提高的初赛考到的最小割。这是否意味着网络流进入NOIP考纲？ 蒟蒻Cyani发现，周围的同学都会网络流啊。蒟蒻也来学一学姿势。 比较推荐LRJ的蓝书，胡伯涛的论文，关于模版">
+  <meta name="description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 2017.12.12。 又回来了。">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」网络流相关">
 <meta property="og:url" content="https://xuzhean.github.io/2017/10/05/Algorithms-Flows/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，对偶图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 前言今年NOIP2017提高的初赛考到的最小割。这是否意味着网络流进入NOIP考纲？ 蒟蒻Cyani发现，周围的同学都会网络流啊。蒟蒻也来学一学姿势。 比较推荐LRJ的蓝书，胡伯涛的论文，关于模版">
-<meta property="og:updated_time" content="2017-11-18T14:21:50.404Z">
+<meta property="og:description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 2017.12.12。 又回来了。">
+<meta property="og:updated_time" content="2017-12-17T04:22:19.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」网络流相关">
-<meta name="twitter:description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，对偶图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 前言今年NOIP2017提高的初赛考到的最小割。这是否意味着网络流进入NOIP考纲？ 蒟蒻Cyani发现，周围的同学都会网络流啊。蒟蒻也来学一学姿势。 比较推荐LRJ的蓝书，胡伯涛的论文，关于模版">
+<meta name="twitter:description" content="待填的坑。 （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。 2017.11.18。 暂时告一段落了。 2017.12.12。 又回来了。">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -185,8 +185,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>待填的坑。</strong> （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，对偶图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。</p>
+        <p><strong>待填的坑。</strong> （无/有源汇）上下界（最大/最小费用）可行流，KM算法，数据结构优化建图，分治优化，手动增广，LP对偶费用流，差分费用流，线性规划与网络流。</p>
 <p><strong>2017.11.18。</strong> 暂时告一段落了。</p>
+<p><strong>2017.12.12。</strong> 又回来了。</p>
+<a id="more"></a>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今年NOIP2017提高的初赛考到的最小割。这是否意味着网络流进入NOIP考纲？</p>
 <p>蒟蒻Cyani发现，周围的同学都会网络流啊。蒟蒻也来学一学姿势。</p>
 <p>比较推荐LRJ的蓝书，胡伯涛的论文，关于<del>模版和</del>建模有比较详细的讲解。</p>
@@ -304,6 +306,88 @@
 <p><strong>考虑一种新的权值计算方式。</strong> 假设一个厨师烧菜时间的序列: $t1, t2, t3, …, tn$ 那么总共的时间为 $n \times t1, (n-1) \times t2, …, tn$ 。考虑倒着计算，依次加入 $k \times t$ 的边。</p>
 <p>拆点！为了使 $1$ 倍时间， $2$ 倍时间，等，都只计算一次。考虑将每个厨师拆成 $\sum p[i]$ 个点，依次表示烧倒数第 $k$ 条边。然而这么多边建出来会T啊。考虑动态建边，当一次增广，烧完倒数第 $k$ 道菜，加入倒数第 $k+1$ 道菜。</p>
 <p>计算一下复杂度。需要增广 $O(\sum p[i])$ 次，点数始终保持 $O(n+m)$ 个， 边数始终保持 $O(nm)$ 条，于是总的复杂度为 $O((n+m)nm \times \sum p[i])$ 。<del>SPFA-EK费用流卡着时限过QAQ。看来要学ZKW费用流了QAQ。</del></p>
+<blockquote>
+<p><strong>BZOJ1001-[BeiJing2006]狼抓兔子。</strong> 给定一个平面图，求最小割。</p>
+</blockquote>
+<p><strong>平面图转对偶图。</strong> 此题暴力ISAP可过。不过经典的做法是，求出他的对偶图（区域变成新的点，相邻连边）。于是跑最短路就好了。</p>
+<blockquote>
+<p><strong>BZOJ2400-Optimal Marks。</strong> 给定一个无向图，某些点的权值已经知道，请确定剩下点的权值。定义一个图的代价为所有边两端点权的异或值之和。求无向图的最小代价，当代价最小时，最小的点和。</p>
+</blockquote>
+<p><strong>按位拆分，最小割。</strong> 显然可以按位拆分。显然可以最小割。<code>S集</code>的权为<code>0</code>，<code>T集</code>的权为<code>1</code>。如果是已经确定的位，就与<code>S or T</code>连上流量为<code>INF</code>的边。原图连流量为<code>1</code>的边。</p>
+<p>比较不显然的是最小点权和。最小费用最大流？TLE!</p>
+<p>这里有一个Trick。我们把所有的流量<code>1</code>改为<code>1000</code>。对于所有与<code>S</code>没有直接连边的点，连上流量为<code>1</code>的边。当割最小时，先要满足价值最小，其次满足点权和。</p>
+<blockquote>
+<p><strong>BZOJ1280-Emmy卖猪pigs。</strong> 有若干个猪圈，猪圈里养了若干头猪。依次来了几位客人，每位客人带上了若干个猪圈的钥匙，他最多可以买 $ai$ 头猪。之后，你可以把这些猪圈中的猪任意安排，再关上。问最多能卖多少猪？</p>
+</blockquote>
+<p><strong>经典最大流建图。</strong> 不难发现一个性质：当一个猪圈中已经有一个客人来过后，第二位客人能够买前一位客人能卖的猪。于是建图就很simple了：</p>
+<p>每个猪圈（源点）向到这个猪圈的第一位客人连流量为<code>猪的数量</code>的边，每个客人向后续有重叠的客人连流量为无穷的边。每位客人向汇点连容量为 $ai$ 的边。</p>
+<blockquote>
+<p><strong>BZOJ1449-[JSOI2009]球队收益</strong> 有 $n$ 支球队，每支球队已经赢了 $win[i]$ 场，输了 $lose[i]$ 场，每支球队还有参数 $c[i],d[i]$ 。剩下的球队会进行 $m$ 场比赛。问所有球队的价值总和的最小值。一个球队的价值定义为 $c[i] \times win’[i] + d[i] \times lose’[i]$ (代表最终的胜利，失败的场数)。</p>
+</blockquote>
+<p><strong>拆边费用流。</strong> 发现一场比赛对应两个价值，但是流量无法凭空产生，那么该如何建图呢？</p>
+<p>有一个很秒的想法，注意到每只队伍最终胜利和失败的次数的总和是比边的。首先假设剩下的场数都是输的，然艘计算每多胜一场可以增加的权值。由因为这个增量是显然递增的，所以是正确的。</p>
+<blockquote>
+<p><strong>BZOJ3280-小R的烦恼</strong> 你需要一些xx，第 $i$ 个商店有 $li$ 个xx，每个xx要 $pi$ 的代价。你在第 $i$ 需要 $ai$ 个xx。每个xx在用完一天之后会XX，所以，拿去修理它，第 $i$ 个地方，需要修理 $d$ 天，需要 $qi$ 的花费。求最小需要花的前。</p>
+</blockquote>
+<p><strong>奇妙的费用流。</strong>  注意到，一个xx可以有多次贡献，对应到流里面，流量并不会增加，这样应该如何建图？注意到，每天结束后有固定 $ai$ 个死掉的xx，这个流量可以由原点提供，于是我们就得到建图方式辣。注意到要考虑：每天多出来死的；活的到汇点；第一天新来活的；每天把死的修d天变成活的；前一天活的不用，到后一天；前一天死的不修，到后一天。。<del>貌似这样不太好QAQ，大概就这这样理解啦。</del> 建图如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">起点</th>
+<th style="text-align:center">终点</th>
+<th style="text-align:center">流量</th>
+<th style="text-align:center">费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">dead[i]</td>
+<td style="text-align:center">a[i]</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">live[i]</td>
+<td style="text-align:center">2*n+1</td>
+<td style="text-align:center">a[i]</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">live[1]</td>
+<td style="text-align:center">l[j]</td>
+<td style="text-align:center">p[j]</td>
+</tr>
+<tr>
+<td style="text-align:center">dead[i]</td>
+<td style="text-align:center">live[i+d[j]]</td>
+<td style="text-align:center">∞</td>
+<td style="text-align:center">q[j]</td>
+</tr>
+<tr>
+<td style="text-align:center">live[i]</td>
+<td style="text-align:center">live[i+1]</td>
+<td style="text-align:center">∞</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">dead[i]</td>
+<td style="text-align:center">dead[i+1]</td>
+<td style="text-align:center">∞</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>BZOJ5120-[2017国家集训队测试]无限之环</strong> 有 $n \times m$ 的方格，每个方格的上下左右，有可能存在接口，也有可能没有。可以顺时针或逆时针旋转。问最少操作几次，使得每个接口总有一个接口与之连通。很显然，总共存在15种方块（不算空的）。</p>
+</blockquote>
+<p><strong>二分图，费用流。</strong> 注意到 <strong>网格图是一个二分图</strong> 所以考虑黑白染色，就变成了两部分的连接。很显然拆成四个方向的四个点，首先对应接触的点先连接，考虑源点流向X集。</p>
+<p>由于每部分的流量总量不变。所以考虑S流向默认的接口 $(1,0)$ 的边。而旋转就是接口之间，花费一定的费用来转移流量。</p>
+<p>以只有一个接头为例。首先S连向那个接头 $(1,0)$ 的边，然后那个接头连向两边 $(1,1)$，向对面连 $(1,2)$ 的边。</p>
+<p>相邻的两个接头也类似，三个接头的与一个接头的恰好相反。</p>
+<p>注意空方块和四个接头的没有必要旋转。</p>
+<p>注意那个对面的两个接头的不能旋转。。因为出题人也建不出图。。hhh。。</p>
+<p>这个建图嘛，我手撸了1h。共6k，竟然1A了。哈哈哈。</p>
 
       
 
@@ -391,14 +475,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          NOIP2017总复习
+          「复习」NOIP2017
         
       </div>
     </a>
   
   
     <a href="/2017/09/04/Training-CF-Round2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForces泛做第二轮</div>
+      <div class="article-nav-title">「泛做」CodeForces-第二轮</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -531,15 +615,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +623,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +631,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,6 +656,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>FWT(快速沃尔什变换)学习笔记 | Cyani&#39;s Blog</title>
+  <title>「BZOJ泛做」SCOI | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="更多的坑待填…">
-<meta name="keywords" content="笔记">
+  <meta name="description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
+<meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FWT(快速沃尔什变换)学习笔记">
-<meta property="og:url" content="https://xuzhean.github.io/2017/08/04/Algorithms-FWT/index.html">
+<meta property="og:title" content="「BZOJ泛做」SCOI">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-SCOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="更多的坑待填…">
-<meta property="og:updated_time" content="2017-08-29T11:59:26.127Z">
+<meta property="og:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
+<meta property="og:updated_time" content="2017-12-20T12:37:18.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FWT(快速沃尔什变换)学习笔记">
-<meta name="twitter:description" content="更多的坑待填…">
+<meta name="twitter:title" content="「BZOJ泛做」SCOI">
+<meta name="twitter:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,36 +165,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Algorithms-FWT" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-BZOJ-SCOI" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      FWT(快速沃尔什变换)学习笔记
+      「BZOJ泛做」SCOI
     </h1>
   
 
         
-        <a href="/2017/08/04/Algorithms-FWT/" class="archive-article-date">
-  	<time datetime="2017-08-04T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-04</time>
+        <a href="/2017/12/19/BZOJ-SCOI/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <font color="red">更多的坑待填…</font>
-
-<a id="more"></a>
-<h4 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h4><p>对于一个长度$n=2^k$的向量$A$，定义$A0$为这个数组的前$2^{k−1}$项，$A1$为这个数组的后$2^{k−1}$项，$A=(A0,A1)$。 </p>
-<p>$$A \pm B = \{A[0] \pm B[0], A[1] \pm B[1], A[2] \pm B[2],…, A[n-1] \pm B[n-1] \}$$</p>
-<p>$$A \times B = \{A[0] \times B[0], A[1] \times B[1], A[2] \times B[2], …, A[n-1] \times B[n-1] \}$$</p>
-<p>$$A \oplus B = \{ \sum _{i \oplus j = 0} A[i] \times B[j], \sum _{i \oplus j = 1} A[i] \times B[j]…, \sum _{i \oplus j = n-1} A[i] \times B[j]\}$$</p>
-<h4 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h4><p>快速沃尔什变换(Fast Walsh-Hadamard Transform)，用于解决一类特殊的卷积。</p>
-<p>$$\large C[i] = \sum _{j \oplus k = i} A[j] \times B[k]$$</p>
-<p>其中$\oplus$可以是任意位运算，$xor, ans, or$。</p>
+        <blockquote>
+<p><strong>BZOJ1078-[SCOI2008]斜堆</strong> 给定一棵斜堆，要求还原插入序列。保证是一个置换。</p>
+</blockquote>
+<p><strong>斜堆的性质。</strong> <a href="http://www.cppblog.com/MatoNo1/archive/2013/03/03/192131.html" target="_blank" rel="external">题解</a> 似乎还要再想想。</p>
+<blockquote>
+<p><strong>BZOJ2333-[SCOI2011]棘手的操作</strong> 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：</p>
+<ul>
+<li><code>U x y</code> 加一条边，连接第 $x$个节点和第 $y$ 个节点</li>
+<li><code>A1 x v</code> 将第 $x$ 个节点的权值增加 $v$</li>
+<li><code>A2 x v</code> 将第 $x$ 个节点所在的连通块的所有节点的权值都增加 $v$</li>
+<li><code>A3 v</code> 将所有节点的权值都增加 $v$</li>
+<li><code>F1 x</code> 输出第 $x$ 个节点当前的权值</li>
+<li><code>F2 x</code> 输出第 $x$ 个节点所在的连通块中，权值最大的节点的权值</li>
+<li><code>F3</code> 输出所有节点中，权值最大的节点的权值</li>
+</ul>
+</blockquote>
+<p><strong>左偏树，懒标记。</strong> 看到操作 <code>U</code> 和最值，不难想到要使用可并堆维护。由于 <code>F3</code> 操作的存在，我们需要维护一个 <code>set</code> 用于保存所有堆顶的值。而 <code>A2</code> 可以用线段树的懒标记实现。<code>A3</code>就搞一个简单的全局增量。<code>A1</code>操作需要删除原有的节点，再加入新的。查询的时候注意要路径上的所有点<code>pushdown</code>，因为左偏树的高度是期望 $O(\log)$ 的，所有往上找父亲的复杂度是对的。</p>
+<p>代码其实挺难写的，要注意 <code>set</code> 修改的时候要仔细，同时<code>A1</code>和<code>A2</code>操作都需要修改。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!h[x].lazy) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">if</span> (h[x].l) &#123; h[h[x].l].val += h[x].lazy; h[h[x].l].lazy += h[x].lazy; &#125;</div><div class="line">	<span class="keyword">if</span> (h[x].r) &#123; h[h[x].r].val += h[x].lazy; h[h[x].r].lazy += h[x].lazy; &#125;</div><div class="line">	h[x].lazy = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ALLpushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (h[x].fa) ALLpushdown(h[x].fa);</div><div class="line">	pushdown(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getroot</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (h[x].fa) x = h[x].fa;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!x || !y) <span class="keyword">return</span> x + y;</div><div class="line">	pushdown(x); pushdown(y);</div><div class="line">	<span class="keyword">if</span> (h[x].val &lt; h[y].val) swap(x, y);</div><div class="line">	h[x].r = merge(h[x].r, y); h[h[x].r].fa = x;</div><div class="line">	<span class="keyword">if</span> (d[h[x].l] &lt; d[h[x].r]) swap(h[x].l, h[x].r);</div><div class="line">	d[x] = d[h[x].r] + <span class="number">1</span>;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">clear</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> t = merge(h[x].l, h[x].r), f = h[x].fa;</div><div class="line">	h[x].fa = h[x].l = h[x].r = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (x == h[f].l) h[f].l = t;</div><div class="line">	<span class="keyword">else</span> h[f].r = t;</div><div class="line">	h[t].fa = f;</div><div class="line">	<span class="keyword">return</span> getroot(t);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	n = read();</div><div class="line">	rep (i, <span class="number">1</span>, n) &#123;</div><div class="line">		h[i].val = read();</div><div class="line">		s.insert(h[i].val);</div><div class="line">	&#125;</div><div class="line">	Q = read(); d[<span class="number">0</span>] = <span class="number">-1</span>;</div><div class="line">	<span class="keyword">while</span> (Q--) &#123;</div><div class="line">		op = readchar();</div><div class="line">		<span class="keyword">if</span> (op == <span class="string">'U'</span>) &#123;</div><div class="line">			u = getroot(read()); v = getroot(read());</div><div class="line">			<span class="keyword">if</span> (u != v) &#123;</div><div class="line">				<span class="keyword">if</span> (merge(u, v) == u) s.erase(s.find(h[v].val));</div><div class="line">				<span class="keyword">else</span> s.erase(s.find(h[u].val));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">'A'</span>)&#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read(); y = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				s.erase(s.find(h[getroot(x)].val));</div><div class="line">				h[x].val += y;</div><div class="line">				s.insert(h[merge(x, clear(x))].val);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read()); y = read();</div><div class="line">				s.erase(s.find(h[x].val));</div><div class="line">				s.insert(h[x].val += y);</div><div class="line">				h[x].lazy += y;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> delta += read();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read());</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> writeln(*(--s.end()) + delta);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>BZOJ1294-[SCOI2009]围豆豆Bean</strong> 在一个 $n \times m$ 的矩阵中，有 $D$ 个豆豆，都有一定的分值，还有一些障碍物。如果一个位置没有障碍，而且没有豆豆，就可以进入。要求从某个位置出发，最后回到这个位置，得到的价值为围住的豆豆数量，减去走的步数。求得到的价值最大为多少。<br>$n, m \leq 10, D \leq 9$</p>
+</blockquote>
+<p><strong>SPFA，状压。</strong> 考虑枚举每一个点作为起点，$f[i][j][k]$ 表示到达 $(i,j)$ 可以包围的集合为 $k$ 的最短路径。因为状态存在环，跑一个<code>SPFA</code>就可以了。最后权值和减最短路径就是价值。</p>
+<p>如何判断一个点最终是否会被围起来？<strong>射线法！</strong> 从一点向随机方向引一条射线，如果射线和多边形的边相交奇数次，说明点在多边形内。否则在多边形外。考虑向右连射线，这里的相交需要左闭右开，也就是和一条竖直线段的非下端点相交才能算。</p>
 
       
 
@@ -208,7 +222,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
         		</li>
       		
 		</ul>
@@ -264,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/08/04/Algorithms-FWT/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/19/BZOJ-SCOI/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +292,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/05/Algorithms-Group-theory/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          组合数学-Burnside引理与Polya定理
+          「BZOJ泛做」SDOI
         
       </div>
     </a>
   
   
-    <a href="/2017/08/04/Algorithms-Tree-count/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图论-prufer序列与矩阵树定理</div>
+    <a href="/2017/12/19/BZOJ-APIO/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」APIO</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -422,15 +436,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,11 +444,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,7 +452,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,6 +477,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

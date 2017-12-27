@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>POI切题记 | Cyani&#39;s Blog</title>
+  <title>「BZOJ泛做」SDOI | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="似乎POI的质量挺高的？蒟蒻也要开始做辣，就从POI2000(7th)开始啦。 POI 2000 (2017.11.13~)">
-<meta name="keywords" content="切题">
+  <meta name="description" content="BZOJ3122-[SDOI2013]随机数生成器 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \dmod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。  分类讨论，大小步算法。 先要特判一波。 $X[1] = t$ ， $a = 0$ 时直接输出。 $a = 1$">
+<meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POI切题记">
-<meta property="og:url" content="https://xuzhean.github.io/2017/11/13/POI/index.html">
+<meta property="og:title" content="「BZOJ泛做」SDOI">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-SDOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="似乎POI的质量挺高的？蒟蒻也要开始做辣，就从POI2000(7th)开始啦。 POI 2000 (2017.11.13~)">
-<meta property="og:updated_time" content="2017-11-12T22:48:50.437Z">
+<meta property="og:description" content="BZOJ3122-[SDOI2013]随机数生成器 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \dmod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。  分类讨论，大小步算法。 先要特判一波。 $X[1] = t$ ， $a = 0$ 时直接输出。 $a = 1$">
+<meta property="og:updated_time" content="2017-12-19T11:35:49.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POI切题记">
-<meta name="twitter:description" content="似乎POI的质量挺高的？蒟蒻也要开始做辣，就从POI2000(7th)开始啦。 POI 2000 (2017.11.13~)">
+<meta name="twitter:title" content="「BZOJ泛做」SDOI">
+<meta name="twitter:description" content="BZOJ3122-[SDOI2013]随机数生成器 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \dmod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。  分类讨论，大小步算法。 先要特判一波。 $X[1] = t$ ， $a = 0$ 时直接输出。 $a = 1$">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,28 +165,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-POI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-BZOJ-SDOI" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      POI切题记
+      「BZOJ泛做」SDOI
     </h1>
   
 
         
-        <a href="/2017/11/13/POI/" class="archive-article-date">
-  	<time datetime="2017-11-13T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
+        <a href="/2017/12/19/BZOJ-SDOI/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>似乎POI的质量挺高的？蒟蒻也要开始做辣，就从POI2000(7th)开始啦。</p>
-<h2 id="POI-2000-2017-11-13"><a href="#POI-2000-2017-11-13" class="headerlink" title="POI 2000 (2017.11.13~)"></a>POI 2000 (2017.11.13~)</h2>
+        <blockquote>
+<p><strong>BZOJ3122-[SDOI2013]随机数生成器</strong> 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \dmod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。</p>
+</blockquote>
+<p><strong>分类讨论，大小步算法。</strong> 先要特判一波。 $X[1] = t$ ， $a = 0$ 时直接输出。 $a = 1$ 时，就是一个裸的 $exgcd$ 。接下来就怒推一发公式。。。</p>
+<p>显然可以暴力展开，得到：</p>
+<p>$$X[n] = aX[n-1] + b = a(aX[n-2] + b) + b = … = a ^ {n-1} X[1] + (a ^ 0 + a ^ 1 + … + a ^ {n-2}) b$$</p>
+<p>随便化简一下：</p>
+<p>$$a ^ {n-1} = \frac {X[n] - \frac {a ^ {n-1} -1} { a - 1} \times b} {X[1]} $$</p>
+<p>跑个<code>BSGS</code>就好了。小心爆int。</p>
+
       
 
       
@@ -199,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">切题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
         		</li>
       		
 		</ul>
@@ -255,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/11/13/POI/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/19/BZOJ-SDOI/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +277,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/19/Algorithms-Number-theory/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-ZJOI/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「学习笔记」数论进阶
+          「BZOJ泛做」ZJOI
         
       </div>
     </a>
   
   
-    <a href="/2017/10/27/Contest-NOIP2017/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NOIP2017总复习</div>
+    <a href="/2017/12/19/BZOJ-SCOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」SCOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -413,15 +421,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,11 +429,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,7 +437,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,6 +462,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

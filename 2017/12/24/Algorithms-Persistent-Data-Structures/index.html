@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「学习笔记」数论进阶 | Cyani&#39;s Blog</title>
+  <title>「学习笔记」可持久化数据结构 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
+  <meta name="description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「学习笔记」数论进阶">
-<meta property="og:url" content="https://xuzhean.github.io/2017/11/19/Algorithms-Number-theory/index.html">
+<meta property="og:title" content="「学习笔记」可持久化数据结构">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/24/Algorithms-Persistent-Data-Structures/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
-<meta property="og:updated_time" content="2017-11-25T07:23:48.071Z">
+<meta property="og:description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
+<meta property="og:updated_time" content="2017-12-24T03:12:47.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「学习笔记」数论进阶">
-<meta name="twitter:description" content="数论函数前置技能定义数论函数。 定义域为正整数的函数。所以以下默认所有数都是正整数。 积性函数。 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。 完全积性函数。 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。 性质线性筛求 $[1,n]$ 的积性函数。 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) =">
+<meta name="twitter:title" content="「学习笔记」可持久化数据结构">
+<meta name="twitter:description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,131 +165,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Algorithms-Number-theory" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Algorithms-Persistent-Data-Structures" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      「学习笔记」数论进阶
+      「学习笔记」可持久化数据结构
     </h1>
   
 
         
-        <a href="/2017/11/19/Algorithms-Number-theory/" class="archive-article-date">
-  	<time datetime="2017-11-19T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
+        <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" class="archive-article-date">
+  	<time datetime="2017-12-24T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h1><h2 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>数论函数。</strong> 定义域为正整数的函数。所以以下默认所有数都是正整数。</p>
-<p><strong>积性函数。</strong> 对于所有 $\gcd (a,b) = 1$ ， $f(ab) = f(a)f(b)$ 。</p>
-<p><strong>完全积性函数。</strong> 对于任意的 $a,b$， $f(ab) = f(a)f(b)$ 。</p>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><strong>线性筛求 $[1,n]$ 的积性函数。</strong> 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) = \prod f(p _ {i} ^ {k_ i})$ 。</p>
-<p><strong>积性。</strong> 若 $f,g$ 为积性函数， 那么 $(fg)(n) = f(n)g(n), (\frac f g)(n) = \frac {f(n)} {g(n)}$  也都是积性函数。</p>
-<h3 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数"></a>常见的积性函数</h3><p><strong>欧拉函数，积性。</strong> $\varphi(n)$ 表示 $[1,n]$ 中与 $n$ 互质的数的个数。</p>
-<p><strong>莫比乌斯函数，积性。</strong> 当 $n$ 含有平方因子 $\mu(n) = 0$ , 否则 $n$ 为 $k$ 个不同的质因子乘积， $\mu(n) = -1 ^{k}$ 。</p>
-<p><strong>除数函数，积性。</strong> $\sigma _ {k} (n)$ 表示 $n$ 的所有因数的 $k$ 次幂之和。</p>
-<p>特别的，$d(n) = \sigma _ {0} (n)$ ，表示 $n$ 的因数个数。</p>
-<p>$\sigma _ {1} (n) = \sigma (n)$ ，表示 $n$ 的所有因数之和。</p>
-<p><strong>这个角标在上在下都是等价的！</strong></p>
-<p><strong>幂函数，完全积性。</strong> $id _ {k} (n)$ ，表示 $n^k$ 。</p>
-<p>特别的， $id _ {0} (n) = 1 (n) = 1$ 。</p>
-<p><strong>单位函数，完全积性。</strong> 当且仅当 $n=1$ 时， $e(n)=1$ ，否则 $e(n)=0$ 。</p>
-<h2 id="Dirichlet卷积"><a href="#Dirichlet卷积" class="headerlink" title="Dirichlet卷积"></a>Dirichlet卷积</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>两个数论函数 $f,g$ 的Dirichlet卷积。</p>
-<p>$$\large (f \ast g)(n) = \sum _ {d|n} f(d) \times g(\frac n d)$$</p>
-<h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><p><strong>定义。</strong> $(f+n)(n) = f(n) + g(n)$ .</p>
-<p><strong>交换律。</strong> $f \ast g = g \ast f$</p>
-<p><strong>结合律。</strong> $(f \ast g) * h = f \ast (g \ast h)$</p>
-<p><strong>分配率。</strong> $f \ast (g + h) = f \ast g + f \ast h$</p>
-<p><strong>单位元。</strong> $f \ast e = f$</p>
-<p>当 $f,g$ 为积性函数时， $f \ast g$ 也为积性函数。</p>
-<p>已知数论函数 $f,g$ ，则可以在 $O(n \log n)$ 的时间内计算出 $f \ast g$ 。</p>
-<h3 id="常见的Dirichlet卷积"><a href="#常见的Dirichlet卷积" class="headerlink" title="常见的Dirichlet卷积"></a>常见的Dirichlet卷积</h3><p>比较显然的两个</p>
-<p>$$d(n) = \sum _ {d|n} 1 \Leftrightarrow d = 1 \ast 1$$</p>
-<p>$$\sigma (n) = \sum _ {d|n} d \Leftrightarrow \sigma = d \ast 1$$</p>
-<p><strong>_极其重要的，莫比乌斯反演的基础_</strong></p>
-<p>$$\large \sum _ {d|n} \mu(d) = \sum _ {i=0} ^{k} (-1) ^{i} \times \binom k i = (1-1) ^{k} = e(n) \Longleftrightarrow e = \mu * 1$$</p>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>如果两个数论函数 $f,g$ 满足 $f = g \ast 1$ ，也即</p>
-<p>$$\large f(n) = \sum _ {d|n} g(d)$$</p>
-<p>那么它们满足 $g = \mu * f$ ，也即</p>
-<p>$$\large g(n) = \sum _ {d|n} \mu (d) \times f(\frac n d)$$</p>
-<p><strong>考虑证明</strong> $f = g \ast 1 \Leftrightarrow g = \mu \ast f$</p>
-<p>已知</p>
-<p>$$\large f = g \ast 1$$</p>
-<p>两边都卷上 $\mu$ ,可得</p>
-<p>$$\large f \ast \mu = g \ast \mu \ast 1 = g \ast e = g$$</p>
-<p>已知</p>
-<p>$$\large f \ast \mu = g$$</p>
-<p>两边都卷上 $1$ ，可得</p>
-<p>$$\large g \ast 1 = f \ast \mu \ast 1 = f \ast e = f$$</p>
-<p><strong>本质？</strong> $1$ 与 $\mu$ 在 Dirichlet卷积意义下互为逆元。</p>
-<h2 id="小技巧汇总"><a href="#小技巧汇总" class="headerlink" title="小技巧汇总"></a>小技巧汇总</h2><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><blockquote>
-<p>有一个 <strong>积性函数</strong> $f$，它与恒等函数 $1$ 的Dirichlet卷积 $g = f*1$ 如何计算？</p>
-</blockquote>
-<p>假设 $n = \prod _ {i=1} ^{t} p _ {i} ^{ki}$ ，$g(n) = \sum _ {d|n} f(n)$ 。那么就有</p>
-<p>$$\large g(n) = \prod _ {i=1} ^{t} \sum _ {j=0} ^{ki} f(p _ {i} ^{j})$$</p>
-<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>整数分块技巧。求 $\sum _ {i=1} ^{n} f(i) \times \lfloor \frac n i \rfloor$</p>
-<p>注意到 $\large \lfloor \frac n i \rfloor$ 只有 $O(\sqrt n)$ 种取值。对于固定的 $\lfloor \frac n i \rfloor$ ， $i$ 的取值为 $\large \left[ \left \lfloor \frac n {\lfloor \frac n i \rfloor+1} \right \rfloor+1, \left \lfloor \frac n {\lfloor \frac n i \rfloor} \right \rfloor \right]$ 。</p>
-<p>对于相同的 $\lfloor \frac n i \rfloor$ ，我们只需要计算 $f(i)$ 的前缀和即可。</p>
-<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>与 $n$ 互质的数的和：</p>
-<p>$$\large \sum _ {i=1} ^ {n} i \times e(\gcd (i, n)) = \frac {n \times \varphi(n) + e(n)} 2$$</p>
-<p>大致证明：当 $i$ 与 $n$ 互质时， $n-i$ 也与 $n$ 互质。</p>
-<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>假设 $a \ast b$ 已经是Dirichlet卷积，那么</p>
-<p>$$\large id _ {k} \times (a \ast b) = (id _ {k} \times a) \ast (id _ {k} \times b)$$</p>
-<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><p>因为 （$\varphi(d)$ 表示与 $n$ 的最大公约数为 $\frac n d$ 的数的个数，它们的和显然为 $n$ ）：</p>
-<p>$$\large \sum _ {d|n} \varphi (d) = n$$</p>
-<p>所以有</p>
-<p>$$\large \varphi \ast 1 = id$$</p>
-<p>再根据 技巧四 <strong>$id$ 具有的分配率？</strong> ，$\varphi$ 是连接两个相邻 $id$ 的桥梁，即</p>
-<p>$$\large (\varphi \times id _ {k}) \ast id _ {k} = id _ {k+1}$$</p>
-<h3 id="六"><a href="#六" class="headerlink" title="六"></a>六</h3><p>可以由下面的莫比乌斯反演推出</p>
-<p>$$\varphi (n) = \sum _ {d|n} \mu (d) \times \frac n d \Leftrightarrow \varphi = \mu \ast ld$$</p>
-<h3 id="七"><a href="#七" class="headerlink" title="七"></a>七</h3><p>常见变换方式：约数与倍数的互换。</p>
-<p>脑部正确性， <strong>两种贡献</strong> 的思想。</p>
+        <p>###可持久化线段树</p>
+<p>常见的一个实现是主席树，由<code>HJT主席</code>引入中国OI界。</p>
+<p>####基本思想</p>
+<p>考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。</p>
+<p>引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。</p>
+<p>从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。</p>
+<p>####经典应用：区间K小值。</p>
+<p>考虑建立权值线段树，按照下标插入，$[l,r]$ 中，某个元素出现了多少遍，可以通过 $r$ 和 $l-1$ 版本的线段树作差得到。然后在主席树上二分即可。</p>
+<p>####一些好题</p>
 <blockquote>
-<p><strong>TA爷:</strong> 对于 $d,e,D=d*e$ 三项贡献的这种，可以枚举 $D$ 将其化为狄利克雷卷积，也可以枚举 $d$和 $e$ 化成带下取整的式子；一般来讲前者往往易于预处理，可以应付多组询问，后者则在单次询问中有优秀表现。</p>
+<p><strong>BZOJ1146-[CTSC2008]网络管理Network</strong> 维护一棵树，要求支持：单点修改权值，路径第 $K$ 大。<br>$n, Q \leq 80000$</p>
 </blockquote>
-<h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><h3 id="问题的一般形式"><a href="#问题的一般形式" class="headerlink" title="问题的一般形式"></a>问题的一般形式</h3><p>给出一个奇怪的数论函数 $f(x)$ （simple一点像 $\mu, \varphi$ ）。接着给出了一个 $n$ ，一般有 $10^9,10^{10},10^{11},10^{12}$ 的范围。需要求 $S(n) = \sum _ {i=1} ^{n} f(i)$ 模一个大数的值。</p>
-<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>求出 $S(n)$ 会非常困难，考虑找出另一个函数 $g(x)$ ，考虑 $(f*g)(x)$ 的前缀和。</p>
-<p>$$\large  \sum _ {i=1} ^{n} \sum _ {j|i} f(i) g(\frac i j) = \sum _ {ij \leq n} f(i) g(j) = \sum _ {i=1} ^{n} g(i) S(\lfloor \frac n i \rfloor) $$</p>
-<p>于是，</p>
-<p>$$\large g(1)S(n) = \sum _ {i=1} ^{n} (f*g)(i) - \sum _ {i=2} ^{n} g(i) S(\lfloor \frac n i \rfloor)$$</p>
-<h3 id="要求-amp-amp-时间复杂度-amp-amp-Trick"><a href="#要求-amp-amp-时间复杂度-amp-amp-Trick" class="headerlink" title="要求&amp;&amp;时间复杂度&amp;&amp;Trick"></a>要求&amp;&amp;时间复杂度&amp;&amp;Trick</h3><p>需要保证 $(f*g)(x),g(x)$ 的前缀和都比较容易计算。</p>
-<p>可以直接记忆化搜索，复杂度 $O(n^{\frac 3 4})$ 。</p>
-<p>可以预处理前 $k$ 个前缀和，复杂度 $O(k + \frac n {\sqrt k})$ 。取 $k=n^{\frac 2 3}$ 最优，复杂度 $O(n ^ {\frac 2 3})$ 。</p>
-<p>对于 $\mu(x),\varphi(x)$ 的前缀和，我们令 $g(x) = 1$ 即可。</p>
-<p><strong>特别重要的！</strong></p>
-<p><strong>一个性质： $\large \left \lfloor \frac n {ab} \right \rfloor = \left \lfloor \frac {\left \lfloor \frac n a \right \rfloor} b \right \rfloor$</strong></p>
-<p>因为 $\frac n {n ^ {\frac 2 3}} \leq n ^ {\frac 1 3}$ ，根据上述性质，杜教筛在筛的过程中，会被计算的 $s(x)$ 只有 $O(n ^ {\frac 1 3})$ 个。</p>
-<p>这个东西用于时间复杂度计算很有用！所以像分块套杜教筛啊，杜教筛套分块啊，复杂度都是对的！（只要都是不断整除 $n$）</p>
-<p>还有一个 <code>Trick</code> ，我们不是要 <code>HASH</code> 吗，但是那个太慢了。</p>
-<p>$S(x)$ 直接存到 $f[n/x]$ 里就好了（ $n$ 是全局的）</p>
-<h3 id="复杂的基本形式"><a href="#复杂的基本形式" class="headerlink" title="复杂的基本形式"></a>复杂的基本形式</h3><p><a href="http://jiruyi910387714.is-programmer.com/posts/195270.html" target="_blank" rel="external">%%%jiry_2</a></p>
-<p>有时候， $f(x)$ 本身就是两个函数的积/Dirichlet卷积，通常令 $g(x) = 1$ ，而且可以进一步化简。</p>
-<p>嗯，，还是要多做题啊。。。</p>
-<h2 id="推柿子啦啦啦"><a href="#推柿子啦啦啦" class="headerlink" title="推柿子啦啦啦"></a>推柿子啦啦啦</h2><blockquote>
-<p><strong>51Nod1238 最小公倍数之和</strong> $\sum _ {i=1} ^{n} \sum _ {j=1} ^{n} lcm(i,j)$</p>
+<p><strong>树上带修改主席树，真·裸题。</strong> 首先这道题从2个log到4个log的算法都能过。话说<code>zzd Dalao</code>用了二分答案+树链剖分+主席树，竟然只比两个log慢4倍！</p>
+<p>树上主席树有一个常见的套路：每一个节点的版本，都是在父节点的基础上修改。这样 $root[x] + root[y] - root[lca(x,y)] - root[fa[lca(x,y)]]$ 就得到这条链了。</p>
+<p>再考虑这个带修改。注意到，一个点修改之后，只对它的子节点与外界的询问有影响。稍微分类讨论一下，就能发现，我们只需要修改子树中所有版本即可。</p>
+<p>这个可以用树状数组套权值线段树解决。修改的时候，需要改变 $\log$ 个节点；查询的时候，也只需要考虑 $\log$ 个节点的贡献总和。</p>
+<p>复杂度 $O(n \log ^ 2 n)$</p>
+<blockquote>
+<p><strong>BZOJ3674-可持久化并查集加强版</strong> 维护可持久化并查集。</p>
 </blockquote>
-<p>两维的嘛..要先拆开来啦..（第三步利用了技巧三）</p>
-<p>$$\large {f(n) = \sum _ {i=1} ^{n} lcm(n,i)\\ = n \times \sum _ {i=1} ^{n} \frac i {\gcd (i, n)}\\ = n \times \sum _ {d|n} ^{n} \sum _ {id \leq n} i \times e(\gcd (i, \frac n d))\\ = n \times \sum _ {d|n} ^{n} \frac 1 2 \times (e(d) + d \times \varphi(d))\\ = \frac n 2 + \frac 1 2 \times n \times \sum _ {d|n} d \times \varphi(d)\\ }<br>$$</p>
-<p>最主要是搞出 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 也就是 $id \times [(id \times \varphi) \ast 1] = (id _ 2 \times \varphi) \ast id$ （技巧四）的前缀和。考虑如何消去难以计算的 $\varphi$ 。</p>
-<p>我们需要卷上一个新的东西。考虑利用 $\varphi \ast 1 = id$ 来消去。考虑卷上 $id _ 2$ 来提出括号中的 $id _ 2$ ，于是</p>
-<p>$$\large id _ 2 \ast (id _ 2 \times \varphi) \ast id = id _ 2 \times (1 * \varphi) \ast id = id _ 3 \ast id$$</p>
-<p>这个前缀和就比较好求辣。令 $h(i)$ 表示这个柿子的前缀和，于是（考虑展开后每个 $d$ 的贡献次数）</p>
-<p>$$\large h(n) = \sum _ {d=1} ^{n} d \sum _ {id \leq n} i ^ 3$$</p>
-<p>注意到不同 $i$ 的上限只有 $O(\sqrt n)$ 个，所以这个前缀和也可以分块！$g(x) = id _ 2$ 的前缀和也很容易计算。由于把 $S$ 划分为 $O(\sqrt n)$ 个子问题时也需要 $O(\sqrt n)$ 的时间复杂度，所以总的复杂度不变。仍然为 $O(n ^ {\frac 2 3})$ 。</p>
-<p>发现很神奇的， $ANS = s(n)$ 。</p>
-<p><strong>另一种方法。</strong> 得到 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 后，可以改变形式使得更容易筛。改为枚举 $i$ 是 $d$ 的多少倍。</p>
-<p>$$\large {S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d) \\ = \sum _ {i=1} ^ n i \times \sum _ {d=1} ^ {\lfloor \frac n d \rfloor} d ^ 2 \times \varphi (d)}<br>$$</p>
-<p>嗯，那么要求的就是 $id _ 2 \times \varphi$ 的前缀和，再分块。卷上 $id_ 2$ 。要求 $id_ 3$ 的前缀和。</p>
-<p><strong>题外话。</strong> <code>51Nod1227</code>也是同样的方法，只是一开始得到的为 $(\varphi \times id) \ast 1$ 。<code>51Nod1237</code>大致方向差不多，只是推的过程简单很多。</p>
-<p>如果用方法二，卷起来得到了 $id _ 2$ ，十分容易计算！</p>
-<p>如果直接卷 $id$ 得到 $1 \ast id _ 2$ ，也可以应用方法一，里面套一层分块。</p>
-<p><strong>似乎两种方法本质一样，都需要进行一次约数/倍数变换。分块在外面或者里面。</strong></p>
+<p><strong>可持久化数组。</strong> 注意到主席树就是一个可持久化数组，维护并查集的 $fa,rank$ ，按秩合并即可。</p>
+<blockquote>
+<p><strong>BZOJ2653-middle</strong> 给定一个长度为 $n$ 的序列，和若干个询问。每个询问 $(a,b,c,d)$ 要求求出 $l$ 在 $[a,b]$ 之间， $r$ 在 $[c,d]$ 之间的，构成的子序列的中位数的最大值。</p>
+</blockquote>
+<p><strong>二分答案，主席树，中位数。</strong>  中位数嘛，有一个常见的套路：二分答案 $x$ ，令所有小于 $x$ 为 $-1$，否则为 $1$ 。如果左后所有数之和大于等于 $0$ ，说明符合要求，可以继续变大。</p>
+<p>这题同样也是二分答案。注意到，对于区间 $[b,c]$ 是一定要选择的。而对于 $[a,b-1]$ 和 $[c+1,d]$ 我们最好是选择一个最大的前缀和后缀。就是线段树最基础的维护了。</p>
+<p>预处理主席树的时候，默认所有数都为 $1$ ，插入一个数之后，修改对应的位置为 $-1$ ，这样就能方便判断了。</p>
+<blockquote>
+<p><strong>BZOJ3545-[ONTAK2010]Peaks</strong> 给定一张图，每个点有点权，边有边权。查询 $(v,x,k)$ 要求回答：从 $x$ 出发，走边权不超过 $x$ 的边，能都到达的第 $k$ 大点权。</p>
+</blockquote>
+<p><strong>并查集虚拟点，dfs序，主席树。</strong> 显然，根据最小瓶颈树的理论，求出的最小生成树一定是最优的。</p>
+<p>考虑按照边权从小到大插入。对于边 $(u,v)$ ，我们找到它们对应的祖先 $a,b$ 造一个虚拟点 $c$ 对应的点权是 $(u,v)$ 的边权。</p>
+<p>这样有什么用处呢？发现对于点 $(x,y)$ ，他们的 $lca$ 对应的点权，就是从 $x$ 到 $y$ 需要经过路径最大值的最小值。</p>
+<p>这样就可以搞出整棵，包含 $2n-1$ 个节点的树了。首先倍增预处理，对于 $v$ ，我们倍增向上跳到点 $u$，但是点权不能超过 $x$ ，那么， $v$ 能达到的点就是 $u$ 的子树！</p>
+<p>dfs序预处理一下，然后就是区间K大了。</p>
+<blockquote>
+<p><strong>BZOJ3772-精神污染</strong> 给定一棵树，和若干条路径，求其中一条路径包含另一条路径的概率。</p>
+</blockquote>
+<p><strong>欧拉序，主席树。</strong> 确实是一道好题。注意到，这相当于求 <strong>一条路径的两个端点都在另一条路径上的方案数。</strong></p>
+<p>考虑首先限制 $x$ 。对于 $(x,y)$，每个点建一棵主席树，$x$ 在父亲版本的基础上加入另一个端点 $y$。</p>
+<p>对于查询路径上两个端点都被包含，相当于是路径上插入的另一个点也在路径上。</p>
+<p>于是问题就转化为 <strong>统计路径上的点数之和。</strong></p>
+<p>可以用欧拉序：保存一个节点入栈和出栈的时间。入栈的位置 $+1$ ,出栈的位置 $-1$。</p>
+<p>有一个很神奇的性质：$(x,y)$ 之间的点数之和（$x,y$是祖先/后代关系），就是 $[in[x],in[y]]$之和（其他节点都没有计算，或者被抵消；其实就是 $(x,y)$当前还在栈中）。路径就拆成 $[x,lca],[lca,y],[lca,lca]$。</p>
+<p>主要代码，</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;o, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> o1, <span class="keyword">int</span> o2, <span class="keyword">int</span> o3, <span class="keyword">int</span> o4, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (l == x &amp;&amp; y == r) <span class="keyword">return</span> T[o1].sum + T[o2].sum - T[o3].sum - T[o4].sum;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</div><div class="line">	in[u] = ++clk;</div><div class="line">  ...</div><div class="line">	out[u] = ++clk;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</div><div class="line">	root[u] = root[fa[u][<span class="number">0</span>]];</div><div class="line">	loop (k, headV[u], linkV) &#123;</div><div class="line">		insert(root[u], <span class="number">1</span>, <span class="number">2</span>*n, in[v[k]], <span class="number">1</span>);</div><div class="line">		insert(root[u], <span class="number">1</span>, <span class="number">2</span>*n, out[v[k]], <span class="number">-1</span>);</div><div class="line">	&#125;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	rep (i, <span class="number">1</span>, m) &#123;</div><div class="line">		a[i] = read(); b[i] = read();</div><div class="line">		addEdge(headV, v, linkV, sizeV, a[i], b[i]);</div><div class="line">	&#125;</div><div class="line">	dfs1(<span class="number">1</span>);</div><div class="line">  ...</div><div class="line">	dfs2(<span class="number">1</span>);</div><div class="line">	rep (i, <span class="number">1</span>, m) &#123;</div><div class="line">		c = lca(a[i], b[i]);</div><div class="line">		ans += query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[a[i]]);</div><div class="line">		ans += query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[b[i]]);</div><div class="line">		ans -= query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[c]) + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">  ...</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>BZOJ4546-[CodeChef]XRQRS</strong> 给定一个初始时为空的整数序列以及一些询问：<br>类型1：在数组后面就加入数字 $x$。<br>类型2：在区间 $[L,R]$ 中找到 $y$，最大化 $x xor y$。<br>类型3：删除数组最后 $K$个元素。<br>类型4：在区间 $[L,R]$ 中，统计小于等于 $x$ 的元素个数。<br>类型5：在区间 $[L,R]$ 中，找到第 $k$ 小的数。</p>
+</blockquote>
+<p><strong>可持久化Trie树。</strong> 本质上就是主席树，都是最基础的操作。需要注意的是操作 $2$ ，就是经典的 Trie树 上贪心。</p>
 
       
 
@@ -359,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/11/19/Algorithms-Number-theory/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/24/Algorithms-Persistent-Data-Structures/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,8 +319,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/11/13/POI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POI切题记</div>
+    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」COCI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -508,15 +453,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +461,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,7 +469,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,6 +494,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

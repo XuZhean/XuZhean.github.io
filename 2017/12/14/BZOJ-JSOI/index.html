@@ -7,17 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>Archives: 2017/8 | Cyani&#39;s Blog</title>
+  <title>「BZOJ泛做」JSOI | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This Cyani&apos;s Bolg.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cyani&#39;s Blog">
-<meta property="og:url" content="https://xuzhean.github.io/archives/2017/08/page/2/index.html">
+  <meta name="description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
+<meta name="keywords" content="泛做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「BZOJ泛做」JSOI">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/14/BZOJ-JSOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="This Cyani&apos;s Bolg.">
+<meta property="og:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
+<meta property="og:updated_time" content="2017-12-14T12:04:07.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cyani&#39;s Blog">
-<meta name="twitter:description" content="This Cyani&apos;s Bolg.">
+<meta name="twitter:title" content="「BZOJ泛做」JSOI">
+<meta name="twitter:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -163,101 +165,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BZOJ-JSOI" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/04/Algorithms-FWT/" class="archive-article-date">
-  	<time datetime="2017-08-04T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/04/Algorithms-FWT/">FWT(快速沃尔什变换)学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      「BZOJ泛做」JSOI
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/14/BZOJ-JSOI/" class="archive-article-date">
+  	<time datetime="2017-12-14T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>BZOJ1558-[JSOI2009]等差数列</strong> 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$</p>
+</blockquote>
+<p><strong>差分，线段树。</strong> 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。</p>
+<p>合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着，第一个是任意的差分值，剩下的 $n-1$ 差分值相等。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/14/BZOJ-JSOI/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/04/Algorithms-Tree-count/" class="archive-article-date">
-  	<time datetime="2017-08-04T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-04</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/04/Algorithms-Tree-count/">图论-prufer序列与矩阵树定理</a>
-    </h1>
+    <a href="/2017/12/14/BZOJ-SHOI/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          「BZOJ泛做」SHOI
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/10/BZOJ-USACO/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」USACO月赛の金组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+   
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/08/">&laquo; Prev</a><a class="page-number" href="/archives/2017/08/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -281,8 +323,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -375,15 +417,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -391,11 +425,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -403,7 +433,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,6 +458,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>
