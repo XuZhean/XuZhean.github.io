@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-APIO/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ2303-[APIO2011]方格染色 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。  奇妙的并查集。 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $">
-<meta property="og:updated_time" content="2017-12-20T11:44:23.913Z">
+<meta property="og:updated_time" content="2017-12-27T23:51:11.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」APIO">
 <meta name="twitter:description" content="BZOJ2303-[APIO2011]方格染色 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。  奇妙的并查集。 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $">
@@ -189,6 +189,7 @@
 <p><strong>BZOJ2303-[APIO2011]方格染色</strong> 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。</p>
 </blockquote>
 <p><strong>奇妙的并查集。</strong> 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $S(1..i-1, 1..j-1)$ 全部都 xor 起来。于是 $a[1][1] \oplus a[i][1] \oplus a[1][j] \oplus a[i][j] = [i,j都是偶数]$ 。于是就有 $2n-1$ 个自由变元（也是因为有 $n^2$ 个变元， $(n-1)^2$ 个方程）。</p>
+<a id="more"></a>
 <p>然后我们可以枚举 $a[1][1]$ 的值。这些方程就可以的到 $a[i][1]$ 与 $a[1][j]$ 的取值是否相同。用一个带权并查集搞一搞，判矛盾以及统计连通块数目。</p>
 <p>Code:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getpa</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pa[x] == x) <span class="keyword">return</span> x;</div><div class="line">	<span class="keyword">int</span> p = getpa(pa[x]);</div><div class="line">	g[x] ^= g[pa[x]];</div><div class="line">	<span class="keyword">return</span> pa[x] = p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> u = getpa(x), v = getpa(y);</div><div class="line">	<span class="keyword">if</span> (u == v) <span class="keyword">return</span> !(g[x] ^ g[y] ^ z);</div><div class="line">	g[v] = (g[x] ^ g[y] ^ z); pa[v] = u;</div><div class="line">	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">()</span> </span>&#123;</div><div class="line">	rep (i, <span class="number">1</span>, n+m) &#123; pa[i] = i; g[i] = <span class="number">0</span>; &#125;</div><div class="line">	pa[n+<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, Q)</div><div class="line">		<span class="keyword">if</span> (!link(x[i], y[i]+n, z[i])) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">1</span>, n+m) <span class="keyword">if</span> (pa[i] == i) res++;</div><div class="line">	<span class="keyword">return</span> Power(<span class="number">2</span>, res<span class="number">-1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	n = read(); m = read(); Q = read();</div><div class="line">	flag[<span class="number">1</span>] = flag[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, Q) &#123;</div><div class="line">		x[i] = read(); y[i] = read(); z[i] = read();</div><div class="line">		<span class="keyword">if</span> (x[i] + y[i] == <span class="number">2</span>) &#123; flag[z[i]] = <span class="number">0</span>; i--; Q--; <span class="keyword">continue</span>; &#125;</div><div class="line">		z[i] ^= (x[i]^<span class="number">1</span>)&amp;(y[i]^<span class="number">1</span>)&amp;<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (flag[<span class="number">1</span>]) ans = (ans + calc()) % MOD;</div><div class="line">	<span class="keyword">if</span> (flag[<span class="number">0</span>]) &#123;</div><div class="line">		rep (i, <span class="number">1</span>, Q) <span class="keyword">if</span> (x[i] &gt; <span class="number">1</span> &amp;&amp; y[i] &gt; <span class="number">1</span>) z[i] ^= <span class="number">1</span>;</div><div class="line">		ans = (ans + calc()) % MOD;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -281,18 +282,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/19/BZOJ-SCOI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-Other/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」SCOI
+          「BZOJ泛做」杂
         
       </div>
     </a>
   
   
-    <a href="/2017/12/19/BZOJ-Other/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」杂</div>
+    <a href="/2017/12/19/BZOJ-SCOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」SCOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -425,11 +426,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,7 +442,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,7 +454,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,10 +467,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

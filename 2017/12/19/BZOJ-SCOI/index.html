@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-SCOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
-<meta property="og:updated_time" content="2017-12-20T12:37:18.806Z">
+<meta property="og:updated_time" content="2017-12-27T23:50:44.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」SCOI">
 <meta name="twitter:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
@@ -201,6 +201,7 @@
 <li><code>F3</code> 输出所有节点中，权值最大的节点的权值</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <p><strong>左偏树，懒标记。</strong> 看到操作 <code>U</code> 和最值，不难想到要使用可并堆维护。由于 <code>F3</code> 操作的存在，我们需要维护一个 <code>set</code> 用于保存所有堆顶的值。而 <code>A2</code> 可以用线段树的懒标记实现。<code>A3</code>就搞一个简单的全局增量。<code>A1</code>操作需要删除原有的节点，再加入新的。查询的时候注意要路径上的所有点<code>pushdown</code>，因为左偏树的高度是期望 $O(\log)$ 的，所有往上找父亲的复杂度是对的。</p>
 <p>代码其实挺难写的，要注意 <code>set</code> 修改的时候要仔细，同时<code>A1</code>和<code>A2</code>操作都需要修改。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!h[x].lazy) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">if</span> (h[x].l) &#123; h[h[x].l].val += h[x].lazy; h[h[x].l].lazy += h[x].lazy; &#125;</div><div class="line">	<span class="keyword">if</span> (h[x].r) &#123; h[h[x].r].val += h[x].lazy; h[h[x].r].lazy += h[x].lazy; &#125;</div><div class="line">	h[x].lazy = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ALLpushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (h[x].fa) ALLpushdown(h[x].fa);</div><div class="line">	pushdown(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getroot</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (h[x].fa) x = h[x].fa;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!x || !y) <span class="keyword">return</span> x + y;</div><div class="line">	pushdown(x); pushdown(y);</div><div class="line">	<span class="keyword">if</span> (h[x].val &lt; h[y].val) swap(x, y);</div><div class="line">	h[x].r = merge(h[x].r, y); h[h[x].r].fa = x;</div><div class="line">	<span class="keyword">if</span> (d[h[x].l] &lt; d[h[x].r]) swap(h[x].l, h[x].r);</div><div class="line">	d[x] = d[h[x].r] + <span class="number">1</span>;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">clear</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> t = merge(h[x].l, h[x].r), f = h[x].fa;</div><div class="line">	h[x].fa = h[x].l = h[x].r = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (x == h[f].l) h[f].l = t;</div><div class="line">	<span class="keyword">else</span> h[f].r = t;</div><div class="line">	h[t].fa = f;</div><div class="line">	<span class="keyword">return</span> getroot(t);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	n = read();</div><div class="line">	rep (i, <span class="number">1</span>, n) &#123;</div><div class="line">		h[i].val = read();</div><div class="line">		s.insert(h[i].val);</div><div class="line">	&#125;</div><div class="line">	Q = read(); d[<span class="number">0</span>] = <span class="number">-1</span>;</div><div class="line">	<span class="keyword">while</span> (Q--) &#123;</div><div class="line">		op = readchar();</div><div class="line">		<span class="keyword">if</span> (op == <span class="string">'U'</span>) &#123;</div><div class="line">			u = getroot(read()); v = getroot(read());</div><div class="line">			<span class="keyword">if</span> (u != v) &#123;</div><div class="line">				<span class="keyword">if</span> (merge(u, v) == u) s.erase(s.find(h[v].val));</div><div class="line">				<span class="keyword">else</span> s.erase(s.find(h[u].val));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">'A'</span>)&#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read(); y = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				s.erase(s.find(h[getroot(x)].val));</div><div class="line">				h[x].val += y;</div><div class="line">				s.insert(h[merge(x, clear(x))].val);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read()); y = read();</div><div class="line">				s.erase(s.find(h[x].val));</div><div class="line">				s.insert(h[x].val += y);</div><div class="line">				h[x].lazy += y;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> delta += read();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read());</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> writeln(*(--s.end()) + delta);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -292,18 +293,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-APIO/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」SDOI
+          「BZOJ泛做」APIO
         
       </div>
     </a>
   
   
-    <a href="/2017/12/19/BZOJ-APIO/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」APIO</div>
+    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」SDOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,11 +437,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,7 +453,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,7 +465,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,10 +478,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

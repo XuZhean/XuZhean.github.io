@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」可持久化数据结构 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
+  <meta name="description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」可持久化数据结构">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/24/Algorithms-Persistent-Data-Structures/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
-<meta property="og:updated_time" content="2017-12-24T03:12:47.445Z">
+<meta property="og:description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。">
+<meta property="og:updated_time" content="2017-12-27T23:48:09.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」可持久化数据结构">
-<meta name="twitter:description" content="###可持久化线段树 常见的一个实现是主席树，由HJT主席引入中国OI界。 ####基本思想 考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。 ####经典应用：">
+<meta name="twitter:description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -185,16 +185,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###可持久化线段树</p>
-<p>常见的一个实现是主席树，由<code>HJT主席</code>引入中国OI界。</p>
-<p>####基本思想</p>
-<p>考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。</p>
+        <h3 id="可持久化线段树"><a href="#可持久化线段树" class="headerlink" title="可持久化线段树"></a>可持久化线段树</h3><p>常见的一个实现是主席树，由<code>HJT主席</code>引入中国OI界。</p>
+<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。</p>
 <p>引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。</p>
 <p>从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。</p>
-<p>####经典应用：区间K小值。</p>
-<p>考虑建立权值线段树，按照下标插入，$[l,r]$ 中，某个元素出现了多少遍，可以通过 $r$ 和 $l-1$ 版本的线段树作差得到。然后在主席树上二分即可。</p>
-<p>####一些好题</p>
-<blockquote>
+<a id="more"></a>
+<h4 id="经典应用：区间K小值。"><a href="#经典应用：区间K小值。" class="headerlink" title="经典应用：区间K小值。"></a>经典应用：区间K小值。</h4><p>考虑建立权值线段树，按照下标插入，$[l,r]$ 中，某个元素出现了多少遍，可以通过 $r$ 和 $l-1$ 版本的线段树作差得到。然后在主席树上二分即可。</p>
+<h4 id="一些好题"><a href="#一些好题" class="headerlink" title="一些好题"></a>一些好题</h4><blockquote>
 <p><strong>BZOJ1146-[CTSC2008]网络管理Network</strong> 维护一棵树，要求支持：单点修改权值，路径第 $K$ 大。<br>$n, Q \leq 80000$</p>
 </blockquote>
 <p><strong>树上带修改主席树，真·裸题。</strong> 首先这道题从2个log到4个log的算法都能过。话说<code>zzd Dalao</code>用了二分答案+树链剖分+主席树，竟然只比两个log慢4倍！</p>
@@ -319,8 +316,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」COCI</div>
+    <a href="/2017/12/20/BZOJ-Baltic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」Baltic</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -453,11 +450,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,7 +466,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,7 +478,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,10 +491,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

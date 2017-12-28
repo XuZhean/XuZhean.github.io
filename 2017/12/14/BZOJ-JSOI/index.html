@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「BZOJ泛做」JSOI | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
+  <meta name="description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$">
 <meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ泛做」JSOI">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/14/BZOJ-JSOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
-<meta property="og:updated_time" content="2017-12-14T12:04:07.544Z">
+<meta property="og:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$">
+<meta property="og:updated_time" content="2017-12-27T23:52:01.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」JSOI">
-<meta name="twitter:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$  差分，线段树。 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。 合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着">
+<meta name="twitter:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -188,6 +188,7 @@
         <blockquote>
 <p><strong>BZOJ1558-[JSOI2009]等差数列</strong> 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$</p>
 </blockquote>
+<a id="more"></a>
 <p><strong>差分，线段树。</strong> 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。</p>
 <p>合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着，第一个是任意的差分值，剩下的 $n-1$ 差分值相等。</p>
 
@@ -273,18 +274,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/14/BZOJ-SHOI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」SHOI
+          「BZOJ泛做」SDOI
         
       </div>
     </a>
   
   
-    <a href="/2017/12/10/BZOJ-USACO/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」USACO月赛の金组</div>
+    <a href="/2017/12/14/BZOJ-SHOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」SHOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -417,11 +418,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,7 +434,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,7 +446,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,10 +459,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

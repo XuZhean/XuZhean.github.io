@@ -185,57 +185,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###可持久化线段树</p>
-<p>常见的一个实现是主席树，由<code>HJT主席</code>引入中国OI界。</p>
-<p>####基本思想</p>
-<p>考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。</p>
+        <h3 id="可持久化线段树"><a href="#可持久化线段树" class="headerlink" title="可持久化线段树"></a>可持久化线段树</h3><p>常见的一个实现是主席树，由<code>HJT主席</code>引入中国OI界。</p>
+<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。</p>
 <p>引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。</p>
 <p>从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。</p>
-<p>####经典应用：区间K小值。</p>
-<p>考虑建立权值线段树，按照下标插入，$[l,r]$ 中，某个元素出现了多少遍，可以通过 $r$ 和 $l-1$ 版本的线段树作差得到。然后在主席树上二分即可。</p>
-<p>####一些好题</p>
-<blockquote>
-<p><strong>BZOJ1146-[CTSC2008]网络管理Network</strong> 维护一棵树，要求支持：单点修改权值，路径第 $K$ 大。<br>$n, Q \leq 80000$</p>
-</blockquote>
-<p><strong>树上带修改主席树，真·裸题。</strong> 首先这道题从2个log到4个log的算法都能过。话说<code>zzd Dalao</code>用了二分答案+树链剖分+主席树，竟然只比两个log慢4倍！</p>
-<p>树上主席树有一个常见的套路：每一个节点的版本，都是在父节点的基础上修改。这样 $root[x] + root[y] - root[lca(x,y)] - root[fa[lca(x,y)]]$ 就得到这条链了。</p>
-<p>再考虑这个带修改。注意到，一个点修改之后，只对它的子节点与外界的询问有影响。稍微分类讨论一下，就能发现，我们只需要修改子树中所有版本即可。</p>
-<p>这个可以用树状数组套权值线段树解决。修改的时候，需要改变 $\log$ 个节点；查询的时候，也只需要考虑 $\log$ 个节点的贡献总和。</p>
-<p>复杂度 $O(n \log ^ 2 n)$</p>
-<blockquote>
-<p><strong>BZOJ3674-可持久化并查集加强版</strong> 维护可持久化并查集。</p>
-</blockquote>
-<p><strong>可持久化数组。</strong> 注意到主席树就是一个可持久化数组，维护并查集的 $fa,rank$ ，按秩合并即可。</p>
-<blockquote>
-<p><strong>BZOJ2653-middle</strong> 给定一个长度为 $n$ 的序列，和若干个询问。每个询问 $(a,b,c,d)$ 要求求出 $l$ 在 $[a,b]$ 之间， $r$ 在 $[c,d]$ 之间的，构成的子序列的中位数的最大值。</p>
-</blockquote>
-<p><strong>二分答案，主席树，中位数。</strong>  中位数嘛，有一个常见的套路：二分答案 $x$ ，令所有小于 $x$ 为 $-1$，否则为 $1$ 。如果左后所有数之和大于等于 $0$ ，说明符合要求，可以继续变大。</p>
-<p>这题同样也是二分答案。注意到，对于区间 $[b,c]$ 是一定要选择的。而对于 $[a,b-1]$ 和 $[c+1,d]$ 我们最好是选择一个最大的前缀和后缀。就是线段树最基础的维护了。</p>
-<p>预处理主席树的时候，默认所有数都为 $1$ ，插入一个数之后，修改对应的位置为 $-1$ ，这样就能方便判断了。</p>
-<blockquote>
-<p><strong>BZOJ3545-[ONTAK2010]Peaks</strong> 给定一张图，每个点有点权，边有边权。查询 $(v,x,k)$ 要求回答：从 $x$ 出发，走边权不超过 $x$ 的边，能都到达的第 $k$ 大点权。</p>
-</blockquote>
-<p><strong>并查集虚拟点，dfs序，主席树。</strong> 显然，根据最小瓶颈树的理论，求出的最小生成树一定是最优的。</p>
-<p>考虑按照边权从小到大插入。对于边 $(u,v)$ ，我们找到它们对应的祖先 $a,b$ 造一个虚拟点 $c$ 对应的点权是 $(u,v)$ 的边权。</p>
-<p>这样有什么用处呢？发现对于点 $(x,y)$ ，他们的 $lca$ 对应的点权，就是从 $x$ 到 $y$ 需要经过路径最大值的最小值。</p>
-<p>这样就可以搞出整棵，包含 $2n-1$ 个节点的树了。首先倍增预处理，对于 $v$ ，我们倍增向上跳到点 $u$，但是点权不能超过 $x$ ，那么， $v$ 能达到的点就是 $u$ 的子树！</p>
-<p>dfs序预处理一下，然后就是区间K大了。</p>
-<blockquote>
-<p><strong>BZOJ3772-精神污染</strong> 给定一棵树，和若干条路径，求其中一条路径包含另一条路径的概率。</p>
-</blockquote>
-<p><strong>欧拉序，主席树。</strong> 确实是一道好题。注意到，这相当于求 <strong>一条路径的两个端点都在另一条路径上的方案数。</strong></p>
-<p>考虑首先限制 $x$ 。对于 $(x,y)$，每个点建一棵主席树，$x$ 在父亲版本的基础上加入另一个端点 $y$。</p>
-<p>对于查询路径上两个端点都被包含，相当于是路径上插入的另一个点也在路径上。</p>
-<p>于是问题就转化为 <strong>统计路径上的点数之和。</strong></p>
-<p>可以用欧拉序：保存一个节点入栈和出栈的时间。入栈的位置 $+1$ ,出栈的位置 $-1$。</p>
-<p>有一个很神奇的性质：$(x,y)$ 之间的点数之和（$x,y$是祖先/后代关系），就是 $[in[x],in[y]]$之和（其他节点都没有计算，或者被抵消；其实就是 $(x,y)$当前还在栈中）。路径就拆成 $[x,lca],[lca,y],[lca,lca]$。</p>
-<p>主要代码，</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;o, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> o1, <span class="keyword">int</span> o2, <span class="keyword">int</span> o3, <span class="keyword">int</span> o4, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (l == x &amp;&amp; y == r) <span class="keyword">return</span> T[o1].sum + T[o2].sum - T[o3].sum - T[o4].sum;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</div><div class="line">	in[u] = ++clk;</div><div class="line">  ...</div><div class="line">	out[u] = ++clk;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</div><div class="line">	root[u] = root[fa[u][<span class="number">0</span>]];</div><div class="line">	loop (k, headV[u], linkV) &#123;</div><div class="line">		insert(root[u], <span class="number">1</span>, <span class="number">2</span>*n, in[v[k]], <span class="number">1</span>);</div><div class="line">		insert(root[u], <span class="number">1</span>, <span class="number">2</span>*n, out[v[k]], <span class="number">-1</span>);</div><div class="line">	&#125;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	rep (i, <span class="number">1</span>, m) &#123;</div><div class="line">		a[i] = read(); b[i] = read();</div><div class="line">		addEdge(headV, v, linkV, sizeV, a[i], b[i]);</div><div class="line">	&#125;</div><div class="line">	dfs1(<span class="number">1</span>);</div><div class="line">  ...</div><div class="line">	dfs2(<span class="number">1</span>);</div><div class="line">	rep (i, <span class="number">1</span>, m) &#123;</div><div class="line">		c = lca(a[i], b[i]);</div><div class="line">		ans += query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[a[i]]);</div><div class="line">		ans += query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[b[i]]);</div><div class="line">		ans -= query(root[a[i]], root[b[i]], root[c], root[fa[c][<span class="number">0</span>]], <span class="number">1</span>, <span class="number">2</span>*n, in[c], in[c]) + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">  ...</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>BZOJ4546-[CodeChef]XRQRS</strong> 给定一个初始时为空的整数序列以及一些询问：<br>类型1：在数组后面就加入数字 $x$。<br>类型2：在区间 $[L,R]$ 中找到 $y$，最大化 $x xor y$。<br>类型3：删除数组最后 $K$个元素。<br>类型4：在区间 $[L,R]$ 中，统计小于等于 $x$ 的元素个数。<br>类型5：在区间 $[L,R]$ 中，找到第 $k$ 小的数。</p>
-</blockquote>
-<p><strong>可持久化Trie树。</strong> 本质上就是主席树，都是最基础的操作。需要注意的是操作 $2$ ，就是经典的 Trie树 上贪心。</p>
-
+        
+          <a class="article-more-a" href="/2017/12/24/Algorithms-Persistent-Data-Structures/#more">more >></a>
+        
       
 
       
@@ -273,70 +229,6 @@
 
 
   
-    <article id="post-BZOJ-COCI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/20/BZOJ-COCI/">「BZOJ泛做」COCI</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/20/BZOJ-COCI/" class="archive-article-date">
-  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ1182-[COCI2009]PLAHTE</strong> 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。<br>$n, Q \leq 10 ^ 6$</p>
-</blockquote>
-<p><strong><del>二阶导数（大雾）</del> 二阶差分，加速度。</strong> 很显然需要搞一个前缀和。</p>
-<p>矩形总共有两种放置情况，一种是在一个象限，还有一种是横跨两个象限。为了 <strong>方便</strong> 处理，可以将后者拆分为两个矩形，同时，我们可以将矩形强制放在第一象限。<del>还是为了方便</del>我们可以用容斥原理，拆分为四个左下角固定，边长无穷大的矩形。</p>
-<p>然后这个东西就很好弄了，扩散有一个初始速度，之后还有一个加速度。叠加起来就好了。本质上是一个二阶差分。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/20/BZOJ-COCI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-BZOJ-Baltic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -360,9 +252,9 @@
         <blockquote>
 <p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
 </blockquote>
-<p><strong>几何基础。</strong> 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。</p>
-<p>事实上不用那么萎。考虑矩形的面积是对角线长度的平方，乘以夹角的 $\sin$ 考虑按照极角序来排，然后用两个指针，始终维持夹角在小于等于 $\frac {\pi} {2}$ 的最大值。酱复杂度就是 $O(n^2 \log n)$ 啦，可能实际并没有快多少？</p>
-
+        
+          <a class="article-more-a" href="/2017/12/20/BZOJ-Baltic/#more">more >></a>
+        
       
 
       
@@ -400,6 +292,69 @@
 
 
   
+    <article id="post-BZOJ-COCI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/20/BZOJ-COCI/">「BZOJ泛做」COCI</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/20/BZOJ-COCI/" class="archive-article-date">
+  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>BZOJ1182-[COCI2009]PLAHTE</strong> 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。<br>$n, Q \leq 10 ^ 6$</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/12/20/BZOJ-COCI/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/20/BZOJ-COCI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-BZOJ-ZJOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -423,10 +378,9 @@
         <blockquote>
 <p><strong>BZOJ1414-[ZJOI2009]对称的正方形</strong> 给定一个 $n \times m$ 的矩阵。问存在多少子矩阵，使得它上下对称且左右对称。<br>$n,m \leq 10^3$</p>
 </blockquote>
-<p><strong>HASH乱搞。</strong> 显然，对于每一个位置，我们可以二分求出一个极大子矩阵。判断就可以用<code>二维HASH</code>，注意方向，小心不要写成旋转对称QAQ。新技能get!二维哈希。</p>
-<p>我们可以弄两个不同的大素数 $p,q$，$(i,j)$ 就要乘上 $p ^ i \times q ^ j$ 。用<code>unsigned int</code>，然后自然溢出就好了。。</p>
-<p>不放心的话，可以用<code>unsigned long long</code>。相当于双模数<code>HASH</code>？</p>
-
+        
+          <a class="article-more-a" href="/2017/12/19/BZOJ-ZJOI/#more">more >></a>
+        
       
 
       
@@ -450,226 +404,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/12/19/BZOJ-ZJOI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-BZOJ-SDOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/BZOJ-SDOI/">「BZOJ泛做」SDOI</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/BZOJ-SDOI/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ3122-[SDOI2013]随机数生成器</strong> 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \dmod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。</p>
-</blockquote>
-<p><strong>分类讨论，大小步算法。</strong> 先要特判一波。 $X[1] = t$ ， $a = 0$ 时直接输出。 $a = 1$ 时，就是一个裸的 $exgcd$ 。接下来就怒推一发公式。。。</p>
-<p>显然可以暴力展开，得到：</p>
-<p>$$X[n] = aX[n-1] + b = a(aX[n-2] + b) + b = … = a ^ {n-1} X[1] + (a ^ 0 + a ^ 1 + … + a ^ {n-2}) b$$</p>
-<p>随便化简一下：</p>
-<p>$$a ^ {n-1} = \frac {X[n] - \frac {a ^ {n-1} -1} { a - 1} \times b} {X[1]} $$</p>
-<p>跑个<code>BSGS</code>就好了。小心爆int。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/BZOJ-SDOI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-BZOJ-SCOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/BZOJ-SCOI/">「BZOJ泛做」SCOI</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/BZOJ-SCOI/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ1078-[SCOI2008]斜堆</strong> 给定一棵斜堆，要求还原插入序列。保证是一个置换。</p>
-</blockquote>
-<p><strong>斜堆的性质。</strong> <a href="http://www.cppblog.com/MatoNo1/archive/2013/03/03/192131.html" target="_blank" rel="external">题解</a> 似乎还要再想想。</p>
-<blockquote>
-<p><strong>BZOJ2333-[SCOI2011]棘手的操作</strong> 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：</p>
-<ul>
-<li><code>U x y</code> 加一条边，连接第 $x$个节点和第 $y$ 个节点</li>
-<li><code>A1 x v</code> 将第 $x$ 个节点的权值增加 $v$</li>
-<li><code>A2 x v</code> 将第 $x$ 个节点所在的连通块的所有节点的权值都增加 $v$</li>
-<li><code>A3 v</code> 将所有节点的权值都增加 $v$</li>
-<li><code>F1 x</code> 输出第 $x$ 个节点当前的权值</li>
-<li><code>F2 x</code> 输出第 $x$ 个节点所在的连通块中，权值最大的节点的权值</li>
-<li><code>F3</code> 输出所有节点中，权值最大的节点的权值</li>
-</ul>
-</blockquote>
-<p><strong>左偏树，懒标记。</strong> 看到操作 <code>U</code> 和最值，不难想到要使用可并堆维护。由于 <code>F3</code> 操作的存在，我们需要维护一个 <code>set</code> 用于保存所有堆顶的值。而 <code>A2</code> 可以用线段树的懒标记实现。<code>A3</code>就搞一个简单的全局增量。<code>A1</code>操作需要删除原有的节点，再加入新的。查询的时候注意要路径上的所有点<code>pushdown</code>，因为左偏树的高度是期望 $O(\log)$ 的，所有往上找父亲的复杂度是对的。</p>
-<p>代码其实挺难写的，要注意 <code>set</code> 修改的时候要仔细，同时<code>A1</code>和<code>A2</code>操作都需要修改。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!h[x].lazy) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">if</span> (h[x].l) &#123; h[h[x].l].val += h[x].lazy; h[h[x].l].lazy += h[x].lazy; &#125;</div><div class="line">	<span class="keyword">if</span> (h[x].r) &#123; h[h[x].r].val += h[x].lazy; h[h[x].r].lazy += h[x].lazy; &#125;</div><div class="line">	h[x].lazy = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ALLpushdown</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (h[x].fa) ALLpushdown(h[x].fa);</div><div class="line">	pushdown(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getroot</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (h[x].fa) x = h[x].fa;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!x || !y) <span class="keyword">return</span> x + y;</div><div class="line">	pushdown(x); pushdown(y);</div><div class="line">	<span class="keyword">if</span> (h[x].val &lt; h[y].val) swap(x, y);</div><div class="line">	h[x].r = merge(h[x].r, y); h[h[x].r].fa = x;</div><div class="line">	<span class="keyword">if</span> (d[h[x].l] &lt; d[h[x].r]) swap(h[x].l, h[x].r);</div><div class="line">	d[x] = d[h[x].r] + <span class="number">1</span>;</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">clear</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> t = merge(h[x].l, h[x].r), f = h[x].fa;</div><div class="line">	h[x].fa = h[x].l = h[x].r = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (x == h[f].l) h[f].l = t;</div><div class="line">	<span class="keyword">else</span> h[f].r = t;</div><div class="line">	h[t].fa = f;</div><div class="line">	<span class="keyword">return</span> getroot(t);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	n = read();</div><div class="line">	rep (i, <span class="number">1</span>, n) &#123;</div><div class="line">		h[i].val = read();</div><div class="line">		s.insert(h[i].val);</div><div class="line">	&#125;</div><div class="line">	Q = read(); d[<span class="number">0</span>] = <span class="number">-1</span>;</div><div class="line">	<span class="keyword">while</span> (Q--) &#123;</div><div class="line">		op = readchar();</div><div class="line">		<span class="keyword">if</span> (op == <span class="string">'U'</span>) &#123;</div><div class="line">			u = getroot(read()); v = getroot(read());</div><div class="line">			<span class="keyword">if</span> (u != v) &#123;</div><div class="line">				<span class="keyword">if</span> (merge(u, v) == u) s.erase(s.find(h[v].val));</div><div class="line">				<span class="keyword">else</span> s.erase(s.find(h[u].val));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">'A'</span>)&#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read(); y = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				s.erase(s.find(h[getroot(x)].val));</div><div class="line">				h[x].val += y;</div><div class="line">				s.insert(h[merge(x, clear(x))].val);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read()); y = read();</div><div class="line">				s.erase(s.find(h[x].val));</div><div class="line">				s.insert(h[x].val += y);</div><div class="line">				h[x].lazy += y;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> delta += read();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			op2 = readchar();</div><div class="line">			<span class="keyword">if</span> (op2 == <span class="string">'1'</span>) &#123;</div><div class="line">				x = read();</div><div class="line">				ALLpushdown(x);</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op2 == <span class="string">'2'</span>) &#123;</div><div class="line">				x = getroot(read());</div><div class="line">				writeln(h[x].val + delta);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> writeln(*(--s.end()) + delta);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>BZOJ1294-[SCOI2009]围豆豆Bean</strong> 在一个 $n \times m$ 的矩阵中，有 $D$ 个豆豆，都有一定的分值，还有一些障碍物。如果一个位置没有障碍，而且没有豆豆，就可以进入。要求从某个位置出发，最后回到这个位置，得到的价值为围住的豆豆数量，减去走的步数。求得到的价值最大为多少。<br>$n, m \leq 10, D \leq 9$</p>
-</blockquote>
-<p><strong>SPFA，状压。</strong> 考虑枚举每一个点作为起点，$f[i][j][k]$ 表示到达 $(i,j)$ 可以包围的集合为 $k$ 的最短路径。因为状态存在环，跑一个<code>SPFA</code>就可以了。最后权值和减最短路径就是价值。</p>
-<p>如何判断一个点最终是否会被围起来？<strong>射线法！</strong> 从一点向随机方向引一条射线，如果射线和多边形的边相交奇数次，说明点在多边形内。否则在多边形外。考虑向右连射线，这里的相交需要左闭右开，也就是和一条竖直线段的非下端点相交才能算。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/BZOJ-SCOI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-BZOJ-APIO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/BZOJ-APIO/">「BZOJ泛做」APIO</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/BZOJ-APIO/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ2303-[APIO2011]方格染色</strong> 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。</p>
-</blockquote>
-<p><strong>奇妙的并查集。</strong> 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $S(1..i-1, 1..j-1)$ 全部都 xor 起来。于是 $a[1][1] \oplus a[i][1] \oplus a[1][j] \oplus a[i][j] = [i,j都是偶数]$ 。于是就有 $2n-1$ 个自由变元（也是因为有 $n^2$ 个变元， $(n-1)^2$ 个方程）。</p>
-<p>然后我们可以枚举 $a[1][1]$ 的值。这些方程就可以的到 $a[i][1]$ 与 $a[1][j]$ 的取值是否相同。用一个带权并查集搞一搞，判矛盾以及统计连通块数目。</p>
-<p>Code:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getpa</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (pa[x] == x) <span class="keyword">return</span> x;</div><div class="line">	<span class="keyword">int</span> p = getpa(pa[x]);</div><div class="line">	g[x] ^= g[pa[x]];</div><div class="line">	<span class="keyword">return</span> pa[x] = p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> u = getpa(x), v = getpa(y);</div><div class="line">	<span class="keyword">if</span> (u == v) <span class="keyword">return</span> !(g[x] ^ g[y] ^ z);</div><div class="line">	g[v] = (g[x] ^ g[y] ^ z); pa[v] = u;</div><div class="line">	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">()</span> </span>&#123;</div><div class="line">	rep (i, <span class="number">1</span>, n+m) &#123; pa[i] = i; g[i] = <span class="number">0</span>; &#125;</div><div class="line">	pa[n+<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, Q)</div><div class="line">		<span class="keyword">if</span> (!link(x[i], y[i]+n, z[i])) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">1</span>, n+m) <span class="keyword">if</span> (pa[i] == i) res++;</div><div class="line">	<span class="keyword">return</span> Power(<span class="number">2</span>, res<span class="number">-1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	n = read(); m = read(); Q = read();</div><div class="line">	flag[<span class="number">1</span>] = flag[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, Q) &#123;</div><div class="line">		x[i] = read(); y[i] = read(); z[i] = read();</div><div class="line">		<span class="keyword">if</span> (x[i] + y[i] == <span class="number">2</span>) &#123; flag[z[i]] = <span class="number">0</span>; i--; Q--; <span class="keyword">continue</span>; &#125;</div><div class="line">		z[i] ^= (x[i]^<span class="number">1</span>)&amp;(y[i]^<span class="number">1</span>)&amp;<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (flag[<span class="number">1</span>]) ans = (ans + calc()) % MOD;</div><div class="line">	<span class="keyword">if</span> (flag[<span class="number">0</span>]) &#123;</div><div class="line">		rep (i, <span class="number">1</span>, Q) <span class="keyword">if</span> (x[i] &gt; <span class="number">1</span> &amp;&amp; y[i] &gt; <span class="number">1</span>) z[i] ^= <span class="number">1</span>;</div><div class="line">		ans = (ans + calc()) % MOD;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>BZOJ1178-[APIO2009]CONVENTION会议中心</strong> 给定若干条线段。要求选取最多的线段，使之不重叠。在最多的基础上，要求选取的线段字典序最小。</p>
-</blockquote>
-<p><strong>倍增，贪心。</strong> 如果没有字典序最小这个条件，就是一个裸的贪心。然后这就有一个倍增的经典应用。</p>
-<p>考虑首先搞掉所有包含其他线段的线段。然后倍增，$f[i][j]$ 表示第 $i$ 条线段之后，所选择 $2^j$ 条线段的最右边一条。只需要贪心预处理 $f[i][0]$ 。</p>
-<p>然后仍是贪心地考虑放入线段 $1,2,…$ ，如果放入线段之后，对答案不会产生影响，就选择这条线段。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/BZOJ-APIO/">展开全文 >></a>
         </p>
       
 
@@ -745,20 +479,20 @@
 
 
   
-    <article id="post-BZOJ-SHOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-BZOJ-APIO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/BZOJ-SHOI/">「BZOJ泛做」SHOI</a>
+      <a class="article-title" href="/2017/12/19/BZOJ-APIO/">「BZOJ泛做」APIO</a>
     </h1>
   
 
         
-        <a href="/2017/12/14/BZOJ-SHOI/" class="archive-article-date">
-  	<time datetime="2017-12-14T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+        <a href="/2017/12/19/BZOJ-APIO/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
 </a>
         
       </header>
@@ -766,11 +500,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p><strong>BZOJ1018-[SHOI2008]堵塞的交通traffic</strong> 给定一个 $2*n$ 的网格图，要求支持加边，删边，求两点的连通。</p>
+<p><strong>BZOJ2303-[APIO2011]方格染色</strong> 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。</p>
 </blockquote>
-<p><strong>线段树。</strong> 因为是线段上的操作，所以很显然可以用线段树来维护。</p>
-<p>不难发现，所有的路径都像这样：向往另一端走，然后转回来，超过之后再转回来。所以就要维护前缀，后缀和两端的最短路，更新类似于floyd。</p>
-
+<p><strong>奇妙的并查集。</strong> 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $S(1..i-1, 1..j-1)$ 全部都 xor 起来。于是 $a[1][1] \oplus a[i][1] \oplus a[1][j] \oplus a[i][j] = [i,j都是偶数]$ 。于是就有 $2n-1$ 个自由变元（也是因为有 $n^2$ 个变元， $(n-1)^2$ 个方程）。</p>
+        
+          <a class="article-more-a" href="/2017/12/19/BZOJ-APIO/#more">more >></a>
+        
       
 
       
@@ -793,7 +528,146 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/14/BZOJ-SHOI/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/19/BZOJ-APIO/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-BZOJ-SCOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/BZOJ-SCOI/">「BZOJ泛做」SCOI</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/19/BZOJ-SCOI/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>BZOJ1078-[SCOI2008]斜堆</strong> 给定一棵斜堆，要求还原插入序列。保证是一个置换。</p>
+</blockquote>
+<p><strong>斜堆的性质。</strong> <a href="http://www.cppblog.com/MatoNo1/archive/2013/03/03/192131.html" target="_blank" rel="external">题解</a> 似乎还要再想想。</p>
+<blockquote>
+<p><strong>BZOJ2333-[SCOI2011]棘手的操作</strong> 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：</p>
+<ul>
+<li><code>U x y</code> 加一条边，连接第 $x$个节点和第 $y$ 个节点</li>
+<li><code>A1 x v</code> 将第 $x$ 个节点的权值增加 $v$</li>
+<li><code>A2 x v</code> 将第 $x$ 个节点所在的连通块的所有节点的权值都增加 $v$</li>
+<li><code>A3 v</code> 将所有节点的权值都增加 $v$</li>
+<li><code>F1 x</code> 输出第 $x$ 个节点当前的权值</li>
+<li><code>F2 x</code> 输出第 $x$ 个节点所在的连通块中，权值最大的节点的权值</li>
+<li><code>F3</code> 输出所有节点中，权值最大的节点的权值</li>
+</ul>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/12/19/BZOJ-SCOI/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/19/BZOJ-SCOI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-BZOJ-SDOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/BZOJ-SDOI/">「BZOJ泛做」SDOI</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/19/BZOJ-SDOI/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>BZOJ3122-[SDOI2013]随机数生成器</strong> 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \mod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/12/19/BZOJ-SDOI/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/19/BZOJ-SDOI/">展开全文 >></a>
         </p>
       
 
@@ -831,9 +705,9 @@
         <blockquote>
 <p><strong>BZOJ1558-[JSOI2009]等差数列</strong> 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$</p>
 </blockquote>
-<p><strong>差分，线段树。</strong> 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。</p>
-<p>合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着，第一个是任意的差分值，剩下的 $n-1$ 差分值相等。</p>
-
+        
+          <a class="article-more-a" href="/2017/12/14/BZOJ-JSOI/#more">more >></a>
+        
       
 
       
@@ -857,6 +731,69 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/12/14/BZOJ-JSOI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-BZOJ-SHOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/14/BZOJ-SHOI/">「BZOJ泛做」SHOI</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/14/BZOJ-SHOI/" class="archive-article-date">
+  	<time datetime="2017-12-14T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>BZOJ1018-[SHOI2008]堵塞的交通traffic</strong> 给定一个 $2*n$ 的网格图，要求支持加边，删边，求两点的连通。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/12/14/BZOJ-SHOI/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/14/BZOJ-SHOI/">展开全文 >></a>
         </p>
       
 
@@ -992,11 +929,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,7 +945,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1020,7 +957,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1033,10 +970,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

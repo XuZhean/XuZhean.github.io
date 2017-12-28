@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「BZOJ泛做」COCI | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$  二阶导数（大雾） 二阶差分，加速度。 很显然需要搞一个前缀和。 矩形总共有两种放置情况，一种是在">
+  <meta name="description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$">
 <meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ泛做」COCI">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/20/BZOJ-COCI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$  二阶导数（大雾） 二阶差分，加速度。 很显然需要搞一个前缀和。 矩形总共有两种放置情况，一种是在">
-<meta property="og:updated_time" content="2017-12-20T12:02:23.772Z">
+<meta property="og:description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$">
+<meta property="og:updated_time" content="2017-12-27T23:48:38.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」COCI">
-<meta name="twitter:description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$  二阶导数（大雾） 二阶差分，加速度。 很显然需要搞一个前缀和。 矩形总共有两种放置情况，一种是在">
+<meta name="twitter:description" content="BZOJ1182-[COCI2009]PLAHTE 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。$n, Q \leq 10 ^ 6$">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -188,6 +188,7 @@
         <blockquote>
 <p><strong>BZOJ1182-[COCI2009]PLAHTE</strong> 在平面坐标系中，有 $n$ 个矩形。时刻0，在原点处有一个xx，之后的每一时刻，每个xx会向周围八个方向扩展。给定 $Q$ 个询问，要求回答时刻 $t$ ，所有矩形覆盖的xx总数是多少。注意，没有矩形覆盖原点。<br>$n, Q \leq 10 ^ 6$</p>
 </blockquote>
+<a id="more"></a>
 <p><strong><del>二阶导数（大雾）</del> 二阶差分，加速度。</strong> 很显然需要搞一个前缀和。</p>
 <p>矩形总共有两种放置情况，一种是在一个象限，还有一种是横跨两个象限。为了 <strong>方便</strong> 处理，可以将后者拆分为两个矩形，同时，我们可以将矩形强制放在第一象限。<del>还是为了方便</del>我们可以用容斥原理，拆分为四个左下角固定，边长无穷大的矩形。</p>
 <p>然后这个东西就很好弄了，扩散有一个初始速度，之后还有一个加速度。叠加起来就好了。本质上是一个二阶差分。</p>
@@ -274,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/20/BZOJ-Baltic/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「学习笔记」可持久化数据结构
+          「BZOJ泛做」Baltic
         
       </div>
     </a>
   
   
-    <a href="/2017/12/20/BZOJ-Baltic/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」Baltic</div>
+    <a href="/2017/12/19/BZOJ-ZJOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」ZJOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,11 +419,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,7 +435,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,7 +447,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,10 +460,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>

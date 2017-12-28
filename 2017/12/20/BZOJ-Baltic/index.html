@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「BZOJ泛做」Baltic | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。  几何基础。 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。 事实">
+  <meta name="description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
 <meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ泛做」Baltic">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。  几何基础。 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。 事实">
-<meta property="og:updated_time" content="2017-12-20T12:50:14.486Z">
+<meta property="og:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
+<meta property="og:updated_time" content="2017-12-27T23:49:00.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」Baltic">
-<meta name="twitter:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。  几何基础。 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。 事实">
+<meta name="twitter:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -188,6 +188,7 @@
         <blockquote>
 <p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
 </blockquote>
+<a id="more"></a>
 <p><strong>几何基础。</strong> 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。</p>
 <p>事实上不用那么萎。考虑矩形的面积是对角线长度的平方，乘以夹角的 $\sin$ 考虑按照极角序来排，然后用两个指针，始终维持夹角在小于等于 $\frac {\pi} {2}$ 的最大值。酱复杂度就是 $O(n^2 \log n)$ 啦，可能实际并没有快多少？</p>
 
@@ -273,18 +274,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」COCI
+          「学习笔记」可持久化数据结构
         
       </div>
     </a>
   
   
-    <a href="/2017/12/19/BZOJ-ZJOI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」ZJOI</div>
+    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」COCI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -417,11 +418,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,7 +434,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,7 +446,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,10 +459,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>
