@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/14/BZOJ-JSOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$">
-<meta property="og:updated_time" content="2017-12-27T23:52:01.361Z">
+<meta property="og:updated_time" content="2018-01-06T10:49:17.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」JSOI">
 <meta name="twitter:description" content="BZOJ1558-[JSOI2009]等差数列 给定 $n$ 个数，$m$ 个操作，每次给一段区间加一个等差数列，或者询问一段区间至少要用多少个等差数列来表示。$n,m \leq 10^5$">
@@ -190,7 +190,13 @@
 </blockquote>
 <a id="more"></a>
 <p><strong>差分，线段树。</strong> 套路？考虑维护差分数组，修改操作变成了两个单点加和一个区间加，用线段树维护。</p>
-<p>合并答案的时候比较复杂，用s[0/1][0/1]表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着，第一个是任意的差分值，剩下的 $n-1$ 差分值相等。</p>
+<p>合并答案的时候比较复杂，用 $s[0/1][0/1]$ 表示左右端点取不取的答案。一段长度为 $n$ 等差数列就意味着，第一个是任意的差分值，剩下的 $n-1$ 差分值相等。</p>
+<blockquote>
+<p><strong>BZOJ1822-[JSOI2010]Frozen Nova 冷冻波</strong> 套路的二分+最大流，需要判断线段是否与圆相交。</p>
+</blockquote>
+<p><strong>计算几何。</strong> 只是想记录一下<code>判断线段 AB 是否与圆 C 相交</code>的简便方法。一种情况：线段的一端在圆内/上，首先直接特判掉。 <strong>第二种情况：线段两端在圆的两边。</strong></p>
+<p>考虑与此线段平行的两条切线中间，被圆分开的两块区域。线段的端点只可能分别在两个区域。首先用叉积求出 $2\triangle ABC$ ，然后除以长度得到与圆心的距离，大于 $r$ 就判掉（防止卡精度，两边平方即可）。有可能线段的两端都在同一个区域，必定存在一个钝角。用点积判断。于是，代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (dist2(a, c) &lt;= <span class="number">1L</span>L * r * r) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"><span class="keyword">if</span> (dist2(b, c) &lt;= <span class="number">1L</span>L * r * r) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"><span class="keyword">return</span> dot(b, c, a) &gt;= <span class="number">0</span> &amp;&amp; dot(a, c, b) &gt;= <span class="number">0</span></div><div class="line">&amp;&amp; cross(c, a, b) * cross(c, a, b) &lt;= <span class="number">1L</span>L * r * r * dist2(a, b);</div></pre></td></tr></table></figure>
 
       
 
@@ -274,11 +280,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-ZJOI/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」SDOI
+          「BZOJ泛做」ZJOI
         
       </div>
     </a>
@@ -311,7 +317,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -418,11 +424,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,7 +444,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,19 +452,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

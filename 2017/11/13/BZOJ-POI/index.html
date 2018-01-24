@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/11/13/BZOJ-POI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="似乎POI的质量挺高的？蒟蒻也要开始做辣。 POI 2000似乎这届特别水？  AUT 给定一个长度为 $n$ 的置换。求存在多少个 $n$ 阶竞赛图满足，如果边 $(u,v)$ 存在，那么 $(p(u),p(v))$ 存在。$n \leq 10000$  简单计数。 考虑将置换分解为循环。容易发现： 对于同一置换：一个长度为 $L$ 循环的方案数为 $2^{L/2}$ 。 对于不同的置换：两个长">
-<meta property="og:updated_time" content="2017-12-22T14:31:47.795Z">
+<meta property="og:updated_time" content="2018-01-06T10:16:47.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POI切题记">
 <meta name="twitter:description" content="似乎POI的质量挺高的？蒟蒻也要开始做辣。 POI 2000似乎这届特别水？  AUT 给定一个长度为 $n$ 的置换。求存在多少个 $n$ 阶竞赛图满足，如果边 $(u,v)$ 存在，那么 $(p(u),p(v))$ 存在。$n \leq 10000$  简单计数。 考虑将置换分解为循环。容易发现： 对于同一置换：一个长度为 $L$ 循环的方案数为 $2^{L/2}$ 。 对于不同的置换：两个长">
@@ -210,6 +210,22 @@
 <p><strong>计算几何，KMP。</strong> 显然，对称轴只可能是两个点的连线，或者是两条线段的连线。</p>
 <p>如何保证轴两边对称？首先要确保距离相等，其次是角度（防止卡精度，又由于边长相等，可以用点积代替）。</p>
 <p>然后这样就可以转化为串<code>s</code>，可以倍长得到<code>ss</code>后，用反串<code>t</code>来匹配、完整的匹配次数即是答案。</p>
+<blockquote>
+<p> <strong>BZOJ1109-[POI2007]堆积木Klo</strong> 给定一个长度为 $n$ 的序列 $ai$，可以删除若干个数。求重新标号之后，$a_i=i$ 的个数最大值。</p>
+</blockquote>
+<p><strong>三维偏序。</strong> 考虑能够满足 $a_i=i$ 数的要求。</p>
+<p>首先我们要保证 $i, a[i]$ 是递增的，还有保证 $i-a[i]$ 也是不减的（选择的相邻两个的差不应该超过位置差）。发现这是一个三维偏序。</p>
+<p>这是一个假的三维偏序。因为 $a[i]$ 递增， $i-a[i]$ 不减时，$i$ 一定递增。二维偏序用 $LIS$ 即可。</p>
+<h2 id="POI-2008"><a href="#POI-2008" class="headerlink" title="POI 2008"></a>POI 2008</h2><blockquote>
+<p><strong>BZOJ1122-[POI2008]账本BBB</strong> 给定一个由 $+1$ 和 $-1$ 构成的长度为 $n$ 的序列，提供两种操作： </p>
+<ol>
+<li>将某一位取反，花销为 $x$</li>
+<li>将最后一位移动到前一位，花销为 $y$ </li>
+</ol>
+<p>要求最终 $p+sum_n=q$，且 $p+sum_i≥0(1≤i≤n)$，求最小花销。</p>
+</blockquote>
+<p><strong>前缀和，贪心。</strong> 考虑预处理前缀，后缀最大前缀和 $pre/suf$，枚举起始位置。 一个很巧妙的思想就是可以根据 $pre,suf$ 求出移动后的前缀和最小值。然后我们贪心地把前面的若干个 $-$ 改成 $+$ 即可。代码就很短了：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000009</span>;</div><div class="line"><span class="keyword">int</span> sum[maxn], pre[maxn], suf[maxn];</div><div class="line"><span class="keyword">int</span> n, p, q, x, y, mn, cnt; <span class="keyword">char</span> s[maxn];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1e18</span>, tmp;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d"</span>, &amp;n, &amp;p, &amp;q, &amp;x, &amp;y);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s+<span class="number">1</span>); sum[<span class="number">0</span>] = p;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">		sum[i] = sum[i<span class="number">-1</span>] + (s[i] == <span class="string">'+'</span> ? <span class="number">1</span> : <span class="number">-1</span>);</div><div class="line">	suf[n+<span class="number">1</span>] = suf[n] = sum[n]; pre[<span class="number">1</span>] = sum[<span class="number">1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) pre[i] = min(pre[i<span class="number">-1</span>], sum[i]);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n<span class="number">-1</span>; i&gt;=<span class="number">1</span>; i--) suf[i] = min(suf[i+<span class="number">1</span>], sum[i]);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n+<span class="number">1</span>; i++) &#123;</div><div class="line">		tmp = <span class="number">1L</span>L * (n + <span class="number">1</span> - i) * y;</div><div class="line">		mn = min(suf[i] - sum[i<span class="number">-1</span>], pre[i<span class="number">-1</span>] + sum[n] - sum[i<span class="number">-1</span>]);</div><div class="line">		<span class="keyword">if</span> (mn &lt; <span class="number">0</span>) &#123; cnt = (<span class="number">1</span> - mn) / <span class="number">2</span>; tmp += <span class="number">1L</span>L * cnt * x; &#125; <span class="keyword">else</span> cnt = <span class="number">0</span>;</div><div class="line">		tmp += <span class="number">1L</span>L * <span class="built_in">abs</span>(sum[n] + cnt * <span class="number">2</span> - q) / <span class="number">2</span> * x;</div><div class="line">		res = min(res, tmp);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, res);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -330,7 +346,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -437,11 +453,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,7 +473,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,19 +481,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

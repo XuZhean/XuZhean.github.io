@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-ZJOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ1414-[ZJOI2009]对称的正方形 给定一个 $n \times m$ 的矩阵。问存在多少子矩阵，使得它上下对称且左右对称。$n,m \leq 10^3$">
-<meta property="og:updated_time" content="2017-12-27T23:49:23.793Z">
+<meta property="og:updated_time" content="2018-01-07T00:42:11.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」ZJOI">
 <meta name="twitter:description" content="BZOJ1414-[ZJOI2009]对称的正方形 给定一个 $n \times m$ 的矩阵。问存在多少子矩阵，使得它上下对称且左右对称。$n,m \leq 10^3$">
@@ -192,6 +192,11 @@
 <p><strong>HASH乱搞。</strong> 显然，对于每一个位置，我们可以二分求出一个极大子矩阵。判断就可以用<code>二维HASH</code>，注意方向，小心不要写成旋转对称QAQ。新技能get!二维哈希。</p>
 <p>我们可以弄两个不同的大素数 $p,q$，$(i,j)$ 就要乘上 $p ^ i \times q ^ j$ 。用<code>unsigned int</code>，然后自然溢出就好了。。</p>
 <p>不放心的话，可以用<code>unsigned long long</code>。相当于双模数<code>HASH</code>？</p>
+<blockquote>
+<p><strong>BZOJ2111-[ZJOI2010]Perm 排列计数</strong> 计算 $1,2,..,n$ 的排列在大根堆中有多少种方案。</p>
+</blockquote>
+<p><strong>组合，动态规划。</strong> 首先求出每个位置的 $size$ ，定义 $f[i]$ 为以第 $i$ 个位置为根的方案数。如果它有两个儿子，那么 $f[i] = \binom {size[i]-1} {size[lc]} \times f[lc] \times f[rc]$ 。</p>
+<p>注意，这里的组合数的 $n,m$ 有可能超过 $MOD$ 。所以需要使用 <code>Lucas定理</code>。 </p>
 
       
 
@@ -275,18 +280,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/19/BZOJ-SDOI/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」COCI
+          「BZOJ泛做」SDOI
         
       </div>
     </a>
   
   
-    <a href="/2017/12/19/BZOJ-Other/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」杂</div>
+    <a href="/2017/12/14/BZOJ-JSOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」JSOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,7 +317,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -419,11 +424,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +444,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,19 +452,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

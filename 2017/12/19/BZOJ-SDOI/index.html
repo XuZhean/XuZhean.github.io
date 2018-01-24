@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-SDOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ3122-[SDOI2013]随机数生成器 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \mod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。">
-<meta property="og:updated_time" content="2017-12-27T23:50:20.917Z">
+<meta property="og:updated_time" content="2018-01-07T00:33:32.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」SDOI">
 <meta name="twitter:description" content="BZOJ3122-[SDOI2013]随机数生成器 给定参数 $a,b,X[1]$ ，序列 $X$ 由 $X[i+1] = (a \times X[i] + b) \mod p$ 得到。问第一次在序列 $X$ 中出现 $t$ 的位置， $p$ 是一个给定的质数。或者永远不会出现。">
@@ -195,6 +195,16 @@
 <p>随便化简一下：</p>
 <p>$$a ^ {n-1} = \frac {X[n] - \frac {a ^ {n-1} -1} { a - 1} \times b} {X[1]} $$</p>
 <p>跑个<code>BSGS</code>就好了。小心爆int。</p>
+<blockquote>
+<p><strong>BZOJ1927-[SDOI2010]星际竞速</strong> 给定一个DAG，要求用若干条不相交路径覆盖所有的点，给定所有边的代价，以及所有点作为路径的第一个点的代价。问最小的代价之和。</p>
+</blockquote>
+<p><strong>最小路径覆盖，费用流，拆点。</strong> 首先考虑 $S$ 向 $i$ 连上 $(1,ai)$ 的边，$i$ 向 $T$ 连 $(1,0)$ 。此时它可以选择 <strong>一个</strong> 后继节点，于是考虑增加一个点 $i+n$ ，需要 $S \rightarrow n+i, (1,0)$ ，考虑删除这个点 $i$ ，对于 $i \rightarrow j$ 连 $(1,w_{i,j})$ 。表示将 $j$ 作为第一个点的代价 <strong>可以是</strong> $w_{i,j}$ 。以上是思考过程。</p>
+<p>正确性？考虑到每个点的流量只有两种可能来源，逆推即可得到一种对应方案。同时每一种方案也对应一种可行的流。所以最小费用即为最小答案。</p>
+<blockquote>
+<p><strong>BZOJ1974-[SDOI2010]auction代码拍卖会</strong> 一个 $10$ 进制表示的正整数，如果从左到右，每一位的数字都不小于前一位的数字，则被称为<code>上升数</code>。 给出正整数 $n$ 和 $K$ ，求有多少个长度恰好为$n$ 的上升数是 $K$ 的倍数，答案对 $999911659$ 取模。 $n \leq 10^{18}, K \leq 500$</p>
+</blockquote>
+<p><strong>动态规划。</strong> 如果纵向切割，显然很难搞。考虑横向切割，不难发现这个数可以拆分为不超过 $9$ 个，$1,11,111,1111,..$ 的和。然后，这些数模 $K$ 很显然是存在循环的。定义 $f[i][j][k]$ 表示前 $i$ 组中，选择了 $j$ 个数，模意义下为 $K$ 的方案数。</p>
+<p>需要注意的是 $\frac {10^{n-1} - 1} 9$ 要特殊处理，同时注意 $K$ 等于 $1$ 的情况。</p>
 
       
 
@@ -288,8 +298,8 @@
     </a>
   
   
-    <a href="/2017/12/14/BZOJ-JSOI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」JSOI</div>
+    <a href="/2017/12/19/BZOJ-ZJOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「BZOJ泛做」ZJOI</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +325,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -422,11 +432,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,7 +452,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,19 +460,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,10 +16,12 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-SCOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
-<meta property="og:updated_time" content="2017-12-27T23:50:44.875Z">
+<meta property="og:image" content="https://images0.cnblogs.com/i/361759/201406/262128005064796.png">
+<meta property="og:updated_time" content="2018-01-06T13:01:32.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」SCOI">
 <meta name="twitter:description" content="BZOJ1078-[SCOI2008]斜堆 给定一棵斜堆，要求还原插入序列。保证是一个置换。  斜堆的性质。 题解 似乎还要再想想。  BZOJ2333-[SCOI2011]棘手的操作 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：  U x y 加一条边，连接第 $x$个节点和第 $y$ 个节点 A1 x v 将第 $x$ 个节点的权值增加 $v$ A2 x v 将第 $x$ 个节点">
+<meta name="twitter:image" content="https://images0.cnblogs.com/i/361759/201406/262128005064796.png">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -210,6 +212,22 @@
 </blockquote>
 <p><strong>SPFA，状压。</strong> 考虑枚举每一个点作为起点，$f[i][j][k]$ 表示到达 $(i,j)$ 可以包围的集合为 $k$ 的最短路径。因为状态存在环，跑一个<code>SPFA</code>就可以了。最后权值和减最短路径就是价值。</p>
 <p>如何判断一个点最终是否会被围起来？<strong>射线法！</strong> 从一点向随机方向引一条射线，如果射线和多边形的边相交奇数次，说明点在多边形内。否则在多边形外。考虑向右连射线，这里的相交需要左闭右开，也就是和一条竖直线段的非下端点相交才能算。</p>
+<blockquote>
+<p><strong>BZOJ1854-[SCOI2010]游戏</strong> 给定 $n$ 个数对，每个数对中最多选择一个数字。要求选择 $1,2,3,…$ 能达到的最大值。 </p>
+</blockquote>
+<p><strong>巧妙的图论模型，并查集。</strong> 发现是一个二元关系，考虑建图。对于一个 $size = p$ 连通块，如果不存在环，只能选择 $p-1$ 个点，存在就能选择 $p$ 个。显然，可以用并查集维护连通块是否存在环，以及连通块的最大值即可。</p>
+<blockquote>
+<p><strong>BZOJ1856-[SCOI2010]字符串</strong> 求存在多少长度为 $n+m$ 的序列，存在 $n$ 个 $1$ ，$m$ 个 $0$ ，同时任意前缀的 $1$ 多于 $0$ 。</p>
+</blockquote>
+<p><strong>卡特兰数的扩展形式</strong>。终于知道卡特兰数怎么推了！！（如果早一点做这题，那场CF就不会血崩了QAQ）。</p>
+<p>考虑这样一个 $n \times m$ 的网格，设 $1,0$ 分别为向右上/右下走。可转化为从 $(0,0)$ 到 $(n+m,n-m) $且不能碰到 $y=1$ 的方案数。考虑容斥，总方案数为 $C(n+m,n)$ 。将路线与 $y=-1$ 第一个交点的左边沿着 $y=-1 $ 对称，发现不合法的方案为 $C(n+m,m-1)$ 。</p>
+<p>盗用 <a href="http://www.cnblogs.com/jianglangcaijin/p/3443689.html" target="_blank" rel="external">题解</a> 的图。</p>
+<p><img src="https://images0.cnblogs.com/i/361759/201406/262128005064796.png" alt="img"></p>
+<blockquote>
+<p><strong>BZOJ1857-[SCOI2010]传送带</strong> 在一个 $2$ 维平面上有两条传送带，每一条传送带可以看成是一条线段。两条传送带分别为线段 $AB$ 和线段 $CD$。<code>xx</code> 在 $AB$ 上的移动速度为 $P$ ，在 $CD$ 上的移动速度为 $Q$ ，在平面上的移动速度 $R$ 。现在 <code>xx</code> 想从 $A$ 点走到 $D$ 点，他想知道最少需要走多长时间。</p>
+</blockquote>
+<p> <strong>三分套三分。</strong> 时间 <strong>显然</strong> 是关于离开位置单峰的，三分一个 $AB$ 再三分 $CD$ 即可。证明嘛..</p>
+<p>先挖坑。</p>
 
       
 
@@ -330,7 +348,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -437,11 +455,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,7 +475,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,19 +483,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

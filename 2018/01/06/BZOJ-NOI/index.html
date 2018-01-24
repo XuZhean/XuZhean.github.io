@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「BZOJ泛做」Baltic | Cyani&#39;s Blog</title>
+  <title>NOI找虐记 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
+  <meta name="description" content="NOI 2009 BZOJ1564-[NOI2009]二叉查找树    给定一个Treap，总代价为深度$\times$距离之和。可以每次以 $K$ 的代价修改权值（权值不能相同，并且是实数），问最小代价。  区间DP。 首先有一个很坑的点，权值不能相同。 事实上，由于权值是实数，所以随便改嘛… 然后数据范围也是假的。随便区间DP就好了..">
 <meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「BZOJ泛做」Baltic">
-<meta property="og:url" content="https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/index.html">
+<meta property="og:title" content="NOI找虐记">
+<meta property="og:url" content="https://xuzhean.github.io/2018/01/06/BZOJ-NOI/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
-<meta property="og:updated_time" content="2018-01-06T10:36:23.079Z">
+<meta property="og:description" content="NOI 2009 BZOJ1564-[NOI2009]二叉查找树    给定一个Treap，总代价为深度$\times$距离之和。可以每次以 $K$ 的代价修改权值（权值不能相同，并且是实数），问最小代价。  区间DP。 首先有一个很坑的点，权值不能相同。 事实上，由于权值是实数，所以随便改嘛… 然后数据范围也是假的。随便区间DP就好了..">
+<meta property="og:updated_time" content="2018-01-06T10:28:58.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「BZOJ泛做」Baltic">
-<meta name="twitter:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
+<meta name="twitter:title" content="NOI找虐记">
+<meta name="twitter:description" content="NOI 2009 BZOJ1564-[NOI2009]二叉查找树    给定一个Treap，总代价为深度$\times$距离之和。可以每次以 $K$ 的代价修改权值（权值不能相同，并且是实数），问最小代价。  区间DP。 首先有一个很坑的点，权值不能相同。 事实上，由于权值是实数，所以随便改嘛… 然后数据范围也是假的。随便区间DP就好了..">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,36 +165,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BZOJ-Baltic" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-BZOJ-NOI" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      「BZOJ泛做」Baltic
+      NOI找虐记
     </h1>
   
 
         
-        <a href="/2017/12/20/BZOJ-Baltic/" class="archive-article-date">
-  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+        <a href="/2018/01/06/BZOJ-NOI/" class="archive-article-date">
+  	<time datetime="2018-01-06T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
+        <h3 id="NOI-2009"><a href="#NOI-2009" class="headerlink" title="NOI 2009"></a>NOI 2009</h3><blockquote>
+<p><strong>BZOJ1564-[NOI2009]二叉查找树</strong>    给定一个<code>Treap</code>，总代价为<code>深度</code>$\times$<code>距离</code>之和。可以每次以 $K$ 的代价修改权值（权值不能相同，并且是实数），问最小代价。</p>
 </blockquote>
-<a id="more"></a>
-<p><strong>几何基础。</strong> 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。</p>
-<p>事实上不用那么萎。考虑矩形的面积是对角线长度的平方，乘以夹角的 $\sin$ 考虑按照极角序来排，然后用两个指针，始终维持夹角在小于等于 $\frac {\pi} {2}$ 的最大值。酱复杂度就是 $O(n^2 \log n)$ 啦，可能实际并没有快多少？</p>
-<blockquote>
-<p><strong>BZOJ1761-[Baltic2009]beetle</strong> 在一条直线上有 $n$ 个点,每个点 $m$ 升水. 一个虫子在坐标轴 $0$ 上，它每个单位时间移动一格，每个点的水每单位时间消失 $1$ 升。问虫子最多可以喝到多少水，喝水的时间忽略不计。</p>
-</blockquote>
-<p><strong>提前费用计算。</strong> 显然是提前费用计算的套路，由于不知道最终要哪些点的水，枚举喝的点的数量即可。然后就是套路区间DP啦。</p>
+<p><strong>区间DP。</strong> 首先有一个很坑的点，<strong>权值不能相同。</strong> 事实上，由于权值是实数，所以随便改嘛…</p>
+<p>然后数据范围也是假的。随便区间DP就好了..</p>
 
       
 
@@ -264,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2018/01/06/BZOJ-NOI/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +273,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/24/Training-CF-Round3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「学习笔记」可持久化数据结构
+          「泛做」CodeForces-第二轮
         
       </div>
     </a>
   
   
-    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」COCI</div>
+    <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「学习笔记」可持久化数据结构</div>
       <i class="icon-circle-right"></i>
     </a>
   

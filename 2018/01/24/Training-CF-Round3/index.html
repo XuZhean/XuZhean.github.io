@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「BZOJ泛做」Baltic | Cyani&#39;s Blog</title>
+  <title>「泛做」CodeForces-第二轮 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
+  <meta name="description" content="手残选手来泛做一波Codeforces啦。。 （其实就是因为看到了许昊然的成套题解 既然有题解了嘛，那我也就懒得写啦。。 这里记录一些有趣的想法。  7E 根据四则运算的结合律，优先级，来简洁地表示状态。 15E 很不错的递推题，关键是找到阶段，以及合理地分类讨论。 19E 图的 DFS树 ，根据 返祖边 搞搞。二分图，环的奇偶性。 30E 各种子串拼接/回文都是套路，反向串匹配、KMP、mana">
 <meta name="keywords" content="泛做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「BZOJ泛做」Baltic">
-<meta property="og:url" content="https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/index.html">
+<meta property="og:title" content="「泛做」CodeForces-第二轮">
+<meta property="og:url" content="https://xuzhean.github.io/2018/01/24/Training-CF-Round3/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
-<meta property="og:updated_time" content="2018-01-06T10:36:23.079Z">
+<meta property="og:description" content="手残选手来泛做一波Codeforces啦。。 （其实就是因为看到了许昊然的成套题解 既然有题解了嘛，那我也就懒得写啦。。 这里记录一些有趣的想法。  7E 根据四则运算的结合律，优先级，来简洁地表示状态。 15E 很不错的递推题，关键是找到阶段，以及合理地分类讨论。 19E 图的 DFS树 ，根据 返祖边 搞搞。二分图，环的奇偶性。 30E 各种子串拼接/回文都是套路，反向串匹配、KMP、mana">
+<meta property="og:updated_time" content="2018-01-24T13:10:27.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「BZOJ泛做」Baltic">
-<meta name="twitter:description" content="BZOJ1356-[Baltic2009]Rectangle 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。">
+<meta name="twitter:title" content="「泛做」CodeForces-第二轮">
+<meta name="twitter:description" content="手残选手来泛做一波Codeforces啦。。 （其实就是因为看到了许昊然的成套题解 既然有题解了嘛，那我也就懒得写啦。。 这里记录一些有趣的想法。  7E 根据四则运算的结合律，优先级，来简洁地表示状态。 15E 很不错的递推题，关键是找到阶段，以及合理地分类讨论。 19E 图的 DFS树 ，根据 返祖边 搞搞。二分图，环的奇偶性。 30E 各种子串拼接/回文都是套路，反向串匹配、KMP、mana">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,36 +165,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BZOJ-Baltic" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Training-CF-Round3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      「BZOJ泛做」Baltic
+      「泛做」CodeForces-第二轮
     </h1>
   
 
         
-        <a href="/2017/12/20/BZOJ-Baltic/" class="archive-article-date">
-  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+        <a href="/2018/01/24/Training-CF-Round3/" class="archive-article-date">
+  	<time datetime="2018-01-24T00:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
-</blockquote>
-<a id="more"></a>
-<p><strong>几何基础。</strong> 考虑一个矩形，他的两条对角线长度相同，且中点相同。就可以 $O(n^2)$ 计算出来，然后按照对角线长度和中点位置排序，考虑可以配对的所有对角线。因为能共圆的点不多，所以直接暴力枚举可过。复杂度是 $O(n^4)$ 的。</p>
-<p>事实上不用那么萎。考虑矩形的面积是对角线长度的平方，乘以夹角的 $\sin$ 考虑按照极角序来排，然后用两个指针，始终维持夹角在小于等于 $\frac {\pi} {2}$ 的最大值。酱复杂度就是 $O(n^2 \log n)$ 啦，可能实际并没有快多少？</p>
+        <p>手残选手来泛做一波<code>Codeforces</code>啦。。</p>
+<p>（其实就是因为看到了许昊然的成套题解</p>
+<p>既然有题解了嘛，那我也就懒得写啦。。</p>
+<p>这里记录一些有趣的想法。</p>
+<hr>
+<p><strong>7E</strong> 根据四则运算的结合律，优先级，来简洁地表示状态。</p>
+<p><strong>15E</strong> 很不错的递推题，关键是找到阶段，以及合理地分类讨论。</p>
+<p><strong>19E</strong> 图的 <strong>DFS树</strong> ，根据 <strong>返祖边</strong> 搞搞。二分图，环的奇偶性。</p>
+<p><strong>30E</strong> 各种子串拼接/回文都是套路，反向串匹配、KMP、manachar，ExKMP。</p>
+<p><strong>36E</strong> 四个奇点，两条互不重合的欧拉路径？连接两个奇点，再断开。</p>
+<p><strong>46F</strong> <strong>最大表示法</strong> 思想。观察到操作是可逆的，于是令两个状态达到极大/极小的等价状态。</p>
+<p><strong>51F</strong> 巧妙的边双，缩点完之后变成一棵树。各种 树形DP/dfs序/树剖。。</p>
+<p><strong>53E</strong> 状压DP，强制顺序。这种防止重复计数的trick应该很套路了吧。。</p>
+<p><strong>67C</strong> 奇怪的性质带来了无后效性，毒瘤-&gt;傻逼DP。</p>
+<p><strong>70E</strong> 又是一类奇妙的附加状态。涉及到与子树外节点的关系，附加这一维状态。</p>
+<p><strong>193D</strong> <strong>超赞的线段树</strong> 。离线，从差分角度考虑贡献。利用 <strong>正</strong> 整数 $\leq 2$ 的一定是最小值/次小值，避免了分块。</p>
+<p><strong>193E</strong> 斐波那契数在模 $10^x$ 意义下，循环节为 $1.5 \times 10^x (2 \leq x)$。</p>
+<p><strong>76F</strong> DP条件的转化。变成二维数点之类的东西，然后离线/数据结构。</p>
+<p><strong>76A</strong> 动态加边MST。只有原有的边和新加入的边有用，边数 $O(n)$，暴力插入排序即可。</p>
+<p><strong>77E</strong> 圆的反演。一个圆关于单位圆反演之后，会得到一条直线（圆经过原点），或是另一个圆。相切的关系不变。简单的初中几何知识就可以了。。<a href="http://trinkle.is-programmer.com/2015/7/11/circle_inversion.102620.html" target="_blank" rel="external">有意思的</a></p>
+<p><strong>79D</strong> 区间修改相关嘛。。考虑异或的 前缀和/差分 转化，区间转单点。一波分类讨论贪心后，转化为图论模型，直接状压DP。</p>
+<p><strong>81E</strong> 基环外向树DP。一般套路：先外向树DP，再在基环上 序列/区间 DP。但此题呢，可以利用基环的相邻两边至多选择一条的性质，直接两次树形DP。</p>
+<p><strong>164D</strong> 对于存在各种 互斥/.. 关系，只能染2种颜色，果断二分图。</p>
+<p><strong>101E</strong> 奥妙重重的分治，减少空间复杂度（加大时间复杂度</p>
+<p><strong>113D</strong> 对于多个线性方程组，只有右边的向量不同，放在右边一起消元。</p>
+<p><strong>115D</strong> 表达式DP，一般的想法是区间DP，可是有很多状态是无用的（就像树形DP）。考虑附加的状态是前缀左括号数量。</p>
+<p><strong>125E</strong> 限制点 $1$ 度 $=K$ 的MST。二分偏差值 $delta$ ，与 $1$ 相连的一边加上这个偏差值，然后直接MST（用两个指针就不用重复排序了）。如果出现两条特殊边与其他边的边权相同，可能永远无法到达 $K$ ，比较好的一个做法是加入一个随机的抖动值。</p>
+<p><strong>140F</strong> 最多增加 $K$ 个点使得点集对称，按照 $x$ 优先排序，那么两端的各 $K+1$ 个点中，任意一个配对方案都能对应到这两个点配对，从两端暴力扫描即可。</p>
+<p><strong>147B</strong> 期望的线性性，从另一个角度表示贡献。同时利用单调性，只有在需要的时候计算。</p>
+<p><strong>217E</strong> 倒着思考，舍弃无用的量。树状数组倍增。</p>
+<p><strong>135E</strong> 主要是找到一个神奇的性质：选出的一定是前缀/后缀。那么分类讨论，组合数算一下就好了。</p>
+<p><strong>163D</strong> 利用不等式给爆搜剪枝，这里利用了均值不等式。</p>
+<p><strong>178F</strong> 比较妙的题。LCP嘛，考虑建出<code>Tire</code>，然后直接树形背包DP。但是这样点数是 $O(n^2)$ ，于是我们可以像后缀树那样压缩点（若干个连续点只有一条出边），因为有用的就是这条边的长度，点数就是 $O(n)$ 。然后树形背包DP，复杂度 $O(n^2)$ ，复杂度 $O(n^2)$ ，复杂度 $O(n^2)$ ！</p>
 <blockquote>
-<p><strong>BZOJ1761-[Baltic2009]beetle</strong> 在一条直线上有 $n$ 个点,每个点 $m$ 升水. 一个虫子在坐标轴 $0$ 上，它每个单位时间移动一格，每个点的水每单位时间消失 $1$ 升。问虫子最多可以喝到多少水，喝水的时间忽略不计。</p>
+<p>呐，以前这种树形背包DP的数据范围都是 $300$ ，我也一直以为是 $O(n^3)$ 的 QwQ，那么来强行口胡一下证明：</p>
+<p>设 $T(n)$ 就是规模为 $n$ 的复杂度，于是 $T(n)=T(s)+T(n-s)+s(n-s)$ ，我们要证明 $T(n) \leq n ^ 2$ 。</p>
+<p>显然有 $T(1) = 1$ 。假设对于 $k \leq n-1$ ，有 $T(k) \leq k^2$ 。</p>
+<p>当 $k=n$ 时 $T(k) = T(k-s) + T(s) + s(k-s) \leq (k-s)^2 + s^2 + 2s(k-s) = k^2$。</p>
+<p>就是一个简单的数学归纳法嘛..</p>
 </blockquote>
-<p><strong>提前费用计算。</strong> 显然是提前费用计算的套路，由于不知道最终要哪些点的水，枚举喝的点的数量即可。然后就是套路区间DP啦。</p>
+<p><strong>187D</strong> 有些情况（最简单的单点修改，区间最值）下可以用 set 代替线段树，还不用 离散化/动态开点。</p>
+<p><strong>176E</strong> 有用的神结论：考虑一个树上 $k$ 个点 $v_1,v_2,…,v_k$ （DFS序递增）的导出子图，边权之和为$\large \frac {(d(v_1,v_2)+d(v_2,v_3)+…+d(v_{n-1},v_n)+d(v_n,v_1)} 2$ ，就变成了裸题。</p>
+<p><strong>200A</strong> 在网格上，覆盖了 $K$ 个点之后，任意一个点到未被覆盖的点的最近距离为 $O(\sqrt K)$ 。并查集的经典应用：滋瓷删除点，求出每个点未被删除的前驱/后继。</p>
 
       
 
@@ -264,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2018/01/24/Training-CF-Round3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +311,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/24/Algorithms-Persistent-Data-Structures/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          「学习笔记」可持久化数据结构
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/20/BZOJ-COCI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「BZOJ泛做」COCI</div>
+    <a href="/2018/01/06/BZOJ-NOI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NOI找虐记</div>
       <i class="icon-circle-right"></i>
     </a>
   

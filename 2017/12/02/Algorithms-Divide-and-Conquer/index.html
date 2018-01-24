@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」分治 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！ 一般地，一个分治的时间复杂度可以表示为： $$\large T(n) = a \times T(n/b) + f(n)$">
+  <meta name="description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」分治">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/02/Algorithms-Divide-and-Conquer/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！ 一般地，一个分治的时间复杂度可以表示为： $$\large T(n) = a \times T(n/b) + f(n)$">
-<meta property="og:updated_time" content="2017-12-27T23:55:43.656Z">
+<meta property="og:description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！">
+<meta property="og:updated_time" content="2017-12-28T02:34:04.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」分治">
-<meta name="twitter:description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！ 一般地，一个分治的时间复杂度可以表示为： $$\large T(n) = a \times T(n/b) + f(n)$">
+<meta name="twitter:description" content="嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。 前置技能分治为什么更好？按照我的理解：分治的复杂度更优，往往基于减少一些 重复 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。 分治的复杂度计算。主定理！">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -188,6 +188,7 @@
         <p>嘛，分治应该是一个比较有意思的一个东西。蒟蒻Cyani也来学一发姿势辣。。</p>
 <h3 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h3><h4 id="分治为什么更好？"><a href="#分治为什么更好？" class="headerlink" title="分治为什么更好？"></a>分治为什么更好？</h4><p>按照我的理解：分治的复杂度更优，往往基于减少一些 <strong>重复</strong> 的运算。这就需要我们去把大问题划分为若干个小问题，这些小问题的公共部分就可以利用一些技巧求解。</p>
 <h4 id="分治的复杂度计算。"><a href="#分治的复杂度计算。" class="headerlink" title="分治的复杂度计算。"></a>分治的复杂度计算。</h4><p><strong>主定理！</strong></p>
+<a id="more"></a>
 <p>一般地，一个分治的时间复杂度可以表示为：</p>
 <p>$$\large T(n) = a \times T(n/b) + f(n)$$</p>
 <p>画出递归树，或者暴力展开就会发现：</p>
@@ -408,7 +409,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -515,11 +516,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +536,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,19 +544,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>

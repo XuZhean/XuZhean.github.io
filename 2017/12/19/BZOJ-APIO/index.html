@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/19/BZOJ-APIO/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
 <meta property="og:description" content="BZOJ2303-[APIO2011]方格染色 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。  奇妙的并查集。 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $">
-<meta property="og:updated_time" content="2017-12-27T23:51:11.407Z">
+<meta property="og:updated_time" content="2018-01-06T13:51:25.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「BZOJ泛做」APIO">
 <meta name="twitter:description" content="BZOJ2303-[APIO2011]方格染色 有一个 $n \times m$ 的方格，可以黑白染色，已经有某些格子已经染色。要求全部染色后，所有 $2 \times 2$ 的区域中，恰好有奇数个黑块。问染色的方案数。  奇妙的并查集。 令 $S(i,j) = a[i][j] \oplus a[i-1][j] \oplus a[i][j-1] \oplus a[i-1][j-1]$ 考虑将 $">
@@ -199,6 +199,17 @@
 <p><strong>倍增，贪心。</strong> 如果没有字典序最小这个条件，就是一个裸的贪心。然后这就有一个倍增的经典应用。</p>
 <p>考虑首先搞掉所有包含其他线段的线段。然后倍增，$f[i][j]$ 表示第 $i$ 条线段之后，所选择 $2^j$ 条线段的最右边一条。只需要贪心预处理 $f[i][0]$ 。</p>
 <p>然后仍是贪心地考虑放入线段 $1,2,…$ ，如果放入线段之后，对答案不会产生影响，就选择这条线段。</p>
+<blockquote>
+<p><strong>BZOJ1912-[APIO2010]patrol巡逻</strong> 给定一棵有根树，可以加入 $K = 1\ or\ 2$ 条边，使得从 $1$ 出发，遍历所有的边，问需要走的最小距离。</p>
+</blockquote>
+<p><strong>DFS，贪心。</strong> 对于 $K=1$ 的情况，显然是选取直径的两端，可以减小<code>直径-1</code>次移动。</p>
+<p>考虑 $K=2$ ，假设已经增加了一条边。对于一条边，如果它之前已经被覆盖了，第二次仍然被覆盖，那么这条边就要经过 <code>2</code> 次（因为新加入的两条边一定要走，这条边要走两次才能回到原来的一侧）。然后再次求最长链即可。</p>
+<blockquote>
+<p> <strong>BZOJ1913-[APIO2010]signaling信号覆盖</strong> 给定 $n$ 个平面上的点，任意三点不共线，任意四点不共圆，问随机选择三个点构成的外接圆，能够覆盖的点数的期望值。</p>
+<p>$n \leq 1500$</p>
+</blockquote>
+<p><strong>计算几何。</strong> 注意到对答案的贡献涉及到四个点的关系。所以考虑任意四个点 $A,B,C,D$ ，分成两种情况。构成了一个凹四边形，那么对答案的贡献为 $1$ ；构成一个凸四边形，对答案的贡献为 $2$ （这个很容易通过四点共圆得到），显然这样的统计不会重复。</p>
+<p>于是就变成统计凹/凸多边形的个数。一个简单的方法就是，枚举凹多边形的凹点 $C$ ，极角排序。然后对于另一端 $D$ ，统计 $B,C$ 的对数。</p>
 
       
 
@@ -319,7 +330,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Cyani
+    		&copy; 2018 Cyani
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -426,11 +437,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,7 +457,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,19 +465,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
+                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树相关</a>
               </li>
             
             <div class="clearfix"></div>
