@@ -165,6 +165,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Training-2017.7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/02/Training-2017.7/">2017年7月NOIP集训总结</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/02/Training-2017.7/" class="archive-article-date">
+  	<time datetime="2017-07-02T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>完结，撒花~</strong> </p>
+<p>暑假终于到了，蒟蒻$Cyani$也要开始刷题啦~</p>
+<p>暑假的训练时光是宝贵的，是算法和思维快速提高的时期，在这里总结下收获。 </p>
+        
+          <a class="article-more-a" href="/2017/07/02/Training-2017.7/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集训</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/02/Training-2017.7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-AtCoder" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,6 +852,138 @@
 
 
   
+    <article id="post-Algorithms-String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/25/Algorithms-String/">「学习笔记」字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/25/Algorithms-String/" class="archive-article-date">
+  	<time datetime="2017-01-25T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>嘛，字符应该是一个比较有意思（duliu）的一个东西</p>
+<h3 id="Part1-基础"><a href="#Part1-基础" class="headerlink" title="Part1 基础"></a>Part1 基础</h3><p>#####HASH</p>
+<p>在 $seed$ 进制下取模，快速判断两个串是否相等<br>维护前缀和。能支持简单的修改，提取子串<br>双模数<code>HASH</code>，自然溢出<br>维护动态串<code>HASH</code>：线段树 or 平衡树</p>
+<h5 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h5><p>求出所有位置结尾的最长匹配长度</p>
+<h5 id="ExKMP"><a href="#ExKMP" class="headerlink" title="ExKMP"></a>ExKMP</h5><p>S的后缀与T的LCP</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//此模版下标从0开始</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exKMP</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">char</span> t[], <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>; f[<span class="number">0</span>] = m;</div><div class="line">	rep (i, <span class="number">1</span>, m<span class="number">-1</span>) &#123;</div><div class="line">		f[i] = max(<span class="number">0</span>, min(f[i-mx], mx+f[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+f[i] &lt; m &amp;&amp; t[i+f[i]] == t[f[i]]) f[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + f[i] &gt; mx + f[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">	mx = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>) &#123;</div><div class="line">		g[i] = max(<span class="number">0</span>, min(f[i-mx], mx+g[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+g[i] &lt; n &amp;&amp; s[i+g[i]] == t[g[i]]) g[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + g[i] &gt; mx + g[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="Manachar"><a href="#Manachar" class="headerlink" title="Manachar"></a>Manachar</h5><p>与<code>ExKMP</code>类似，保存扩展的最右边节点。范围内利用已有信息，否则暴力扩展。<br>为了处理长度为偶数的回文串，在所有中间字符插入<code>#</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200009</span>;</div><div class="line"><span class="keyword">char</span> s[maxn], str[maxn];</div><div class="line"><span class="keyword">int</span> r[maxn], n;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">manachar</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>, p = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123; </div><div class="line">		str[i&lt;&lt;<span class="number">1</span>] = s[i]; str[i&lt;&lt;<span class="number">1</span>|<span class="number">1</span>] = <span class="string">'#'</span>;</div><div class="line">	&#125;</div><div class="line">	str[<span class="number">0</span>] = <span class="string">'$'</span>; str[<span class="number">1</span>] = <span class="string">'#'</span>; str[(n+<span class="number">1</span>)&lt;&lt;<span class="number">1</span>] = <span class="string">'@'</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=(n&lt;&lt;<span class="number">1</span>|<span class="number">1</span>); i++) &#123;</div><div class="line">		r[i] = max(<span class="number">1</span>, min(r[<span class="number">2</span>*p-i], mx-i));</div><div class="line">		<span class="keyword">while</span> (str[i+r[i]] == str[i-r[i]]) r[i]++;</div><div class="line">		<span class="keyword">if</span> (i + r[i] &gt; mx) &#123; p = i; mx = i + r[i]; &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="最小表示法"><a href="#最小表示法" class="headerlink" title="最小表示法"></a>最小表示法</h5><p>$O(n)$ 求出字符串的最小字典序的循环同构。两个指针单调移动</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span>; j = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</div><div class="line">	k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (a[i+k&gt;=n?i+k-n:i+k] == a[j+k&gt;=n?j+k-n:j+k]) k++;</div><div class="line">	<span class="keyword">if</span> (k == n) <span class="keyword">break</span>;</div><div class="line">	<span class="keyword">if</span> (a[i+k&gt;=n?i+k-n:i+k] &lt; a[j+k&gt;=n?j+k-n:j+k]) j = max(j+k+<span class="number">1</span>, i+<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> i = max(i+k+<span class="number">1</span>, j+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">res = min(i, j);</div></pre></td></tr></table></figure>
+<h5 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h5><p>一点小优化：如果一个节点只有一个孩子，那么可以把这个节点省略。 <code>Compacted-trie</code> ，节点数量降为 $O(n) $，n为串数目。例如，<code>Codeforces 178F</code></p>
+<p>常常与前缀相关</p>
+<h5 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h5><p><code>KMP</code>的<code>Trie</code>版本。两种构造方式：</p>
+<ul>
+<li>暴力跳<code>Fail</code>，复杂度不够优</li>
+<li><code>Trie图</code> ！$p[i]$ 保存加入 $i$ 后会到达的节点，$p$ 和 $Fail$ 相互计算</li>
+</ul>
+<h5 id="Fail树"><a href="#Fail树" class="headerlink" title="Fail树"></a>Fail树</h5><p><code>AC自动机</code>中，$Fail$ 指针指向深度比它小的一个节点，构成了一棵树<br>一个点在fail上的祖先是所有能和这个后缀匹配的前缀节点<br><code>Fail树</code> 上的LCA是两个前缀的最长公共后缀，并且在前缀中出现</p>
+<h5 id="回文自动机-PAM"><a href="#回文自动机-PAM" class="headerlink" title="回文自动机 PAM"></a>回文自动机 PAM</h5><p>提取所有本质不同的回文串，可以证明这是 $O(n)$ 的（观察 <code>Manachar</code> 算法，当且仅当 <code>mx</code> 右移时增加）<br>回文自动机的每一个节点都是原串的一个回文子串</p>
+<p><code>PAM</code>的有符号边 $x$：首尾各添加一个字符 $x$ 到达的状态</p>
+<p><code>PAM</code> 的无符号边 <code>Fail</code>：这个回文串的最大真回文后缀</p>
+<p>在线构造，维护last表示当前的最大回文后缀</p>
+<p>只是理性愉悦</p>
+<h4 id="Part2-后缀相关"><a href="#Part2-后缀相关" class="headerlink" title="Part2 后缀相关"></a>Part2 后缀相关</h4><p>发现前面很多东西只能处理前缀，那么如何处理子串？</p>
+<p>每个子串都是某个后缀的前缀！那么就提取所有后缀！</p>
+<h5 id="后缀数组-SA"><a href="#后缀数组-SA" class="headerlink" title="后缀数组 SA"></a>后缀数组 SA</h5><p>定义三个数组：$SA$ ，$Rank$ ，$height$</p>
+<ul>
+<li>$SA$ ，第 $i$ 小的后缀的编号</li>
+<li>$Rank$ ，后缀 $i$ 的排名</li>
+<li>于是有 $Rank[SA[i]]=i,SA[Rank[i]]$</li>
+<li>$height[i]$ ，后缀SA[i-1]和后缀SA[i]的LCP</li>
+</ul>
+<p>求出 $Rank$ </p>
+<ul>
+<li>倍增，进行 $O(\log n)$ 次基数排序。常用的算法。</li>
+<li><code>DC3</code>，线性求，但是常数大。</li>
+</ul>
+<p>求 $height$ </p>
+<ul>
+<li>直接暴力求，复杂度为线性。</li>
+<li>原因：$height[Rank[i]] &gt;= height[Rank[i-1]] - 1$</li>
+</ul>
+<blockquote>
+<p>假设 $SA[Rank[i-1]-1] = k$ ，考虑删除后缀 $i-1$ 和 $k$ 的第一个字符，</p>
+<p>于是得到 $k+1$ 和 $i$ 的 LCP 至少是 $height[Rank[i-1]] - 1$，</p>
+<p>而 $k+1$ 的排名比 $i$ 小，所以有 $height[Rank[i]] &gt;= height[Rank[i-1]] - 1$</p>
+</blockquote>
+<p><strong>后缀数组模板</strong><br>其中 $tax$ 表示桶，$tmp[i]$ 表示第二关键字排名为 $i$ 对应的后缀标号。<br>基数排序的过程：</p>
+<ul>
+<li>统计每一个后缀排名的个数，并求出前缀和</li>
+<li>然后按照第二关键字的排名从大到小处理</li>
+<li>$tax[Rank[tmp[i]]]]$ 就是 $tmp[i]$ 的新排名</li>
+</ul>
+<p>一开始， $Rank[i]$ 就是后缀i的第一个字符，第二关键字就是它的位置<br>考虑每一次倍增子串的长度 $w$，考虑一次完整的循环</p>
+<ul>
+<li>首先是没有后半部分的串，那么它们的第二关键字为0，所以按照位置是排在最前面的那几个。</li>
+<li>之后在是利用SA来求出剩下的第二关键字，SA[i]-w是其对应的子串。</li>
+<li>再是一次基数排序。用tmp临时存储rank的值。</li>
+<li>最后重新离散化。</li>
+</ul>
+<p>按照i，升序暴力求 $height[rank[i]]$ 即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100009</span>;</div><div class="line"><span class="keyword">int</span> SA[maxn], rank[maxn], height[maxn], tax[maxn], tmp[maxn], n, m;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> s[x] == s[y] &amp;&amp; s[x+w] == s[y+w];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=m; i++) tax[i] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) tax[rank[i]]++;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;=<span class="number">1</span>; i--) SA[tax[rank[tmp[i]]]--] = tmp[i];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SuffixArray</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		rank[i] = s[i]; tmp[i] = i;</div><div class="line">	&#125;</div><div class="line">	m = <span class="number">127</span>; Sort();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> w=<span class="number">1</span>,p=<span class="number">1</span>,i; p&lt;n; w+=w,m=p) &#123;</div><div class="line">		<span class="keyword">for</span> (p=<span class="number">0</span>,i=n-w+<span class="number">1</span>; i&lt;=n; i++) tmp[++p] = i;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="keyword">if</span> (SA[i] &gt; w) tmp[++p] = SA[i] - w;</div><div class="line">		Sort(); swap(rank, tmp); rank[SA[<span class="number">1</span>]] = p = <span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) rank[SA[i]] = cmp(tmp, SA[i], SA[i<span class="number">-1</span>], w) ? p : ++p;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> j, k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; height[rank[i++]]=k)</div><div class="line">		<span class="keyword">for</span> (k=k?k<span class="number">-1</span>:k,j=SA[rank[i]<span class="number">-1</span>]; s[i+k]==s[j+k]; ++k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>常用技巧</strong></p>
+<ul>
+<li>二分答案</li>
+</ul>
+<ul>
+<li>利用 $height$ 对后缀分组</li>
+<li>重复出现的子串变为两个后缀的LCP</li>
+<li>两个后缀的LCP就是对应 $Rank$ 的 $height$ 的<code>左开右闭区间min</code></li>
+<li>多个串，合并为一个长的串，中间用特殊字符隔开</li>
+<li>本质不同的子串数目：所有子串个数减去所有 $height$</li>
+<li>不重叠：$SA$ 的最大与最小值</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/25/Algorithms-String/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
@@ -910,11 +1105,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -922,15 +1117,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,7 +1125,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,7 +1133,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">

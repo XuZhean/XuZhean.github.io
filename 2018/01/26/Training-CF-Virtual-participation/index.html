@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「BZOJ泛做」USACO月赛の金组 | Cyani&#39;s Blog</title>
+  <title>「训练记录」CodeForces | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="听说USACO比较基础鬼畜？">
-<meta name="keywords" content="泛做">
+  <meta name="description" content="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional ContestA,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。  E. 给定 $n$ 个数，求最小表示这些数的方法，其中4种表示方法：  一个数 $i$   $i1-i2$ ，表示存在所有 $[i1,i2]$ 的数  $i1\%i2$ ，$[i1,i2]$ 的偶数 $">
+<meta name="keywords" content="训练">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「BZOJ泛做」USACO月赛の金组">
-<meta property="og:url" content="https://xuzhean.github.io/2017/12/10/BZOJ-USACO/index.html">
+<meta property="og:title" content="「训练记录」CodeForces">
+<meta property="og:url" content="https://xuzhean.github.io/2018/01/26/Training-CF-Virtual-participation/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="听说USACO比较基础鬼畜？">
-<meta property="og:updated_time" content="2017-12-27T23:52:23.303Z">
+<meta property="og:description" content="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional ContestA,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。  E. 给定 $n$ 个数，求最小表示这些数的方法，其中4种表示方法：  一个数 $i$   $i1-i2$ ，表示存在所有 $[i1,i2]$ 的数  $i1\%i2$ ，$[i1,i2]$ 的偶数 $">
+<meta property="og:updated_time" content="2018-01-26T12:17:41.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「BZOJ泛做」USACO月赛の金组">
-<meta name="twitter:description" content="听说USACO比较基础鬼畜？">
+<meta name="twitter:title" content="「训练记录」CodeForces">
+<meta name="twitter:description" content="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional ContestA,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。  E. 给定 $n$ 个数，求最小表示这些数的方法，其中4种表示方法：  一个数 $i$   $i1-i2$ ，表示存在所有 $[i1,i2]$ 的数  $i1\%i2$ ，$[i1,i2]$ 的偶数 $">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,82 +165,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BZOJ-USACO" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Training-CF-Virtual-participation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      「BZOJ泛做」USACO月赛の金组
+      「训练记录」CodeForces
     </h1>
   
 
         
-        <a href="/2017/12/10/BZOJ-USACO/" class="archive-article-date">
-  	<time datetime="2017-12-10T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+        <a href="/2018/01/26/Training-CF-Virtual-participation/" class="archive-article-date">
+  	<time datetime="2018-01-26T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>听说<code>USACO</code>比较<del>基础</del>鬼畜？</p>
-<a id="more"></a>
+        <h5 id="001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest"><a href="#001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest" class="headerlink" title="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest"></a>#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest</h5><p>A,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。</p>
 <blockquote>
-<p><strong>BZOJ4757</strong> 给定长度为 $N$ 的序列 $ai$ ，对每个 $ai$ 分配 $ci$ ( $ci$ 为正整数)，且 $ci$ 之和等于 $K$ ，求出最小的 $ai/ci$ 之和。</p>
+<p><strong>E</strong>. 给定 $n$ 个数，求最小表示这些数的方法，其中4种表示方法：</p>
+<ol>
+<li><p>一个数 $i$ </p>
+</li>
+<li><p>$i1-i2$ ，表示存在所有 $[i1,i2]$ 的数</p>
+</li>
+<li>$i1\%i2$ ，$[i1,i2]$ 的偶数</li>
+<li>$i1#i2$ , $[i1,i2]$ 的奇数</li>
+</ol>
+<p>输出时用<code>,</code>分开。求长度最短的表示方法。$n \leq 2 \times 10 ^ 5$</p>
 </blockquote>
-<p><strong>奇妙的贪心。</strong> 考虑这样一个事实，对于 $ai,aj$ ，$ci$ 增大 $1$ 的同时， $cj$ 减小 $1$ 。那么偏移量一定是一大一小，而且增大的速度更快。根据贪心<del>玄学</del>的思想，我们二分偏移量，使得这个偏移量最小，那么答案一定是最优的。</p>
+<p><strong>DP，输出方案。</strong> 注意到 $i$ 只能接在 $i-1,i-2$ 后面，考虑DP。定义 $f[i][j][k]$ 表示到第 $i$ 个数，第 $i-1,i-2$ 的状态分别为 $j,k$ 时最短字符串。</p>
+<p><code>DFS</code>输出方案即可。</p>
 <blockquote>
-<p><strong>BZOJ4768</strong> 给定一个长度为 $N$ 的序列，允许翻转一个非连续子序列，求最长不下降子序列长度。所有数 $&lt;=50$ 。</p>
+<p><strong>I.</strong> 交互题。<br>给定 $n$ ，系统生成了两个数 $0 \leq x0 &lt; m \leq n（n \leq 10^{18}）$。 第 $i$ 次询问，你可以给出一个数$ai$ 。那么 $x[i]=(x[i-1]+ai)\%m$ 。系统会返回 $x[i]$ 与 $x[i-1]$ 的大小关系。求 $x0，m$ 的值。不能有超过 $2016$ 次询问。</p>
 </blockquote>
-<p><strong>奇妙的DP，附加状态。</strong> 用 $f[i][j][l][r]$ 表示 $[i,j]$ 内左边是 $&gt;=l$ ,右边是 $&lt;=r$ 的最大不下降子序列长度。然后两端的数换不换都转移一下。</p>
-<p>为什么要这样考虑呢？因为翻转相当于 $[i,j]$ 两边的交换。为了保证是递增的， $[l][r]$ 显然是需要的。</p>
+<p><strong>交互，倍增。</strong> 首先感谢r爷，赐予我神奇的题解Orz。</p>
+<p><strong>基本思路：</strong> 考虑先搞出 $m$ ，同时，我们统计累加的 $a$ 之和，就可以得到 $x0$ 了。</p>
+<p>方便处理，我们用以下一段代码来询问：如果爆出来了，就返回 $1$ 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(LL a)</span> </span>&#123;</div><div class="line">	tot2 += a; tot1 += tot2 / MOD; tot2 %= MOD;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%I64u\n"</span>, a); fflush(<span class="built_in">stdout</span>);</div><div class="line">	getchar(); <span class="keyword">char</span> ch = getchar();</div><div class="line">	<span class="keyword">return</span> ch != <span class="string">'&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>关键性质：</strong> </p>
+<ul>
+<li>$+a$ 爆出去后的值 $\in [0, a)$ 。</li>
+<li>任意时刻只要 $a \leq m$ ，就不会套圈，而影响判断。所以我们要一直做到 $a \leq m$ 。</li>
+</ul>
+<p><strong>具体步骤：</strong> </p>
+<p>首先搞出一个 $step$ ，不超过 $m$ ，但又不至于太小。考虑倍增，依次加 $2^0,2^1,2^2,…$ 。直到第一次爆出去。然后再依次倍增，直到又爆出去。两个取 $\max$ ，就会得到 $m$ 的级别 $step$。此时，$step$ 不会小于四分之一的 $m$ 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">s1 = <span class="number">1</span>; <span class="keyword">while</span> (!ask(s1)) s1 += s1;</div><div class="line">s2 = <span class="number">1</span>; <span class="keyword">while</span> (!ask(s2)) s2 += s2;</div><div class="line">step = max(s1, s2);</div></pre></td></tr></table></figure>
+<p>考虑每一次 $+step$ ，同时令 $ M+= step$ ，直到第一次爆出去。</p>
+<p>此时 $x[i] \in [0,step)$ ，<strong>可以发现 $x[i]+M-step$ 一定不会爆出去（因为 $M &lt; m$ ，所以这个值也小于 $m$ ）。</strong> </p>
+<p>之后 $step /= 2$ ，就可以逐步缩小 $x[i]$ 的范围。但是如果是 $step$ 为一步慢慢跳，显然询问次数会爆炸。所以直接可以跳 $M-step$ （上面的结论）。</p>
+<p>直到 $step = 1$ ，此时 $x[i] = 0$ 。那么重新跳一遍就可以得到 $m$ 的值。</p>
+<p>于是代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (step) &#123;</div><div class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (!ask(step)) m += step, flag = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> (flag) m -= step;</div><div class="line">	<span class="keyword">if</span> (m &gt; <span class="number">0</span>) ask(m);</div><div class="line">	step &gt;&gt;= <span class="number">1</span>; </div><div class="line">&#125;</div><div class="line"><span class="keyword">while</span> (!ask(<span class="number">1</span>)) m++; m++;</div><div class="line">x = (m - (MOD % m * tot1 + tot2) % m) % m;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"0 %I64u %I64u\n"</span>, x, m);</div></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>BZOJ4741</strong> 有 $n$ 个点，保证不存在三点共线。对于所有构成的三角形，内部的点数就是它的价值。对于每一价值，计算三角形的块数。<br>$n \leq 300$</p>
+<p><strong>J.</strong> 有 $n​$ 种果汁，每一种果汁的量为 $ai​$ 。要把这些果汁放到一些桶里面，一个桶最多能放两种果汁，每种果汁放的量是 <code>real型</code> 的。然后每一个桶里放的果汁总量要相等，问最少要几个桶。</p>
+<p>$n \leq 20,ai \leq 10^9$</p>
 </blockquote>
-<p><strong>奇妙的容斥原理，计算几何。</strong> 似乎很不可做的样子，事实上，利用容斥原理，我们就可以做到 $O(1)$ 计算一个三角形内的点数。考虑预处理：</p>
-<p>对于所有二元组 $(u,v)$ ，计算满足向量 $(u,v) \rightarrow (u,p)$ 的角不大于 $\pi$ 的点 $p$ 数论。</p>
-<p>对于所有三元组 $(u,v,w)$ ，计算满足 $p$ 在向量 $(u,v) \rightarrow (u,w)$ 之间的个数。</p>
-<p>之后配一波系数，容斥一下就好了。</p>
-<blockquote>
-<p><strong>BZOJ4586</strong> 给定一个长度为 $n$ 的初始序列 $Ai$ ，和一个目标序列 $Bi$ 。可以花费 $x$ 的代价使得一个数增加 $1$ ，或者花费 $y$ 的代价使得一个数减少 $1$ 。对于 $(i,j)$ 花费 $|i-j|z$ 的代价使得 $Ai$ 减一， $Aj$ 加一。问最小需要的代价总和。<br>$n \leq 100000$</p>
-</blockquote>
-<p><strong>奇妙的贪心，反悔操作。</strong> 考虑经典的堆来维护返回操作。维护两个堆，分别表示多余的和缺少的。对于每个树默认操作是直接增加或减少，同时把这个反悔后的新代价放入堆。</p>
-<blockquote>
-<p><strong>BZOJ4410</strong> 给定一个网格图，拆除所有行的竖向边，拆出所有列的横向边的代价都已经给定。问使得所有方格连通的最小代价。</p>
-</blockquote>
-<p><strong>堆，Kruskal。</strong> 考虑<code>Kruskal</code>算法的思想，我们要求最小生成树，就需要按照边权从小到大选择。拆出未连接的边即可。注意一个方向的所有边都拆完不一定连通。</p>
-<blockquote>
-<p><strong>BZOJ4411</strong> 给定 $n$ 个点，请你确定一条横线和一条竖线，使得平面划分成的四个区域内点最大值最小.</p>
-</blockquote>
-<p><strong>线段树上二分。</strong> 枚举直线 $x=a$ ，显然两边在线段树中可以动态插入/删除。二分 $y=b$ 的位置。注意到两端是一个下凸函数，取 <code>max</code> 之后仍然下凸。这个东西就可以线段树二分辣。</p>
-<blockquote>
-<p><strong>BZOJ4409</strong> 有一个 $N$ 个点的环，最终点 $i$ 存在 $ri$ 头牛。有 $\sum ri$头牛。可以选择最多 $k$ 个点，然后牛分配在这k个点里。之后每一头牛可以不动，也可以顺时针走 $d$ 格并呆在那里，要耗费d的能量。通过合理分配。使得消耗的总能量最小。<br>$n \leq 1000$</p>
-</blockquote>
-<p><strong>斜率优化DP。</strong> 由于存在环，显然我们可以枚举第一个选择点的位置 $i$ 。用 $f[j][k]$ 表示从 $i$ 出发，选择 $k$ 个点，到 $j$ 的最优解。然后这个东西是可以斜率优化的。</p>
-<p>同时有注意到切线是递增的，所以可以做到 $O(n^2k)$ 。然鹅这个东西是要用 $k-1$ 层去更新第 $k$ 层。所以需要把 $k$ 放在外面。</p>
-<p><del>随便一写就rk3了？？</del></p>
-<blockquote>
-<p><strong>BZOJ3939</strong> 有一个 $n \times m$ 的网格，每个格子有一个取值。从 $(1,1)$ 出发，每一次可以跳到严格右下方的格子。问存在多少中方案能够跳到 $(n,m)$ 。<br>$n, m \leq 750$</p>
-</blockquote>
-<p><strong>动态规划，动态开点线段树。</strong> 显然DP+容斥嘛。维护一个二维前缀和，减去与当前颜色相同的方案数。</p>
-<p>考虑对每个颜色开一个动态开点线段树。每一次最多增加 $O(\log n)$ 个节点。所以总共的空间是 $O(n^2 \log n)$ 的。</p>
-<blockquote>
-<p><strong>BZOJ4509</strong> 数轴上有 $n$ 个点。可以在任意一个位置上引爆，使得爆炸范围内的点再次引爆，但是引爆半径减一。问最小的初始引爆半径，使得所有点都被引爆。</p>
-</blockquote>
-<p><strong>动态规划，单调性。</strong> 注意到左右两部分是无关的，所以我们可以求出前缀和后缀所需要的最小引爆半径。</p>
-<p>用 $f[i]$ 表示 $i$ 左边都被引爆的最小半径。于是有：</p>
-<p>$f[i] = \min \{ ai - aj, f[j+1] + 1 | j &lt; i, a[i] - a[j] &gt; f[j] \}$</p>
-<p>注意到前半部分是随着 $j$ 的变大而单调递减的，而后面是单调递增的。所以我们可以求出两个接近时候的最值。复杂度 $O(n)$ 。</p>
-<blockquote>
-<p><strong>BZOJ4099</strong> 数轴上有 $n$ 个点，每个点有一个大小 $si$。从任意一个位置出发，沿着同一方向跑至少 $si$，就可以突破点 $i$，得到更大的空间。问无法逃脱的线段总长度。</p>
-</blockquote>
-<p><strong>set</strong> 考虑按照点的大小，从大到小插入。当插入一个点后，查找它的前驱和后继，如果无法突破，就打上标记。由于每个点至多被标记一次，所以复杂度是对的。</p>
-<blockquote>
-<p><strong>BZOJ3429</strong> 有一个 $n \times m$ 的01矩阵，以及他的目标状态。每一次可以修改 $b*b$ 大小的子矩阵，使得原来的矩阵到达目标状态。问最大的 $b$是多少。</p>
-</blockquote>
-<p><strong>模拟？</strong> 显然，这个 $b$ 是满足单调性的。当大的 $b$ 满足时，小的 $b$ 也满足。所以考虑暴力修改，当无法再次修改时，用更小的 $b$ 替换。</p>
 
       
 
@@ -254,7 +238,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">训练</a>
         		</li>
       		
 		</ul>
@@ -310,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/10/BZOJ-USACO/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2018/01/26/Training-CF-Virtual-participation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,18 +308,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/14/BZOJ-JSOI/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          「BZOJ泛做」JSOI
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/02/Algorithms-Divide-and-Conquer/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「学习笔记」分治</div>
+    <a href="/2018/01/24/Training-CF-Round3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「泛做」CodeForces-第三轮</div>
       <i class="icon-circle-right"></i>
     </a>
   

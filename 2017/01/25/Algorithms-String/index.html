@@ -7,19 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「BZOJ泛做」USACO月赛の金组 | Cyani&#39;s Blog</title>
+  <title>「学习笔记」字符串 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="听说USACO比较基础鬼畜？">
-<meta name="keywords" content="泛做">
+  <meta name="description" content="嘛，字符应该是一个比较有意思（duliu）的一个东西 Part1 基础#####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等维护前缀和。能支持简单的修改，提取子串双模数HASH，自然溢出维护动态串HASH：线段树 or 平衡树 KMP求出所有位置结尾的最长匹配长度 ExKMPS的后缀与T的LCP 123456789101112131415//此模版下标从0开始void exKMP">
+<meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「BZOJ泛做」USACO月赛の金组">
-<meta property="og:url" content="https://xuzhean.github.io/2017/12/10/BZOJ-USACO/index.html">
+<meta property="og:title" content="「学习笔记」字符串">
+<meta property="og:url" content="https://xuzhean.github.io/2017/01/25/Algorithms-String/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="听说USACO比较基础鬼畜？">
-<meta property="og:updated_time" content="2017-12-27T23:52:23.303Z">
+<meta property="og:description" content="嘛，字符应该是一个比较有意思（duliu）的一个东西 Part1 基础#####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等维护前缀和。能支持简单的修改，提取子串双模数HASH，自然溢出维护动态串HASH：线段树 or 平衡树 KMP求出所有位置结尾的最长匹配长度 ExKMPS的后缀与T的LCP 123456789101112131415//此模版下标从0开始void exKMP">
+<meta property="og:updated_time" content="2018-01-25T08:52:27.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「BZOJ泛做」USACO月赛の金组">
-<meta name="twitter:description" content="听说USACO比较基础鬼畜？">
+<meta name="twitter:title" content="「学习笔记」字符串">
+<meta name="twitter:description" content="嘛，字符应该是一个比较有意思（duliu）的一个东西 Part1 基础#####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等维护前缀和。能支持简单的修改，提取子串双模数HASH，自然溢出维护动态串HASH：线段树 or 平衡树 KMP求出所有位置结尾的最长匹配长度 ExKMPS的后缀与T的LCP 123456789101112131415//此模版下标从0开始void exKMP">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -165,82 +165,100 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BZOJ-USACO" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Algorithms-String" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      「BZOJ泛做」USACO月赛の金组
+      「学习笔记」字符串
     </h1>
   
 
         
-        <a href="/2017/12/10/BZOJ-USACO/" class="archive-article-date">
-  	<time datetime="2017-12-10T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+        <a href="/2017/01/25/Algorithms-String/" class="archive-article-date">
+  	<time datetime="2017-01-25T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>听说<code>USACO</code>比较<del>基础</del>鬼畜？</p>
-<a id="more"></a>
+        <p>嘛，字符应该是一个比较有意思（duliu）的一个东西</p>
+<h3 id="Part1-基础"><a href="#Part1-基础" class="headerlink" title="Part1 基础"></a>Part1 基础</h3><p>#####HASH</p>
+<p>在 $seed$ 进制下取模，快速判断两个串是否相等<br>维护前缀和。能支持简单的修改，提取子串<br>双模数<code>HASH</code>，自然溢出<br>维护动态串<code>HASH</code>：线段树 or 平衡树</p>
+<h5 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h5><p>求出所有位置结尾的最长匹配长度</p>
+<h5 id="ExKMP"><a href="#ExKMP" class="headerlink" title="ExKMP"></a>ExKMP</h5><p>S的后缀与T的LCP</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//此模版下标从0开始</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exKMP</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">char</span> t[], <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>; f[<span class="number">0</span>] = m;</div><div class="line">	rep (i, <span class="number">1</span>, m<span class="number">-1</span>) &#123;</div><div class="line">		f[i] = max(<span class="number">0</span>, min(f[i-mx], mx+f[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+f[i] &lt; m &amp;&amp; t[i+f[i]] == t[f[i]]) f[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + f[i] &gt; mx + f[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">	mx = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>) &#123;</div><div class="line">		g[i] = max(<span class="number">0</span>, min(f[i-mx], mx+g[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+g[i] &lt; n &amp;&amp; s[i+g[i]] == t[g[i]]) g[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + g[i] &gt; mx + g[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="Manachar"><a href="#Manachar" class="headerlink" title="Manachar"></a>Manachar</h5><p>与<code>ExKMP</code>类似，保存扩展的最右边节点。范围内利用已有信息，否则暴力扩展。<br>为了处理长度为偶数的回文串，在所有中间字符插入<code>#</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200009</span>;</div><div class="line"><span class="keyword">char</span> s[maxn], str[maxn];</div><div class="line"><span class="keyword">int</span> r[maxn], n;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">manachar</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>, p = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123; </div><div class="line">		str[i&lt;&lt;<span class="number">1</span>] = s[i]; str[i&lt;&lt;<span class="number">1</span>|<span class="number">1</span>] = <span class="string">'#'</span>;</div><div class="line">	&#125;</div><div class="line">	str[<span class="number">0</span>] = <span class="string">'$'</span>; str[<span class="number">1</span>] = <span class="string">'#'</span>; str[(n+<span class="number">1</span>)&lt;&lt;<span class="number">1</span>] = <span class="string">'@'</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=(n&lt;&lt;<span class="number">1</span>|<span class="number">1</span>); i++) &#123;</div><div class="line">		r[i] = max(<span class="number">1</span>, min(r[<span class="number">2</span>*p-i], mx-i));</div><div class="line">		<span class="keyword">while</span> (str[i+r[i]] == str[i-r[i]]) r[i]++;</div><div class="line">		<span class="keyword">if</span> (i + r[i] &gt; mx) &#123; p = i; mx = i + r[i]; &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="最小表示法"><a href="#最小表示法" class="headerlink" title="最小表示法"></a>最小表示法</h5><p>$O(n)$ 求出字符串的最小字典序的循环同构。两个指针单调移动</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span>; j = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</div><div class="line">	k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (a[i+k&gt;=n?i+k-n:i+k] == a[j+k&gt;=n?j+k-n:j+k]) k++;</div><div class="line">	<span class="keyword">if</span> (k == n) <span class="keyword">break</span>;</div><div class="line">	<span class="keyword">if</span> (a[i+k&gt;=n?i+k-n:i+k] &lt; a[j+k&gt;=n?j+k-n:j+k]) j = max(j+k+<span class="number">1</span>, i+<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> i = max(i+k+<span class="number">1</span>, j+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">res = min(i, j);</div></pre></td></tr></table></figure>
+<h5 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h5><p>一点小优化：如果一个节点只有一个孩子，那么可以把这个节点省略。 <code>Compacted-trie</code> ，节点数量降为 $O(n) $，n为串数目。例如，<code>Codeforces 178F</code></p>
+<p>常常与前缀相关</p>
+<h5 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h5><p><code>KMP</code>的<code>Trie</code>版本。两种构造方式：</p>
+<ul>
+<li>暴力跳<code>Fail</code>，复杂度不够优</li>
+<li><code>Trie图</code> ！$p[i]$ 保存加入 $i$ 后会到达的节点，$p$ 和 $Fail$ 相互计算</li>
+</ul>
+<h5 id="Fail树"><a href="#Fail树" class="headerlink" title="Fail树"></a>Fail树</h5><p><code>AC自动机</code>中，$Fail$ 指针指向深度比它小的一个节点，构成了一棵树<br>一个点在fail上的祖先是所有能和这个后缀匹配的前缀节点<br><code>Fail树</code> 上的LCA是两个前缀的最长公共后缀，并且在前缀中出现</p>
+<h5 id="回文自动机-PAM"><a href="#回文自动机-PAM" class="headerlink" title="回文自动机 PAM"></a>回文自动机 PAM</h5><p>提取所有本质不同的回文串，可以证明这是 $O(n)$ 的（观察 <code>Manachar</code> 算法，当且仅当 <code>mx</code> 右移时增加）<br>回文自动机的每一个节点都是原串的一个回文子串</p>
+<p><code>PAM</code>的有符号边 $x$：首尾各添加一个字符 $x$ 到达的状态</p>
+<p><code>PAM</code> 的无符号边 <code>Fail</code>：这个回文串的最大真回文后缀</p>
+<p>在线构造，维护last表示当前的最大回文后缀</p>
+<p>只是理性愉悦</p>
+<h4 id="Part2-后缀相关"><a href="#Part2-后缀相关" class="headerlink" title="Part2 后缀相关"></a>Part2 后缀相关</h4><p>发现前面很多东西只能处理前缀，那么如何处理子串？</p>
+<p>每个子串都是某个后缀的前缀！那么就提取所有后缀！</p>
+<h5 id="后缀数组-SA"><a href="#后缀数组-SA" class="headerlink" title="后缀数组 SA"></a>后缀数组 SA</h5><p>定义三个数组：$SA$ ，$Rank$ ，$height$</p>
+<ul>
+<li>$SA$ ，第 $i$ 小的后缀的编号</li>
+<li>$Rank$ ，后缀 $i$ 的排名</li>
+<li>于是有 $Rank[SA[i]]=i,SA[Rank[i]]$</li>
+<li>$height[i]$ ，后缀SA[i-1]和后缀SA[i]的LCP</li>
+</ul>
+<p>求出 $Rank$ </p>
+<ul>
+<li>倍增，进行 $O(\log n)$ 次基数排序。常用的算法。</li>
+<li><code>DC3</code>，线性求，但是常数大。</li>
+</ul>
+<p>求 $height$ </p>
+<ul>
+<li>直接暴力求，复杂度为线性。</li>
+<li>原因：$height[Rank[i]] &gt;= height[Rank[i-1]] - 1$</li>
+</ul>
 <blockquote>
-<p><strong>BZOJ4757</strong> 给定长度为 $N$ 的序列 $ai$ ，对每个 $ai$ 分配 $ci$ ( $ci$ 为正整数)，且 $ci$ 之和等于 $K$ ，求出最小的 $ai/ci$ 之和。</p>
+<p>假设 $SA[Rank[i-1]-1] = k$ ，考虑删除后缀 $i-1$ 和 $k$ 的第一个字符，</p>
+<p>于是得到 $k+1$ 和 $i$ 的 LCP 至少是 $height[Rank[i-1]] - 1$，</p>
+<p>而 $k+1$ 的排名比 $i$ 小，所以有 $height[Rank[i]] &gt;= height[Rank[i-1]] - 1$</p>
 </blockquote>
-<p><strong>奇妙的贪心。</strong> 考虑这样一个事实，对于 $ai,aj$ ，$ci$ 增大 $1$ 的同时， $cj$ 减小 $1$ 。那么偏移量一定是一大一小，而且增大的速度更快。根据贪心<del>玄学</del>的思想，我们二分偏移量，使得这个偏移量最小，那么答案一定是最优的。</p>
-<blockquote>
-<p><strong>BZOJ4768</strong> 给定一个长度为 $N$ 的序列，允许翻转一个非连续子序列，求最长不下降子序列长度。所有数 $&lt;=50$ 。</p>
-</blockquote>
-<p><strong>奇妙的DP，附加状态。</strong> 用 $f[i][j][l][r]$ 表示 $[i,j]$ 内左边是 $&gt;=l$ ,右边是 $&lt;=r$ 的最大不下降子序列长度。然后两端的数换不换都转移一下。</p>
-<p>为什么要这样考虑呢？因为翻转相当于 $[i,j]$ 两边的交换。为了保证是递增的， $[l][r]$ 显然是需要的。</p>
-<blockquote>
-<p><strong>BZOJ4741</strong> 有 $n$ 个点，保证不存在三点共线。对于所有构成的三角形，内部的点数就是它的价值。对于每一价值，计算三角形的块数。<br>$n \leq 300$</p>
-</blockquote>
-<p><strong>奇妙的容斥原理，计算几何。</strong> 似乎很不可做的样子，事实上，利用容斥原理，我们就可以做到 $O(1)$ 计算一个三角形内的点数。考虑预处理：</p>
-<p>对于所有二元组 $(u,v)$ ，计算满足向量 $(u,v) \rightarrow (u,p)$ 的角不大于 $\pi$ 的点 $p$ 数论。</p>
-<p>对于所有三元组 $(u,v,w)$ ，计算满足 $p$ 在向量 $(u,v) \rightarrow (u,w)$ 之间的个数。</p>
-<p>之后配一波系数，容斥一下就好了。</p>
-<blockquote>
-<p><strong>BZOJ4586</strong> 给定一个长度为 $n$ 的初始序列 $Ai$ ，和一个目标序列 $Bi$ 。可以花费 $x$ 的代价使得一个数增加 $1$ ，或者花费 $y$ 的代价使得一个数减少 $1$ 。对于 $(i,j)$ 花费 $|i-j|z$ 的代价使得 $Ai$ 减一， $Aj$ 加一。问最小需要的代价总和。<br>$n \leq 100000$</p>
-</blockquote>
-<p><strong>奇妙的贪心，反悔操作。</strong> 考虑经典的堆来维护返回操作。维护两个堆，分别表示多余的和缺少的。对于每个树默认操作是直接增加或减少，同时把这个反悔后的新代价放入堆。</p>
-<blockquote>
-<p><strong>BZOJ4410</strong> 给定一个网格图，拆除所有行的竖向边，拆出所有列的横向边的代价都已经给定。问使得所有方格连通的最小代价。</p>
-</blockquote>
-<p><strong>堆，Kruskal。</strong> 考虑<code>Kruskal</code>算法的思想，我们要求最小生成树，就需要按照边权从小到大选择。拆出未连接的边即可。注意一个方向的所有边都拆完不一定连通。</p>
-<blockquote>
-<p><strong>BZOJ4411</strong> 给定 $n$ 个点，请你确定一条横线和一条竖线，使得平面划分成的四个区域内点最大值最小.</p>
-</blockquote>
-<p><strong>线段树上二分。</strong> 枚举直线 $x=a$ ，显然两边在线段树中可以动态插入/删除。二分 $y=b$ 的位置。注意到两端是一个下凸函数，取 <code>max</code> 之后仍然下凸。这个东西就可以线段树二分辣。</p>
-<blockquote>
-<p><strong>BZOJ4409</strong> 有一个 $N$ 个点的环，最终点 $i$ 存在 $ri$ 头牛。有 $\sum ri$头牛。可以选择最多 $k$ 个点，然后牛分配在这k个点里。之后每一头牛可以不动，也可以顺时针走 $d$ 格并呆在那里，要耗费d的能量。通过合理分配。使得消耗的总能量最小。<br>$n \leq 1000$</p>
-</blockquote>
-<p><strong>斜率优化DP。</strong> 由于存在环，显然我们可以枚举第一个选择点的位置 $i$ 。用 $f[j][k]$ 表示从 $i$ 出发，选择 $k$ 个点，到 $j$ 的最优解。然后这个东西是可以斜率优化的。</p>
-<p>同时有注意到切线是递增的，所以可以做到 $O(n^2k)$ 。然鹅这个东西是要用 $k-1$ 层去更新第 $k$ 层。所以需要把 $k$ 放在外面。</p>
-<p><del>随便一写就rk3了？？</del></p>
-<blockquote>
-<p><strong>BZOJ3939</strong> 有一个 $n \times m$ 的网格，每个格子有一个取值。从 $(1,1)$ 出发，每一次可以跳到严格右下方的格子。问存在多少中方案能够跳到 $(n,m)$ 。<br>$n, m \leq 750$</p>
-</blockquote>
-<p><strong>动态规划，动态开点线段树。</strong> 显然DP+容斥嘛。维护一个二维前缀和，减去与当前颜色相同的方案数。</p>
-<p>考虑对每个颜色开一个动态开点线段树。每一次最多增加 $O(\log n)$ 个节点。所以总共的空间是 $O(n^2 \log n)$ 的。</p>
-<blockquote>
-<p><strong>BZOJ4509</strong> 数轴上有 $n$ 个点。可以在任意一个位置上引爆，使得爆炸范围内的点再次引爆，但是引爆半径减一。问最小的初始引爆半径，使得所有点都被引爆。</p>
-</blockquote>
-<p><strong>动态规划，单调性。</strong> 注意到左右两部分是无关的，所以我们可以求出前缀和后缀所需要的最小引爆半径。</p>
-<p>用 $f[i]$ 表示 $i$ 左边都被引爆的最小半径。于是有：</p>
-<p>$f[i] = \min \{ ai - aj, f[j+1] + 1 | j &lt; i, a[i] - a[j] &gt; f[j] \}$</p>
-<p>注意到前半部分是随着 $j$ 的变大而单调递减的，而后面是单调递增的。所以我们可以求出两个接近时候的最值。复杂度 $O(n)$ 。</p>
-<blockquote>
-<p><strong>BZOJ4099</strong> 数轴上有 $n$ 个点，每个点有一个大小 $si$。从任意一个位置出发，沿着同一方向跑至少 $si$，就可以突破点 $i$，得到更大的空间。问无法逃脱的线段总长度。</p>
-</blockquote>
-<p><strong>set</strong> 考虑按照点的大小，从大到小插入。当插入一个点后，查找它的前驱和后继，如果无法突破，就打上标记。由于每个点至多被标记一次，所以复杂度是对的。</p>
-<blockquote>
-<p><strong>BZOJ3429</strong> 有一个 $n \times m$ 的01矩阵，以及他的目标状态。每一次可以修改 $b*b$ 大小的子矩阵，使得原来的矩阵到达目标状态。问最大的 $b$是多少。</p>
-</blockquote>
-<p><strong>模拟？</strong> 显然，这个 $b$ 是满足单调性的。当大的 $b$ 满足时，小的 $b$ 也满足。所以考虑暴力修改，当无法再次修改时，用更小的 $b$ 替换。</p>
+<p><strong>后缀数组模板</strong><br>其中 $tax$ 表示桶，$tmp[i]$ 表示第二关键字排名为 $i$ 对应的后缀标号。<br>基数排序的过程：</p>
+<ul>
+<li>统计每一个后缀排名的个数，并求出前缀和</li>
+<li>然后按照第二关键字的排名从大到小处理</li>
+<li>$tax[Rank[tmp[i]]]]$ 就是 $tmp[i]$ 的新排名</li>
+</ul>
+<p>一开始， $Rank[i]$ 就是后缀i的第一个字符，第二关键字就是它的位置<br>考虑每一次倍增子串的长度 $w$，考虑一次完整的循环</p>
+<ul>
+<li>首先是没有后半部分的串，那么它们的第二关键字为0，所以按照位置是排在最前面的那几个。</li>
+<li>之后在是利用SA来求出剩下的第二关键字，SA[i]-w是其对应的子串。</li>
+<li>再是一次基数排序。用tmp临时存储rank的值。</li>
+<li>最后重新离散化。</li>
+</ul>
+<p>按照i，升序暴力求 $height[rank[i]]$ 即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100009</span>;</div><div class="line"><span class="keyword">int</span> SA[maxn], rank[maxn], height[maxn], tax[maxn], tmp[maxn], n, m;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> s[x] == s[y] &amp;&amp; s[x+w] == s[y+w];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=m; i++) tax[i] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) tax[rank[i]]++;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;=<span class="number">1</span>; i--) SA[tax[rank[tmp[i]]]--] = tmp[i];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SuffixArray</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		rank[i] = s[i]; tmp[i] = i;</div><div class="line">	&#125;</div><div class="line">	m = <span class="number">127</span>; Sort();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> w=<span class="number">1</span>,p=<span class="number">1</span>,i; p&lt;n; w+=w,m=p) &#123;</div><div class="line">		<span class="keyword">for</span> (p=<span class="number">0</span>,i=n-w+<span class="number">1</span>; i&lt;=n; i++) tmp[++p] = i;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="keyword">if</span> (SA[i] &gt; w) tmp[++p] = SA[i] - w;</div><div class="line">		Sort(); swap(rank, tmp); rank[SA[<span class="number">1</span>]] = p = <span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) rank[SA[i]] = cmp(tmp, SA[i], SA[i<span class="number">-1</span>], w) ? p : ++p;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> j, k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; height[rank[i++]]=k)</div><div class="line">		<span class="keyword">for</span> (k=k?k<span class="number">-1</span>:k,j=SA[rank[i]<span class="number">-1</span>]; s[i+k]==s[j+k]; ++k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>常用技巧</strong></p>
+<ul>
+<li>二分答案</li>
+</ul>
+<ul>
+<li>利用 $height$ 对后缀分组</li>
+<li>重复出现的子串变为两个后缀的LCP</li>
+<li>两个后缀的LCP就是对应 $Rank$ 的 $height$ 的<code>左开右闭区间min</code></li>
+<li>多个串，合并为一个长的串，中间用特殊字符隔开</li>
+<li>本质不同的子串数目：所有子串个数减去所有 $height$</li>
+<li>不重叠：$SA$ 的最大与最小值</li>
+</ul>
 
       
 
@@ -254,7 +272,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -310,7 +328,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/10/BZOJ-USACO/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/01/25/Algorithms-String/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,20 +342,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/14/BZOJ-JSOI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/01/Hello-World!/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          「BZOJ泛做」JSOI
+          Hello World!
         
       </div>
     </a>
   
-  
-    <a href="/2017/12/02/Algorithms-Divide-and-Conquer/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">「学习笔记」分治</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

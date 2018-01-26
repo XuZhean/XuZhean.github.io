@@ -165,6 +165,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Training-CF-Virtual-participation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/26/Training-CF-Virtual-participation/">「训练记录」CodeForces</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/26/Training-CF-Virtual-participation/" class="archive-article-date">
+  	<time datetime="2018-01-26T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest"><a href="#001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest" class="headerlink" title="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest"></a>#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest</h5><p>A,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。</p>
+<blockquote>
+<p><strong>E</strong>. 给定 $n$ 个数，求最小表示这些数的方法，其中4种表示方法：</p>
+<ol>
+<li><p>一个数 $i$ </p>
+</li>
+<li><p>$i1-i2$ ，表示存在所有 $[i1,i2]$ 的数</p>
+</li>
+<li>$i1\%i2$ ，$[i1,i2]$ 的偶数</li>
+<li>$i1#i2$ , $[i1,i2]$ 的奇数</li>
+</ol>
+<p>输出时用<code>,</code>分开。求长度最短的表示方法。$n \leq 2 \times 10 ^ 5$</p>
+</blockquote>
+<p><strong>DP，输出方案。</strong> 注意到 $i$ 只能接在 $i-1,i-2$ 后面，考虑DP。定义 $f[i][j][k]$ 表示到第 $i$ 个数，第 $i-1,i-2$ 的状态分别为 $j,k$ 时最短字符串。</p>
+<p><code>DFS</code>输出方案即可。</p>
+<blockquote>
+<p><strong>I.</strong> 交互题。<br>给定 $n$ ，系统生成了两个数 $0 \leq x0 &lt; m \leq n（n \leq 10^{18}）$。 第 $i$ 次询问，你可以给出一个数$ai$ 。那么 $x[i]=(x[i-1]+ai)\%m$ 。系统会返回 $x[i]$ 与 $x[i-1]$ 的大小关系。求 $x0，m$ 的值。不能有超过 $2016$ 次询问。</p>
+</blockquote>
+<p><strong>交互，倍增。</strong> 首先感谢r爷，赐予我神奇的题解Orz。</p>
+<p><strong>基本思路：</strong> 考虑先搞出 $m$ ，同时，我们统计累加的 $a$ 之和，就可以得到 $x0$ 了。</p>
+<p>方便处理，我们用以下一段代码来询问：如果爆出来了，就返回 $1$ 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(LL a)</span> </span>&#123;</div><div class="line">	tot2 += a; tot1 += tot2 / MOD; tot2 %= MOD;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%I64u\n"</span>, a); fflush(<span class="built_in">stdout</span>);</div><div class="line">	getchar(); <span class="keyword">char</span> ch = getchar();</div><div class="line">	<span class="keyword">return</span> ch != <span class="string">'&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>关键性质：</strong> </p>
+<ul>
+<li>$+a$ 爆出去后的值 $\in [0, a)$ 。</li>
+<li>任意时刻只要 $a \leq m$ ，就不会套圈，而影响判断。所以我们要一直做到 $a \leq m$ 。</li>
+</ul>
+<p><strong>具体步骤：</strong> </p>
+<p>首先搞出一个 $step$ ，不超过 $m$ ，但又不至于太小。考虑倍增，依次加 $2^0,2^1,2^2,…$ 。直到第一次爆出去。然后再依次倍增，直到又爆出去。两个取 $\max$ ，就会得到 $m$ 的级别 $step$。此时，$step$ 不会小于四分之一的 $m$ 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">s1 = <span class="number">1</span>; <span class="keyword">while</span> (!ask(s1)) s1 += s1;</div><div class="line">s2 = <span class="number">1</span>; <span class="keyword">while</span> (!ask(s2)) s2 += s2;</div><div class="line">step = max(s1, s2);</div></pre></td></tr></table></figure>
+<p>考虑每一次 $+step$ ，同时令 $ M+= step$ ，直到第一次爆出去。</p>
+<p>此时 $x[i] \in [0,step)$ ，<strong>可以发现 $x[i]+M-step$ 一定不会爆出去（因为 $M &lt; m$ ，所以这个值也小于 $m$ ）。</strong> </p>
+<p>之后 $step /= 2$ ，就可以逐步缩小 $x[i]$ 的范围。但是如果是 $step$ 为一步慢慢跳，显然询问次数会爆炸。所以直接可以跳 $M-step$ （上面的结论）。</p>
+<p>直到 $step = 1$ ，此时 $x[i] = 0$ 。那么重新跳一遍就可以得到 $m$ 的值。</p>
+<p>于是代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (step) &#123;</div><div class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (!ask(step)) m += step, flag = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> (flag) m -= step;</div><div class="line">	<span class="keyword">if</span> (m &gt; <span class="number">0</span>) ask(m);</div><div class="line">	step &gt;&gt;= <span class="number">1</span>; </div><div class="line">&#125;</div><div class="line"><span class="keyword">while</span> (!ask(<span class="number">1</span>)) m++; m++;</div><div class="line">x = (m - (MOD % m * tot1 + tot2) % m) % m;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"0 %I64u %I64u\n"</span>, x, m);</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>J.</strong> 有 $n​$ 种果汁，每一种果汁的量为 $ai​$ 。要把这些果汁放到一些桶里面，一个桶最多能放两种果汁，每种果汁放的量是 <code>real型</code> 的。然后每一个桶里放的果汁总量要相等，问最少要几个桶。</p>
+<p>$n \leq 20,ai \leq 10^9$</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">训练</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/26/Training-CF-Virtual-participation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Training-CF-Round3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/24/Training-CF-Round3/">「泛做」CodeForces-第二轮</a>
+      <a class="article-title" href="/2018/01/24/Training-CF-Round3/">「泛做」CodeForces-第三轮</a>
     </h1>
   
 
@@ -228,6 +326,7 @@
 <p><strong>187D</strong> 有些情况（最简单的单点修改，区间最值）下可以用 set 代替线段树，还不用 离散化/动态开点。</p>
 <p><strong>176E</strong> 有用的神结论：考虑一个树上 $k$ 个点 $v_1,v_2,…,v_k$ （DFS序递增）的导出子图，边权之和为$\large \frac {(d(v_1,v_2)+d(v_2,v_3)+…+d(v_{n-1},v_n)+d(v_n,v_1)} 2$ ，就变成了裸题。</p>
 <p><strong>200A</strong> 在网格上，覆盖了 $K$ 个点之后，任意一个点到未被覆盖的点的最近距离为 $O(\sqrt K)$ 。并查集的经典应用：滋瓷删除点，求出每个点未被删除的前驱/后继。</p>
+<p><strong>207A</strong> 已经有序的序列可以通过归并排序合并，为这道题的构造提供了方向。</p>
 
       
 
@@ -393,69 +492,6 @@
 
 
   
-    <article id="post-BZOJ-Baltic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/20/BZOJ-Baltic/">「BZOJ泛做」Baltic</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/20/BZOJ-Baltic/" class="archive-article-date">
-  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/12/20/BZOJ-Baltic/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/20/BZOJ-Baltic/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-BZOJ-COCI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -519,29 +555,31 @@
 
 
   
-    <article id="post-BZOJ-Other" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-BZOJ-Baltic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/BZOJ-Other/">「BZOJ泛做」杂</a>
+      <a class="article-title" href="/2017/12/20/BZOJ-Baltic/">「BZOJ泛做」Baltic</a>
     </h1>
   
 
         
-        <a href="/2017/12/19/BZOJ-Other/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2017/12/20/BZOJ-Baltic/" class="archive-article-date">
+  	<time datetime="2017-12-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>都是些没有出处的 <del>毒瘤</del> 题。</p>
+        <blockquote>
+<p><strong>BZOJ1356-[Baltic2009]Rectangle</strong> 给出 $n$ 个点，要你从这些点中找出四个点来组成一个矩形，面积最大。注意可以不与坐标轴平行。</p>
+</blockquote>
         
-          <a class="article-more-a" href="/2017/12/19/BZOJ-Other/#more">more >></a>
+          <a class="article-more-a" href="/2017/12/20/BZOJ-Baltic/#more">more >></a>
         
       
 
@@ -565,7 +603,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/BZOJ-Other/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/20/BZOJ-Baltic/">展开全文 >></a>
         </p>
       
 
@@ -630,82 +668,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/12/19/BZOJ-APIO/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-BZOJ-SCOI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/BZOJ-SCOI/">「BZOJ泛做」SCOI</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/BZOJ-SCOI/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>BZOJ1078-[SCOI2008]斜堆</strong> 给定一棵斜堆，要求还原插入序列。保证是一个置换。</p>
-</blockquote>
-<p><strong>斜堆的性质。</strong> <a href="http://www.cppblog.com/MatoNo1/archive/2013/03/03/192131.html" target="_blank" rel="external">题解</a> 似乎还要再想想。</p>
-<blockquote>
-<p><strong>BZOJ2333-[SCOI2011]棘手的操作</strong> 有 $n$ 个节点，每个点有一个权值，要求支持以下操作：</p>
-<ul>
-<li><code>U x y</code> 加一条边，连接第 $x$个节点和第 $y$ 个节点</li>
-<li><code>A1 x v</code> 将第 $x$ 个节点的权值增加 $v$</li>
-<li><code>A2 x v</code> 将第 $x$ 个节点所在的连通块的所有节点的权值都增加 $v$</li>
-<li><code>A3 v</code> 将所有节点的权值都增加 $v$</li>
-<li><code>F1 x</code> 输出第 $x$ 个节点当前的权值</li>
-<li><code>F2 x</code> 输出第 $x$ 个节点所在的连通块中，权值最大的节点的权值</li>
-<li><code>F3</code> 输出所有节点中，权值最大的节点的权值</li>
-</ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/12/19/BZOJ-SCOI/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/BZOJ-SCOI/">展开全文 >></a>
         </p>
       
 
@@ -846,6 +808,67 @@
 
 
   
+    <article id="post-BZOJ-Other" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/BZOJ-Other/">「BZOJ泛做」杂</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/19/BZOJ-Other/" class="archive-article-date">
+  	<time datetime="2017-12-19T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>都是些没有出处的 <del>毒瘤</del> 题。</p>
+        
+          <a class="article-more-a" href="/2017/12/19/BZOJ-Other/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">泛做</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/19/BZOJ-Other/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -967,11 +990,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛做</a>
+                <a href="javascript:void(0)" class="js-tag color3">比赛</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -979,15 +1002,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集训</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -995,7 +1010,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+                <a href="javascript:void(0)" class="js-tag color3">集训</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1003,7 +1018,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">训练</a>
               </li>
              
               <li class="article-tag-list-item">
