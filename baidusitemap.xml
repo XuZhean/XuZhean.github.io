@@ -4,14 +4,31 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2018/01/26/Training-CF-Virtual-participation/</loc>
-    <lastmod>2018-01-26T12:17:41.332Z</lastmod>
+    <loc>https://xuzhean.github.io/2018/01/26/Training-CF/</loc>
+    <lastmod>2018-01-30T01:58:20.993Z</lastmod>
     <data>
         <display>
-        <title>「训练记录」CodeForces</title>
+        <title>「训练记录」奇怪的东西</title>
         <pubTime>2018-01-26T04:00:00.000Z</pubTime>
         
         <tag>训练</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/07/01/AtCoder/</loc>
+    <lastmod>2018-01-30T00:06:06.054Z</lastmod>
+    <data>
+        <display>
+        <title>「AtCoder」比赛记录&题解</title>
+        <pubTime>2017-07-01T14:00:00.000Z</pubTime>
+        
+        <tag>比赛</tag>
          
          
            
@@ -555,23 +572,6 @@
         <pubTime>2017-10-27T12:00:00.000Z</pubTime>
         
         <tag>复习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/01/AtCoder/</loc>
-    <lastmod>2017-12-01T06:58:01.061Z</lastmod>
-    <data>
-        <display>
-        <title>「AtCoder」比赛记录&题解</title>
-        <pubTime>2017-07-01T14:00:00.000Z</pubTime>
-        
-        <tag>比赛</tag>
          
          
            
