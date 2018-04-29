@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>https://xuzhean.github.io/2018/01/01/Note-Introduction-to-Algebra-Volume-I/</loc>
+    <lastmod>2018-04-29T09:31:53.553Z</lastmod>
+    <data>
+        <display>
+        <title>《代数学引论》 第一卷</title>
+        <pubTime>2017-12-31T16:01:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Calculous/</loc>
-    <lastmod>2018-04-29T09:03:09.824Z</lastmod>
+    <lastmod>2018-04-29T09:12:23.338Z</lastmod>
     <data>
         <display>
         <title>「切题记录」微积分基础</title>
@@ -22,11 +39,28 @@
     
   <url>
     <loc>https://xuzhean.github.io/2017/12/31/Algorithms-SegmentTree/</loc>
-    <lastmod>2018-04-29T09:01:01.641Z</lastmod>
+    <lastmod>2018-04-29T09:11:57.090Z</lastmod>
     <data>
         <display>
         <title>「学习笔记」线段树进阶</title>
         <pubTime>2017-12-31T15:59:53.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-String/</loc>
+    <lastmod>2018-04-29T09:11:48.165Z</lastmod>
+    <data>
+        <display>
+        <title>「学习笔记」字符串の黑魔法</title>
+        <pubTime>2017-12-31T15:59:58.000Z</pubTime>
         
         <tag>笔记</tag>
          
@@ -93,23 +127,6 @@
         <display>
         <title>「学习笔记」线性分治</title>
         <pubTime>2017-12-31T15:59:57.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-String/</loc>
-    <lastmod>2018-04-29T08:56:46.548Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」字符串の黑魔法</title>
-        <pubTime>2017-12-31T15:59:58.000Z</pubTime>
         
         <tag>笔记</tag>
          

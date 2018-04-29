@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」线段树进阶 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线段树的高(chang)级(jian)应用review分治结构 懒标记  可以快速合并 可以快速更新区间信息  不满足懒标记性质的一些操作  基于均摊复杂度   线段树优美的分治结构 从一道题引入  有一个序列，每次在最后加上一个元素，询问区间Max 序列最后长度 $\leq 100000$ $Q \leq 10^7$  预处理每个区间的前后缀max 对于询问区间 $[l,r]$ 找到 $[l,r">
+  <meta name="description" content="线段树的高(chang)级(jian)应用">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」线段树进阶">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-SegmentTree/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="线段树的高(chang)级(jian)应用review分治结构 懒标记  可以快速合并 可以快速更新区间信息  不满足懒标记性质的一些操作  基于均摊复杂度   线段树优美的分治结构 从一道题引入  有一个序列，每次在最后加上一个元素，询问区间Max 序列最后长度 $\leq 100000$ $Q \leq 10^7$  预处理每个区间的前后缀max 对于询问区间 $[l,r]$ 找到 $[l,r">
+<meta property="og:description" content="线段树的高(chang)级(jian)应用">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-SegmentTree/1.jpg">
-<meta property="og:updated_time" content="2018-04-29T09:01:01.641Z">
+<meta property="og:updated_time" content="2018-04-29T09:11:57.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」线段树进阶">
-<meta name="twitter:description" content="线段树的高(chang)级(jian)应用review分治结构 懒标记  可以快速合并 可以快速更新区间信息  不满足懒标记性质的一些操作  基于均摊复杂度   线段树优美的分治结构 从一道题引入  有一个序列，每次在最后加上一个元素，询问区间Max 序列最后长度 $\leq 100000$ $Q \leq 10^7$  预处理每个区间的前后缀max 对于询问区间 $[l,r]$ 找到 $[l,r">
+<meta name="twitter:description" content="线段树的高(chang)级(jian)应用">
 <meta name="twitter:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-SegmentTree/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
@@ -187,7 +187,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="线段树的高-chang-级-jian-应用"><a href="#线段树的高-chang-级-jian-应用" class="headerlink" title="线段树的高(chang)级(jian)应用"></a>线段树的高(chang)级(jian)应用</h1><h2 id="review"><a href="#review" class="headerlink" title="review"></a>review</h2><p>分治结构</p>
+        <h1 id="线段树的高-chang-级-jian-应用"><a href="#线段树的高-chang-级-jian-应用" class="headerlink" title="线段树的高(chang)级(jian)应用"></a>线段树的高(chang)级(jian)应用</h1><a id="more"></a>
+<h2 id="review"><a href="#review" class="headerlink" title="review"></a>review</h2><p>分治结构</p>
 <p>懒标记</p>
 <ul>
 <li>可以快速合并</li>

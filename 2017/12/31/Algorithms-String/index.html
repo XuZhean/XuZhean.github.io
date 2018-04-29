@@ -9,13 +9,13 @@
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
   <title>「学习笔记」字符串の黑魔法 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+  <meta name="description" content="怎样AC—— 字符串の黑魔法">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」字符串の黑魔法">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+<meta property="og:description" content="怎样AC—— 字符串の黑魔法">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF30E.png">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbabd_1.png">
@@ -30,10 +30,10 @@
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbab.png">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbabd.png">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/233.png">
-<meta property="og:updated_time" content="2018-04-29T08:56:46.548Z">
+<meta property="og:updated_time" content="2018-04-29T09:11:48.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」字符串の黑魔法">
-<meta name="twitter:description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+<meta name="twitter:description" content="怎样AC—— 字符串の黑魔法">
 <meta name="twitter:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
@@ -200,7 +200,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2><p>[TOC]</p>
+        <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2><a id="more"></a>
+<p>[TOC]</p>
 <p><strong>_例题挑一些做！_</strong></p>
 <p><strong>_习题别做！_</strong></p>
 <h2 id="Part-1-基础字符串算法"><a href="#Part-1-基础字符串算法" class="headerlink" title="Part 1 基础字符串算法"></a>Part 1 基础字符串算法</h2><p>####HASH</p>

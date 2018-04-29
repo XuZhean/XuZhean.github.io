@@ -165,6 +165,474 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Note-Introduction-to-Algebra-Volume-I" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/01/Note-Introduction-to-Algebra-Volume-I/">《代数学引论》 第一卷</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/01/Note-Introduction-to-Algebra-Volume-I/" class="archive-article-date">
+  	<time datetime="2017-12-31T16:01:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="《代数学引论-基础代数》笔记"><a href="#《代数学引论-基础代数》笔记" class="headerlink" title="《代数学引论: 基础代数》笔记"></a>《代数学引论: 基础代数》笔记</h1><p>致谢：<a href="http://tieba.baidu.com/p/4962526429" target="_blank" rel="external">部分习题答案</a>  <a href="https://book.douban.com/subject/2036531/discussion/614859732/" target="_blank" rel="external">某道习题答案</a></p>
+<h2 id="Chapter-1-代数基础"><a href="#Chapter-1-代数基础" class="headerlink" title="_Chapter 1_  代数基础"></a>_Chapter 1_  代数基础</h2><h3 id="Section-1-线性方程组初步"><a href="#Section-1-线性方程组初步" class="headerlink" title="Section 1  线性方程组初步"></a>Section 1  线性方程组初步</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>可以写成矩阵形式，$ Ax = B$。齐次线性方程组定义为，$\forall\; i = 1 \cdots n, b_i  = 0$ （存在零解）</p>
+<p>若 $n=m$，称之为 <strong>方阵</strong>，它的 <strong>主对角线</strong> 即为  $\{a_{11},a_{22},a_{33},\cdots,a_{nn}\}$</p>
+<p>定义一种特殊的方阵， <strong>对角矩阵</strong>： 满足 $\forall\; i \not=j,a_{ij}=0$，记为 $\mathrm{diag}\{a_{11},a_{22},a_{33},\cdots,a_{nn}\}$。而作为特殊的对接矩阵，<strong>纯量矩阵</strong> 定义为 $\mathrm{diag}\{a_{11},a_{22},a_{33},\cdots,a_{nn}\}$，$\forall\; i = 1 \cdots n, a_{ii} = a$，记为 $\mathrm{diag}_n(a)$。<strong>单位矩阵</strong> $\mathrm{diag}_n(1)$，记为 $E_n$</p>
+<p><strong>上三角矩阵</strong> $n=m,\forall\; i &gt; j,a_{ij} = 0$，<strong>下三角矩阵</strong> $n=m,\forall\; i&lt;j,a_{ij} = 0$。方便起见，将方阵 $A$ 化为上三角矩阵后的形式记为 $\bar{A}$</p>
+<p>线性方程组的 <strong>相容性</strong> 指的是是否有解；而 <strong>确定性</strong> 指解是否唯一</p>
+<h4 id="初等变换-Rightarrow-化为阶梯形"><a href="#初等变换-Rightarrow-化为阶梯形" class="headerlink" title="初等变换 $\Rightarrow$ 化为阶梯形"></a>初等变换 $\Rightarrow$ 化为阶梯形</h4><p><strong>I型初等变换</strong> 交换两行</p>
+<p><strong>II型初等变换</strong> 其中一行加上另一行的常数倍</p>
+<p>初等变换可逆，变换后在许多意义下等价</p>
+<h4 id="阶梯形线性方程组"><a href="#阶梯形线性方程组" class="headerlink" title="阶梯形线性方程组"></a>阶梯形线性方程组</h4><p>设 $r$ 是阶梯形线性方程组的行数</p>
+<ul>
+<li>如果 $\exist\; t&gt;r,b_t \not= 0$， 方程组不相容</li>
+<li>自由变量 $\Rightarrow$ 主未知数</li>
+<li>如果 $n=r$ ，方程组即为三角形式，存在唯一解</li>
+</ul>
+<p><strong>推论：$n &gt; m$ 时，相容的方程组是不定的</strong></p>
+<h3 id="Section-2-低阶行列式"><a href="#Section-2-低阶行列式" class="headerlink" title="Section 2  低阶行列式"></a>Section 2  低阶行列式</h3><h4 id="二阶行列式"><a href="#二阶行列式" class="headerlink" title="二阶行列式"></a>二阶行列式</h4><p>$\begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a _{22} \end{pmatrix}$ 的行列式 $\begin{vmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a _{22} \end{vmatrix} = a_{11}a_{22}  - a_{21}a_{12}$</p>
+<p>可以发现，$\begin{vmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{vmatrix} x_1 = \begin{vmatrix} b_1 &amp; a_{21} \\ b_2 &amp; a_{22} \end{vmatrix}$ ，于是可以得到 $x_1,x_2$ 的行列式表达</p>
+<p>_一般地，对于 $x_i$ 只需要将第 $i$ 列替换为 $b_1,\cdots,b_n$ 即可_</p>
+<h4 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h4><p>对于三个未知数，两个齐次方程的线性方程组，令 $y_1 = - \frac{x_1} {x_3}, y_2 = -\frac{x_2} {x_3}$，可以得到关于 $y_1,y_2$ 的二元方程组，进而得到二阶行列式表达。得到特解，</p>
+<p>$$<br>x_1 = \begin{vmatrix} a_{12} &amp; a_{13} \\ a_{22} &amp; a_{23} \end{vmatrix} \quad x_2 = \begin{vmatrix} a_{12} &amp; a_{11} \\ a_{23} &amp; a_{21} \end{vmatrix} \quad x_3 = \begin{vmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{23} \end{vmatrix}<br>$$</p>
+<p>_如果 $\exist\; i\in\{1,2,3\},x_i \not = 0$，所有解都可以由特解乘以常数得到_</p>
+<p>考虑一个三元方程组，配上系数 $c_1,c_2,c_3$，可以消掉 $x_2,x_3$。最后得到关于 $x_1$ 的二阶行列式表达，$x_1$ 前的系数即为三阶行列式</p>
+<p>$$<br>\begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31}<br>$$</p>
+<h4 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h4><p>命题：三阶行列式的六项不可能都是正的</p>
+<p><strong>_proof_</strong></p>
+<p>设 $A$ 为所有 $+$ 项的乘积，$B$ 为所有 $-$ 项的乘积，必然有 $A+B=0$</p>
+<p>$A,B$ 异号或均为 $0$，必然存在负的一项</p>
+<p>_对于二阶行列式，沿着主对角线翻转，值取为相反数；而对于三阶行列式，翻转后不变_</p>
+<h3 id="Section-3-集合与映射"><a href="#Section-3-集合与映射" class="headerlink" title="Section 3  集合与映射"></a>Section 3  集合与映射</h3><h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>如果 $T \subset S$，<strong>差集</strong> $S \backslash T$ 也称为 $T$ 在 $S$ 中的 <strong>补集</strong></p>
+<p>对于两个集合 $X,Y$，<strong>笛卡尔积</strong> $X \times Y = \{(x,y) | x \in X, y \in Y\}$ （由此可以定义多元函数）</p>
+<p>例如 <strong>笛卡尔平方</strong> $\mathbb{R^2 = R \times R}$ 就表示实平面</p>
+<p>对于有限集 $A$，其 <strong>基数</strong> $|A$| 定义为 $A$ 的元素个数</p>
+<p>对于无限集 $A$，存在一一映射 $f:X \rightarrow Y$ 与 $\mathbb{N}$ 基数相同的集合，称作 <strong>可数集</strong>，记作 $\large \aleph_{0}$</p>
+<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><p>对于集合 $X,Y$，存在变换 $f:X \rightarrow Y$，即为 <strong>映射</strong> （对应有 <strong>定义域，值域</strong>）</p>
+<p>可以定义 <strong>象</strong> $\mathrm{Im} f = \{f(x) | x \in X\} = f(X) \subset Y$</p>
+<p>类似定义 <strong>原象</strong> $\begin{eqnarray} f^{-1}(Y_0)  = \{x \in X | f(x) \in Y_0\} = \bigcup _{y \in Y_0} f ^ {-1} (y) \;(Y_0 \subset Y) \end{eqnarray}$</p>
+<p><strong>_定义域和值域是一个映射（函数）的本质部分（是映射相同的必要条件）_</strong></p>
+<p>定义 <strong>单位映射</strong> $e_X: X \rightarrow X$，指向自己</p>
+<p>如果 $X \subset X’ , Y \subset Y’, f:X\rightarrow Y, g:X’ \rightarrow Y’,\quad \forall x \in X, f(x) = g(x) $，$g$ 是 $f$ 的 <strong>扩张</strong>，类似可以定义 <strong>收缩</strong></p>
+<p>定义映射的乘积（合成） $fg(x) = f(g(x))$</p>
+<p><strong>定理一：映射的合成满足结合律</strong>（直接运用定义证明）</p>
+<p>定义 <strong>逆映射</strong>，设 $f:X \rightarrow Y, g: Y \rightarrow X$，如果 $fg = e_Y$ 那么 $f$ 是 $g$ 的 <strong>左逆</strong> ，$g$ 是 $f$ 的 <strong>右逆</strong></p>
+<p>如果存在 $fg =e_Y, gf = e_X$，$g,f$ 互为 <strong>逆</strong></p>
+<p><strong>引理：如果 $gf = e_X$ 则 $f$ 是单的，$g$ 是满的</strong>（用单射 / 满射定义证明）</p>
+<p><strong>定理二：$f:X \rightarrow Y$ 有逆，当且仅当 $f$ 是双射</strong>（左推右，直接利用引理；右推左，根据定义）</p>
+<p><strong>推论：对于双射 $f:X \rightarrow Y$，$(f^{-1})^{-1} =f$。如果 $f:X \rightarrow Y, h: Y \rightarrow Z$ 都是双射，必定有 $hf$ 也是双射，同时 $(hf)^{-1} = f^{-1} h^{-1}$</strong></p>
+<p><strong>定理三：$X$ 是有限集，变换 $f:X \rightarrow X$ 是单射，则 $f$ 是双射（满射同理）</strong>（利用有限性，证明它是满射即可）</p>
+<h4 id="Extra-1"><a href="#Extra-1" class="headerlink" title="Extra"></a>Extra</h4><p>_设 $f:X \rightarrow Y,\; S \subset X, T \subset X$，有 $f(S \cup T) = f(S) \cup f(T), \quad f(S \cap T) \subset f(S) \cap f(T)$_</p>
+<h3 id="Section-4-关系"><a href="#Section-4-关系" class="headerlink" title="Section 4  关系"></a>Section 4  关系</h3><h4 id="二元关系"><a href="#二元关系" class="headerlink" title="二元关系"></a>二元关系</h4><p>对于集合 $X,Y$，定义 $\omega \subset X \times Y$ 为 $X,Y$ 间的一个 <strong>二元关系</strong></p>
+<p>$(x,y) \in \omega$ 用 $x  \omega y$ 表示，称 $x,y$ 间有关系 $\omega$</p>
+<p>例如 $&lt;$ 是 $\mathbb{R}$ 的一个二元关系，由 $\mathbb{R}$ 上位于 $x=y$ 上方的点组成</p>
+<h4 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h4><p>集合上的二元关系 $\sim$ 叫做 <strong>等价关系</strong>，任取 $x,x‘,x’’ \in X$ 满足</p>
+<ol>
+<li>反身性，$x \sim x$</li>
+<li>对称性，$x \sim x’ \Rightarrow x’ \sim x$</li>
+<li>传递性，$x \sim x’,x’ \sim x’’ \Rightarrow x \sim x’’$</li>
+</ol>
+<p>可以定义 $x$ 的 <strong>等价类</strong> $\overline{x} = \{ x’ \in X | x’ \sim x \} \subset X$</p>
+<p><strong>定理：由 $\sim$ 确定的等价类的集合是 $X$ 的一个划分，是这些子集的不交并，记为 $\pi _{\sim} (X)$</strong></p>
+<h4 id="商映射"><a href="#商映射" class="headerlink" title="商映射"></a>商映射</h4><p>简单来说，<strong>商映射</strong> 是将 $x \in X$ 映射到对应的等价类</p>
+<p>即定义满射 $p: x \mapsto p(x) = \overline{x}$，叫做 $X$ 到 <strong>商集</strong> $X / \sim$ 的 <strong>自然映射</strong></p>
+<p>_在某个给定的映射 $f$ 下_</p>
+<p>定义映射 $\overline{f}:X/\omega_f \rightarrow Y,\;\overline{f} (\overline{x}) = f(x)$（不依赖于 <strong>代表元</strong> $\overline x$ 的选取）</p>
+<p>于是有 $f = \overline{f} \cdot p$</p>
+<h4 id="序集"><a href="#序集" class="headerlink" title="序集"></a>序集</h4><p>一个 <strong>全序集</strong> $X$，存在二元关系 $\le$ 满足反身性，反对称性和传递性。称 $X$ 上有一个 <strong>偏序</strong></p>
+<p>联系图论中的DAG，可以定义 <strong>最大元，极大元，最小元，极小元</strong></p>
+<h3 id="Section-5-数学归纳法"><a href="#Section-5-数学归纳法" class="headerlink" title="Section 5  数学归纳法"></a>Section 5  数学归纳法</h3><p><strong>注意归纳基础</strong></p>
+<p><strong>二重归纳原理</strong></p>
+<p>…</p>
+<h3 id="Section-6-置换"><a href="#Section-6-置换" class="headerlink" title="Section 6  置换"></a>Section 6  置换</h3><h4 id="置换的记法"><a href="#置换的记法" class="headerlink" title="置换的记法"></a>置换的记法</h4><p>考虑一个 $n$ 元有限集 $\Omega = \{1,2,3,\cdots,n\}$，<strong>置换</strong> 即为一一映射 $\pi : i \mapsto \pi(i)$，全体置换记作 $S_n$（显然有 $|S_n| = n!$。与一般的映射类似的，置换存在单位元，恒等映射 $e = e_{\Omega}$，同样可以定义乘法，满足同样的运算律</p>
+<p>对于置换 $\pi$，一种方便的记法是 $\large (i, \pi(i), \pi^2(i), \pi^3(i), \cdots, \pi^{n-1}(i))$</p>
+<h4 id="置换的循环结构"><a href="#置换的循环结构" class="headerlink" title="置换的循环结构"></a>置换的循环结构</h4><p>定义置换 $\pi$ 的 <strong>阶</strong> $q$，满足 $\langle \pi \rangle = \{e, \pi, \cdots, \pi^{q-1}\}$ 包含所有互不相同的方幂，同时 $\pi ^ q = e$</p>
+<p>我们可以定义两个点 $i,j \in \Omega$ 是 <strong>$\pi$ 等价</strong> 的，当且仅当 $\exist s \in \mathbb{Z},\; j = \pi ^ s(i)$</p>
+<p>于是我们将 $\Omega$ 划分为若干类，$\Omega = \Omega_1 \cup \cdots \cup \Omega_p$，称之为 <strong>$\pi$ 轨道</strong> </p>
+<p>考虑其中一个 $\pi$ 轨道 $\Omega_k$（令 $l_k = \Omega_k$），令 $\pi_k = (i, \pi(i), \cdots, \pi ^ {l_k-1})$，我们得到一个置换，称之为 <strong>长为 $l_k$ 的置换</strong>（显然置换 $\pi_k$ 使集合 $\Omega \backslash \Omega_k$ 中的点不动，于是两个循环是 <strong>无关的</strong>）</p>
+<p>所以 $\pi$ 可以对应到乘积的分解 $\pi = \pi_1 \pi_2 \cdots \pi_p$ （显然可以省略恒等置换）</p>
+<p>运用数学归纳法即可证明：<strong>定理一： $S_n$ 中的每一个置换 $\pi \not= e$ 都可以唯一地分解为长度 $\ge 2$ 且不相交的循环的乘积</strong></p>
+<p>接下来考虑长度为 $2$ 的循环，称作 <strong>对换</strong></p>
+<p>一个简单的 <strong>推论：任何置换 $\pi \in S_n$ 都可以表示为对换的乘积，而且并不唯一</strong> （直接构造即可，比如 $(i_1,i_2,\cdots,i_l) = (i_1,i_l)(i_1,i_{l-1}) \cdots (i_1,i_2)$ ）</p>
+<p>考虑 $\pi \in S_n$，分解为对换的乘积 $\pi = \tau_1 \tau_2 \cdots \tau_k$，定义 $\epsilon_\pi = (-1)^k$ 为 $\pi$ 的符号（奇偶性）</p>
+<p>一个重要 <strong>定理二：$\epsilon_\pi$ 的奇偶性是唯一确定的，与分解式无关，满足 $\epsilon_{\alpha \beta} = \epsilon_\alpha \epsilon_\beta$。</strong> 只需要考虑数学归纳法，找到 $m$ 个因子变为 $m-2$ 个因子的构造性依据（参见 $\mathrm{page}\; 41$）</p>
+<p>显然如果 $\pi \in S_n$ 会分解为 $m$ 个循环（包括长度为 $1$ 的），有 $\epsilon_\pi = (-1)^{n-m}$</p>
+<p>构造 $L_r : \pi \rightarrow \tau \pi$，是一个一一映射，即可得到 <strong>结论：$S_n$ 中奇置换个数等于偶置换个数</strong></p>
+<p>定义一个 $n$ 元函数 $f$ 是 <strong>斜对称的</strong>，当且仅当交换相邻变量的位置时，函数变号。数学归纳法可以得到 <strong>推论：交换任意两个变量，函数变号</strong>，运用这个推论也可以证明定理二</p>
+<h4 id="Extra-2"><a href="#Extra-2" class="headerlink" title="Extra"></a>Extra</h4><p>定义 $\begin{eqnarray} \mathrm{sgn}(\pi) = \prod _ {1 \le i &lt; j \le n} \frac {\pi(j) - \pi(i)} {j-i} \end{eqnarray}=(-1)^k$，$k$ 即为置换的逆序对个数，显然有 $\epsilon_\pi =\mathrm{sgn}(\pi)$</p>
+<p>只需要构造对换，使得每一次对换减少一个逆序对。具体地，假设 $1,2,\cdots,i-1$ 已经排列完毕，在 $i-1$ 到 $i$ 中间的数都比 $i$ 要大，每一次将 $i$ 和前面一个元素交换，即可减少一个逆序对，直到 $i,i-1$ 相邻</p>
+<h3 id="Section-7-整数的算术"><a href="#Section-7-整数的算术" class="headerlink" title="Section 7 整数的算术"></a>Section 7 整数的算术</h3><p><strong>算术基本定理：任意正整数 $n \not= 1$ 必定能唯一地分解为素数的乘积</strong> （尽管非常显然，定理只涉及到整除的性质，但是定理的证明需要用到 $\mathbb{Z}$ 中的加法与乘法运算）</p>
+<h2 id="Chapter-2-矩阵"><a href="#Chapter-2-矩阵" class="headerlink" title="_Chapter 2_  矩阵"></a>_Chapter 2_  矩阵</h2><h3 id="Section-1-行和列的向量空间"><a href="#Section-1-行和列的向量空间" class="headerlink" title="Section 1  行和列的向量空间"></a>Section 1  行和列的向量空间</h3><p>定义 <strong>行向量</strong> 是属于向量空间 $\mathbb{R}^n$ 的一个元素，<strong>列向量</strong> 与 行向量 的区别仅仅只是约定。$\mathbb{R}$ 的运算法则适用于 $\mathbb{R}^n$</p>
+<h4 id="线性组合-线性包"><a href="#线性组合-线性包" class="headerlink" title="线性组合. 线性包"></a>线性组合. 线性包</h4><p>考虑 $X_1,X_2,\cdots,X_k \in \mathbb{R}^n$，$X = a_1X_1 + a_2X_2 + \cdots + a_kX_k$ 是向量 $X_i$ 带有系数 $a_i$ 的 <strong>线性组合</strong></p>
+<p>令 $V = \langle X_1, X_2, \cdots, X_k \rangle$，是这些向量的所有线性组合构成的集合，称之为向量组的 <strong>线性包</strong>，称 <strong>包</strong> 是这些向量 <strong>张成的</strong> </p>
+<p>满足性质 $S \subset V \Rightarrow \langle S \rangle \subset V$，$0 \subset V$</p>
+<p><strong>重要结论：线性包 $U,V$ 的交集一定是线性包，而并集不一定是线性包</strong>（证明交集的线性组合在交集内即可；可构造反例 $U = \{(a,0)|a \in \mathbb{R}\}, V = \{(0,a)|a \in \mathbb{R}\}$）</p>
+<h4 id="线性相关"><a href="#线性相关" class="headerlink" title="线性相关"></a>线性相关</h4><p>对于空间 $\mathbb{R}^n$ 中的向量组 $X_1, X_2, \cdots, X_k$，如果存在 $k$ 个不全为 $0$ 的数，使得</p>
+<p>$$<br>a_1X_1 + a_2X_2 + \cdots + a_kX_k = 0<br>$$<br>就称这个向量组是 <strong>线性相关的</strong></p>
+<p>下面是一些 <strong>显然而非常重要的定理：</strong>（直接利用线性相关的定义即可）</p>
+<ul>
+<li>向量组的一部分是线性相关的，整体也是线性相关的；线性无关向量的任意一部分都是线性无关的</li>
+<li>线性相关的向量组至少存在一个向量是其他向量的线性组合；如果存在一个向量是其他向量的线性组合，那么这个向量组的线性相关的</li>
+<li>向量组 $X_1, \cdots, X_k$ 是线性无关的，$X_1,\cdots,X_k,X$ 是线性相关的，$X$ 是其他向量的线性组合；如果 $X$ 不能表示为其他向量的线性组合，那么这向量组是线性无关的</li>
+</ul>
+<h4 id="基-维数"><a href="#基-维数" class="headerlink" title="基. 维数"></a>基. 维数</h4><p>定义向量组 $X_1,\cdots,X_r \in V$ 是 $V$ 的 <strong>基</strong>，当且仅当他们线性无关，并且 $\langle X_1, \cdots, X_k \rangle =V$。$r$ 即为 $V$ 的 <strong>维数</strong></p>
+<p>对于 $X \in V$ 显然存在唯一的 $\{a_i\}$，使得 $X = a_1X_1 + \cdots + a_kX_k$，系数 $\{a_i\}$ 称之为 $X$ 相对于基 $X_1,\cdots,X_k$ 的 <strong>坐标</strong></p>
+<p>定义 <strong>标准基</strong> $\{E_{(1)}, E_{(2)}, \cdots, E_{(n)}\}$，它是 $\mathbb{R}^n$ 的基。其中 $E_{(i)} = (0,0,\cdots,1,\cdots,0)$（第 $i$ 项为 $1$）</p>
+<p>一个重要的 <strong>引理：设 $V = \langle X_1, \cdots, X_r \rangle$ ，$Y_1, \cdots, Y_k$ 是线性包 $V$ 内线性无关的向量组，则有 $s \le r$</strong>（利用反证法，设 $x_1Y_1 + \cdots + x_kY_k = 0$，得到一个 $r$ 行 $s$ 列的齐次线性方程组，存在非零解，与条件矛盾）</p>
+<p><strong>定理：对于一个线性包 $V$ 的所有基，都含有相同个数的向量，一定满足 $r \le n$，记作 $\mathrm{dim}\; V$</strong>（每次不断扩充将 $V$ 中无法线性组合的 $X_k$ 加入线性包，根据引理，最后得到的个数 $r \le n$；设存在两组基 $\{X_i|i=1,\cdots,r\},\{Y_i|i=1,\cdots,s\}$，根据引理 $s \le r, r \le s$ 得到 $s=r$）</p>
+<p>定义向量组 $\{X_1, X_2, \cdots\}$ 的 <strong>秩</strong>，$\mathrm{rank}\{X_1,X_2, \cdots \} =\mathrm{dim} \langle X_1, X_2, \cdots \rangle$</p>
+<p>特别的，对于 $V = \{0\}$，我们定义 $\mathrm{dim}\; V = 0$</p>
+<h4 id="Extra-3"><a href="#Extra-3" class="headerlink" title="Extra"></a>Extra</h4><p>设 $U,V$ 是两个 $\mathbb{R}^n$ 中的线性包，定义 <strong>线性包的和</strong>：</p>
+<p>$$<br>U + V = \langle U \cup V \rangle = \{u + v | u \in U, v \in V\}<br>$$<br>如果 $U \cap V = 0$，称 $U \oplus V = U + V$，为 <strong>直和</strong></p>
+<p>命题：$V = V_1 \oplus V_2 \oplus V_3 \oplus \cdots \oplus V_k$ $\large \Longleftrightarrow$ $X = X_1 + \cdots +X_k\in V \; (X_i \in V_i)$ 的表示方法唯一</p>
+<p><strong>_proof_</strong></p>
+<ul>
+<li>假设存在两种表示方法，必定存在 $X_i + X_j = X’_i + X’_j\;(X_i \not=X’_i,X_j \not=X’_j)$，那么有 $X_i-X’_i = X_j-X’_j \in V_i \cup V_j$，而 $V_i \cup V_j = 0$，矛盾</li>
+<li>类似于之前的构造性方法，假设存在两个线性包有交集，得到表示方法不唯一</li>
+</ul>
+<p>设 $V$ 是 $\mathbb{R}^n$ 中的一个线性包，如果 $V = U \oplus W$，那么 $W$ 叫作 $U$ 在 $V$ 中的 <strong>补</strong></p>
+<p>命题： $U$ 在 $V$ 中的补是唯一确定的</p>
+<p><strong>假命题。</strong> 容易举出反例：$U = \mathbb{R}^2,V = \{(\lambda,0)|\lambda \in R\}$，则 $W$ 可以取 $\{(0,\lambda)|\lambda \in R\}$ 或者 $\{(\lambda,\lambda)|\lambda \in R\}$</p>
+<p>证明：$\mathbb{R}^n$ 中的向量组 $X_1, \cdots, X_n$ 张成 $\mathbb{R}^n$，当且仅当它们是线性无关的</p>
+<p><strong>_proof_</strong></p>
+<ul>
+<li>假设它们是线性相关的，那么它们的维数 $r &lt; n$，小于 $\mathbb{R}^n$ 的维数，无法张成，矛盾</li>
+<li>考虑任意一个向量 $X \in \mathbb{R}^n$，是否是线性组合，即一个方程组是否存在解。由于它们线性无关，一定能变成三角矩阵（构造一个齐次方程组，不存在非零解，所以变换的时候不会使得某一行都为 $0$），故存在解</li>
+</ul>
+<p>证明：$U,V$ 是 $\mathbb{R}^n$ 中的线性包，若 $U \cap V = 0$，则 $\mathrm{dim}(U+V) = \mathrm{dim}\;U + \mathrm{dim}\;V$</p>
+<p><strong>_proof_</strong></p>
+<p>考虑选取 $U+V$的基为 $U,V$ 的基的并。只需证明：$U,V$ 的基的并线性无关，基的并能张成 $U+V$。两者显然</p>
+<h3 id="Section-2-矩阵的秩"><a href="#Section-2-矩阵的秩" class="headerlink" title="Section 2  矩阵的秩"></a>Section 2  矩阵的秩</h3><h4 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h4><p>将矩阵 $A$ 的第 $i$ 列记作 $A^{(i)}$，线性包 $V_c =\langle A^{(1)}, A^{(2)}, \cdots, A^{(n)} \rangle$ 叫作矩阵的 <strong>列空间</strong>，<strong>列秩</strong> $r_c = \mathrm{dim}\;V_c$</p>
+<p>类似地，我们将第 $i$ 行记作 $A_{(i)}$，线性包 $V_r = \langle A_{(1)}, A_{(2)}, \cdots, A_{(m)} \rangle$ 叫作矩阵的 <strong>行空间</strong>，<strong>行秩</strong> $r_r = \mathrm{dim}\;V_r$</p>
+<p>一个重要的 <strong>引理：对于一个矩阵 $A$ 经过有限次行初等变换后，得到了矩阵 $A’$，那么有 $r_r(A’) = r_r(A), r_c(A’) = r_c(A)$</strong>（只需考虑一次初等变换后不变，对于行秩，利用定义显然；对于列秩，只需要证明其 <strong>极大线性无关组</strong>（是它的其中一个基）的大小不变：它对应的齐次方程组的解不变，即极大线性无关组无法加入新的向量，也无法减少向量）</p>
+<p>通过这个引理可以得到重要 <strong>定理：对于任意 $m \times n$ 阶矩阵 $A$，等式 $r_c(A) = \mathrm{rank}\;A =r_r(A)$ 成立（其中 $\mathrm{rank}\;A$ 叫作矩阵 $A$ 的秩）</strong></p>
+<p>首先通过行初等变换得到阶梯矩阵 $A’​$，记 $r​$ 为非零行数。提取每一个非零行开头第一个不是 $0​$ 的元素所在的列，称之为矩阵的 <strong>列向量基</strong>，显然他们线性无关，得到 $r_c(A’) \ge r​$；又 $r_c(A’) = \mathrm{dim}\; V’_C \le  \mathrm{dim}\; \mathbb{R}^r = r​$，得到 $r_c(A’) = r​$。而 $r_r(A’)=r​$ 是显然的</p>
+<h4 id="可解性原则"><a href="#可解性原则" class="headerlink" title="可解性原则"></a>可解性原则</h4><p>结合之前定理的证明过程，我们可以得到 <strong>结论：对于一个齐次方程组，化为阶梯形后，它的主未知数个数等于矩阵的秩</strong></p>
+<p>_这句话表明，矩阵的秩是其内在特征，不依赖于任何外加状况_</p>
+<p><strong>克罗内克-卡皮里定理：线性方程组是有解的，当且仅当它的系数矩阵的秩等于其增广矩阵的秩（注意，该定理无法判断是否存在唯一解</strong></p>
+<ul>
+<li>考虑必要性，$Ax=B$ 存在解，当且仅当列向量 $B$ 是矩阵 $A$ 的列向量的线性组合，即有 $\mathrm{rank}(A^{(1)},\cdots,A^{(n)}) = \mathrm{rank}(A^{(1)},\cdots, A^{(n)},B)$。得到 $\mathrm{rank}\;A = r_c(A) = r_c((A|B)) = \mathrm{rank}\;((A|B))$</li>
+<li>考虑充分性，如果 $A,(A|B)$ 的秩相同，矩阵 $A$ 的列向量基是 $A,(A|B)$ 的极大线性无关组，于是列向量 $B$ 是 $A$ 的列向量基的线性表示，故存在解</li>
+</ul>
+<h4 id="Extra-4"><a href="#Extra-4" class="headerlink" title="Extra"></a>Extra</h4><p>定理 $r_c(A) = r_r(A)$ 的另一种，不需要化为阶梯型的证明方法</p>
+<p><strong>_proof_</strong></p>
+<p>基本思路：设 $\mathrm{dim}\; V_r(A) = r, \mathrm{dim}\; V_c(A) = s$，如果我们能证明 $s \le r$，再考虑矩阵 $A$ 的转置 $^t A$，就可以得到 $r = s$</p>
+<p>具体地，选取 $A$ 的 $r$ 个基行（不妨设为前 $r$ 行），构成一个新的矩阵 $\tilde{A}$，再选取它的 $t$ 个基列（类似的设为前 $t$ 列），有 $t \le r$（因为 $V_c(\tilde{A}) \subset \mathbb{R}^r$）</p>
+<p>接下来就是要证明 $s \le t$，即 $A$ 的列秩不大于 $\tilde{A}$ 的列秩，即证明对于 $A$ 的任意一列，都可以由前 $t$ 列线性表出。假设 $A_{(i)} = \mu_1A_{(1)} + \cdots + \mu_rA_{(r)}$，而对于前 $r$ 行，存在系数满足，$\tilde{A}^{(k)} = \lambda_1 \tilde{A}^{(1)} + \cdots + \lambda_t \tilde{A}^{(t)}$。于是</p>
+<p>$$<br>a_{ik} = \sum _ {l = 1} ^ {r} \mu_l a_{lk} = \sum _{l = 1} ^{r} \mu_l \sum _ {p=1} ^ {t} \lambda_p a_{lp} =  \sum _ {p=1} ^ {t} \lambda_p \sum _{l = 1} ^{r} \mu_l  a_{lp} = \sum _ {p=1} ^ {t} \lambda_p a_{ip}<br>$$<br>就证明了结论</p>
+<h3 id="Section-3-线性映射-矩阵的运算"><a href="#Section-3-线性映射-矩阵的运算" class="headerlink" title="Section 3  线性映射. 矩阵的运算"></a>Section 3  线性映射. 矩阵的运算</h3><h4 id="矩阵与映射"><a href="#矩阵与映射" class="headerlink" title="矩阵与映射"></a>矩阵与映射</h4><p>考虑两个高分别为 $n,m$ 的列向量空间，设 $A = (a_{ij})$ 是一个 $m \times n$ 的矩阵，定义一个映射 $\varphi _ {A} : \mathbb{R}^n \rightarrow \mathbb{R}^m$，对于一个高度为 $n$ 的列向量 $X = [x_1, x_2, \cdots, x_n] \in \mathbb{R}^n$，即有</p>
+<p>$$<br>Y = \varphi_A(X) = x_1 A^{(1)} + x_2 A^{(2)} + \cdots + x_n A^{(n)}<br>$$<br>也可以写作 $\begin{eqnarray} y_i = \sum _ {j=1} ^{n} a_{ij} x_{j},\quad i=1,2,\cdots,m \end{eqnarray}$</p>
+<p>容易验证，映射 $\varphi_A$ 满足性质：</p>
+<ul>
+<li>$\varphi_A(X’ + X’’) = \varphi_A(X’) + \varphi_A(X’’), \quad \forall \; X’,X’’ \in \mathbb{R}^n$（可加性）</li>
+<li>$\varphi_A(\lambda X) = \lambda \varphi_A(X), \quad \; \forall X \in \mathbb{R}^n, \lambda \in \mathbb{R}$（齐次性）</li>
+</ul>
+<p>可以证明，满足上述性质的任意映射 $\varphi$ 等价于 $\varphi_A$（利用性质，得到 $\begin{eqnarray} \varphi(X) = \sum _{j=1} ^{n} x_j \varphi(E^{(j)}) \end{eqnarray}$，映射 $\varphi$ 的取值由它在列向量基 $E^{(j)}$ 的取值完全决定）</p>
+<p>有了之前的铺垫，我们可以引入定义：满足上述性质的映射 $\varphi = \varphi_A : \mathbb{R}^n \rightarrow \mathbb{R}^m$ 叫作从 $\mathbb{R}^n$ 到 $\mathbb{R}^m$ 的 <strong>线性映射</strong> （不同向量空间之间的映射）。特别地，如果 $m=n$ 时叫作 <strong>线性变换</strong> （向量空间到自己的映射），矩阵 $A$ 叫作 <strong>线性映射 $\varphi_A$ 的矩阵</strong>。特别地，当 $m=1$ 时，映射 $\varphi: \mathbb{R}^n \rightarrow \mathbb{R}$ 称作 <strong>$n$ 变元的线性函数</strong></p>
+<p>根据之前的结论，我们可以得到重要 <strong>定理：从 $\mathbb{R}^n$ 到 $\mathbb{R}^m$ 的线性映射与 $m \times n$ 阶的矩阵之间存在着一一对应</strong></p>
+<p>利用映射 $\varphi_A$ 的性质，以及矩阵的运算法则，得到重要 <strong>推论：$\alpha \varphi_A + \beta \varphi_B = \varphi _{\alpha A + \beta B}$</strong></p>
+<p>以下是一个常用的事实：<strong>线性函数的线性组合也是一个线性函数</strong></p>
+<h4 id="矩阵的乘积"><a href="#矩阵的乘积" class="headerlink" title="矩阵的乘积"></a>矩阵的乘积</h4><p>类比一般的映射复合，我们可以考虑两个线性映射的合成。考虑 $\varphi_A：\mathbb{R}^n \rightarrow \mathbb{R}^s,\;\varphi_B:\mathbb{R}^s \rightarrow \mathbb{R}^m,\quad\varphi_C = \varphi_A \circ \varphi_B$，利用 $\varphi_A,\varphi_B$ 是线性映射这一性质，容易得到 $\varphi_C$ 也是一个线性映射。考察线性映射的显式表达，可以得到</p>
+<p>$$<br>c{ij} = \sum _ {k=1} ^{s} a_{ik} b_{kj}=A{(i)}B^{(j)}<br>$$<br>于是我们得到 <strong>矩阵乘法</strong> 的定义，上式即为 $C = A \times B$</p>
+<p><strong>定理：有矩阵 $A$ 和矩阵 $B$ 确定的两个线性变换的乘积 $\varphi_A \circ \varphi_B$ 是由矩阵 $C = AB$ 确定的线性变换，即有 $\varphi_A \circ \varphi_B = \varphi_{AB}$</strong></p>
+<p>_乘法 $AB$ 有意义，当且仅当 $A$ 的列数等于 $B$ 的行数。而方阵始终有意义_</p>
+<p>根据映射的结合律，得到 <strong>推论：矩阵乘法满足结合律 $A(BC)=(AB)C$</strong></p>
+<p>根据定义，可以直接得到矩阵乘法的 <strong>分配率：$(A+B)C = AC+BC,\; D(A+B) = DA+DB$</strong></p>
+<h4 id="矩阵的转置"><a href="#矩阵的转置" class="headerlink" title="矩阵的转置"></a>矩阵的转置</h4><p>考虑两个分别为 $n \times m,m\times n$ 的矩阵 $A,B$，$\forall\; i=1,\cdots,n, j=1,\cdots,m,\; A_{ij} = B_{ji}$，两个矩阵就 <strong>互为转置</strong>，显然满足性质 $^t(^tA) = A,\;^t(A+B) = {}^tA + {}^tB,{}^t(\lambda A) =\lambda{}^tA,{}^t(A_1A_2\cdots A_r)={}^tA_r \cdots {}^tA_2 {}^tA_1$</p>
+<h4 id="矩阵乘积的秩"><a href="#矩阵乘积的秩" class="headerlink" title="矩阵乘积的秩"></a>矩阵乘积的秩</h4><p> <strong>定理：不等式 $\mathrm{rank}\;AB \le \min \{\mathrm{rank}\;A,\mathrm{rank}\;B\}$ 成立</strong>（考虑到 $C_{(i)} = A_{(i)}B$，我们选取 $A$ 前 $r_1$ 个向量作为基向量，$B$ 的秩不会发生改变；到 $C$ 的所有行向量能由前 $r_1$ 个向量线性表出，即 $\mathrm{rank}\;C \le \mathrm{rank}\;A$，类似可以得到 $B$）</p>
+<h4 id="方阵"><a href="#方阵" class="headerlink" title="方阵"></a>方阵</h4><p>全体 $n$ 阶实方阵的集合记作 $M_n(\mathbb{R})$，构成一个 <strong>（结合）环</strong></p>
+<p>对于任意方阵 $A$ ，显然有 $\mathrm{diag}_n(\lambda)A = \lambda A = A \mathrm{diag}_n(\lambda)$。同时有 <strong>定理：在 $M_n$ 中，与任意矩阵可交换的矩阵是纯量矩阵</strong>（考虑一个可交换的矩阵，在其两边分别乘上 $E_{ij}$，观察矩阵的形式即可）</p>
+<p>对于方阵 $A$，存在 $A’,A’’$ 满足 $AA’= E = A’’A \Longrightarrow A’’=A’’E=A’’(AA’)=(A’’A)A’=EA’=A’$这样如果存在 $AA’=E=A’A$，那么 $A’$ 一定唯一，称之为 $A$ 的 <strong>逆矩阵</strong>，记作 $A^{-1}$，称矩阵 $A$ 是可逆的</p>
+<p>定义：矩阵 $A \in M_n(\mathbb{R})$ 叫做 <strong>非退化的</strong>，当且仅当行（列）向量组线性无关，即 $\mathrm{rank}\;A = n$。否则 $A$ 是 <strong>退化的</strong></p>
+<p><strong>非常重要的定理：矩阵 $A \in M_n(\mathbb{R})$ 是 可逆的，当且仅当它是非退化的</strong></p>
+<ul>
+<li>一方面，如果存在 $AB=E$，$n = \mathrm{rank}\;E = \mathrm{rank}\;AB \le \min\{\mathrm{rank}\;A,\mathrm{rank}\;B\} \le n$</li>
+<li>另一方面，如果 $\mathrm{rank}\; A =n$，那么 $\langle A^{(1)}, \cdots, A^{(n)} \rangle = \mathbb{R}^n$，于是 $\exist A’ \in M_n(\mathbb{R}),\;\forall \; j=1,\cdots,n, \quad E^{(j)} = AA’^{(j)}$，即 $E = AA’$；显然 ${}^tA$ 也是非退化的，也即存在 $B$ 满足 $E = {}^tAB$ ，可得$E = {}^tE = {}^t({}^t AB) = {}^tB{}^t({}^tA) = {}^tBA$，故存在 $A’’={}^tB$ 满足 $E = A’’A$</li>
+</ul>
+<p><strong>推论1：设 $B,C$ 分别是 $m,n$ 阶非退化方阵，而 $A$ 是任意的 $m \times n$ 矩阵，则 $\mathrm{rank}\; BAC = \mathrm{rank}\; A$</strong>（根据之前的定理，有 $\mathrm{rank}\; BAC \le \mathrm{rank}\; BA = \mathrm{rank}\; BA(CC^{-1}) = \mathrm{rank}\; (BAC)C^{-1} \le \mathrm{rank}BAC$，即 $\mathrm{rank}\;BA = \mathrm{rank}\;A$）</p>
+<p><strong>推论2：如果 $A,B \in M_n(\mathbb{R}), \;AB=E \; \mathtt{or} \; BA=E$，那么 $B=A^{-1}$</strong>（$AB=E \Rightarrow \mathrm{rank}\;A = n$，即 $A$ 是非退化的）</p>
+<p><strong>推论3：如果 $A,B,\cdots,C \in M_n(\mathbb{R})$ 是非退化的方阵，其乘积也是非退化的，同时 $(AB\cdots C)^{-1} = C^{-1} \cdots B^{-1} A^{-1}$</strong></p>
+<h4 id="矩阵的等价类"><a href="#矩阵的等价类" class="headerlink" title="矩阵的等价类"></a>矩阵的等价类</h4><p>引入三类 <strong>初等矩阵</strong>，分别对应三类初等变换：</p>
+<ul>
+<li>令 $E_{st}$ 表示只有第 $s$ 行第 $t$ 列为 $1$，其他位置都为 $0$ 的矩阵</li>
+<li>对于 I 型初等变换，$F_{st} = E - E_{ss} - E_{tt} + E_{st} + E_{ts}$</li>
+<li>对于 II 型初等变换，$F_{st}(\lambda) = E + \lambda E_{st}$</li>
+<li>和特殊的 III 型初等变换，第 $s$ 乘以了一个常数，$F_s(\lambda) = E + (\lambda - 1) E_{ss}$</li>
+</ul>
+<p>由初等变换的可逆性，能得到 <strong>初等矩阵的可逆性</strong>：</p>
+<p>$$<br>(F{st})^{-1} = F{st},\quad F{st}(\lambda)^{-1} = F{st}(\lambda),\quad F{s}(\lambda)^{-1}= F{s}(\lambda^{-1})<br>$$<br>（II 与 III 型对应的初等矩阵，其逆矩阵有不同的表现形式，故不宜统一形式）</p>
+<p>考虑一个 $m \times n$ 的矩阵，可以通过 <strong>行与列的 I,II 初等变换</strong> 得到左上角为 $r \times r$ 非退化对角子矩阵的矩阵，这里有 $r = \mathrm{rank}\; A$。再通过 III 型初等变换，得到矩阵 $P_k\cdots P_1AQ_1\cdots Q_l = \begin{pmatrix} E_r &amp; 0 \\ 0 &amp; 0\end{pmatrix}$ （其中 $P_i(Q_i)$ 是 $m(n)$ 阶初等矩阵）</p>
+<p>于是就能引入 <strong>矩阵的等价性</strong>，大小相同的 $A,B$ 等价当且仅当能找到非退化的 $m,n$ 阶矩阵 $B = PAQ$。容易验证其满足条件，我们引入形如 $\begin{pmatrix} E_r &amp; 0 \\ 0 &amp; 0\end{pmatrix}$ 的矩阵作为等价类的代表元</p>
+<p>得到重要 <strong>定理：$n \times m$ 的矩阵集合被划分为 $\min\{n,m\} + 1$ 个等价类，所有秩相同的矩阵属于同一个等价类</strong>，以及 <strong>推论：所有非退化矩阵能写成初等矩阵的乘积</strong></p>
+<h4 id="逆矩阵的计算"><a href="#逆矩阵的计算" class="headerlink" title="逆矩阵的计算"></a>逆矩阵的计算</h4><p>利用初等矩阵的理论，我们可以很方便地进行逆矩阵的计算。对于一个非退化方阵 $A$，写成扩展矩阵 $(A|E)$，经过行初等变换（即乘上初等矩阵），变换为 $(E|A’)$，$A’$ 即为 $A$ 的逆。称之为 <strong>P约化</strong>，一般地，变成其代表元的过程称之为 <strong>PQ约化</strong></p>
+<h4 id="解空间"><a href="#解空间" class="headerlink" title="解空间"></a>解空间</h4><p>考虑一个 $n$ 元含有 $m$ 个方程的线性齐次方程组，$AX = 0$ 的全部解。显然，解的线性组合也是解，故齐次线性方程组的 <strong>解空间</strong> 是个线性包（也称之为 $A$ 的 <strong>核</strong>）：$V_A = \langle X \in \mathbb{R}^n | AX = 0 \rangle \subset \mathbb{R}^n$</p>
+<p><strong>定理：等式 $r=\mathrm{rank}\;A,\; s= \mathrm{dim}\; V_A,\; r + s = n$ 成立</strong>，考虑其证明：</p>
+<ul>
+<li>假设 $V_A$ 的基 $X^{(1)},\cdots,X^{(s)}$，选择其他的基 $X^{(s+1)},\cdots,X^{(n)}$ 以扩充成 $\mathbb{R}^n$。取 $X \in \mathbb{R}^n$ 是这些基的线性组合</li>
+<li>根据前提，$AX$ 可以表示为 $AX^{(s+1)}, \cdots, AX^{(n)}$ 的线性组合，而 $V_c(A) = \langle AX | X \in \mathbb{R}^n \rangle \subset \mathbb{R}^m$</li>
+<li>所以有 $r = \mathrm{dim}\; V_c(A) \le n - s$，而 $r = n - s$ 仅当 $AX^{(s+1)}, \cdots, AX^{(n)}$ 线性无关</li>
+<li>线性无关的证明：$\begin{eqnarray} 0 = \sum _ {k \ge s + 1} \beta _ k A X ^ {(k)} = A(\sum _ {k \ge s + 1} \beta _ k X ^ {(k)}) \Longrightarrow \sum _ {k \ge s + 1} \beta _ k X ^ {(k)} \in V _ A \end{eqnarray}$，而根据 $X^{(k)}$ 的选择，得到所有的 $\beta_k = 0$</li>
+</ul>
+<p>将任意一组解 $X$ 的基，定义为 <strong>基础解系</strong>。而 <strong>规范基础解系</strong> 定义为：<br>$$<br>X ^ {(1)} = \left[ x_1^{(1)},x_2^{(1)},\cdots,x_r^{(1)},1,0,\cdots,0\right] \\<br>X ^ {(2)} = \left[ x_1^{(2)},x_2^{(2)},\cdots,x_r^{(2)},1,0,\cdots,0\right] \\<br>\cdots \cdots\\<br>X ^ {(n-r)} = \left[ x_1^{(n-r)},x_2^{(n-r)},\cdots,x_r^{(n-r)},0,0,\cdots,1\right] \\<br>$$</p>
+<h4 id="Extra-5"><a href="#Extra-5" class="headerlink" title="Extra"></a>Extra</h4><p><strong>马尔科夫矩阵</strong> 应用于概率论，可以看作是概率的转移。定义矩阵</p>
+<p>$$<br>P = (p_{ij}),\quad p_{ij} \ge 0, \quad \sum _ {j=1} ^ {n} p _{ij} = 1, \quad i = 1, 2, \cdots n<br>$$</p>
+<p>常常作用于概率列向量</p>
+<p>$$<br>X = \left[ x_1, \cdots, x_n \right], \quad x_i \ge 0, \quad \sum _ {i=1} ^ n x _ i = 1$<br>$$</p>
+<ul>
+<li>矩阵 $P \in M_n(\mathbb{R})$ 是马尔科夫的，当前仅当对于任意概率向量 $X$，$PX$ 是概率向量</li>
+<li>如果 $P,Q \in M_n(\mathbb{R})$ 是马尔科夫的，那么 $PQ$ 也是马尔科夫矩阵</li>
+</ul>
+<p>命题：对于任意两个 $m \times n​$ 的矩阵 $A,B​$ ， $\mathrm{rank}(A+B) \le \mathrm{rank}\;A + \mathrm{rank}\; B​$</p>
+<p><strong>_proof_</strong> </p>
+<p>注意到 $A,B$ 的基向量可以线性表出 $A+B$ 即可</p>
+<p>命题 <strong>Sylvester不等式</strong>：对于任意的 $m \times s, s \times n$ 的矩阵 $A,B$，证明：$\mathrm{rank}\; A + \mathrm{rank}\; B - s \le \mathrm{rank} \;AB$</p>
+<p><strong>_proof_</strong></p>
+<p>注意到 $\mathrm{Im}\; B \subset \mathbb{R}^s$，即有 $\mathrm{ker}\; AB \subset \mathrm{ker}\; A \subset \mathrm{ker}\; A + \mathrm{ker}\;B$</p>
+<p>$m - \mathrm{rank}\; AB \le m - \mathrm{rank}\; A + s - \mathrm{rank}\;B$</p>
+<p><a href="https://wenku.baidu.com/view/86db5c1a4431b90d6c85c7c8.html" target="_blank" rel="external">关于矩阵秩的不等式</a></p>
+<p>证明：若矩阵 $A = (a_{ij})$ 是非退化的对称矩阵，那么 $A^{-1}$ 也是对称矩阵</p>
+<p><strong>_proof_</strong><br>$$<br>AA^{-1} = E \Rightarrow {}^tA^{-1}{}^tA = E \Rightarrow {}^tA^{-1}A = E \Longrightarrow A^{-1} = {}^tA^{-1}<br>$$</p>
+<p><strong>分块矩阵</strong> 将一个矩阵用若干条横线和竖线分成许多个小矩阵，将每个小矩阵称为这个矩阵的子块，以子块为元素的形式上的矩阵</p>
+<p>加法、数乘、转置，稍微yy一下</p>
+<p>考虑乘法。显然要求分块矩阵 $A$ 的列分割方式等于分块矩阵 $B$ 的行分割方式，直接按照之前的乘法方式，每个元素也是矩阵乘法，容易发现其等价性</p>
+<p>常常用于减少矩阵的阶数，例如：（这里 $A,B,E,0 \in M_n(\mathbb{R}$)<br>$$<br>\begin{pmatrix} E &amp; A \\ 0 &amp; E \end{pmatrix} \begin{pmatrix} A &amp; 0 \\ -E &amp;B \end{pmatrix} = \begin{pmatrix} 0 &amp; AB \\ -E &amp; B \end{pmatrix}<br>$$<br>对于一些特殊的分块矩阵，有一些性质 <a href="https://baike.baidu.com/item/%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5" target="_blank" rel="external">Baidu</a> or <a href="https://en.wikipedia.org/wiki/Block_matrix" target="_blank" rel="external">Wiki</a></p>
+<p><strong>_矩阵乘法的另一种理解_</strong>  考虑两个 $m \times s,\; s \times n$ 的矩阵 $A,B$ 的乘法 $C = A \times B$</p>
+<p>根据定义，我们得到的矩阵乘法：$C_{ij} = A_{(i)} \cdot B^{(j)}$（其中 $\cdot$ 为向量的数量积）</p>
+<p>如果我们提取 $B$ 的行向量而不是列向量，可以得到另一种理解<br>$$<br>\begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1s} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2s} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\  a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{ns} \end{pmatrix} \begin{pmatrix} B_{(1)} \\ B_{(2)} \\ \vdots \\ B_{(s)} \end{pmatrix} = \begin{pmatrix} a_{11}B_{(1)} + a_{12}B_{(2)} + \cdots + a_{1s}B_{(s)} \\  a_{21}B_{(1)} + a_{22}B_{(2)} + \cdots + a_{2s}B_{(s)} \\ \cdots\cdots\quad\quad\quad\quad\cdots\cdots \\ a_{n1}B_{(1)} + a_{n2}B_{(2)} + \cdots + a_{ns}B_{(s)} \\  \end{pmatrix}<br>$$<br>$A$ 仍然是一个用于线性映射的矩阵，只不过此处的 $B$ 向量（矩阵）的每一个元素都是一个向量</p>
+<p><strong>_回归到了矩阵的本质_</strong></p>
+<h2 id="Chapter-3-行列式"><a href="#Chapter-3-行列式" class="headerlink" title="_Chapter 3_  行列式"></a>_Chapter 3_  行列式</h2><h3 id="Section-1-行列式：构造和基本性质"><a href="#Section-1-行列式：构造和基本性质" class="headerlink" title="Section 1  行列式：构造和基本性质"></a>Section 1  行列式：构造和基本性质</h3><h4 id="几何背景"><a href="#几何背景" class="headerlink" title="几何背景"></a>几何背景</h4><p>从行列式的几何意义入手，我们可以得到一些直观的理解。考虑一个 $n$ 阶方阵 $A = (a_{ij})$，对应一个 <strong>平行六面体</strong>，是形如<br>$$<br>x_1A^{(1)} + \cdots + x_nA^{(n)},\quad 0 \le x_i \le 1<br>$$<br>的点的集合。低维的情形有 线段，平行四边形</p>
+<p>$n$ 维平行六面体的体积归纳定义为 $n-1$ 底面的体积与点 $A^{(n)}$ 到底面所在超平面的垂线段长度的乘积。注意此处的体积为 <strong>有向体积</strong></p>
+<p>行列式即为 $\det A = v(A)$，$A$ 是单位立方体 $E$ 在线性映射 $\varphi_A$ 下的像。故 $\det A$ 可以看作 <strong>有向体积的变换系数</strong>。直接能得到大量的行列式性质</p>
+<p>####组合 - 解析方法 </p>
+<p>为了得到更多的技巧，我们需要采用 <strong>_分析_</strong> 的方法，而不是几何直观。直接给出行列式的 <strong>完全展开式</strong>，以研究其性质<br>$$<br>|A| = \det A = \sum _ {\sigma \in S_n} \epsilon_\sigma a_{1 \sigma(1)} a_{2 \sigma(2)} \cdots a_{n \sigma(n)}<br>$$</p>
+<h4 id="行列式的基本性质"><a href="#行列式的基本性质" class="headerlink" title="行列式的基本性质"></a>行列式的基本性质</h4><p>引入两个基本概念。一个函数 $\mathcal{D}: \left[ A_{(1)},\cdots,A_{(n)} \right] \mapsto \mathcal{D} \left(A_{(1)},\cdots,A_{(n)}\right)$ 叫做 <strong>多重线性的</strong>，如果它的每一个分量 $A_{(i)}$ 都是线性的，即<br>$$<br>\mathcal{D} (A_{(1)}, \cdots,\alpha A’_{(i)} + \beta A’’_{(i)}, \cdots, A_{(n)}) = \alpha \mathcal{D}(A_{(1)},\cdots,A’_{(i)},\cdots,A_{(n)}) + \beta \mathcal{D} (A_{(1)}, \cdots, A’’_{(i)}, \cdots, A_{(n)})<br>$$<br><strong>_注 1：_</strong> 由多重线性性可得    i) 含有零向量时，$\mathcal{D}=0$    ii) 对于固定的 $A_{(1)},\cdots,A_{(i-1)},A_{(i+1)},\cdots,A_{(n)}$以及任意的 $i$，$A_{(i)} = X = \{x_1,\cdots,x_n\}$，一定有<br>$$<br>\mathcal{D}(A_{(1)},\cdots,A_{(n)})  = \alpha_1x_1 + \alpha_2x_2 + \cdots + \alpha_nx_n<br>$$<br>其中 $\alpha_1,\cdots,\alpha_n$ 是与 $A_{(i)}$ 无关的纯量。逆命题显然同样成立</p>
+<p>同样还有之前提过的 <strong>斜对称性</strong>，当且仅当<br>$$<br>\forall\; i \in \{1,2,\cdots,n-2,n-1\},\quad \mathcal{D}(A_{(1)},\cdots,A_{(i)},A_{(i+1)},\cdots,A_{(n)}) = - \mathcal{D}(A_{(1)},\cdots,A_{(i+1)},A_{(i)},\cdots,A_{(n)})<br>$$<br><strong>_注 2：_</strong> 可以得到，斜对称性等价于一下形式<br>$$<br>\forall\; i \in \{1,2,\cdots,n-2,n-1\},\quad \mathcal{D}(A_{(1)},\cdots,A_{(i-1)},X,X,A_{(i+2)},\cdots,A_{(n)})<br>$$</p>
+<p>对于行列式，行和列的地位是等价的，有 <strong>定理 1：对于任意方阵，有 $\det {}^tA = \det A$</strong>（事实上，这是显而易见的，考虑同一项乘积，两个置换必定有 $\pi\sigma = e$，有 $\epsilon_\pi = \epsilon_\sigma$）</p>
+<p><strong>_注 3：_</strong> 此论断表明，行列式的行（列）满足的性质，那么列（行）也满足</p>
+<p><strong>定理 2：以下三个性质成立。 _D1._ $\det A$ 是矩阵 $A$ 行的斜对称函数  _D2._ $\det A$ 是矩阵 $A$ 行的多重线性函数  _D3._ $\det E = 1$（显然）</strong></p>
+<p>对于 _D1._，考虑同一项乘积，需要增加一次对换，系数全部取反；对于 _D2._，我们只需要提出与 $a_{kj}$ 无关的系数，就能得到 $A_{(k)}$ 的线性表达形式，满足 _注 1_ 中的形式</p>
+<p>以上三个性质称之为 <strong>行列式的性质</strong>，但是我们可以对于具有性质 _D1,D2_ 的任意函数 $\mathcal{D}:M_n(\mathbb{R}) \rightarrow \mathbb{R}$ 证明诸多性质</p>
+<p>_D4._ 显然有 $\det \lambda A = \lambda^n \det A$</p>
+<p>_D5._ 根据 _注 1_，行列式满足 _D1._：有一行为零的行列式等于 $0$</p>
+<p>_D6._ 根据 _D1_，以及之前关于斜对称函数的推论，得到：有两行相同的方阵 $A$ 的行列式为 $0$（交换后变号同时相等）</p>
+<p>_D7._ 对行列式的行施行 II 型初等变换后，其值不变，证明如下：</p>
+<p>$$<br>\begin{split}<br>\mathcal{D}(A’) &amp;= \mathcal{D}(A_{(1)},\cdots,A_{(s)}+\lambda A_{(t)},\cdots,A_{(n)}) \\<br>&amp;= \mathcal{D}(\cdots,A_{(s)},\cdots) + \lambda \mathcal{D}(\cdots,A_{(t)},\cdots, A_{(t)},\cdots) \\<br>&amp;= \mathcal{D}(\cdots,A_{(s)},\cdots) \\<br>&amp;= \mathcal{D}(A)<br>\end{split}<br>$$</p>
+<p><strong>_注 4:_</strong> 注意到这些性质只利用到 _D1,D2_，所以满足这两个性质函数能够满足以上几个性质</p>
+<p><strong>命题 1：设 $A$ 是一个方阵，那么有</strong><br>$$<br>\mathcal{D}(\bar A) = \mathcal{D}(E) \, \bar a_{11} \bar a_{22} \cdots \bar a_{nn}<br>$$<br>直接利用 _D1_ 以及 _D7_，不断化为对角矩阵即可。对于 $\mathcal{D} = \det$，由于 $\det E = 1$，所以我们就得到了计算行列式的简便做法，注意一次 I 型初等变换会变号</p>
+<p>引入定义。将矩阵 $A = (a_{ij})$ 去掉第 $i$ 行和第 $j$ 列得到的矩阵的行列式记作 $M_{ij}$，称为矩阵 $A$ 的对应于元素 $a_{ij}$ 的 <strong>子式</strong>。而数值 $A_{ij} = (-1)^{i+j} M_{ij}$ 叫做 <strong>代数余子式</strong></p>
+<p><strong>命题 2：若 $A$ 的形式如下，那么有 $\det A = a_{11}M_{11} = a_{11}A_{11}$</strong><br>$$<br>A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{12} \\ 0 &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp;  \vdots \\ 0 &amp; a_{n2} &amp; \cdots &amp; a_{nn}\end{pmatrix}<br>$$<br>利用行列无关的性质，翻转后即可证明</p>
+<p><strong>定理3：对于任意满足之前所述性质的函数 $\mathcal{D}$，均有 $\mathcal{D}(A) = \mathcal{D}(E) \cdot \det A$</strong>（利用 命题1 可直接得出）</p>
+<p>可见 <strong>行列式的性质，_D1,D2,D3_</strong> 唯一地刻画了这个函数。而 $\mathcal{D}$ 只需要 _D1,D2_ 这两个性质</p>
+<h3 id="Section-2-行列式的进一步性质"><a href="#Section-2-行列式的进一步性质" class="headerlink" title="Section 2  行列式的进一步性质"></a>Section 2  行列式的进一步性质</h3><h4 id="行列式按一行或一列的元素展开"><a href="#行列式按一行或一列的元素展开" class="headerlink" title="行列式按一行或一列的元素展开"></a>行列式按一行或一列的元素展开</h4><p>一种计算行列式的常用方法：基于逐次降低行列式的阶数，我们有</p>
+<p><strong>定理 1：设 $A = (a_{ij}) \in M_n(\mathbb{R})$，下述公式成立</strong><br>$$<br>\det A = \sum _ {i=1} ^ {n} (-1) ^ {i+j} a _{ij} M _{ij} = \sum _{i=1} ^{n} a _{ij} A _{ij}<br>$$<br><strong>也就是说矩阵 $A$ 的行列式等于某行（或某列）的一切元素与它们的代数余子式的乘积之和</strong><br>$$<br>\begin{split}<br>&amp; \det A \\<br>=&amp; \sum _{i=1} ^{n}<br>\begin{vmatrix}<br>a_{11} &amp; \cdots &amp; 0 &amp; \cdots &amp; a_{1n} \\<br>\cdots &amp; \cdots &amp; 0 &amp; \cdots &amp; \cdots \\<br>a_{i1} &amp; \cdots &amp; a_{ij} &amp; \cdots &amp; a_{in} \\<br>\cdots &amp; \cdots &amp; 0 &amp; \cdots &amp; \cdots \\<br>a_{n1} &amp; \cdots &amp; 0 &amp; \cdots &amp; a_{nn}<br>\end{vmatrix} \\<br>=&amp; \sum _{i=1} ^{n} (-1)^{i+j}<br>\begin{vmatrix}<br>a_{ij} &amp; a_{i1} &amp; \cdots &amp; a_{i,j-1} &amp; a_{i,j+1} &amp; \cdots &amp; a_{i,n} \\<br>0 &amp; a_{11} &amp; \cdots &amp; a_{1,j-1} &amp; a_{1,j+1} &amp; \cdots &amp; a_{1,n} \\<br>0 &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>0 &amp; a_{i1} &amp; \cdots &amp; a_{i-1,j-1} &amp; a_{i-1,j+1} &amp; \cdots &amp; a_{i-1,n} \\<br>0 &amp; a_{i1} &amp; \cdots &amp; a_{i+1,j-1} &amp; a_{i+1,j+1} &amp; \cdots &amp; a_{i+1,n} \\<br>0 &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>0 &amp; a_{n1} &amp; \cdots &amp; a_{n,j-1} &amp; a_{n,j+1} &amp; \cdots &amp; a_{nn}<br>\end{vmatrix} \\<br>= &amp; \sum _{i=1} ^{n} (-1)^{i+j} a_{ij} M_{ij}<br>\end{split}<br>$$</p>
+<p>引入 <strong>范德蒙德行列式</strong>，</p>
+<blockquote>
+<p>有<br>$$<br>\Delta_n =<br>\begin{vmatrix}<br>1 &amp; 1 &amp; \cdots &amp; 1 \\<br>x_1 &amp; x_2 &amp; \cdots &amp;x_n \\<br>x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>x_1^{n-1} &amp; x_2^{n-1} &amp; \cdots &amp; x_n^{n-1}<br>\end{vmatrix}<br>= \Delta(x_1,x_2,\cdots,x_n)<br>= \prod _ {1 \le i &lt; j \le n}(x_j-x_i)<br>$$<br><strong>_proof_</strong></p>
+<p>考虑数学归纳法，先进行初等变换，消去第 1列的大部分元素<br>$$<br>\Delta_n =<br>\begin{vmatrix}<br>1 &amp; 1 &amp; \cdots &amp; 1 \\<br>0 &amp; x_2 - x_1 &amp; \cdots &amp; x_n-x_1 \\<br>0 &amp; x_2^2 - x_2x_1 &amp; \cdots &amp; x_n^2-x_nx_1 \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>0 &amp; x_2^{n-1}-x_2^{n-2}x_1 &amp; \cdots &amp; x_n^{n-1} - x_n^{n-2}x_1<br>\end{vmatrix}<br>$$<br>这样就可以利用代数余子式展开，再利用多重线性性<br>$$<br>\Delta_n = \prod _{i=2} ^{n} (x_n-x_1) \cdot \Delta(x_2,x_3,\cdots,x_n) = \prod _{1 \le i &lt; j \le n} (x_j-x_i)<br>$$</p>
+</blockquote>
+<p>引入 <strong>斜对称的</strong> 的方阵</p>
+<blockquote>
+<p>满足 $a_{ij} + a_{ji} = 0$，显然有 $a _{ii} = 0$，其行列式<br>$$<br>\det A = \det {}^tA = \det (-A) = (-1)^n \det A<br>$$<br>对于任意奇数阶的斜对称矩阵，均有行列式为 $0$</p>
+</blockquote>
+<h4 id="特殊矩阵的行列式"><a href="#特殊矩阵的行列式" class="headerlink" title="特殊矩阵的行列式"></a>特殊矩阵的行列式</h4><p><strong>定理 2：对于 $n+m$ 阶行列式 $D$ 在前 $n$ 列和后 $m$ 行的交叉处为 $0$，则有公式：</strong><br>$$<br>\det \begin{pmatrix} A &amp; C \\ 0 &amp; B \end{pmatrix} = \det A \cdot \det B<br>$$<br><strong>_proof_</strong></p>
+<p>考虑固定 $A,C$，令 $D = \mathcal{D}(B)$。显然 $\mathcal{D}$ 具有性质 _D1. D2._，于是有 $\mathcal{D}(B) = \mathcal{D}(E) \det B$</p>
+<p>考察 $\begin{pmatrix} A &amp; C \\ 0 &amp; E \end{pmatrix}$，注意到后 $m$ 行都只有一个 $1$，于是我们可以依次展开第 $n+m,n+m-1,\cdots,n+1$ 行，容易得到 $\mathcal{D}(E) = \det A$。</p>
+<p>就证明了结论</p>
+<p>另外，行列式 $\det \begin{pmatrix} C &amp; A \\ B &amp; 0 \end{pmatrix} = (-1)^{nm} \det A \cdot \det B$ 的证明也可以用类似方法</p>
+<p>行列式在矩阵乘法中非常重要的一个论断：</p>
+<p><strong>定理 3：设 $A,B$ 是 $n$ 阶方阵，那么有</strong><br>$$<br>\det AB = \det A \cdot \det B<br>$$<br><strong>_proof_</strong></p>
+<p>类似于之前的证明方法，我们构造函数 $\mathcal{D}_B(A) = \det AB$，需要证明其满足性质 _D1,D2_</p>
+<p>对于 _D1_，注意到 $(AB)_{(s)},(AB)_{(t)}$ 交换了位置，行列式取负</p>
+<p>对于 _D2_，显然 $\det AB$ 是第 $i$ 行 $(AB)_{(i)}$ 的元素的线性函数</p>
+<p>于是有 $\mathcal{D}_B(A) = \mathcal{D}_B(E) \cdot \det A = \det EB \det A = \det A \det B$</p>
+<h4 id="Extra-6"><a href="#Extra-6" class="headerlink" title="Extra"></a>Extra</h4><p>_定理 3_ 的另类证法，构造辅助矩阵 $C = \begin{pmatrix}E &amp; B \\ -A &amp; 0 \end{pmatrix},\; C’ = \begin{pmatrix}E &amp; B \\ 0 &amp; AB \end{pmatrix}$</p>
+<p>由于 $C’$ 是由 $C$ 进行 II 型初等变换得到的，故有 $\det AB = \det C’ = \det C = \det A \det B$</p>
+<p>定义<br>$$<br>C_n(\lambda_1,\cdots,\lambda_n) =<br>\begin{pmatrix}<br>\lambda_1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\<br>-1 &amp; \lambda_2 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>0 &amp; 0 &amp; 0 &amp; \cdots &amp; \lambda_{n-2} &amp; 1 &amp; 0 \\<br>0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; \lambda_{n-1} &amp; 1 \\<br>0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; -1 &amp; \lambda_{n}<br>\end{pmatrix}<br>$$<br>有 $\det C_n = \lambda_n C_{n-1} + \det C _{n-2}$ 成立</p>
+<p>只需要按照最后一列展开，$A_{n-1,n}$ 按照最后一行展开即可</p>
+<p>证明<br>$$<br>\det<br>\begin{pmatrix}<br>A &amp; B \\<br>B &amp; A<br>\end{pmatrix}<br>= \det (A+B)<br>\cdot \det(A-B)<br>$$<br>形式上，利用初等变换<br>$$<br>\det \begin{pmatrix} A &amp; B \\ B &amp; A \end{pmatrix}  = \det \begin{pmatrix} A-B &amp; B \\ B-A &amp; A \end{pmatrix}<br>= \det \begin{pmatrix} A-B &amp; B \\ 0 &amp; A+B\end{pmatrix}<br>$$</p>
+<h3 id="Section-3-行列式的进一步性质"><a href="#Section-3-行列式的进一步性质" class="headerlink" title="Section 3  行列式的进一步性质"></a>Section 3  行列式的进一步性质</h3><h4 id="非退化矩阵的判别准则"><a href="#非退化矩阵的判别准则" class="headerlink" title="非退化矩阵的判别准则"></a>非退化矩阵的判别准则</h4><p>考虑一个非退化方阵 $A$，满足 $AA^{-1} = A^{-1}A = E$，于是得到<br>$$<br>\det A \cdot \det A^{-1} = 1<br>$$<br>引入 <strong>伴随矩阵</strong>，即矩阵的每个位置的代数余子式，再取转置<br>$$<br>A^{\vee} =<br>\begin{pmatrix}<br>A_{11} &amp; \cdots &amp; A_{n1} \\<br>\vdots &amp; \ddots &amp; \vdots \\<br>A_{1n} &amp; \cdots &amp; A_{nn}<br>\end{pmatrix}<br>$$<br>我们有 <strong>定理 1：矩阵 $A \in M_n(\mathbb{R})$ 是非退化的，当且仅当 $\det A \not= 0$。若 $\det A \not= 0$，则有</strong><br>$$<br>A^{-1} = (\det A)^{-1} A^\vee<br>$$<br><strong>_proof_</strong></p>
+<blockquote>
+<p> 引入一个 <strong>引理：对于 $A \in M_n(\mathbb{R})$ 我们有关系式</strong><br> $$<br> a_{i1}A_{j1} + a_{i2}A_{j2} + \cdots + a_{in}A_{jn} = \delta_{ij} \det   A,\quad \delta_{ij} = [i=j]<br> $$<br> 对于 $i=j$ 的情况，就是行列式的展开式</p>
+<p> 对于 $i \not= j$ 的情况，取 $A’$，是由 $A$ 中第 $i$ 行代替第 $j$ 行得到的矩阵。显然有 $\det A’ = 0$，第 $j$ 行展开为代数余子式即可</p>
+</blockquote>
+<p>取 $C = A A^\vee$，有 $(c_{ij}) = (\delta \det A) = (\det A) E$，即 $AA^\vee = (\det A)E$，于是如果有 $\det A \not=0$<br>$$<br>A (\det A)^{-1} A^\vee = E \Longrightarrow A^{-1} = (\det A)^{-1} A^\vee<br>$$</p>
+<h4 id="克拉默（克莱姆）公式"><a href="#克拉默（克莱姆）公式" class="headerlink" title="克拉默（克莱姆）公式"></a>克拉默（克莱姆）公式</h4><p><strong>定理 2：如果一个 $n \times n$ 的线性方程组的系数不为 $0$，那么有</strong><br>$$<br>x_k = \frac {<br>    \begin{vmatrix}<br>    a_{11} &amp; \cdots &amp; b_{1} &amp; \cdots &amp; a_{1n} \\<br>    \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>    a_{n1} &amp; \cdots &amp; b_{n} &amp; \cdots &amp; a_{nn}<br>    \end{vmatrix}<br>}<br>{<br>    \begin{vmatrix}<br>    a_{11} &amp; \cdots &amp; a_{1k} &amp; \cdots &amp; a_{1n} \\<br>    \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>    a_{n1} &amp; \cdots &amp; a_{nk} &amp; \cdots &amp; a_{nn}<br>    \end{vmatrix}<br>}<br>,\quad k = 1,2,\cdots,n<br>$$<br><strong>_proof_</strong></p>
+<p>利用伴随矩阵，可以得到<br>$$<br>X = A^{-1}B = \frac 1 {\det A} A^\vee B<br>$$<br>从而<br>$$<br>x_k = \frac 1 {\det A} \sum _{i=1} ^n A_{ik} b_{i}<br>$$<br>注意到分子就是行列式的第 $k$ 列展开式</p>
+<p>需要注意一点，克拉默公式对系数系统的微小扰动是及其敏感的，并不适用于求近似解</p>
+<h4 id="加边子式法"><a href="#加边子式法" class="headerlink" title="加边子式法"></a>加边子式法</h4><p>定义 <strong>$k$ 阶子式</strong>：一个 $m \times n$ 的矩阵 $A$ 的任意 $k$ 行和 $k$ 列交叉处的元素组成的一个方阵的行列式。子式 $\widetilde M$ 称之为 $M$ 的 <strong>加边</strong>，当且仅当 $M$ 是由 $\widetilde{M}$ 去掉一端的行，以及一端的列得到的</p>
+<p>有 <strong>定理（加边子式法）：对于一个矩阵 $A$，如果存在一个 $r$ 阶子式 $M \not= 0$，且对于 $r$ 的任意加边，它们都为 $0$，则 $\mathrm{rank}\; A = r$</strong>（只需要展开 $\widetilde M$，利用 $i$ 的任意性，证明任意一列都是前 $r$ 列的线性组合即可，得到 $\mathrm{rank}\; A \le r$，但是 $M$ 中的列是线性无关，矩阵 $A$ 中更长的列肯定线性无关）</p>
+<p>得到 <strong>推论：任意矩阵的秩等于它的非零子式的最大阶数</strong></p>
+<p>加边子式法常常用于求矩阵 $A$ 的行或列的极大线性无关组，然而用初等变换会使得信息丧失</p>
+<h4 id="Extra-7"><a href="#Extra-7" class="headerlink" title="Extra"></a>Extra</h4><p><strong>_由于某些原因被skip了，日后填_</strong></p>
+<h3 id="Section-4-行列式的公理化构造（待理解）"><a href="#Section-4-行列式的公理化构造（待理解）" class="headerlink" title="Section 4  行列式的公理化构造（待理解）"></a>Section 4  行列式的公理化构造（待理解）</h3><p>本节指出了 _通往行列式理论的若干途径_，通过最简单的三条公理得到许多优美的性质</p>
+<p><strong>第一公理化构造</strong> 将行列式看作满足下述三条性质的任意函数 $\mathcal{D}: M_n(\mathbb{R}) \rightarrow \mathbb{R}$</p>
+<ul>
+<li>关于矩阵的行是斜对称的</li>
+<li>关于矩阵的行是线性相关的</li>
+<li>$\mathcal{D}(E) = 1$</li>
+</ul>
+<p>根据之前的证明，这个函数是由这三条性质唯一确定的。唯一需要关心的给出 $\mathcal{D}({}^tA) = \mathcal{D}(A)$ 的独立证明</p>
+<p><strong>第二公理化构造</strong> 类似于第一公理化构造，可以直接推到上述三条性质</p>
+<p><strong>完全归纳构造法</strong> 定义一阶矩阵 $(a_{11})$ 的行列式为 $a_{11}$，利用代数余子式的展开式作归纳</p>
+<p>归纳法证明 _D1.D2.D3_ 成立</p>
+<p><strong>通过乘法性质的刻画</strong> 定义函数 $\mathcal{D}$ 满足乘法、两种初等矩阵的值</p>
+<p>证明三种初等矩阵的值与其行列式的值对应相等，利用乘法性质得到 $\mathcal{D}(A) = \det A$</p>
+<h4 id="Extra-8"><a href="#Extra-8" class="headerlink" title="Extra"></a>Extra</h4><p>Too Difficult…</p>
+<h2 id="Chapter-4-群-环-域"><a href="#Chapter-4-群-环-域" class="headerlink" title="_Chapter 4_  群. 环. 域"></a>_Chapter 4_  群. 环. 域</h2><h3 id="Section-1-具有代数运算的集合"><a href="#Section-1-具有代数运算的集合" class="headerlink" title="Section 1  具有代数运算的集合"></a>Section 1  具有代数运算的集合</h3><h4 id="二元运算"><a href="#二元运算" class="headerlink" title="二元运算"></a>二元运算</h4><p>定义映射 $\tau : X \times X \rightarrow X$ 叫做 $X$ 上的 <strong>二元代数运算</strong>，记为 $\tau(a,b)$，常常简记为 $a \tau b$，特殊的记号 $_, \circ, \cdot, +$。称 $\cdot$ 为 <strong>积</strong>（可省略），称 $+$ 为 <strong>和</strong>。在一个集合上可以定义许多不同的运算，选定一种后，记号 $(X,_)$ 称 $_$ 定义了 $X$ 上的一个 _*代数结构（代数系统）__</p>
+<p>注意到二元运算看起来是十分特殊的。一般地，我们还有 $n$ 元运算，属于 <strong>泛代数</strong> 的范畴</p>
+<h4 id="半群与幺半群"><a href="#半群与幺半群" class="headerlink" title="半群与幺半群"></a>半群与幺半群</h4><p>定义集合 $X$ 上的二元运算 $_$ 是 <strong>结合的</strong>，有 $\forall \; a,b,c \in X,\quad (a_b)_c = a_(b*c)$</p>
+<p>如果是 <strong>交换的</strong>，则有 $a _ b = b _ a$，显然这两个性质是互相独立的</p>
+<p>元素 $e \in X$ 叫做关于二元运算 $_$ 的 <strong>单位元（中性元）</strong>，当且仅当 $\forall\, x \in X,\; e _ x = x * e = x$</p>
+<p>称满足结合律的代数结构为 <strong>半群</strong>，称带有单位元的半群为 <strong>幺半群</strong></p>
+<blockquote>
+<p>一些常见的例子.</p>
+<p>考虑 $\Omega$ 是任意集合，$M(\Omega)$ 是它变换的集合。三元组 $(M(\Omega), \circ, e_\Omega)$ 是一个幺半群</p>
+<p>考虑 $\Omega$ 的幂集 $\mathcal{P}(\Omega)$，我们有两个可交换的幺半群 $(\mathcal{P}(\Omega),\cup,\varnothing),\; (\mathcal{P}(\Omega),\cap,\Omega)$</p>
+<p>对于方阵，我们有交换幺半群 $(M_n(\mathbb{R}),+,0)$，以及非交换幺半群 $(M_n(\mathbb{R}),\cdot,E)$</p>
+<p>定义 $n\mathbb{Z} = \{nm|m \in \mathbb{Z}\}$，那么有交换幺半群 $(n\mathbb{Z},+,0)$，当 $n &gt; 0$ 时 $(n\mathbb{Z},\cdot)$ 是一个半群</p>
+</blockquote>
+<p>带有运算 $_$ 的半群 $S$ 的一个子集 $S’$ 是一个 <strong>子半群</strong>，若取 $x,y \in S’, x _ y \in S’$，也称 <strong>子集 $S’ \subset S$ 关于运算 $*$ 封闭</strong></p>
+<p>类似可以定义 <strong>子幺半群</strong>，但是要求单位元一定在这个子幺半群内。也称之为 <strong>变换幺半群</strong></p>
+<h4 id="广义结合律-方幂"><a href="#广义结合律-方幂" class="headerlink" title="广义结合律. 方幂"></a>广义结合律. 方幂</h4><p>一个显然的 <strong>定理 1：如果 $X$ 上的二元运算是结合的，那么 $S$ 中 $n$ 个元素相乘的结果与括号位置无关</strong></p>
+<p>定义元素的 <strong>$n$ 次方幂</strong>，$x ^n = x \, x \, \cdots \, x$，显然有  $x^mx^n = x^{n+m}, \quad (x^m)^n=x^{nm}, \quad m,n \in \mathbb{N}$，在 <strong>幺半群</strong> 中，定义 $x^0 = e$。在加法幺半群中，上述性质可以记为 $mx+nx = (m+n)x,\quad n(mx) = nmx$</p>
+<p>一般来说，称 $(M,\cdot,e)$ 为 <strong>乘法</strong> 幺半群，而称 $(M,+,0)$ 为 <strong>加法</strong> 幺半群（一般用于交换的幺半群）</p>
+<h4 id="可逆元素"><a href="#可逆元素" class="headerlink" title="可逆元素"></a>可逆元素</h4><p>幺半群 $(M,\cdot,e)$ 的一个元素 $a$ 称为 <strong>可逆的</strong>，若存在 $b \in M,\; ab = e = ba$，容易证明 $b$ 是唯一的。称 $a,b$ 互为 <strong>逆元</strong>，记为 $a^{-1}$</p>
+<p>一个显然的 <strong>结论：幺半群 $(M,\cdot,e)$ 中全体可逆元素的集合对运算封闭，并且构成 $M$ 中的一个子幺半群</strong></p>
+<h4 id="Extra-9"><a href="#Extra-9" class="headerlink" title="Extra"></a>Extra</h4><p>证明：存在代数结构 $(X,_)$（只有封闭性），满足 $\forall\, x,y \in X,\; (x_y)_y=x,\; y_(y_x)=x$。 求证 $_$ 是交换的</p>
+<blockquote>
+<p> _“因为这是本书中最没用的习题之一. 但毕竟还是个练习！” <a href="https://book.douban.com/subject/2036531/discussion/614859732/" target="_blank" rel="external">答案</a>_</p>
+</blockquote>
+<p><strong>_proof_</strong><br>$$<br>\begin{split}<br>(x _ y) _ y &amp;= x \\<br>(x _ y) _ ((x _ y) _ y) &amp;= (x _ y) _ x \\<br>y &amp;= (x _ y) _ x \quad(\mathrm{use}\; y _ (y _ x) = x) \\<br>x &amp;= (y _ x) _ y \\<br>(x _ y) _ y &amp;= (y _ x) _ y \\<br>((x _ y) _ y) _ y &amp;= ((y _ x) _ y) _ y \\<br>x _ y &amp;= y _ x \quad\quad\quad\;(\mathrm{use}\; (x _ y) _ y = x) \\ \ \\<br>\Large\mathrm{Ver}&amp;\Large\mathrm{y\ nice.}<br>\end{split}<br>$$</p>
+<p>证明集合<br>$$<br>M_n^0(\mathbb{R}) = \left\{ A = (a_{ij}) \in M_n(\mathbb{R}) \; \left| \;\sum _{i=1} ^{n} a_{ij} = 0, \quad i=1,2,\cdots,n\right. \right\}<br>$$<br>在矩阵乘法运算下构成一个半群。它是一个幺半群吗？</p>
+<p><strong>_proof_</strong></p>
+<p>显然满足结合律，于是只需要证明它对于矩阵乘法封闭。不妨令 $C = AB$</p>
+<p>考虑 $\forall\, i=1,2,\cdots,n, \;\sum C_{(i)} = \sum _{j=1}^n a_{ij} (\sum B_{(j)}) = 0 $，即对乘法封闭</p>
+<p>注意到它是列线性相关的，即有 $\mathrm{rank}\, A &lt; n, \; \forall A \in M_n^0(\mathbb{R})$，不存在单位元 $E$</p>
+<p>证明：在乘法幺半群 $M$ 中选出任意一个元素 $t$，并引入运算 $_$：$x_y = xty$，证明 $(M,*)$ 称为一个幺半群当且仅当所选的元素 $t$ 可逆，且它的单位元是 $t^{-1}$</p>
+<p><strong>_proof_</strong></p>
+<p>显然 $(M,*)$ 也是一个半群，设其单位元为 $e$，而 $M$ 的单位元为 $e’$，根据定义，显然有<br>$$<br>xte = x = etx \;\Longrightarrow\; te = e’ = et \;\Longrightarrow\; e = t^{-1}<br>$$</p>
+<h3 id="Section-2-群"><a href="#Section-2-群" class="headerlink" title="Section 2  群"></a>Section 2  群</h3><h4 id="定义和例子"><a href="#定义和例子" class="headerlink" title="定义和例子"></a>定义和例子</h4><p>考虑行列式不为 $0$ 的实系数 $n$ 阶方阵的集合 $GL_n(\mathbb{R})$，连同乘法运算，显然它是一个幺半群。注意到对于任意 $A \in GL_n(\mathbb{R})$ 均存在逆元满足 $AA^{-1} = E = A^{-1}A$，我们称之为 <strong>$\mathbb{R}$ 上的 $n$ 阶一般线性群</strong></p>
+<p>由此引入 <strong>定义</strong>：所有元素都可逆的幺半群叫做 <strong>群</strong>。特别的，对于代数结构 $S_n$ 称之为 <strong>$n$ 元置换的对称群</strong>。带有交换二元运算的群称之为 <strong>交换群</strong>，也常常叫做 <strong>阿贝尔群</strong></p>
+<p>类似的，我们可以定义 <strong>子群</strong> 的概念，当且仅当 $H \subset G$ 且满足群的性质。类似地，定义 <strong>真子群</strong>，要求 $H \not={e},H \not= G$</p>
+<blockquote>
+<p>一些常见群的例子.</p>
+<p>定义 $GL_n(\mathbb{R})$ 中行列式为 $1$ 的矩阵构成的子集 $SL_n(\mathbb{R})$，是一个子群，称为 <strong>$n$ 阶特殊线性群</strong> </p>
+<p>考虑不同数域下的 $GL_n$ 有许许多多 有限 / 无限 的群</p>
+<p>我们也可以令 $S(\Omega)$ 是 $\Omega$ 的全体双射，它的各类子群叫做 <strong>变换群</strong>。注意到将 $\Omega$ 取作 $\mathbb{R}^n$，包含可逆线性变换构成的集合，就和 $n$ 阶非退化矩阵一一对应</p>
+</blockquote>
+<h4 id="循环群"><a href="#循环群" class="headerlink" title="循环群"></a>循环群</h4><p>设 $G$ 是一个乘法群，$a \in G$，如果对于任意 $g \in G$ 都可以写成 $g = a ^n$ 的形式，则称 $G = \langle a \rangle$ 是带有生成元 $a$ 的 <strong>循环群</strong>。而加法群则定义为 $\langle a \rangle = \{na | a \in \mathbb{Z}\}$，方便起见，我们定义符号 $(a^{-1})^{k} = a^{-1}$。</p>
+<p>容易证明 <strong>定理 1：任取 $m,n \in \mathbb{Z}$，有</strong><br>$$<br>a^ma^n = a^{m+n},\quad (a^m)^n = a^{mn}<br>$$</p>
+<blockquote>
+<p>一个简单的例子，整数加群 $(\mathbb{Z}, + , 0)$ 是个循环群，它由元素 $1$ 或 $-1$ 生成</p>
+</blockquote>
+<p>考虑任意一个群 $G$，和 $a \in G$，有两种可能</p>
+<ul>
+<li>$\forall\, n \not= m,\; a^m \not= a^n$，称 $a$ 是 <strong>无限阶元</strong></li>
+<li>$\exist\, n &lt; m,\; a^m = a^n \Rightarrow a ^{m-n} = e$，令 $q$ 是使 $a^q=e$ 的最小整数，称 $a$ 是 <strong>$q$ 阶元</strong></li>
+</ul>
+<p>考虑一个显然的 <strong>定理 2：如果 $a$ 是个 $q$ 阶元，那么 $\mathrm{Card}\langle a \rangle = q$，并且，</strong><br>$$<br>\langle a \rangle = \{e,a,a^2,\cdots,a^{q-1}\} \\<br>a^k = e \Leftrightarrow k=lq,\quad l\in \mathbb{Z}<br>$$<br>（考虑 $k$ 的带余除法即可）            </p>
+<h4 id="同构"><a href="#同构" class="headerlink" title="同构"></a>同构</h4><p>直接引入 <strong>定义</strong>：两个分别具有运算 $_$ 和 $\circ$ 的群 $(G,_)$ 与群 $(G’,\circ)$ 称之为 <strong>同构</strong> 的，存在一种映射 $f:G \rightarrow G’$，使得</p>
+<ul>
+<li>$\forall\, a,b \in G, \; f(a * b) = f(a) \circ f(b)$</li>
+<li>$f$ 是双射</li>
+</ul>
+<p>用符号 $G \simeq G’$ 表示两个群同构</p>
+<p><strong>推论 1：单位元对应到单位元</strong>（$e _ a = a _ e = a \Rightarrow f(e) \circ f(a) = f(a) \circ f(e) = f(a) \Rightarrow f(e) = e’$，其中性质二保证了 $f(g)$ 取遍 $G’$ 的所有元素）</p>
+<p><strong>推论 2：$f(a^{-1}) = f(a)^{-1}$</strong> （利用等式 $f(a^{-1}) \circ f(a) = e’ = f(a)^{-1} \circ f(a)$ 即得证）</p>
+<p><strong>推论 3：逆映射 $f^{-1}:G’ \rightarrow G$ 也是一个同构</strong>（显然，只需任取 $a,b \in G$ 证明定义中的等式即可）</p>
+<p>一个简单的例子：函数 $f:=\ln$ 是 $(\mathbb{R}_+,\cdot)$ 到 $(\mathbb{R},+)$ 的一个同构映射，逆映射即为 $f^{-1}: x \mapsto e^x$ </p>
+<p>一个不言而喻的 <strong>定理 3：任意两个同阶的循环群是同构的（特别的，任意两个无限循环群是同构的）</strong></p>
+<p>群论中的重要 <strong>定理 4（凯莱定理）：任意 $n$ 阶有 $G$ 限群都同构于对称群 $S_n$ 的某个子群</strong></p>
+<p><strong>_proof_</strong></p>
+<p>设 $n = |G|$。假设 $G = \{e=g_1, g_2, \cdots, g_n\}$</p>
+<p>对于任意一个元素 $a \in G$，定义映射 $L_a : g \mapsto ag$。注意到 $L_a$ 是一个双射，存在逆映射，存在恒定映射，并且满足结合律。得到 $H = \{L_e, l_{g_2}, \cdots, l_{g_n}\} \subset G$ 在对应关系 $L : a \mapsto L_a$ 下与 $G$ 同构</p>
+<p>如果同构定义中 $G’ = G$ 得到群 $G$ 到自身的同构映射 $\varphi:G \rightarrow G$，称之为群的 <strong>自同构</strong>。恒等映射 $e_G : g \mapsto g$ （记为 $1$）是自同构，自同构的逆映射也是自同构，容易验证自同构也满足结合律。事实上，群 $G$ 的全体自同构集合 $\mathrm{Aut}(G)$ 构成 $S(G)$ 的一个子群（$G \rightarrow G$ 的全体双射）</p>
+<h4 id="同态"><a href="#同态" class="headerlink" title="同态"></a>同态</h4><p>直接引入 <strong>同态</strong> 的定义，群 $(G,_)$ 到 $(G’,\circ)$ 的一个映射 $f : G \rightarrow G’$ 叫做 <strong>同态映射</strong>，若（相当于只满足同构的第一个性质）<br>$$<br>\forall\, a,b \in G,\quad f(a_b) = f(a) \circ f(b)<br>$$<br>定义集合<br>$$<br>\ker f = \{g \in G | f(g) = e’ \in G’\}<br>$$<br>是同态 $f$ 的 <strong>核</strong>。自己到自己的同态映射称为 <strong>自同态</strong></p>
+<p>显然映射的象 $\mathrm{Im}\, f \subset G’$ 是一个子群。$\ker f$ 的平凡性表示 $f$ 是否是单射，如果有 $\ker f = \{e\}$，那么 $f: G \rightarrow \mathrm{Im} f$ 是一个同构映射</p>
+<p>由于<br>$$<br>f(a) = e’,f(b) = e’ \Longrightarrow f(a*b) = f(a) \circ f(b) = e’ \circ e’ = e’ \\<br>f(a^{-1}) = f(a) ^{-1} = (e’)^{-1} = e’<br>$$<br>所以核 $\ker f$ 是 $G$ 的一个子群</p>
+<h4 id="术语-例子"><a href="#术语-例子" class="headerlink" title="术语. 例子"></a>术语. 例子</h4><p>在集合间的映射，我们有术语 <strong>满射，单射，双射</strong>。在群（或者其他代数系统）的 <strong>同态（态射）</strong> 时，有对应术语 <strong>满同态，单同态，同构</strong></p>
+<blockquote>
+<p>一些群同态的例子.</p>
+<p>整数加群 $\mathbb{Z}$ 到 $q$ 阶循环群 $\langle g \rangle$ 有一个满同态映射 $f : n \mapsto g^n$，同时有 $\ker f  = \{lq | l \in \mathbb{Z}\}$</p>
+<p>从实数加群 $\mathbb{R}$ 到平面绕不动点 $O$ 的旋转群 $T$ 是个满同态映射</p>
+<p>一般线性群 $GL_m(\mathbb{R})$ 到非零实数乘法群 $\mathbb{R}^*$ 有态射 $f : A \mapsto \det A$，并且有 $\ker f = SL_m(\mathbb{R})$</p>
+<p>$n$ 阶对称群 $S_n$ 到二阶循环群 $C_s = \langle -1 \rangle  = \{1, -1\}$ 有映射 $\epsilon : \pi \mapsto \epsilon_\pi$，核为 $\ker \epsilon = A_n$，称之为 <strong>交错群</strong></p>
+<p>无限群可以同构于自己的真子群。群 $(\mathbb{Z},+)$ 到群 $(n\mathbb{Z}, +)$ 恰好两种同构映射 $f : k \mapsto nk$ 或 $g:k \mapsto -nk$</p>
+<p>考察一个群 $G$ 的自同构群 $\mathrm{Aut}(G)$，如果满足性质：存在 $2$ 阶自同构 $\varphi\,(\varphi^2 =1)$，没有非平凡不动点<br>$$<br>a \not= e \Rightarrow \varphi(a) \not= a<br>$$<br>如果有 $\varphi(a) a^{-1} = \varphi(b) b^{-1}$，可得<br>$$<br>\varphi(b)^{-1}\varphi(a) = b^{-1} a,\;\varphi(b^{-1}a) = b^{-1}a,\; b^{-1} a = e,\;<br>a = b<br>$$<br>也即对于任意 $g \in G$，都可以写成 $\varphi(a)a^{-1}$ 的形式，此时有<br>$$<br>\varphi(g) = \varphi^2(a) \varphi(a)^{-1} = a\varphi(a)^{-1} = (\varphi(a)a^{-1})^{-1} = g^{-1}<br>$$<br>即 $\varphi : g \mapsto g^{-1}$，由于<br>$$<br>ab = \varphi(a^{-1}) \varphi(b^{-1}) = (a^{-1}b^{-1})^{-1}=((ba)^{-1})^{-1} = ba<br>$$<br>得到 $G$ 是阿贝尔群，并且 $G$ 是由 $e$ 和互不相同的元素对 $g_i,g_i^{-1} = \varphi(g_i)$ 组成</p>
+<p>我们可以改变群的运算，但在同构意义下不改变群的自身，考虑上一节的习题3。此时的群为 $(G,\cdot)$，引入运算 $g * h = g t h$ （其中 $t$ 是 $G$ 中的一个给定元素）</p>
+<p>考虑映射 $f : g \mapsto g t^{-1}$ 建立了 $(G,\cdot),(G,*)$ 之间的同构</p>
+</blockquote>
+<p><strong>一个一般性原则</strong>：对群 $G$ 的态射的研究反映出群 $G$ 自身的重要信息</p>
+<h4 id="Extra-10"><a href="#Extra-10" class="headerlink" title="Extra"></a>Extra</h4><p>设 $S$ 是群 $G$ 的子集，若包含子群 $S$ 的所有群的交集与 $G$ 重合，则称 $G$ 是由 $S$ 生成的，记作 $G = \langle S \rangle$</p>
+<ul>
+<li>证明：当 $G = \langle S \rangle$ 时，任意元素 $g \in G$ 形如 $g = t_1t_2\cdots t_n,\quad n=1,2,\cdots$ 其中 $t_i \in S$ 或者 $t_i^{-1} \in S$（反证，得到 $G$ 中形如 $t_1t_2 \cdots t_n$ 包含 $S$ 同时是一个群即可）</li>
+</ul>
+<p><strong>挖坑待填</strong></p>
+<h3 id="Section-3-环与域"><a href="#Section-3-环与域" class="headerlink" title="Section 3  环与域"></a>Section 3  环与域</h3><h4 id="环的一般定义与基本性质"><a href="#环的一般定义与基本性质" class="headerlink" title="环的一般定义与基本性质"></a>环的一般定义与基本性质</h4><p>直接给出 <strong>定义：</strong> 设 $R$ 是一个非空集合，在 $R$ 上定义了两种（二元代数）运算 $+$ 和 $\cdot$，并且满足条件 $(R,+)$ 是阿贝尔群，$(R,\cdot)$ 是半群，加法与乘法运算以分配律相联系 $(a+b)c = ac+bc,\; c(a+b) = ca+cb$，则称 $(R,+,\cdot)$ 是一个 <strong>环</strong></p>
+<p>其中 $(R,+)$ 叫作 <strong>环的加法群</strong>，而 $$(R,\cdot)$$ 叫作它的 <strong>乘法半群</strong>。如果 $(R,\cdot)$ 是一个幺半群，则称 $(R,+,\cdot)$ 是 <strong>有单位元的环</strong>，加法的单位元称为 <strong>零元</strong>。类似的，我们可以定义 环 $R$ 的子集 $L$ 叫作一个 <strong>子环</strong>，如果<br>$$<br>\forall\, x,y \in L,\quad  x-y \in L,xy \in L<br>$$<br>类似地，可以定义由子集 $T \subset R$ 生成的子环 $\langle T \rangle \subset R$ 。如果 $\forall\, x, y, \in L,\; xy = yx$，则环 $R$ 是 <strong>交换的</strong></p>
+<blockquote>
+<p>一些环的例子.</p>
+<p>$M_n(\mathbb{R})$ 是一个有单位元 $1 = E$ 的环，称之为 <strong>$\mathbb{R}$ 上的全矩阵环</strong></p>
+<p>设 $X$ 是任意集合 $R$ 是任意环，$R^X = \{X \rightarrow R\}$ 是所有映射 $f : X \rightarrow R$ 组成的集合。定义两种二元运算</p>
+<p>$$<br>(f+g)(x) = f(x) \oplus g(x) \\<br>(fg)(x) = f(x) \odot g(x)<br>$$</p>
+<p>容易验证其满足环的所有条件。其中 $0_X  : x \mapsto 0, 1_X : x \mapsto 1$ 是 $R^X$ 的零元和单位元。称之为 <strong>函数环</strong></p>
+</blockquote>
+<p>从环的定义中的三个条件导出环的其他更特殊的性质，可以从 $\mathbb{Z}$ 的性质得到启示，例如有<br>$$<br>a + 0 = a \Rightarrow a(a+0) = a^2  \Rightarrow a^2 + a \cdot 0 = a^2 \Rightarrow a \cdot 0 = 0\;(0 \cdot a = 0)<br>$$<br>如果存在 $0 = 1$，则任取 $a \in R$，会得到 $a = a \cdot 1 = a \cdot 0 = 0$，即 $R$ 中仅有零元。得到在非平凡的环中，有 $1 \not = 0$</p>
+<p>利用分配律，容易得到 $(-a)b = a(-b) = -(ab)$。可证牛顿二项式仅当 $R$ 是交换环时成立</p>
+<h4 id="同余式-剩余类环"><a href="#同余式-剩余类环" class="headerlink" title="同余式. 剩余类环"></a>同余式. 剩余类环</h4><p>定义两个整数 <strong>模 $m$ 同余</strong>，于是 $\Z$ 划分为若干类（同一类的模 $m$ 同余），每个剩余类形如<br>$$<br>\{r\}_m = r + m \Z = \{r + mk | k \in \Z \}<br>$$<br>实际应用中，我们常常用 $\Z_m$ 中的代表元代替剩余类。同样，我们在 $\Z$ 中导出运算，得到了 $\{\Z_m,\oplus,\odot\}$ 是一个带有单位元 $1 + m\Z$ 的 <strong>模 $m$ 的剩余类环</strong></p>
+<h4 id="环的同态"><a href="#环的同态" class="headerlink" title="环的同态"></a>环的同态</h4><p>直接给出 <strong>定义</strong>，设 $(R,+,\cdot)$  和 $(R’,\oplus,\odot)$ 是两个环，映射 $f : R \rightarrow R’$ 称为 <strong>同态</strong>，若 $f$ 保持环的两种运算，即<br>$$<br>f(a+b) = f(a) \oplus f(b) \\<br>f(ab) = f(a) \odot f(b)<br>$$<br>有 $f(0) = 0’,f(na) = nf(a)\,(n \in \Z)$。其中，集合<br>$$<br>\ker f = \{a \in R | f(a) = 0’\}<br>$$<br>称为同态 $f$ 的 <strong>核</strong>，显然 $\ker f $ 是 $R$ 的一个子环</p>
+<p>类似地，有 <strong>单同态</strong>，若 $\ker f = 0$（反证即可）；<strong>满同态</strong>，若 $\mathrm{Im} f = R’$；<strong>同构</strong>，$f$ 既单且满，记为 $R \cong R’$</p>
+<h4 id="环的类型-域"><a href="#环的类型-域" class="headerlink" title="环的类型. 域"></a>环的类型. 域</h4><p>注意到，我们所熟知的数环 $\Z, \Q, \R$ 中，具有性质：从 $ab = 0$ 中可以推得 $a=0$ 或者 $b=0$。但是一些其他的环却不具有这个性质</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/01/Note-Introduction-to-Algebra-Volume-I/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Solutions-BZOJ" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -436,569 +904,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2><p>[TOC]</p>
-<p><strong>_例题挑一些做！_</strong></p>
-<p><strong>_习题别做！_</strong></p>
-<h2 id="Part-1-基础字符串算法"><a href="#Part-1-基础字符串算法" class="headerlink" title="Part 1 基础字符串算法"></a>Part 1 基础字符串算法</h2><p>####HASH</p>
-<p>在 $seed$ 进制下取模，快速判断两个串是否相等</p>
-<p>维护集合。能支持简单的删减</p>
-<p>维护前缀。能支持简单的修改，提取子串</p>
-<p>双模数 <code>HASH</code> ，自然溢出</p>
-<p>维护动态串 <code>HASH</code> ：线段树 <code>or</code> 平衡树</p>
-<h5 id="一道简单题？一道难题？"><a href="#一道简单题？一道难题？" class="headerlink" title="一道简单题？一道难题？"></a>一道简单题？一道难题？</h5><p>区间修改，查询区间是否是周期为 $c$ 的串</p>
-<p>思考5min…</p>
-<p><strong>比较难的一道题</strong></p>
-<blockquote>
-<p><strong>CF452F Permutation</strong> 给定一个长度为 $n$ 的置换，问是否存在 $a,b\;(a \not=b,a\equiv b \pmod 2)$ 满足 $\large c = \frac {a+b} 2$ 的位置在 $a,b$ 之间</p>
-<p>$n \leq 300000$</p>
-</blockquote>
-<p>思考10min…</p>
-<p>考虑从左至右枚举 $c$ ，如果不存在 $a,b$ </p>
-<p>那么一定满足 $a,b$ 在 $c$ 的同一边</p>
-<p>即 $a,b$ 要么都在 $c$ 前出现，要么都在后面出现</p>
-<p>也就是数值 $c$ 两边的出现情况是否对称</p>
-<p>考虑正着倒着各维护一个 <code>HASH</code> 值</p>
-<p>即可判断是否对称</p>
-<h4 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h4><p>求出所有位置结尾的最长匹配长度</p>
-<p>常见套路：作为DP的状态，最小周期串 ，名次匹配</p>
-<p>没啥好说的</p>
-<h4 id="ExKMP"><a href="#ExKMP" class="headerlink" title="ExKMP"></a>ExKMP</h4><p>求 <code>S</code> 的后缀与 <code>T</code> 的LCP，记为 $EX_{S,T}[i]$</p>
-<p>考虑先求出 $EX_{T,T}[i]$ ，保存当前最大的 $k+ex[k]-1$ ，在范围内的，直接用之前的信息求出，否则暴力匹配，复杂度线性</p>
-<p>如何理解第 5 行代码？</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//此模版下标从0开始</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exKMP</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">char</span> t[], <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>; f[<span class="number">0</span>] = m;</div><div class="line">	rep (i, <span class="number">1</span>, m<span class="number">-1</span>) &#123;</div><div class="line">		f[i] = max(<span class="number">0</span>, min(f[i-mx], mx+f[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+f[i] &lt; m &amp;&amp; t[i+f[i]] == t[f[i]]) f[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + f[i] &gt; mx + f[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">	mx = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>) &#123;</div><div class="line">		g[i] = max(<span class="number">0</span>, min(f[i-mx], mx+g[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+g[i] &lt; n &amp;&amp; s[i+g[i]] == t[g[i]]) g[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + g[i] &gt; mx + g[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><blockquote>
-<p><strong>51Nod1638 字符串重组</strong> $s$ 是一个长度为 $n$ 的字符串，定义</p>
-<p>$$f(s,i,j) = s_{i+1…j−1} + r(s_{j…n−1}) + r(s_{0…i})\;(0 \le i&lt;j&lt;n)$$</p>
-<p>给定 $a$ 和 $b$ 。找出相应的 $i$ 和 $j$ ，使得 $f(a,i,j) =b$ </p>
-<p>取 $i$ 最大，其次 $j$ 最小的方案</p>
-</blockquote>
-<p>思考7min…</p>
-<p>将 $a$ 反向与 $b$ 进行 <code>KMP</code>，得到 $i,j$ 的值</p>
-<p>用 <code>ExKMP</code> 判 $a[i+1],b$ 的最长公共前缀</p>
-<p>需要预处理一下 $i$ 的上界 $\mathrm{limit}$</p>
-<p>注意细节</p>
-<h4 id="Manachar"><a href="#Manachar" class="headerlink" title="Manachar"></a>Manachar</h4><p>求出 $r[i]$ ，表示以 $i$ 为回文中心的最长回文半径</p>
-<p>与 <code>ExKMP</code> 类似，保存扩展的最右边节点。范围内利用已有信息，否则暴力扩展。<br>为了处理长度为偶数的回文串，在所有中间字符插入 <code>#</code> ，两端插入其它字符</p>
-<p>复杂度 $O(n)$ </p>
-<p>观察其扩展的方式，不难得到：任意一串的本质不同的回文串最多有 $O(n)$ 个</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200009</span>;</div><div class="line"><span class="keyword">char</span> s[maxn], str[maxn];</div><div class="line"><span class="keyword">int</span> r[maxn], n;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">manachar</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>, p = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123; </div><div class="line">		str[i&lt;&lt;<span class="number">1</span>] = s[i]; str[i&lt;&lt;<span class="number">1</span>|<span class="number">1</span>] = <span class="string">'#'</span>;</div><div class="line">	&#125;</div><div class="line">	str[<span class="number">0</span>] = <span class="string">'$'</span>; str[<span class="number">1</span>] = <span class="string">'#'</span>; str[(n+<span class="number">1</span>)&lt;&lt;<span class="number">1</span>] = <span class="string">'@'</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=(n&lt;&lt;<span class="number">1</span>|<span class="number">1</span>); i++) &#123;</div><div class="line">		r[i] = max(<span class="number">1</span>, min(r[<span class="number">2</span>*p-i], mx-i));</div><div class="line">		<span class="keyword">while</span> (str[i+r[i]] == str[i-r[i]]) r[i]++;</div><div class="line">		<span class="keyword">if</span> (i + r[i] &gt; mx) &#123; p = i; mx = i + r[i]; &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="一道题"><a href="#一道题" class="headerlink" title="一道题"></a>一道题</h5><blockquote>
-<p><strong>BZOJ2342 [SHOI2011]双倍回文</strong> 给定一个字符串，求最长的一个形如 $ww^rww^r$  的子串</p>
-<p>$n \leq 500000$</p>
-</blockquote>
-<p>思考10min…</p>
-<p>考虑枚举大回文中心 $i$ ，而$j$ 满足条件当且仅当 $i-r[i]/2\le j&lt;i,\;j + r[j] \ge i$</p>
-<p>对于每一个 $i$ ，我们要求出最小的 $j$ </p>
-<p>注意到第二个不等式右边单调递增，并查集维护</p>
-<p><strong>exercise</strong></p>
-<p><code>BZOJ2565 最长双回文串</code></p>
-<p><code>BZOJ3103 Palindromic Equivalence</code></p>
-<h4 id="最小表示法"><a href="#最小表示法" class="headerlink" title="最小表示法"></a>最小表示法</h4><p>$O(n)$ 求出字符串的最小字典序的循环同构。两个指针单调移动</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span>; j = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</div><div class="line">	k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (a[i+k&gt;=n?i+k-n:i+k] == a[j+k&gt;=n?j+k-n:j+k]) k++;</div><div class="line">	<span class="keyword">if</span> (k == n) <span class="keyword">break</span>;</div><div class="line">	<span class="keyword">if</span> (a[i+k&gt;=n?i+k-n:i+k] &lt; a[j+k&gt;=n?j+k-n:j+k]) j = max(j+k+<span class="number">1</span>, i+<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> i = max(i+k+<span class="number">1</span>, j+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">res = min(i, j);</div></pre></td></tr></table></figure>
-<p>裸题：BZOJ2176 Strange string</p>
-<p>最小表示法思想：简化状态的表示</p>
-<h5 id="红红火火恍恍惚惚哈哈哈"><a href="#红红火火恍恍惚惚哈哈哈" class="headerlink" title="红红火火恍恍惚惚哈哈哈"></a>红红火火恍恍惚惚哈哈哈</h5><blockquote>
-<p><strong>Codeforces 524F</strong> 给出一个仅由 <code>(</code> 和 <code>)</code> 构成的字符串，现在可以加入若干字符，或者把末尾的字符移到最前面。求一个长度最短的合法括号序列，如果有多个输出长度最短的且字典序最小。</p>
-</blockquote>
-<p>思考10min…</p>
-<p>长度是否能确定？</p>
-<p>是原长加上两种括号的差值 $t=\mathrm{cnt\;<code>)</code>}-\mathrm{cnt\;<code>(</code>}$，$t$ 也是需要加上的左括号数量</p>
-<p>所有位置都能成为左端点吗？</p>
-<p>如果一个括号序列可以匹配，当且仅当 <strong>所有位置的前缀 <code>(</code> 数量大于 <code>)</code> 的数量</strong></p>
-<p>单调队列维护 <code>)</code> 与 <code>(</code> 差值的前缀和单调递减，判断 $t$ 个左括号是否够用</p>
-<p>循环同构，字典序最小？</p>
-<p>最小表示法即可</p>
-<p><del>随便一写就可以秒 SA 做法了</del></p>
-<blockquote>
-<p><strong>Codeforces 46F</strong></p>
-<p><img src="CF46F.png" alt="CF46F"></p>
-</blockquote>
-<p>思考3min…</p>
-<p>操作可逆，达到极大/极小的状态，<code>bellman-ford</code></p>
-<p><strong>ExKMP，Manachar</strong></p>
-<blockquote>
-<p><strong>Codeforces 30E</strong> </p>
-<p><img src="CF30E.png" alt="CF30E"></p>
-</blockquote>
-<p>思考10min…</p>
-<p>是否有 $O(n)$ 做法？</p>
-<p>套路，将串反向与原串ExKMP</p>
-<p>一个重要性质，$T[x+1,n-x]$ 一定越长越好</p>
-<p>枚举回文中心，预处理前缀最大值</p>
-<h2 id="Part-2-基础字符串数据结构"><a href="#Part-2-基础字符串数据结构" class="headerlink" title="Part 2 基础字符串数据结构"></a>Part 2 基础字符串数据结构</h2><h4 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h4><p>常常与前缀相关</p>
-<p>类似于主席树，可以可持久化</p>
-<p>小优化：如果一个节点只有一个孩子，那么可以把这个节点省略</p>
-<p> <code>Compacted-trie</code> ，节点数量降为 $O(n) $</p>
-<h5 id="两个简单应用"><a href="#两个简单应用" class="headerlink" title="两个简单应用"></a>两个简单应用</h5><blockquote>
-<p><strong>Codeforces 178F</strong> 给你 $n$ 个串 $a_i$ ，要求选择 $k$ 个串，求</p>
-<p>$$\begin{eqnarray} \large \min \left\{ \sum _ {i=1} ^ {k-1} \sum _ {j=i+1} ^ {k} lcp(a_i,a_j) \right\} \end{eqnarray}$$</p>
-</blockquote>
-<p>思考5min…</p>
-<p>建出 <code>Copacted-trie</code> ，暴力树形背包DP，复杂度 $O(n^2)$</p>
-<blockquote>
-<p><strong>BZOJ4546 [CodeChef]XRQRS</strong> 给定一个初始时为空的整数序列（元素由 <code>1</code> 开始标号）以及一些询问：</p>
-<ol>
-<li>在数组后面就加入数字 $x$</li>
-<li>在区间 $[L,R]$ 中找到 $y$ ，最大化 $x \oplus y$</li>
-<li>删除数组最后 $k$ 个元素</li>
-<li>在区间 $[L,R]$ 中，统计小于等于 $x$ 的元素个数</li>
-<li>在区间 $[L,R]$ 中，找到第 $k$ 小的数</li>
-</ol>
-</blockquote>
-<p>思考 5min…</p>
-<p><code>可持久化Tire</code> 裸题，不说了</p>
-<p><del>卡内存差评</del></p>
-<p><strong>exercise</strong></p>
-<p><code>BZOJ4523 [CQOI2016]路由表</code></p>
-<p><code>BZOJ2741 [FOTILE模拟赛]L</code></p>
-<h4 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h4><p><code>KMP</code> 的 <code>Trie</code> 版本。两种构造方式：</p>
-<ul>
-<li>暴力跳 <code>Fail</code>，复杂度不够优</li>
-<li><code>Trie图</code> ！$p[i]$ 保存加入 $i$ 后会到达的节点，$p$ 和 $Fail$ 相互计算</li>
-</ul>
-<p><strong>Fail树</strong></p>
-<ul>
-<li><code>AC自动机</code>中，<code>Fail</code> 指针指向深度比它小的一个节点，构成了一棵树</li>
-<li>一个点在 <code>Fail</code> 上的祖先是所有能和这个后缀匹配的前缀节点</li>
-<li><code>Fail树</code> 上的 <code>LCA</code> 是两个前缀的最长公共后缀，并且在前缀中出现</li>
-</ul>
-<p>常见套路：自动机状态作为 <code>DP</code> 状态，矩阵快速幂优化，<code>Fail树</code>搞搞</p>
-<h5 id="经典题"><a href="#经典题" class="headerlink" title="经典题"></a>经典题</h5><blockquote>
-<p><strong>51Nod1440 迈克打电话</strong> 有 $n$ 只熊，从 $1$ 到 $n$ 进行编号。第 $i$ 只熊的电话号码是$s_i$。每只熊会给那些电话号码是他的子串的熊打电话（可能会给自己打）。</p>
-<p>$call(i, j)$ 表示第 $i$ 只熊给第 $j$ 只熊打电话的次数，也就是第 $j$ 个串在第 $i$ 个串中出现的次数。</p>
-<p>迈克会有 $q$ 次询问。每个询问中给出 $l,r,k$</p>
-<p>然后请您计算一下 $\sum ^r _{i=l} call(i,k)$</p>
-</blockquote>
-<p>思考7min…</p>
-<p>简单套路</p>
-<p>离线，<code>Fail</code>树，<code>DFS</code>序</p>
-<p><strong>exercise</strong></p>
-<p><code>BZOJ3881 [COCI2015]Divljak</code></p>
-<h4 id="回文自动机-PAM"><a href="#回文自动机-PAM" class="headerlink" title="回文自动机 PAM"></a>回文自动机 PAM</h4><p>提取所有本质不同的回文串，是 $O(n)$ 的</p>
-<p>回文自动机的每一个节点都是原串的一个回文子串，状态只记它的长度</p>
-<p><code>PAM</code> 的有符号边 <code>x-trans</code>：首尾各添加一个字符 <code>x</code> 到达的状态</p>
-<p><code>PAM</code> 的无符号边 <code>Fail</code>：这个回文串的最大真回文后缀</p>
-<p>在线构造，维护 <code>last</code> 表示当前的最大回文后缀</p>
-<p>令 $p=last$ ，加入一个字符 $x$ 之后，$p$ 不断跳 <code>Fail</code>，直到个这个回文子串的前一个字符为 $x$ </p>
-<p>如果不存在 <code>x-trans</code> ，新建一个节点，新状态的 <code>Fail</code> 就是 <code>p</code> 继续跳 <code>Fail</code> 知道这个回文子串的前一个字符为 <code>x</code> 为止</p>
-<h5 id="裸题"><a href="#裸题" class="headerlink" title="裸题"></a>裸题</h5><blockquote>
-<p><strong>BZOJ3676 [APIO2014]回文串</strong> 假设 $cnt[i]$ 是回文串 $i$ 在 $s$ 中出现的次数，求</p>
-<p>$$\large \max \{ cnt[i] \cdot i \}$$</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300009</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PalindromicTree</span> &#123;</span></div><div class="line">    <span class="keyword">int</span> p[<span class="number">26</span>], fail, cnt, len;</div><div class="line">&#125; T[maxn];</div><div class="line"><span class="keyword">int</span> n, size, last, cur;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</div><div class="line"><span class="keyword">char</span> s[maxn]; </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	T[size].len = x; <span class="keyword">return</span> size++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">	newNode(<span class="number">0</span>); newNode(<span class="number">-1</span>);</div><div class="line">	s[<span class="number">0</span>] = <span class="string">'#'</span>; T[<span class="number">0</span>].fail = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> o)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (s[n-T[o].len<span class="number">-1</span>] != s[n]) o = T[o].fail;</div><div class="line">	<span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	gets(s+<span class="number">1</span>); build();</div><div class="line">	<span class="keyword">for</span> (n=<span class="number">1</span>; s[n]; n++) &#123;</div><div class="line">		cur = get(last);</div><div class="line">		<span class="keyword">if</span> (!T[cur].p[s[n]-<span class="string">'a'</span>]) &#123;</div><div class="line">			last = newNode(T[cur].len + <span class="number">2</span>);</div><div class="line">			T[last].fail = T[get(T[cur].fail)].p[s[n]-<span class="string">'a'</span>];</div><div class="line">			T[cur].p[s[n]-<span class="string">'a'</span>] = last;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> last = T[cur].p[s[n]-<span class="string">'a'</span>];</div><div class="line">		T[last].cnt++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=size<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--) &#123;</div><div class="line">		T[T[i].fail].cnt += T[i].cnt;</div><div class="line">		ans = max(ans, <span class="number">1L</span>L * T[i].cnt * T[i].len);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>execise</strong></p>
-<p><code>Gym 100543G</code></p>
-<p>更多应用请参考 翁文涛 的 <code>2017集训队论文</code></p>
-<h2 id="Part-3-后缀三兄弟"><a href="#Part-3-后缀三兄弟" class="headerlink" title="Part 3 后缀三兄弟"></a>Part 3 后缀三兄弟</h2><p><strong>注意，这是本次讲课最重要的内容！</strong></p>
-<p>发现前面很多东西只能处理前缀，那么如何处理子串？</p>
-<p>每个子串都是某个后缀的前缀！那么就提取所有后缀！</p>
-<h4 id="后缀数组-SA"><a href="#后缀数组-SA" class="headerlink" title="后缀数组 SA"></a>后缀数组 SA</h4><h5 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h5><p>定义三个数组：<code>SA</code>  ，<code>Rank</code>  ，<code>height</code></p>
-<ul>
-<li><code>SA</code> ，第 <code>i</code> 小的后缀的编号</li>
-<li><code>Rank</code>，后缀 <code>i</code> 的排名</li>
-<li>于是有 <code>Rank[SA[i]]=i, SA[Rank[i]]</code></li>
-<li><code>height[i]</code> ，后缀 <code>SA[i-1]</code> 和 后缀 <code>SA[i]</code> 的 <code>LCP</code></li>
-</ul>
-<p>求 <code>Rank</code></p>
-<ul>
-<li>倍增，进行 $O(\log n)$ 次基数排序。常用的算法</li>
-<li><code>DC3</code>，线性求，但是常数大 <del>没有用</del></li>
-</ul>
-<p>求 <code>height</code> </p>
-<ul>
-<li>直接暴力求，复杂度为线性</li>
-<li>原因：<code>height[Rank[i]] &gt;= height[Rank[i-1]] - 1</code></li>
-</ul>
-<blockquote>
-<p>假设 <code>SA[Rank[i-1]-1] = k</code>，考虑删除后缀 <code>i-1</code> 和 <code>k</code> 的第一个字符</p>
-<p>于是得到 <code>k+1</code> 和 <code>i</code> 的 <code>LCP</code> 至少是 <code>height[Rank[i-1]] - 1</code></p>
-<p>而 <code>k+1</code> 的排名比 <code>i</code> 小，所以有 <code>height[Rank[i]] &gt;= height[Rank[i-1]] - 1</code></p>
-</blockquote>
-<h5 id="后缀数组模板"><a href="#后缀数组模板" class="headerlink" title="后缀数组模板"></a>后缀数组模板</h5><p>其中 $tax$ 表示桶，$tmp[i]$ 表示第二关键字排名为 $i$ 对应的后缀标号</p>
-<p>基数排序的过程：</p>
-<ul>
-<li><p>统计每一个后缀排名的个数，并求出前缀和</p>
-</li>
-<li><p>然后按照第二关键字的排名从大到小处理</p>
-</li>
-<li><p>$tax[Rank[tmp[i]]]–]$ 就是 $tmp[i]$ 的新排名</p>
-</li>
-</ul>
-<p>一开始， $Rank[i]$ 就是后缀i的第一个字符，第二关键字就是它的位置</p>
-<p>考虑每一次倍增子串的长度 $w$，考虑一次完整的循环</p>
-<ul>
-<li><p>首先是没有后半部分的串，那么它们的第二关键字为0，所以按照位置是排在最前面的那几个</p>
-</li>
-<li><p>之后在是利用 <code>SA</code> 来求出剩下的第二关键字，<code>SA[i]-w</code> 是其对应的子串</p>
-</li>
-<li><p>再是一次基数排序。用 <code>tmp</code> 临时存储 <code>rank</code> 的值</p>
-</li>
-<li><p>最后重新离散化</p>
-</li>
-</ul>
-<p>按照 <code>i</code>，升序暴力求 $height[rank[i]]$ 即可</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100009</span>;</div><div class="line"><span class="keyword">int</span> SA[maxn], rank[maxn], height[maxn], tax[maxn], tmp[maxn], n, m;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> s[x] == s[y] &amp;&amp; s[x+w] == s[y+w];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=m; i++) tax[i] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) tax[rank[i]]++;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;=<span class="number">1</span>; i--) SA[tax[rank[tmp[i]]]--] = tmp[i];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SuffixArray</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		rank[i] = s[i]; tmp[i] = i;</div><div class="line">	&#125;</div><div class="line">	m = <span class="number">127</span>; Sort();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> w=<span class="number">1</span>,p=<span class="number">1</span>,i; p&lt;n; w+=w,m=p) &#123;</div><div class="line">		<span class="keyword">for</span> (p=<span class="number">0</span>,i=n-w+<span class="number">1</span>; i&lt;=n; i++) tmp[++p] = i;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="keyword">if</span> (SA[i] &gt; w) tmp[++p] = SA[i] - w;</div><div class="line">		Sort(); swap(rank, tmp); rank[SA[<span class="number">1</span>]] = p = <span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) rank[SA[i]] = cmp(tmp, SA[i], SA[i<span class="number">-1</span>], w) ? p : ++p;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> j, k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; height[rank[i++]]=k)</div><div class="line">		<span class="keyword">for</span> (k=k?k<span class="number">-1</span>:k,j=SA[rank[i]<span class="number">-1</span>]; s[i+k]==s[j+k]; ++k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>模版：UOJ #35 后缀排序</strong></p>
-<p> 回顾一下 <code>SA[],Rank[]</code> 的性质，我们来看一道题</p>
-<blockquote>
-<p><strong>BZOJ4319 [CERC2008]Suffix reconstruction</strong> 给定 <code>SA[]</code> ，构造一个原字符串，只能包含小写字母</p>
-</blockquote>
-<p>贪心？</p>
-<p>按照 <code>SA[]</code> 的顺序，每个位置能小就尽量小</p>
-<p>如何知道一个位置是否要增大 <code>1</code> ？</p>
-<p><strong>exercise</strong></p>
-<p><strong>LOJ Hello 2018 的 B</strong> ，同样是一道利用 <code>SA[],Rank[]</code> 性质的题</p>
-<h5 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h5><ul>
-<li><p>二分答案</p>
-</li>
-<li><p><strong>利用 <code>height</code> 对后缀分组</strong></p>
-</li>
-<li><p>重复出现的子串变为两个后缀的 <code>LCP</code></p>
-</li>
-<li><p><strong>两个后缀的LCP就是对应 <code>Rank</code> 的 <code>height</code> 的 <code>左开右闭区间min</code></strong></p>
-</li>
-<li><p><strong>多个串，合并为一个长的串，中间用特殊字符隔开</strong></p>
-</li>
-<li><p>本质不同的子串数目：所有子串个数减去所有 $height$</p>
-</li>
-<li><p>不重叠：$SA$ 的最大与最小值</p>
-</li>
-<li><p><strong>单调栈，<code>RMQ</code></strong></p>
-</li>
-</ul>
-<p>更多内容请参考文件夹内 <code>罗穗骞</code> 的集训队论文</p>
-<p><del>具体这些套路的模版题不展开介绍</del></p>
-<h5 id="常用技巧选讲"><a href="#常用技巧选讲" class="headerlink" title="常用技巧选讲"></a>常用技巧选讲</h5><p><del>我怎么敢不讲啊QAQ</del></p>
-<ol>
-<li><strong>可重叠最长重复子串</strong> 给定一个字符串，求最长重复子串，这两个子串可以重叠</li>
-</ol>
-<p>—— <code>height</code> 最大值</p>
-<ol>
-<li><strong>不可重叠最长重复子串</strong> 不可重叠</li>
-</ol>
-<p>—— 二分答案，按 <code>height</code> 分组，组内 <code>SA</code> 的 <code>min,max</code></p>
-<ol>
-<li><strong>可重叠的 $k$  次最长重复子串</strong> 要求重复 $k$ 次</li>
-</ol>
-<p>—— 二分答案，分组，后缀个数</p>
-<ol>
-<li><strong>最长回文子串</strong> </li>
-</ol>
-<p>—— 对称，用特殊字符隔开</p>
-<ol>
-<li><strong>连续重复子串</strong> 给定 <code>S</code> ，求最大的 <code>R</code> 使得 <code>S</code> 为某个字符串重复 <code>R</code> 次得到</li>
-</ol>
-<p>—— 枚举答案 <code>R</code> ，判断 <code>suffix(1),suffix(k+1)</code> 的最长公共前缀是否等于 $n-k$ ，只需求 <code>height[]</code> 的每一个数到 <code>height[rank[1]]</code> 的最小值</p>
-<ol>
-<li><strong>重复次数最多的连续重复子串 （一定要记住的经典套路）</strong> </li>
-</ol>
-<p>—— 考虑枚举答案长度 <code>L</code> ，注意到一个性质，如果一个长度为 $L$ 的字符串重复出现，那么他肯定经过了 <code>s[0],s[L],s[2L],S[3L],...</code>  ，枚举 $i$ ，只要看字符 <code>s[Li],s[L(i+1)]</code> 往前往后各能匹配多远即可，如果长度为 <code>k</code> ，那么就出现了 <code>k/L+1</code> 次，复杂度 $O(n \log n)$ ！</p>
-<ol>
-<li><strong>两个串の最长公共子串</strong> </li>
-</ol>
-<p>—— 考虑拼接起来，中间用特殊字符隔开，考虑求 <strong>排名相邻且不再同一个字符串的 <code>height</code> 最大值</strong> </p>
-<p>思考：为什么只要考虑排名相邻的？</p>
-<ol>
-<li><strong>两个串の长度不小于 $k$ 的公共子串对数</strong> </li>
-</ol>
-<p>—— 考虑 <code>A</code> 和 <code>B</code> 所有后缀的最长公共前缀的长度，单调栈实现，细节自己yy</p>
-<ol>
-<li><strong>多个串の出现在不小于 $k$ 个字符串中的最长子串</strong> </li>
-</ol>
-<p>—— 二分答案，分组</p>
-<h5 id="一些🌰"><a href="#一些🌰" class="headerlink" title="一些🌰"></a>一些🌰</h5><blockquote>
-<p><strong>UOJ#219 [NOI2016]优秀的拆分</strong> 如果一个字符串可以被拆分为 $AABB$ 的形式，其中 $AA$ 和 $BB$ 是任意 <strong>非空</strong> 字符串，则我们称该字符串的这种拆分是优秀的。</p>
-<p>现在给出一个长度为 $n$ 的字符串 $S$，我们需要求出，在它 <strong>所有子串</strong> 的所有拆分方式中，优秀拆分的总个数</p>
-<p>$T \leq 10, n \leq 30000$</p>
-</blockquote>
-<p>思考10min…</p>
-<p>显然，我们可以统计每个前缀的后缀 <code>AA</code> 的个数，后缀同理</p>
-<p>用之前的第 6 个技巧即可</p>
-<p>求 <code>LCP</code> 用 <code>ST</code> 表即可</p>
-<p>区间修改，差分即可</p>
-<p><del>（如果泥萌二分＋<code>hash</code> ，也可以卡过）</del></p>
-<blockquote>
-<p><strong>Codeforces 802I</strong> 求一个串中，所有本质不同子串的出现次数的平方和 </p>
-</blockquote>
-<p>思考5min…</p>
-<p><del>不久？</del>之前 <code>vp</code> 中的一道题</p>
-<p>显然可以单调栈，考虑求出所有 <code>LCP</code> 的出现次数，细节比较多，请自己yy</p>
-<p><strong>很多这种单调栈+后缀数组的题都可以用后缀树做</strong> </p>
-<h5 id="更多的练习"><a href="#更多的练习" class="headerlink" title="更多的练习"></a>更多的练习</h5><p>习题不多不多 <del>据说有些用 <code>SAM</code> 做更简单</del></p>
-<p><code>BZOJ        3172        [TJOI2013]单词</code></p>
-<p><code>BZOJ        3230        相似子串</code></p>
-<p><code>BZOJ        2119        股市的预测</code></p>
-<p><code>BZOJ        4278        [ONTAK2015]Tasowanie</code></p>
-<p><code>BZOJ        4516        [SDOI2016]生成魔咒</code></p>
-<p><code>BZOJ        4556        [TJOI2016]字符串</code></p>
-<p><code>BZOJ        2534        L-gap字符串</code></p>
-<p><code>BZOJ        3796        Mushroom追妹纸</code></p>
-<p><code>BZOJ        3682        Phorni</code></p>
-<p><code>CodeChef     STRQUERY    String Query</code></p>
-<h4 id="后缀自动机-SAM"><a href="#后缀自动机-SAM" class="headerlink" title="后缀自动机 SAM"></a>后缀自动机 SAM</h4><p>如何理解 <code>SAM</code> ？</p>
-<p>确保理解后缀自动机的结构，<strong>特别是 <code>Right集合</code> 的意义</strong></p>
-<p>在讲之前，先来感性理解一下 <code>SAM</code> 的结构</p>
-<p><img src="aabbabd_1.png" alt="aabbabd_1"></p>
-<h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><ol>
-<li>串 <code>S</code> 的后缀自动机能识别 <strong>且仅能识别</strong>  <code>S</code> 的所有 <strong>后缀</strong></li>
-<li>同时，所有子串包含在 <code>SAM</code> 的某个状态</li>
-<li>如果暴力对后缀建 <code>Tire</code>，复杂度是 $O(n^2)$ 发现很多状态是重复的，考虑 <strong>最小化 </strong> <code>SAM</code> ，合并所有的重复状态</li>
-</ol>
-<h6 id="状态的优化"><a href="#状态的优化" class="headerlink" title="状态的优化"></a>状态的优化</h6><p>一个节点的到根路径必然是 <strong>一些</strong> 子串，这个节点所能够识别的后缀是这些子串出现的所有位置对应的后缀</p>
-<p>假设一个子串 <code>s</code> 在 $\{[l_i,r_i]\}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
-<p><strong>可以发现，节点 <code>A,B</code> 能合并，当且仅当 <code>A,B</code> 在字符串中出现的结束位置完全一样</strong></p>
-<p>定义 <code>Right(sub)</code> 表示 <code>sub</code> <strong>右端</strong> 在 <code>S</code> 中出现的集合</p>
-<p>考虑将所有相同 <code>Right()</code> 的状态合并为一个节点</p>
-<p>.【一个 <code>Right</code> 集合 <code>+</code> 一个长度】能够对应一些相同的子串</p>
-<p>显然合法的长度是一个区间，记为 <code>[min(u),max(u)]</code></p>
-<p><strong>_深刻理解 <code>Right集合</code> 的意义_</strong></p>
-<p>考虑从串 <code>S</code> 的 <code>i</code> 位置开始走，走到了位置 <code>j</code> ，当前状态为 <code>u</code></p>
-<p>那么 <code>Right(u)</code> 包含 <code>j</code> ，同时 <code>min(u) &lt;= i-j+1 &lt;= max(u)</code></p>
-<p><strong>当走到某个状态时，已经匹配的串已经失去原有的信息，它可以是满足这个状态的任意串，因为在 <code>SAM</code> 中这些串都是等价的</strong></p>
-<h6 id="状态数的线性性"><a href="#状态数的线性性" class="headerlink" title="状态数的线性性"></a>状态数的线性性</h6><p>若 <code>Right(a)，Right(b) (|a|&gt;|b|)</code>中有公共元素</p>
-<p>那么 <strong>串 <code>a</code> 是串 <code>b</code> 的后缀</strong> ，<code>Right(b)</code> 是 <code>Right(a)</code> 的 <strong>真</strong> 子集</p>
-<p>所以任意两个节点 <strong>要么没有交集，要么是真包含</strong></p>
-<p>令 <code>Right(par[u])</code> 是 <code>Right(u)</code> 的最小超集</p>
-<p>这种关系构成一棵 <strong><code>Parent树</code></strong> （满足 <strong>任意节点至少两个子节点，性质显然</strong>）</p>
-<p>节点数 $O(n)$</p>
-<p><strong>例如串 <code>aaabbabd</code> 的 <code>ParentTree</code> </strong></p>
-<p>注意那些叶子节点还有其他含义</p>
-<p><img src="ParentTree.png" alt="ParentTree"></p>
-<h6 id="一个重要性质"><a href="#一个重要性质" class="headerlink" title="一个重要性质"></a>一个重要性质</h6><p><code>max[parent[u]] + 1 = min[u]</code></p>
-<h6 id="转移数的线性性"><a href="#转移数的线性性" class="headerlink" title="转移数的线性性"></a>转移数的线性性</h6><p>考虑搞一棵有向生成树</p>
-<p>对于一条非连续的边 $(a,b)$</p>
-<p>构造从根到状态 <code>a</code> 的路径 <code>+ (a-&gt;b) +</code> <code>b</code> 到任意一个 <code>end状态</code></p>
-<p>这必然是一个后缀 <del>（不然这条边有什么用）</del></p>
-<p>显然一个非树边至少被一个后缀所对应</p>
-<p>而后缀至多对应到一条非树边</p>
-<p>所以非树边的数量不会超过后缀的数量</p>
-<p><strong>边也是 $O(n)$ 的，SAM是个线性结构</strong></p>
-<h6 id="其他的性质"><a href="#其他的性质" class="headerlink" title="其他的性质"></a>其他的性质</h6><ol>
-<li>子串的个数，就是状态中 <code>Right集合</code> 的大小</li>
-<li>一个节点的 <code>Right集合</code> 是对应子孙的所有叶子节点的并集 （+ 前缀）</li>
-<li>按照 <code>dfs序</code> 排列，一个节点的 <code>Right集合</code> 就是一段区间，可以快速求出一个子串的所有出现位置</li>
-<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 $\{r_1,r_2,r_3,\cdots,r_k\}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 $\{r_i+1\}$</li>
-<li>那么如果 <code>s</code> 出发有标号为 <code>x</code> 的边，那么 <code>Parent(s)</code> 出发必然也有</li>
-<li>反证法可以证明：$\mathrm{Right}(\mathrm{trans}(s,c)) \subset \mathrm{Right}(\mathrm{trans}(\mathrm{Parent}(s),c))$</li>
-<li>如果有 <code>s-&gt;t</code> ，<code>Max(t) &gt; Max(s)</code> （根据 <code>Right集合</code>  的定义，这条性质显然，同时能够保证 <code>SAM</code> 是个 <code>DAG</code> ）</li>
-</ol>
-<h5 id="线性构造-SAM，前方高能！掉线用户请重连！"><a href="#线性构造-SAM，前方高能！掉线用户请重连！" class="headerlink" title="线性构造 SAM，前方高能！掉线用户请重连！"></a>线性构造 SAM，前方高能！掉线用户请重连！</h5><p>每次添加一个字符，并更新 <code>SAM</code> 使得它包含这个新字符</p>
-<p>令当前字符串为 <code>T</code> ，新字符为 <code>x</code></p>
-<p>考虑所有表示  <code>T</code> 的后缀（也就是 <code>Right集合</code> 中包含 <code>|T|</code> ）的节点 $v_1,v_2,v_3,\cdots,v_k$</p>
-<p>必然 <strong>存在 <code>Right(p)</code> $=\{|T|\}$ 的节点 <code>p</code></strong></p>
-<p> $v_1,v_2,v_3,\cdots,v_k$ 由于 <code>Right集合</code> 都含有 <code>|T|</code> ，那么它们在 <code>Parent树</code> 中必然全是 <code>p的祖先</code></p>
-<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $=\{|T|+1\}$ 的节点</strong></p>
-<p>不妨让他们从后代到祖先排为 $v_1=p,v_2,v_3,\cdots,v_k=root$</p>
-<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，$\{r_1,r_2,\cdots,r_n=|T|\}$</p>
-<p>如果它没有标号为 <code>x</code> 的边，它的 <code>Right集合</code> 没有 $r_i$ 满足 $s[r_i+1]=x$</p>
-<p>也就是只能达到 $\mathrm{Right(u)} = {|T|+1}$ 的状态 $u$ </p>
-<p>于是让它连一条到 <code>np</code> ，标号为 <code>x</code> 的边</p>
-<p><img src="2.jpg" alt="2"> $$\Large \Longrightarrow$$   <img src="3.jpg" alt="3"></p>
-<p><strong>这一部分请仔细体会</strong></p>
-<p>假设 $v_p$ 是第一个存在标号 $x$ 的边，其中 $\mathrm{trans}(v_p,x)=q$</p>
-<p>那么 <code>q</code> 的 <code>Right集合</code> 是 $\{r_i+1 : S[r_i + 1]=x\}$</p>
-<p><strong>但是我们不一定能够直接插入 $|T|+1$ 到 $q$</strong></p>
-<p>接下来分成两种情况：</p>
-<p>$\max(q)=\max(v_p)+1$ ，$np$ 满足条件范围为 $[\max(v_p)+1,|T|+1]$ </p>
-<p>此时 $q$ 代表的所有串的 <code>right集合</code> 仍然相同</p>
-<p>那么直接令 $\mathrm{parent}(np)=q$</p>
-<p>可以发现 $v_p$ 及其祖先的 <code>x</code> 转移的 <code>Right集合</code> 都并上了 <code>|T|+1</code></p>
-<p>否则 $\max(q)&gt;\max(v_p)+1$ </p>
-<p>这种情况下 $q$ 代表的串中，长度不超过 $\max(v_p)+1$ 的串的 <code>Right集合</code> 会多出一个值 <code>|T|+1</code> ，而长度更大的其他串不会</p>
-<p>于是我们新建一个节点 <code>nq</code> ，代表原来 $q$ 中长度不超过 $\max(v_p)+1$ 的串，于是</p>
-<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup \{|T|+1\},\;\max(nq)=\max(vp)+1$</p>
-<p>$\mathrm{parent}(nq)=\mathrm{parent}(q)，\mathrm{parent}(q)=\mathrm{parent}(np)=nq$</p>
-<p>$|T|+1$ 开始不能转移，所以 $nq$ 的转移可以从 $q$ 复制过来</p>
-<p>会存在 $v_p, \cdots, v_e$，$\mathrm{trans}(v,x)=q$，那么把它设置为 $nq$ 即可</p>
-<p>（显然 $\max(\mathrm{trans}(v_t)) \leq \max(v_p)=\max(nq)$ ，可以转移）</p>
-<p>如果始终不存在这样的点，令 <code>parent(np)=root</code> 即可</p>
-<p><strong>SAM模板</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span> <span class="keyword">int</span> p[<span class="number">26</span>], pa, val; &#125; t[maxn&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> size = <span class="number">1</span>, root = <span class="number">1</span>, last = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> p = last, np = ++size, q, nq;</div><div class="line">    t[np].val = t[p].val + <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(; p &amp;&amp; !t[p].p[c]; p = t[p].pa) t[p].p[c] = np;</div><div class="line">    <span class="keyword">if</span> (!p) t[np].pa = root;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        q = t[p].ch[c];</div><div class="line">        <span class="keyword">if</span> (t[q].val == t[p].val + <span class="number">1</span>) t[np].pa = q;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            nq = ++size;</div><div class="line">            t[nq] = t[q]; t[nq].val = t[p].val + <span class="number">1</span>;</div><div class="line">            t[q].pa = t[np].pa = nq;</div><div class="line">            <span class="keyword">for</span>(; p &amp;&amp; t[p].p[c] == q; p = t[p].pa) t[p].p[c] = nq;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    last = np;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以串 <code>aabbabd</code> 为例，我们看一下它是如何构造的，此处的 <code>len</code> 即为 $\max(u)$，<strong>重点为图3至图4</strong> </p>
-<p><img src="a.png" alt="a"><img src="aa.png" alt="aa"><img src="aab.png" alt="aab"><img src="aabb.png" alt="aabb"></p>
-<p>我们来考虑图3至图4的改变，泥萌可能会说：</p>
-<p>不是只要把 5 接在 4 后面就好了嘛….</p>
-<p>但是会发现此时 4 的 <code>Right集合</code> 为 $\{3,4\}$ ，$[\min,\max]=[1,3]$ </p>
-<p>也就是说能代表状态 <code>aab,ab,b,abb,bb,b</code> ？</p>
-<p>但是实际上只能代表 <code>abb,ab,b,b</code></p>
-<p>所以我们不能把 <code>|T|+1</code> 放入 4，必须要新建一个 6 ，6 是 4 和 5 的并集</p>
-<p>剩下的构造过程自行体会….</p>
-<p><img src="aabba.png" alt="aabba"><img src="aabbab.png" alt="aabbab"><img src="aabbabd.png" alt="aabbabd"></p>
-<h5 id="常见套路"><a href="#常见套路" class="headerlink" title="常见套路"></a>常见套路</h5><h6 id="拓扑序DP"><a href="#拓扑序DP" class="headerlink" title="拓扑序DP"></a>拓扑序DP</h6><p>在 <code>SAM</code> 上走，是拓扑序正序</p>
-<p>在 <code>parent树</code> 上走，是拓扑序逆序</p>
-<p>如何求出拓扑序？</p>
-<h6 id="如何求-right集合-？"><a href="#如何求-right集合-？" class="headerlink" title="如何求 right集合 ？"></a>如何求 <code>right集合</code> ？</h6><p>首先，在所有前缀所在状态的 <code>Right集合</code> 中加入 $i$</p>
-<p>可以按照 <code>parent树</code> ，平衡树启发式合并 <code>or</code> 线段树合并得到 <code>right集合</code></p>
-<h6 id="利用-parent树"><a href="#利用-parent树" class="headerlink" title="利用 parent树"></a>利用 <code>parent树</code></h6><p>由于是一棵树，所以就可以干很多事情…</p>
-<p>树上倍增、<code>LCT</code>、点分治…</p>
-<p>自行想象</p>
-<h6 id="建出后缀树"><a href="#建出后缀树" class="headerlink" title="建出后缀树"></a>建出后缀树</h6><p>这个之后再讲</p>
-<p><del>不就是反串的 <code>Parent树</code> 嘛</del></p>
-<h5 id="一些简单的经典应用"><a href="#一些简单的经典应用" class="headerlink" title="一些简单的经典应用"></a>一些简单的经典应用</h5><p>泥萌赶紧来秒题！</p>
-<p>一些简单小应用，<code>SAM</code> 可以用来…</p>
-<ol>
-<li>求最小循环同构！Hint：倍长，走标号最小的转移</li>
-<li>求所有长度为 <code>1..|S|</code> 的子串的出现次数最大值！Hint：<code>Right集合</code> 大小即为出现次数</li>
-</ol>
-<blockquote>
-<p><strong>SPOJ SUBLEX</strong> 给定一个字符串，问所有本质不同的非空子串中，字典序第 $K$ 大的</p>
-<p>$n \leq 90000, Q \leq 500$</p>
-</blockquote>
-<p>思考5min…</p>
-<p>考虑建出 <code>SAM</code> ，$f[i]$ 表示从状态 $i$ 出发的方案数</p>
-<p>正着贪心即可求出第 $K$ 大</p>
-<p><code>SAM</code> 是个 <code>DAG</code> ，那么如何求出拓扑序？</p>
-<p>注意到一个重要性质</p>
-<p><strong><code>SAM</code> 中的转移一定是从 <code>Max</code> 较小的状态 到 <code>Max</code> 严格大于它的状态</strong></p>
-<p>类似后缀数组，用一个桶记录一下即可</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for (int i=(a); i&lt;=(b); i++)</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200005</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SAM</span> &#123;</span> <span class="keyword">int</span> p[<span class="number">26</span>], pa, val; &#125; t[maxn];</div><div class="line"><span class="keyword">int</span> tax[maxn], cur[maxn], n, Q, now, v;</div><div class="line"><span class="keyword">int</span> root = <span class="number">1</span>, size = <span class="number">1</span>, last = <span class="number">1</span>;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[maxn], K;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123; &#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;s); n = <span class="built_in">strlen</span>(s);</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>)  extend(s[i]-<span class="string">'a'</span>);</div><div class="line">	rep (i, <span class="number">1</span>, size) ++tax[t[i].val], f[i] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	rep (i, <span class="number">1</span>, size) cur[size+<span class="number">1</span>-(tax[t[i].val]--)] = i;	<span class="comment">//注意这是拓扑序的倒序</span></div><div class="line">	rep (i, <span class="number">1</span>, size) rep (j, <span class="number">0</span>, <span class="number">25</span>) f[cur[i]] += f[t[cur[i]].p[j]];</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;Q);</div><div class="line">	<span class="keyword">while</span> (Q--) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;K); now = <span class="number">1</span>;</div><div class="line">		<span class="keyword">while</span> (K) &#123;</div><div class="line">			rep (i, <span class="number">0</span>, <span class="number">25</span>) <span class="keyword">if</span> (v = t[now].p[i])</div><div class="line">				<span class="keyword">if</span> (f[v] &gt;= K) &#123; <span class="built_in">putchar</span>(<span class="string">'a'</span>+i); now = v; --K; <span class="keyword">break</span>; &#125;</div><div class="line">				<span class="keyword">else</span> K -= f[v];</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>SPOJ LCS</strong> 给两个长度小于 <code>100000</code> 的字符串 <code>A</code> 和 <code>B</code> ，求出他们的最长公共连续子串</p>
-</blockquote>
-<p>思考5min…</p>
-<p>对 <code>A</code> 建 <code>SAM</code> ，读入 <code>B</code> <del>放进 <code>SAM</code> 跑就好了</del></p>
-<p>严肃.jpg</p>
-<blockquote>
-<p>令当前状态为 <code>s</code> ，同时最大匹配长度为 <code>len</code></p>
-<p>我们读入字符 <code>x</code> 。如果 <code>s</code> 有标号为 <code>x</code> 的边，<code>s=Trans(s,x),len = len+1</code></p>
-<p>否则我们找到<code>s</code>的第一个祖先<code>anc</code>，它有标号为<code>x</code>的边</p>
-<p>令 <code>s=Trans(anc,x),</code> <strong><code>len=Max(anc)+1</code></strong></p>
-<p>如果没有这样的祖先，那么令 <code>s=root,len=0</code></p>
-<p>在过程中更新状态的最大匹配长度</p>
-</blockquote>
-<p>思考：如果是 $n\;(n \leq10)$ 个串呢？ <strong>SPOJ LCS2</strong></p>
-<p>同样建出其中一个串的 <code>SAM</code></p>
-<p>考虑一个状态 $s$，如果 <code>A</code>之外其它串对它的匹配长度分别是</p>
-<p>$a_1,a_2,\cdots,a_{n-1}$</p>
-<p>用 $\min(a_1,a_2,\cdots,a_{n-1},\max(s))$ 更新答案</p>
-<h5 id="更多例题"><a href="#更多例题" class="headerlink" title="更多例题"></a>更多例题</h5><blockquote>
-<p><strong>BZOJ1396 识别子串</strong> 给定一个字符串，对于每一个位置，求包含这个位置，同时只在串中出现一次的最短的串的长度</p>
-<p>$|S| \leq 10^5$</p>
-</blockquote>
-<p>思考10min…</p>
-<p>注意到 <strong>只出现 $1$ 次</strong> 这个性质，我们可以找出所有 <code>Right集合</code> 元素个数为 1 的状态</p>
-<p>按照拓扑序倒着转移，得到所有 <code>Right集合</code> 的元素个数</p>
-<p>右端点固定，左端点可以移动</p>
-<p>两个线段树维护，直接标记永久化，最后 $O(n)$ 递归即可</p>
-<blockquote>
-<p> <strong>Codeforces 316G3 Good Substrings</strong> 求字符串 $s$ 有多少本质不同的子串是好的，一个字符串 $t$ 是好的，当且仅当它满足所有的 $n$ 条规则，$t$ 在 $p_i$ 中出现了 $l_i$ 到 $r_i$ 次</p>
-<p>$|s|,|p_i| \leq 50000, n \leq 10$</p>
-</blockquote>
-<p>此题难度较大，我直接讲…</p>
-<p>考虑把 $s$ 和 $p_i$ 用特殊字符隔开，连成一个字符串（注意 $s$ ，一定要放在最前面），建 <code>SAM</code></p>
-<p>按照拓扑序倒着 <code>DP</code> 即可得到 <code>SAM</code> 在所有子串中的出现次数，记 <code>cnt[i][j]</code> 表示自动机状态 $i$ 在 $p_i$ 中的出现次数，其中 $p_0=s$</p>
-<p>我们考虑所有满足 <code>cnt[i][0] &gt; 0</code> 的状态 <code>u</code> ，只要 $\forall i, l[i] \leq cnt[u][i] \leq r[i]$ ，就要把答案加上 $\max(u) - \min(u)+1$ </p>
-<p>我们为什么一定要把 $s$ 放在最前面呢？</p>
-<p>如果状态 $u$ 的 $cnt[0]$ 不为 $0$ ，那么状态 $u$ 所代表的子串 <strong>一定不会横跨分隔字符</strong> ！</p>
-<p>这也就保证了：如果一个状态 <code>Right集合</code> 的某个元素（注意这仅仅只是右端点）在某个匹配串中，整个串一定在这个匹配串中</p>
-<p>代码同样简单易懂</p>
-<p>比 <code>SA</code> 高到不知道哪里去了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> pos)</span> </span>&#123;</div><div class="line">	... cnt[np][pos] = <span class="number">1</span>; ...		<span class="comment">//注意 cnt 不要放在结构体里！</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%d"</span>, &amp;s, &amp;n);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; s[i]; i++) extend(s[i] - <span class="string">'a'</span>, <span class="number">0</span>);</div><div class="line">	extend(<span class="number">26</span>, n+<span class="number">1</span>); </div><div class="line">	rep (j, <span class="number">1</span>, n) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s%d%d"</span>, &amp;s, &amp;l[j], &amp;r[j]);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; s[i]; i++) extend(s[i] - <span class="string">'a'</span>, j);</div><div class="line">		extend(<span class="number">26</span>, n+<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[t[i].val]++;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	per (i, size, <span class="number">1</span>) cur[tax[t[i].val]--] = i;</div><div class="line">	per (i, size, <span class="number">1</span>) &#123;</div><div class="line">		u = cur[i]; </div><div class="line">		rep (j, <span class="number">0</span>, n) cnt[t[u].pa][j] += cnt[u][j];</div><div class="line">		<span class="keyword">if</span> (!cnt[u][<span class="number">0</span>]) <span class="keyword">continue</span>; flag = <span class="number">1</span>;</div><div class="line">		rep (j, <span class="number">1</span>, n) flag &amp;= (l[j] &lt;= cnt[u][j] &amp;&amp; cnt[u][j] &lt;= r[j]);</div><div class="line">		<span class="keyword">if</span> (flag) ans += t[u].val - t[t[u].pa].val;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h6 id="引入广义后缀自动机"><a href="#引入广义后缀自动机" class="headerlink" title="引入广义后缀自动机"></a>引入广义后缀自动机</h6><p>平常的 <code>SAM</code> 都是只能搞一个串的，但是我们也可以将多个字符串建成 <code>Tire</code>  再造广义 <code>SAM</code> </p>
-<p>在这里，<code>right集合</code> 的定义变为在每个串中出现的位置之并。通常用来维护多个独立的串（没写过不知道）或者一棵 <code>Trie树</code></p>
-<p><del>考虑建立多个串的 <code>SAM</code> ，构造时一个一个串插入，插入完一个串后将 <code>last</code> 设为 <code>root</code> 再重新开始</del></p>
-<p>考虑建立 <code>Trie</code> 的 <code>SAM</code> 。插入完 <code>Trie</code> 节点 <code>u</code> 的时候记录一下 <code>tmp = last</code> ，然后插入完 <code>u</code> 的某个子树<br>后，再将 <code>last</code> 赋为 <code>tmp</code> ，再插入另一个子树。</p>
-<p>也就是每个节点将父节点所在前缀的状态作为 <code>last</code></p>
-<p>但是 <code>广义SAM</code> 插入字符 <code>w</code> 时可能会发现 <code>last</code> 的 <code>w</code> 转移边已经存在，设转移到的状态为 $q$ ，假如 $\max(q) = \max(last) + 1$ ，那说明当前前缀处于状态 <code>q</code> 中，就不作任何操作。否则新建一个状态 <code>nq</code> ，当前这个前缀处于 <code>nq</code> 中，然后类似构造普通 <code>SAM</code> 的时候一样更新一下 <code>q</code> 和 <code>nq</code> 的信息</p>
-<p>也就是说，不用任何改变…</p>
-<p>正确性自行想象 <del>我也不会</del></p>
-<blockquote>
-<p><strong>BZOJ 3926 [ZJOI2015]诸神眷顾的幻想乡</strong> 给定一棵树，每个节点都有一个字符，满足树的叶子节点数不超过 $20$ ，问这棵树的所有路径中所有本质不同的子串个数</p>
-<p>$n \leq 100000$</p>
-</blockquote>
-<p>考虑以所有叶子节点作为根，<code>DFS</code> 插入字典树</p>
-<p><code>广义SAM</code> 跑一下即可</p>
-<p>放了 <code>std</code></p>
-<p>（此处应展示代码）</p>
-<p>来看一道<del>比较</del>难的题</p>
-<blockquote>
-<p><strong>Codeforces 700E Cool Slogans</strong> 给你一个长度为 $n$ 的字符串 $S$ ，求最长的一个字符串序列 $a[1..k]$ 满足序列中的每一个字符串都是 $S$ 的子串，且对于任意的$1&lt;i \leq k$ 都有 $a[i−1]$ 在 $a[i]$ 中至少出现两次。两次出现允许重叠。 问最大满足条件的 $k$ 是多少</p>
-<p>$n \leq 200000$</p>
-</blockquote>
-<p>思考20min…</p>
-<p>Hint:</p>
-<p>一个重要性质：$a[i-1]$ 必定为 $a[i]$ 的后缀（前缀同理）</p>
-<p>否则后面那些字符都是没用的，可以删去</p>
-<p>发现选择的字符串一定是 <code>SAM</code> 一条链上的</p>
-<p>还有一个性质：因为状态中 <code>Right集合</code> 所代表的所有字符串等价（短串能去转移，长串也一定能去转移）</p>
-<p>所以我们可以考虑选择长度为 $\max(u)$ 的串，而且更长的串更任意被转移到</p>
-<p><del>说实话，我似乎想了2h还是不太懂….</del></p>
-<p><del>泥萌如果能yy出来的话教一下我啊QAQ</del></p>
-<p><img src="233.png" alt="233"></p>
-<p><del>似乎有人有同样的疑问，假装是对的。。。</del></p>
-<p>是的，我用了删除线，那么我就来口胡一波！<del>其实是问了某位 <code>dalao</code> + 自己好好整理过了</del></p>
-<p><strong>结论：当前状态 $S$ 到其他状态最长串的转移一定是最优的</strong> </p>
-<p>考虑数学归纳法，显然对于 $\max$ 为 $|S|$ 的状态，结论是满足的</p>
-<p>假设对于 $|b|&gt;k$ 满足条件</p>
-<p>对于 $|b|=k$ 不满足，当且仅当某个状态 $S’$ 只能由较短串 $a\;(|a|&lt;|b|)$ 转移，不能由某个状态的最长串 $b$ 转移，满足 $f[a] \leq f[b]$ </p>
-<p>（也就是 $S’$ 可以由两个 $a$ 构成，只能由一个 $b$ 构成，且 $S’$ 的某个前缀是 $b$ 的后缀）</p>
-<p>我们考虑这样一个串 $S’’$ ，是由 $S’$ 左端点左移得到的，且满足 $b$ 是它的前缀</p>
-<p>显然 $f[S’’] \geq f[S’]$ ，考虑他们能转移的状态</p>
-<ul>
-<li>如果能转移到的最优状态相同，结论成立</li>
-<li>否则就变成了之前的情况，根据假设，结论成立</li>
-</ul>
-<p>也就是  $|b|=k$ 时满足条件</p>
-<p><del>可能还需要好好理解</del></p>
-<p>于是可以考虑 <code>DP[x]</code> 表示 <code>x</code> 到根这条链上选若干个字符串出来组成 <code>a</code> 数组的最大长度，<code>pos[x]</code> 表示 <code>a[dp[x]]</code> 具体是哪一个位置 （显然，长度相同的，越靠前越好）</p>
-<p>考虑 <code>x</code> 从 <code>pos[pa[x]]</code> 转移</p>
-<p>只需要判断一下它的 <code>Right集合</code> 即可</p>
-<p>用线段树合并求出</p>
-<p>感谢 <a href="http://blog.csdn.net/qq_33229466/article/details/79140428" target="_blank" rel="external">题解</a></p>
-<p><del>此题还有 SA 做法</del></p>
-<h5 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h5><p>大概 <code>Codeforces</code> 更好一点？</p>
-<p><code>BZOJ    2806    [CTSC2012]Cheat</code></p>
-<p><code>BZOJ    1921    [CTSC2010]珠宝商</code></p>
-<p><code>BZOJ    3998    [TJOI2015]弦论</code></p>
-<p><code>BZOJ    4032    [HEOI2015]最短不公共子串</code></p>
-<p><code>BZOJ    4566    [HAOI2016]找相同字符</code></p>
-<p><code>CF    616F    Expensive Strings</code></p>
-<p><code>CF    235C    Cyclical Quest</code></p>
-<p><code>CC    TSUBSTR    Substrings on a Tree</code></p>
-<p><code>CC    TMP01    To Queue or not to Queue</code></p>
-<p><code>广义</code></p>
-<p><code>BZOJ    2780    [SPOJ8093]Sevenk Love Oimaster</code></p>
-<p><code>BZOJ    3473    字符串</code></p>
-<p><code>51Nod    1869    那些年，我们一起讲的故事</code></p>
-<p>更多应用可以参考 <code>张天扬的集训队论文</code></p>
-<h4 id="后缀树"><a href="#后缀树" class="headerlink" title="后缀树"></a>后缀树</h4><p>（此处应手画 <code>aabbabd</code> 的后缀树）</p>
-<p>几个重要性质：</p>
-<ol>
-<li>反串构造一个 <code>SAM</code> ，那么它的 <code>parent树</code> 就是原串的后缀树</li>
-<li>后缀树上一个点的父亲到它的转移串，就是这个点在 <code>parent树</code> 上对应区间的逆序串</li>
-<li>如果再 <code>DFS</code> 一遍后缀树，就可以得到后缀数组</li>
-</ol>
-<p>为什么第一个性质成立？</p>
-<p>考虑 <code>S</code> 的 <code>parent树</code> ，叶子节点一定包含 <code>S</code> 的某个前缀，从叶子节点往上走，节点里的串长度越来越小，直到走到根（包含一个空串），并且父亲节点中的串是儿子节点中的串的后缀。如果将这个过程反过来考虑，正好像是在 $S_r$ 的后缀 <code>Trie</code> 上从上往下走</p>
-<p>哇！看起来很简单的样子</p>
-<p>那么，我们来做题辣！</p>
-<h5 id="小🌰"><a href="#小🌰" class="headerlink" title="小🌰"></a>小🌰</h5><blockquote>
-<p><strong>Codechef  KILLKTH <a href="https://www.codechef.com/JAN18/problems/KILLKTH" target="_blank" rel="external">Killjee and k-th letter</a> </strong> 给定一个字符串 $S$ ，将这个字符串的所有子串按照字典序排列，得到一个更长的串，每次询问第 $k$ 个字符，强制在线。</p>
-<p>$|S|,Q \leq 2 \times 10 ^ 5$</p>
-</blockquote>
-<p>思考 10min…</p>
-<p>来自 <code>RXDoi</code> 的纯正题解！</p>
-<blockquote>
-<p>任轩笛 2018/1/8 星期一 下午 1:47:53<br>搞个后缀树</p>
-<p>任轩笛 2018/1/8 星期一 下午 1:47:55<br>求个前缀和</p>
-<p>任轩笛 2018/1/8 星期一 下午 1:47:59<br>二分以下</p>
-<p>任轩笛 2018/1/8 星期一 下午 1:48:09<br>再在树上倍增一下就行了吧</p>
-</blockquote>
-<p><del>当然 SA 也是可以做的</del></p>
-<p>二分答案可以找到是由那个节点做出贡献</p>
-<p>树上倍增用于找到对应的位置</p>
-<p>比较麻烦是提取所有树边上的串</p>
-<p>考虑最终为区间 $[l[i],r[i]]$ </p>
-<p>一开始建状态的时候，默认 $r[i]=n$ </p>
-<p>然后 <code>BFS</code> ，<del>似乎还有一个结论可以找到，并不是很懂</del></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=size; i++) in[T[i].pa] += (T[i].pa != <span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=size; i++) <span class="keyword">if</span> (!in[i]) q[qr++] = i;</div><div class="line"><span class="keyword">while</span> (ql &lt; qr) &#123;</div><div class="line">	u = q[ql++]; tmp = T[u].pa;</div><div class="line">	<span class="keyword">if</span> (!(--in[tmp])) q[qr++] = tmp;</div><div class="line">	l[u] = r[u] - (T[u].val - T[tmp].val) + <span class="number">1</span>;</div><div class="line">	r[tmp] = min(r[tmp], l[u] - <span class="number">1</span>);</div><div class="line">	e[tmp][s[l[u]]-<span class="string">'a'</span>] = u;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>记得当时写了 5h？</p>
-<h5 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h5><p><code>BZOJ    3413    匹配</code></p>
-<p><code>BZOJ    3238    [AHOI2013]差异</code></p>
-<p><code>BZOJ    3879    SvT</code></p>
-<p><code>Codeforces 917E Upside Down</code></p>
-<p><code>std才9KB...</code></p>
-<h1 id="编不下去了-gt-lt"><a href="#编不下去了-gt-lt" class="headerlink" title="编不下去了 &gt;.&lt;"></a>编不下去了 &gt;.&lt;</h1><h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END."></a>THE END.</h1>
+        <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2>
+        
+          <a class="article-more-a" href="/2017/12/31/Algorithms-String/#more">more >></a>
+        
       
 
       
@@ -1245,258 +1154,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="线段树的高-chang-级-jian-应用"><a href="#线段树的高-chang-级-jian-应用" class="headerlink" title="线段树的高(chang)级(jian)应用"></a>线段树的高(chang)级(jian)应用</h1><h2 id="review"><a href="#review" class="headerlink" title="review"></a>review</h2><p>分治结构</p>
-<p>懒标记</p>
-<ul>
-<li>可以快速合并</li>
-<li>可以快速更新区间信息</li>
-</ul>
-<p>不满足懒标记性质的一些操作</p>
-<ul>
-<li>基于均摊复杂度</li>
-</ul>
-<hr>
-<p>线段树优美的分治结构</p>
-<p>从一道题引入</p>
-<blockquote>
-<p>有一个序列，每次在最后加上一个元素，询问区间Max</p>
-<p>序列最后长度 $\leq 100000$</p>
-<p>$Q \leq 10^7$</p>
-</blockquote>
-<p>预处理每个区间的前后缀max</p>
-<p>对于询问区间 $[l,r]$</p>
-<p>找到 $[l,r]$ 第一次分开的位置</p>
-<p>左边的后缀max，右边的前缀max</p>
-<p>可以做到 $O(1)$</p>
-<p>考虑更新</p>
-<p>加入一个元素的时候，更新一下前缀max</p>
-<p>如果区间被插满了，算一下后缀max</p>
-<h2 id="小清新线段树"><a href="#小清新线段树" class="headerlink" title="小清新线段树"></a>小清新线段树</h2><p>线段树的懒标记有很多神奇的用处</p>
-<p>但是有些问题并不满足上述的性质</p>
-<p><code>......</code></p>
-<h4 id="A-基于均摊复杂度的线段树"><a href="#A-基于均摊复杂度的线段树" class="headerlink" title="A 基于均摊复杂度的线段树"></a>A 基于均摊复杂度的线段树</h4><p>来回顾区间加减，区间覆盖的一些神奇性质</p>
-<p>区间加，区间覆盖 $\Rightarrow$ 区间内相对大小不变 <code>or</code> 相同</p>
-<p>于是，对于</p>
-<p>区间覆盖 $\Rightarrow$ 缩成一个点</p>
-<p>区间加减 $\Rightarrow$ 差分</p>
-<blockquote>
-<p>CF438D 维护一个序列，滋瓷区间取模，单点修改，区间求和</p>
-<p>$n,m \leq 10^5, a_i \leq 10^9$</p>
-</blockquote>
-<p>思考10min…</p>
-<p>注意到，对于一个大于模数的数，</p>
-<p>一次 $\bmod$ 之后，至多为原来大小的一半</p>
-<p>直接暴力找最大值，暴力修改</p>
-<p>复杂度 $O(m \log n \log a_i)$</p>
-<blockquote>
-<p>简单的加强，要求滋瓷区间覆盖</p>
-</blockquote>
-<p>思考5min…</p>
-<p>考虑这样一种暴力的做法</p>
-<p>维护区间 $\min, \max$ ，分几种情况讨论</p>
-<ul>
-<li>$\max &lt; m$ ，直接 return</li>
-<li>$\min = \max$ ，直接区间覆盖</li>
-</ul>
-<p>思考：复杂度为什么是对的？</p>
-<p>考虑将 <strong>相邻且相同的数字缩成同一个点</strong></p>
-<p>再来看区间取模，可以注意到一次操作至多会增加 $2$ 个点</p>
-<p>显然，每个大点定位的复杂度也是 $O(\log n)$ ，所以复杂度仍然不变</p>
-<blockquote>
-<p>我们从势能法角度来理解渐进时间复杂度分析，先简单介绍势能分析</p>
-<p>势能分析常用于一类基于均摊的数据结构的时间复杂度</p>
-<p>引入“势能”，把势能看作整个数据结构的一个状态函数</p>
-<p>定义 $\Phi(i)$ 表示第 $i$ 次操作后，数据结构的势能</p>
-<p>定义 $c_i$ 表示第 $i$ 次操作的实际时间花费</p>
-<p>定义 $a_i$ 为第 $i$ 次操作的均摊时间花费</p>
-<p>我们令</p>
-<p>$$\large a_i = c_i + \Phi(i) - \Phi(i-1) = c_i + \Delta \Phi(i)$$</p>
-<p>显而易见地</p>
-<p>$$\large \sum a_i + \Phi(0) - \Phi(n) = \sum c_i$$</p>
-<p>也就是说，只要我们确定了 $\sum a_i$ 与 $\Phi(0) - \Phi(n)$ 的上界</p>
-<p>就能确定 $\sum c_i$ 的上界！</p>
-<p>这里，我们不考虑常数问题</p>
-<p>回到这一题，受之前的思路启发，我们定义（假设我们已经将相邻且相同的数字缩成一个点）</p>
-<p>$$\large \Phi(i)  = \log n \sum _ {i=1} ^ n \log x_i$$</p>
-<p>考虑区间覆盖操作</p>
-<p>$$\large a_i \leq \log n + \log n \log x_i = O(\log n \log x_i)$$</p>
-<p>考虑区间取模操作（假设我们对 $t$ 个点取模）</p>
-<p>$$\large a_i \leq t \log n - t \log n + 2 \log n \log x_i = O(\log n \log x_i)$$</p>
-<p>（觉得这一步有锅？我们只要给势能函数乘以一个足够大的常数即可）</p>
-<p>同时</p>
-<p>$$\large \Phi(0) - \Phi(n) \leq O(n \log n \log x_i)$$</p>
-<p>所以</p>
-<p>$$\large T(n) = \sum c_i  = O(n \log n \log x_i)$$</p>
-<p>我们可以发现，覆盖操作比较省时，在积累势能</p>
-<p>而与此相对的，取模操作比较耗时，在消耗势能</p>
-<p>势能分析的本质：</p>
-<p>将多余的时间存储起来，在需要的时候使用 </p>
-<p><del>抱歉，您在其他地方找不到这样的证明</del></p>
-<p><del>因为全都是我yy的</del></p>
-</blockquote>
-<p>那么，该怎么写呢？</p>
-<p><del>平衡树</del></p>
-<p>线段树模版拓展</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y, ...)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (cut(o, ..)) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span> (l == x &amp;&amp; y == r &amp;&amp; check(o, ..)) &#123;</div><div class="line">        ... <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    pushdown(o);</div><div class="line">    <span class="keyword">if</span> (x &lt;= mid) update(lc, l, mid, x, min(mid, y), ...);</div><div class="line">    <span class="keyword">if</span> (mid &lt; y) update(rc, mid+<span class="number">1</span>, r, max(mid+<span class="number">1</span>, x), y, ...);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对于这道题</p>
-<p>$cut():\; \max(l,r) &lt; x$</p>
-<p>$check():\;\max(l,r) = \min(l,r)$</p>
-<hr>
-<blockquote>
-<p><strong>HDU5828 Rikka with Sequence = UOJ228</strong> 维护一个序列，滋瓷区间加减，区间开根号（下取整），询问区间和</p>
-</blockquote>
-<p>思考10min…</p>
-<p>这类问题通常全局也难以解决，考虑从全局修改入手</p>
-<p>注意到开根号几次就差不多全相同了（最多差 $1$ ）</p>
-<p><code>3 4 -&gt; 1 2 -&gt; 3 4 -&gt; 1 2</code></p>
-<p>于是，我们考虑</p>
-<p>$check():\; \max(l,r) - \min(l,r) \leq 1$</p>
-<p>直接变成区间减法 <code>or</code> 区间覆盖</p>
-<p>还是分析复杂度</p>
-<p>考虑差分，我们只取绝对值</p>
-<p>注意到，我们只需要 $O(\log \log x_i)$ 就能让 $x_i$ 变为 $1$ </p>
-<p>同样，我们也只需要经过这么多次，使得两个数的差分值小于 $2$</p>
-<p>这启发我们定义势能函数：</p>
-<p>$$\large \Phi(i) = \log n \sum _ {i=1} ^{n-1} \log \log |x_i - x_{i-1}|$$</p>
-<p>考虑区间加减</p>
-<p>$$\large a _ i = \log n + 2 \log n \log \log x_i = O(\log n \log \log x_i)$$</p>
-<p>考虑区间开根（假设执行了 $t$ 段连续区间的减法）</p>
-<p>$$\large a_i = t \log n - (t-1) \log n + 2 \log n \log \log x_i = O(\log n \log \log x_i)$$</p>
-<p>而 $\large \Phi(0) - \Phi(n) = O(n \log n \log \log x_i)$</p>
-<p>…</p>
-<p><del>口胡完毕</del></p>
-<hr>
-<p>通过这两道题，大概泥萌都已经掌握了势能分析？</p>
-<p>在实际比赛的时候，可以考虑对暴力线段树<code>DFS</code>加入<code>cut,check</code> <del>或许会有意想不到的收获、</del></p>
-<p><strong>exercise</strong></p>
-<p><code>BZOJ 2130 魔塔</code></p>
-<p><code>HDU 5634 Rikka with Phi</code></p>
-<h4 id="B-懒标记顺序-amp-标记回收"><a href="#B-懒标记顺序-amp-标记回收" class="headerlink" title="B 懒标记顺序&amp;标记回收"></a>B 懒标记顺序&amp;标记回收</h4><p>普通的懒标记在线段树上的深度顺序是与时间相关的</p>
-<p>利用标记的顺序，可以干一些奇怪的事情</p>
-<p><code>......</code></p>
-<p>一个小🌰</p>
-<blockquote>
-<p>区间取 $\max$，询问区间和</p>
-</blockquote>
-<p>我们考虑令所有标记值随着深度的增加而增加</p>
-<p>每个点向上走，遇到的第一个标记就是它的历史最大值！</p>
-<p>于是可以简单地维护区间和</p>
-<p>如何让标记满足这样的顺序要求？</p>
-<p>考虑标记回收</p>
-<p>我们维护每一个子树内最小的标记值 $w$</p>
-<p>在打上标记之后，根据 $w$ 的值暴力<code>DFS</code></p>
-<p>删掉所有更小的标记</p>
-<p>这样就可保证标记有序</p>
-<p>回收标记的复杂度不超过打标记+标记下传</p>
-<p>标记回收是一个巧妙的想法，关于这个东西更多的应用，可以参考吉老师的《Segment Tree Beats》与集训队论文</p>
-<p><strong>exercise</strong></p>
-<p><code>HDU5306 Gorgeous Sequence</code></p>
-<h4 id="C-线段树与懒标记的变体"><a href="#C-线段树与懒标记的变体" class="headerlink" title="C 线段树与懒标记的变体"></a>C 线段树与懒标记的变体</h4><p>传统的线段树使用两个孩子的信息，来更新自己的信息</p>
-<p>还有一些变体的问题，需要递归到某一个孩子内更新信息</p>
-<blockquote>
-<p><strong>Codechef STREETTA</strong> 区间对等差数列取 $\min$ ，询问单点值</p>
-</blockquote>
-<p>思考10min…</p>
-<p>线段树维护半平面交？</p>
-<p>考虑标记永久化，每个位置只放上一个标记</p>
-<p>如何合并标记？</p>
-<p>求出两个标记的分界点。分界点两边各是一个标记占优</p>
-<p>那么一定有一个标记占优的部分是一个子树的一部分</p>
-<p>把这个标记下传下去继续比较</p>
-<p>至多 $O(\log n)$ 次比较</p>
-<blockquote>
-<p><a href="http://dsa.openjudge.cn/finalht2016/2/" target="_blank" rel="external">List</a> 询问一个区间形成的单调栈的大小 </p>
-</blockquote>
-<p>思考10min…</p>
-<p>令 $getw(x,r)$ 为以 $r$ 的初值走到子树 $x$ 中会增加多少个数</p>
-<p>$getw(x,r)=getw(lc,r)+getw(rc,max(\max[lc],r))$</p>
-<p>发现可以预处理 $getw(rc,\max[lc])$</p>
-<p>考虑一下复杂度</p>
-<p>如果 $\max[lc] &lt; r$</p>
-<p>$getw(lc, r) = 0$ ，我们只需要递归计算 $getw(rc, r)$</p>
-<p>如果 $\max[lc] \geq r$</p>
-<p>我们只需要递归计算 $getw(lc, r)$</p>
-<p>总的复杂度为 $O(n \log ^2n)$</p>
-<h2 id="zkw重口味线段树"><a href="#zkw重口味线段树" class="headerlink" title="zkw重口味线段树"></a>zkw重口味线段树</h2><p>讲道理这个东西只能用来卡常，没什么用？</p>
-<p>单点加减，最值查询</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (M=<span class="number">1</span>; M&lt;=N+<span class="number">1</span>; M&lt;&lt;=<span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=M+<span class="number">1</span>; i&lt;=M+n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T[i]);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=M<span class="number">-1</span>; i&gt;=<span class="number">1</span>; i--) T[i] = T[i+i] + T[i+i+<span class="number">1</span>];</div><div class="line"><span class="keyword">for</span> (T[x+=M]=V, x&gt;&gt;=<span class="number">1</span>; x; x&gt;&gt;=<span class="number">1</span>)</div><div class="line">	T[x] = T[x+x] + T[x+x+<span class="number">1</span>];</div><div class="line"><span class="keyword">for</span> (s=s+M<span class="number">-1</span>, t=t+M+<span class="number">1</span>; s^t^<span class="number">1</span>; s&gt;&gt;=<span class="number">1</span>, t&gt;&gt;=<span class="number">1</span>) &#123;</div><div class="line">	<span class="keyword">if</span> (~s&amp;<span class="number">1</span>) ans += T[s^<span class="number">1</span>];</div><div class="line">	<span class="keyword">if</span> ( t&amp;<span class="number">1</span>) ans += T[t^<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>zkw线段树处理区间修改比较麻烦，往往需要标记永久化</p>
-<p>对于区间加减，最值查询，我们可以考虑差分</p>
-<p>zkw线段树的查询方式也可以来搞事情，我们来看一道题</p>
-<blockquote>
-<p>有一个 $N$ 片叶子的线段树，是他不是按照 $mid$ 分开的。所以树高不是 $O(logn)$ ，并且一个区间会被拆分成很多个区间。有 $Q$ 次询问，每次询问一个区间 $[l, r]$会被拆分成多少个小区间？</p>
-<p>$n,Q \leq 100000$</p>
-</blockquote>
-<p>思考3min…</p>
-<p>我们只要统计 $[l-1,lca)$ 路径上所有左儿子的右兄弟，$(lca,r+1]$ 路径上右儿子的左兄弟个数之和，倍增即可</p>
-<h2 id="线段树合并"><a href="#线段树合并" class="headerlink" title="线段树合并"></a>线段树合并</h2><p>定义 <code>merge(a,b)</code></p>
-<ul>
-<li>如果 <code>a,b</code> 中有一个不含任何元素，就返回另一个</li>
-</ul>
-<ul>
-<li>如果 <code>a,b</code> 都是叶子，返回 <code>merge_leaf(a,b)</code></li>
-</ul>
-<ul>
-<li>返回 <code>merge(a-&gt;l,b-&gt;l)</code> 与 <code>merge(a-&gt;r,b-&gt;r)</code> 连接成的树</li>
-</ul>
-<p><strong>复杂度分析</strong></p>
-<p>注意到一个性质，当且仅当两颗线段树在某个位置上都存在节点的时候，才会对时间复杂度产生 $O(1)$ 的贡献</p>
-<p>显然，这相当于以 $O(1)$ 的时间复杂度删除一个节点</p>
-<p>而一开始存在 $O(n \log n)$ 个节点</p>
-<p><strong>有什么用？</strong></p>
-<p>利用这种动态开点的值域线段树，可以解决一堆有序集合进行合并/分裂，同时查询<code>k</code>小的问题</p>
-<p>两道经典题</p>
-<p><code>BZOJ2212 [POI2011]Tree Rotations</code></p>
-<p><code>BZOJ2733 [HNOI2010]永无乡 = BZOJ3545 [ONTAK2010]Peaks</code></p>
-<blockquote>
-<p><strong>BZOJ3307 雨天的尾巴</strong>  $n$ 个点，形成一个树。有 $m$ 次操作，每次选择两个点 $x,y$ 。对于 $x$ 到 $y$ 的路径上，每个点放一个 $z$。完成所有操作后，每个点存放最多的是哪个数字</p>
-</blockquote>
-<p>思考10min…</p>
-<p>考虑差分？</p>
-<p>差不多就是 $u,v,lca,fa[lca]$ 打标记</p>
-<p>自底向上，线段树合并</p>
-<p>没了。</p>
-<p><strong>exercise</strong></p>
-<p><code>BZOJ4730 Alice和Bob又在玩游戏</code></p>
-<p><code>Szkopul</code>    <a href="https://szkopul.edu.pl/problemset/problem/f2dSBM7JteWHqtmVejMWe1bW/site/?key=statement" target="_blank" rel="external"><code>[ONTAK2010]Zadanie Autostrady</code></a></p>
-<h2 id="如何优雅地使用set"><a href="#如何优雅地使用set" class="headerlink" title="如何优雅地使用set"></a>如何优雅地使用set</h2><blockquote>
-<p>你有 $n$ 个墙，第 $i$ 个墙的高度为 $a_i$，给你 $Q$ 个操作</p>
-<p>$P$，询问当前墙的状态下最多能存储多少水</p>
-<p>$U, x, v\;(v&gt;0)$ ，$a_x += v$</p>
-<p><img src="1.jpg" alt="1"></p>
-</blockquote>
-<p>思考15min…</p>
-<p>可以强行把墙当作水，发现这是单峰的</p>
-<p>对于两边，我们都维护一下单调性</p>
-<p>可以用线段树区间修改，比较无脑</p>
-<p>区间最值操作？</p>
-<p>利用单调性，记录区间最大/最小，暴力 <code>DFS</code></p>
-<p>复杂度？</p>
-<p>当然更好的是用 <code>set</code> </p>
-<p>简单易懂</p>
-<p>（数据在 <code>prob</code> 文件夹里）</p>
-<blockquote>
-<p><strong>LOJ#546. 「LibreOJ β Round #7」网格图</strong> 给定一张 $n \times m$ 的网格图，行标号 $1$ 到 $n$，列标号为 $1$ 到 $m$，网格图上设置了 $k$ 个障碍。</p>
-<p>一个机器人在网格图中行走，初始时它位于位置 $s$，每一时刻他有三种行动方式</p>
-<ul>
-<li>如果自己面向的方向不是障碍或网格的边缘，向该方向前进一格。</li>
-<li>向左（逆时针）转四分之一周。</li>
-<li>向右（顺时针）转四分之一周。</li>
-</ul>
-<p>初始时机器人可以选择面向任意一个方向</p>
-<p>现在有 $Q$ 个询问，每个询问给定一个终点 $t_i$，请你求出他从 $s$ 到 $t_i$ 最少需要的转向次数，每次选择的初始方向可以不同。</p>
-<p>$k \leq 50000, Q \leq 10^5$</p>
-</blockquote>
-<p>思考15min…</p>
-<p>一个简单的图论建模：</p>
-<p>将被障碍分开的若干个连续网格看作一个点，两个点交叉，加一条边权为 $1$ 的边</p>
-<p><del>暴力BFS</del></p>
-<p>考虑数据结构优化，有两个方向</p>
-<p>线段树套 <code>set</code> 优化 <code>BFS</code>，我的做法，复杂度两只 <code>log</code></p>
-<p>主席树上建图，复杂度一只 <code>log</code></p>
-<p>大致做法：主席树预处理，树边边权为 $0$ </p>
-<p>每个点只会连 $\log$ 条边，边权为 $0$， 跑<code>BFS</code></p>
-
+        <h1 id="线段树的高-chang-级-jian-应用"><a href="#线段树的高-chang-级-jian-应用" class="headerlink" title="线段树的高(chang)级(jian)应用"></a>线段树的高(chang)级(jian)应用</h1>
+        
+          <a class="article-more-a" href="/2017/12/31/Algorithms-SegmentTree/#more">more >></a>
+        
       
 
       
@@ -1520,258 +1181,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/12/31/Algorithms-SegmentTree/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Algorithms-Calculous" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/31/Algorithms-Calculous/">「切题记录」微积分基础</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/31/Algorithms-Calculous/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="OI-微积分基础"><a href="#OI-微积分基础" class="headerlink" title="OI 微积分基础"></a>OI 微积分基础</h1><p>普及一些微积分 <del>常识</del> 基本知识？<del>讲道理选修2-2都有</del></p>
-<p>大概没学过这些东西，多项式理论也看不下去吧…</p>
-<p><img src="http://img.uoj.ac/utility/emoticon-1.jpg" alt=""></p>
-<h2 id="预备技能"><a href="#预备技能" class="headerlink" title="预备技能"></a>预备技能</h2><h4 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h4><p>$\begin{eqnarray}  \large \lim _ {x \rightarrow x_0} f(x) \end{eqnarray}$</p>
-<p><strong>无穷逼近</strong> 时候的值，左极限，右极限</p>
-<p>垂直渐进线，水平渐进线</p>
-<p><strong>三明治定理</strong> 求极限</p>
-<p>多项式在 $+ \infty$ 的极限？首项决定一切</p>
-<p>举两个函素的🌰</p>
-<p><img src="/img/f1.png" alt="1"></p>
-<p>$\large \begin{eqnarray} \lim _ {x \rightarrow 0} \sin(\frac 1 x)=  \end{eqnarray}$ ？</p>
-<p>$\large \begin{eqnarray} \lim _ {x \rightarrow +\infty} \sin(\frac 1 x)=  \end{eqnarray}$ ？</p>
-<p><img src="/img/f2.png" alt="2"></p>
-<p>$\large \begin{eqnarray} \lim _ {x \rightarrow +\infty}\frac {\sin(x)} {x} \end{eqnarray} =$ ？</p>
-<p>找到上下界</p>
-<p>水平渐进线…</p>
-<h4 id="连续性"><a href="#连续性" class="headerlink" title="连续性"></a>连续性</h4><p>$\begin{eqnarray} \large \lim _ {x \rightarrow x_0} f(x)=f(x_0) \end{eqnarray}$</p>
-<p>每个 多项式函数 / 指数函数 / 对数函数 都是连续的</p>
-<p><strong>介质定理</strong> ：判断是否有根（记得初中数竞那啥的吧）</p>
-<p><strong>最大最小值定理</strong> ：闭区间 $[a,b]$ 存在最大，最小值</p>
-<p><img src="/img/233.png" alt="233"></p>
-<h2 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h2><h4 id="可导性"><a href="#可导性" class="headerlink" title="可导性"></a>可导性</h4><p>切线？斜率？</p>
-<p>$\begin{eqnarray} \large f’(x)=\lim _ {\Delta x \rightarrow 0} \frac {f(x+\Delta x) - f(x)} {\Delta x},f’’(x),\cdots,f^{(n)}(x) \end{eqnarray}$</p>
-<ul>
-<li>双侧极限存在且相等</li>
-<li>可导函数必定连续</li>
-</ul>
-<p>微分还有第二形式</p>
-<p>$\large \begin{eqnarray} \frac {\mathrm{d}y} {\mathrm{d}x} \end{eqnarray}$</p>
-<p>$y$ 关于 $x$ 的导数</p>
-<h4 id="求导的基本法则"><a href="#求导的基本法则" class="headerlink" title="求导的基本法则"></a>求导的基本法则</h4><p>函数的 $a$ 倍：导数乘以 $a$</p>
-<p>函数和/差：导数求和/差</p>
-<p>积法则：</p>
-<p>$\begin{eqnarray} \large h(x)=f(x)g(x), h’(x)=f’(x)g(x)+f(x)g’(x) \end{eqnarray}$</p>
-<p>商法则：</p>
-<p>$\begin{eqnarray} \large h(x) = \frac {f(x)} {g(x)}, h’(x) = \frac {f’(x)g(x)-f(x)g’(x)} {g^2(x)} \end{eqnarray}$</p>
-<p>链式求导法则：</p>
-<p>$\begin{eqnarray} \large h(x)=f(g(x)),h’(x) = f’(g(x))g’(x) \end{eqnarray}$</p>
-<p><strong>_除了商法则，其他应该都容易感性理解？_</strong><img src="http://img.uoj.ac/utility/bear-sinister-smile.gif" alt="坏笑熊"></p>
-<p><strong>求导基本法则的证明</strong></p>
-<p><img src="/img/1.png" alt="1"></p>
-<p><img src="/img/2.png" alt="2"></p>
-<p><img src="/img/3.png" alt="3"></p>
-<p>至于链式求导法则，写成微分的第二形式，大概就能理解</p>
-<p>$\large \begin{eqnarray} u=g(x), y=f(u),\; \frac {\mathrm{d}y} {\mathrm{d}x} = \frac {\mathrm{d}y} {\mathrm{d}u} \frac {\mathrm{d}u} {\mathrm{d}x} \end{eqnarray}$</p>
-<p><strong>三角函数的导数也是三角函数</strong> （具体规则太多啦…）</p>
-<p><strong>多项式如何求导？</strong> </p>
-<p>根据积法则，我们可以用数学归纳法推导幂函数的导数</p>
-<p>$\large \begin{eqnarray} f(x)=x^a,f’(x)=ax^{a-1} \end{eqnarray}$</p>
-<p>一个性质：一个 $n$ 次多项式的导函数是 $n-1$ 次多项式</p>
-<p>是不是很简单<img src="http://img.uoj.ac/utility/bear-applaud.gif" alt="鼓掌熊"></p>
-<h4 id="隐函数求导"><a href="#隐函数求导" class="headerlink" title="隐函数求导"></a>隐函数求导</h4><p><strong>隐函数</strong> ，可以看作是曲线？</p>
-<p>我要求圆的切线方程！</p>
-<p>$\large \begin{eqnarray}  \frac {\mathrm{d}} {\mathrm{d}x}(x^2+y^2) =  \frac {\mathrm{d}} {\mathrm{d}x}  (r^2) \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray}  2x +  2y \frac {\mathrm{d}y} {\mathrm{d}x} = 0\end{eqnarray}$</p>
-<p>$\large \begin{eqnarray}  \frac {\mathrm{d}y} {\mathrm{d}x} = -\frac y x \end{eqnarray}$</p>
-<p>搞定！</p>
-<h4 id="指数函数与对数函数的求导"><a href="#指数函数与对数函数的求导" class="headerlink" title="指数函数与对数函数的求导"></a>指数函数与对数函数的求导</h4><p>$e$ ? 关于复利 …</p>
-<p>奇怪的定义？</p>
-<p>$\begin{eqnarray} \large e = \lim _ {x \rightarrow 0 ^ +} (1 + x) ^{\frac {1} {x}} \end{eqnarray} =2.718281828\cdots$</p>
-<p>复利！</p>
-<p>$\begin{eqnarray} \large \lim _ {n \rightarrow +\infty}\left( 1 + \frac r n \right)^n = \lim _ {t \rightarrow 0^+} (1+t)^{\frac r t} = e ^ r\end{eqnarray}$</p>
-<p>奇怪的函数</p>
-<p>$\large \ln(f(x)), \exp(f(x))$ </p>
-<p>哈，她为什么被称作 <strong>自然对数</strong> ？</p>
-<p>$\large \begin{split} &amp; \ln’(f(x)) \\ =&amp; \lim  _{h \rightarrow 0} \frac {\ln(f(x+h))-\ln(f(x))} {h}\\ =&amp; \lim _ {h \rightarrow 0}  \ln(\frac {f(x+h)}{f(x)}) ^ {\frac 1 h} \\ =&amp; \lim _ {h \rightarrow 0}  \ln(1+ \frac {f’(x)h}{f(x)}) ^ {\frac 1 h} \\ =&amp; \ln (\exp{\Large\frac {f’(x)} {f(x)}}) \\ =&amp; \frac {f’(x)} {f(x)} \end{split}$</p>
-<p>是不是炒鸡神奇！<img src="http://img.uoj.ac/utility/bear-flying.gif" alt="超人熊"></p>
-<p>特别的，当 $f(x)=x$ 时，$\large  \begin{eqnarray} \ln’x=\frac 1 x  \end{eqnarray}$</p>
-<p><strong>对于一般的底数，$\large \begin{eqnarray} \log _b’ x = \frac 1 {x \ln b} \end{eqnarray}$</strong></p>
-<p>考虑 $\large f(x) = \exp x$ 的导数</p>
-<p>根据之前的结论 $\begin{eqnarray} \large \frac {f’(x)} {f(x)} = \ln’(\exp x) = 1\end{eqnarray}$</p>
-<p>所以 $\large f’(x) = f(x)=\exp x$ </p>
-<p><strong>对于一般的底数，$\large (b^x)’=b^x \ln b$</strong></p>
-<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><p>与微分相对的，是积分</p>
-<p>也是一个极限的定义，可以通过极限求解（黎曼和）</p>
-<h4 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h4><p>$\large \begin{eqnarray} \int  _a ^b f(x) dx \end{eqnarray}$</p>
-<p>几何意义：曲线 $y=f(x)$ ，两条直线 $x=a,x=b$ 与 $x$ 轴围成的有向面积</p>
-<p>定积分是一个具体的值</p>
-<p>试着求解一下</p>
-<p>$\large \begin{eqnarray} \int _ {0} ^ {a} x^2 \mathrm{d}x \end{eqnarray}$</p>
-<p>（划分为若干个小长方形，然后求极限…）</p>
-<p><strong>微积分基本定理</strong> 对于连续函数 $f(x)$ ，如果存在 $F(x)$ 满足</p>
-<p>$\large \begin{eqnarray} F’(x) = f(x) \end{eqnarray}$</p>
-<p>那么</p>
-<p>$\large \begin{eqnarray} \int _ {a} ^ {b} f(x) \mathrm{d}x = F(b)-F(a) \end{eqnarray}$</p>
-<p>我们只需要找到 $f(x)$ 的 <strong>反导数</strong></p>
-<h4 id="数值积分"><a href="#数值积分" class="headerlink" title="数值积分"></a>数值积分</h4><p><del>我不会算定积分！</del> <img src="http://img.uoj.ac/utility/bear-bomb.gif" alt="炸弹熊"></p>
-<p>简单易懂的 <strong>数值积分</strong> ，求出近似积分</p>
-<p>一个大模版，具体见大白书…</p>
-<p>辛普森公式：</p>
-<p>$\large \begin{eqnarray} \int _ {a} ^ {b} f(x) dx \approx \frac {b-a} 6 \times (f(a)+4f(\frac {a+b} 2) + f(b)) \end{eqnarray}$</p>
-<p>主要用途：求各种面积并</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">simpson</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</div><div class="line">	<span class="keyword">double</span> c = (a+b) / <span class="number">2</span>;</div><div class="line">	<span class="keyword">return</span> (F(a)+<span class="number">4</span>*F(c)+F(b))*(b-a)/<span class="number">6</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">asr</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> eps, <span class="keyword">double</span> A)</span></span>&#123;</div><div class="line">	<span class="keyword">double</span> c = (a+b) / <span class="number">2</span>, L = simpson(a, c), R = simpson(c, b);</div><div class="line">	<span class="keyword">if</span> (<span class="built_in">fabs</span>(L+R-A) &lt;= <span class="number">15</span>*eps) <span class="keyword">return</span> L+R+(L+R-A)/<span class="number">15.0</span>;</div><div class="line">	<span class="keyword">return</span> asr(a, c, eps/<span class="number">2</span>, L) + asr(c, b, eps/<span class="number">2</span>, R);</div><div class="line">&#125;</div><div class="line"></div><div class="line">asr(<span class="number">0</span>, <span class="number">1</span>, eps, simpson(<span class="number">0</span>, <span class="number">1</span>));</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>51Nod 1630 B君的竞技场</strong> 我们将竞技场规则简化如下：1. 每个人进入竞技场后，会等概率随机匹配一个人，匹配到的人与当前胜利和失败场数无关。2. 胜利达到 $x$ 场，或失败达到 $y$ 场后，退出竞技场，根据退出时的胜利场数获得奖励，不能中途放弃。3. 水平高的选手，总能战胜水平低的选手，不存在水平相等的人。4. 竞技场有无穷多的人。</p>
-<p>B君并不知道自己的水平，你可以认为B君的水平是在所有人中的等概率随机。B君想知道自己退出时期望胜利场数是多少。</p>
-<p>$0 &lt; x, y \leq 20$</p>
-</blockquote>
-<p>我们假设 B 能战胜 $p$ 的人，显然，我们可以 $O(xy)$ 来算出 B 的期望胜利场数，记为 $f(p)$ …</p>
-<p><del>naive的我取 p=0.5 …</del></p>
-<p>求 $f(p)$ 在 $[0,1]$ 的积分即可，我用了自适应辛普森…</p>
-<p>似乎直接保存多项式，求定积分也可以… </p>
-<h5 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h5><p>$\large \begin{eqnarray} \int f(x)dx \end{eqnarray}$</p>
-<p>发现没有上下界，事实上，它代表的是 <strong>_反导数的集合_</strong> </p>
-<p>如果 $F’(x)=f(x)$ ，那么</p>
-<p>$\large \begin{eqnarray} \int f(x)dx = F(x)+C\end{eqnarray}$</p>
-<p>为什么要加上常数 $C$ ？</p>
-<p>发现一个常数的导数为 $0$ ，加上任意的常数得到的函数 $F(x)$ 的导数都是 $f(x)$ </p>
-<p>考虑一个多项式 $\large F(x) = \sum _ {i=0} ^{n} f_i x^i$</p>
-<p>对他求导，$\large F’(x) = \sum _ {i=0} ^ {n-1} f_{i+1} (i+1)x^i$</p>
-<p>所以</p>
-<p>$$\large \begin{eqnarray} \int F(x)dx = \sum _ {i=1} ^{n+1} \frac {f_{i-1}} {i} x^i +C\end{eqnarray}$$</p>
-<h2 id="泰勒展开"><a href="#泰勒展开" class="headerlink" title="泰勒展开"></a>泰勒展开</h2><p><strong>_知其然，知其所以然_</strong></p>
-<p>仿造一个函数 $g(x) \approx f(x)$ … </p>
-<p>考虑先选择一个起点，比如 $(0,f(0))$ ，令 $g(0)=f(0)$ 发现只会存在一个点重合</p>
-<p>开始考虑曲线的变化趋势，即导数，保证在此处的导数相等，$g’(0)=f’(0)$ </p>
-<p>想进一步精确化，应该考虑凹凸性，就让二者的导数的导数相等，$g’’(0)=f’’(0)$ </p>
-<p>_我求导的次数越多，不就越接近吗？_</p>
-<p>这是泰勒的想法…</p>
-<p>令 $g(x)$ 是一个 <strong>$n$ 次多项式函数</strong> ，就能求 $n$ 次导数</p>
-<p>一般地，我们假设起点在 $(x_0,f(x_0))$ ，设函数 $g(x)$ ：</p>
-<p>$\large g(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + \cdots + a_n(x-x_0)^n$</p>
-<p>考虑 $g(x_0),f(x_0)$ 的 $k$ 阶导数相等</p>
-<blockquote>
-<p>先来看看 $h(x) = (x-x_0)^k$ 的导数，我们可以令 $f(x)=x^k,g(x)=x-x_0$ ，$h(x)$ 就是他们的复合函数，根据之前的链式求导法则：</p>
-<p>$\large h’(x) = f’(g(x))g’(x) = k(x-x_0)^{k-1} \times 1 = k(x-x_0)^{k-1}$</p>
-</blockquote>
-<p>$\large \begin{eqnarray} f^{(k)}(x_0) = g^{(k)}(x_0) = k!a_k+ \frac{k!} {1!} a_{k+1}(x_0-x_0) + \frac {k!} {2!} a_{k+2}(x_0-x_0)^2+\cdots \end{eqnarray}$</p>
-<p>也就是说</p>
-<p>$\large \begin{eqnarray} a_k = \frac {f^{(k)}(x_0)} {k!} \end{eqnarray}$</p>
-<p>所以，我们就可以得到</p>
-<p>$\large \begin{eqnarray} f(x) \approx g(x) = \sum _ {i=0} ^{n} \frac {f^{(i)}(x_0)} {i!} (x-x_0)^i\end{eqnarray}$</p>
-<p>如果 $g(x)$ 是一个无穷次多项式，那么就可以把 $\approx$ 改成 $=$ 了</p>
-<p>$\large \begin{eqnarray} f(x) = g(x) = \sum _ {i=0} ^{\infty} \frac {f^{(i)}(x_0)} {i!} (x-x_0)^i\end{eqnarray}$</p>
-<p>引入 <strong><a href="https://en.wikipedia.org/wiki/Power_series" target="_blank" rel="external">幂级数</a>，<a href="https://en.wikipedia.org/wiki/Formal_power_series" target="_blank" rel="external">形式幂级数</a></strong> </p>
-<p>麦克劳林级数：$x_0=0$ 时的泰勒级数</p>
-<p><strong>应用</strong></p>
-<p>展开 $\large \begin{eqnarray} e^x,\ln(1+x),\sin x,\cos x,\frac {1}{1-x} \end{eqnarray}$  之类奇怪的函数…</p>
-<p>得到欧拉定理，$\large e^{ix} = \cos x + i \sin x$</p>
-<p><strong>常用麦克劳林级数表</strong></p>
-<p>$\large \begin{eqnarray} e ^ {x} = \sum _ {n = 0} ^ {\infty} {\frac {x ^ {n}} {n！}} = 1 + x + {\frac {x ^ {2} } {2！}} + {\frac {x ^ {3}} {3！}} + \cdots \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray} \ln(1-x)&amp;=  -  \sum _ {n = 1} ^ {\infty} {\frac {x ^ {n}} {n}} =  -  x- {\frac {x ^ {2}} {2}}  -  {\frac {x ^ {3}} {3}}  -  \cdots \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray} \ln(1 + x)= \sum _ {n = 1} ^ {\infty}(-  1)^ {n + 1} {\frac {x ^ {n}} {n}} = x- {\frac {x ^ {2}} {2}} + { \frac {x ^ {3}} {3}}  -  \cdots \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray} \frac {1} {(1-x)^k} = \sum _ {n=k-1} ^ {\infty} \binom {n} {k} x^{n-k} \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray} (1+x)^{\alpha} = \sum _ {n=0} ^ {\infty} \binom {\alpha} {n} x^n \end{eqnarray}$</p>
-<p>其系数是广义二项式系数</p>
-<p>$\large \begin{eqnarray} \binom {\alpha} {n} = \prod _ {k=1} ^{n} \frac {\alpha - k + 1} {k} ,\;\alpha \in \mathbb{C} \end{eqnarray}$</p>
-<p>注意柿子 $(4),(5)$ 要求 $|x| &lt; 1$ ，当然形式幂级数就没事啦…</p>
-<p>同时，可以发现 $(4)$ 是 $(5)$ 的特例</p>
-<p><strong>一些需要注意的事情</strong></p>
-<p>$\large \ln(1-x)$ 可以由 $\large \begin{eqnarray} \frac 1 {1-x} \end{eqnarray}$ 积分得到…</p>
-<p>而且可以得到它的常数项系数为 $0$ </p>
-<p>嘿嘿嘿… <img src="http://img.uoj.ac/utility/bear-facepalm.jpg" alt="捂脸熊"></p>
-<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b85c6666cb1f08756cc464a786ca4d4adfc056f6" alt="233"></p>
-<p>$B$ 是伯努利数，$E$ 是欧拉数…</p>
-<h2 id="牛顿迭代"><a href="#牛顿迭代" class="headerlink" title="牛顿迭代"></a>牛顿迭代</h2><p>对于给定的一个函数 $f (x)$ （有单调性？） ，要求一个 $f (x) = 0$ 的根</p>
-<p>二分太慢了。。期望 $O(\log M)$</p>
-<p>引入 <strong>牛顿迭代</strong> </p>
-<p>可选择一个邻近这个根的点作为初始点 $x_0$ , 然后求 $f (x)$ 于 $(x_0, f (x_0))$ 处</p>
-<p>切线与 $x$ 轴的交点, 此交点 <strong>一般</strong> 将更加接近根</p>
-<p>$\large \begin{eqnarray} x = x_0 - \frac {f(x)} {f’(x)} \end{eqnarray}$</p>
-<p>可以看作 <strong>泰勒展开式中，我们只取前两项</strong></p>
-<p>一般？那么有什么要求呢？<img src="http://img.uoj.ac/utility/bear-thinking.gif" alt="思考熊"></p>
-<blockquote>
-<p>已经证明，如果是连续的，并且待求的零点是孤立的，那么在零点周围存在一个区域，只要初始值位于这个邻近区域内，那么牛顿法必定收敛。 并且，如果不为 $0$ ， 那么牛顿法将具有平方收敛的性能. 粗略的说，这意味着每迭代一次，<strong>牛顿法结果的有效数字将增加一倍</strong> </p>
-</blockquote>
-<p>所以差不多是 $O(\log \log M)$ 的样子</p>
-<p>一个经典的栗子就是开平方…</p>
-<p>$\large \begin{eqnarray} f(x) = x^2 - C \end{eqnarray}$</p>
-<p>按照</p>
-<p>$\large \begin{eqnarray} x = x_0 - \frac {x^2-C} {2x_0} = \frac {1} {2} (x_0 + \frac C {x_0}) \end{eqnarray}$</p>
-<p>不断迭代</p>
-<p>一道牛迭+FFT裸题：</p>
-<p><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1166" target="_blank" rel="external">51Nod 1166 大数开平方</a></p>
-<p> 参考自 <a href="http://tieba.baidu.com/p/2873435742" target="_blank" rel="external">神贴</a> ，大概就是取个倒数，迭代里不用套高精度除法了</p>
-<p><del>我来瞎推一下</del></p>
-<p>此时 $\large \begin{eqnarray} f(x) = (\frac 1 x)^m - C \end{eqnarray}$</p>
-<p>$\large \begin{eqnarray} x = x_0 + \frac {x_0^{-m}-C} {mx^{-m-1}_0} =  x_0 + \frac {x-ax^{m+1}} {m} \end{eqnarray}$</p>
-<p>搞定！此时变成了单精度除法，乘法用FFT优化</p>
-<p>最后求一次倒数，注意可以用倍增牛迭实现</p>
-<p>其实没啥用啦…</p>
-<p><strong>有啥用？</strong></p>
-<p><a href="http://picks.logdown.com/posts/209226-newtons-method-of-polynomial" target="_blank" rel="external">多项式的牛顿迭代</a></p>
-<p>求给定多项式 $G(x)$ ，求解一个多项式 $F(x)$ ，满足</p>
-<p>$\large G(F(x)) \equiv \bmod x^n$</p>
-<p>假如我们已经知道 $F_{n}(x)$ 满足</p>
-<p>$\large \begin{eqnarray} G(F_n(x)) \equiv 0 \pmod x ^ n \end{eqnarray}$</p>
-<p>考虑牛顿迭代…可以得到</p>
-<p>$\large \begin{eqnarray} F_{2n}(x) \equiv F_{n}(x) - \frac {G(F_{n}(x))} {G’(F_{n}(x))} \pmod {x^{2n}} \end{eqnarray}$</p>
-<p>本质是倍增</p>
-<p>每迭代一次精度增加一倍</p>
-<p>多项式求逆，多项式开根，多项式求 $\ln$ ，多项式求 $\exp$，多项式快速幂，多项式求$\sin$…</p>
-<p><strong>都可以直接推导…</strong></p>
-<p>还可解锁更多技能呦</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/31/Algorithms-Calculous/">展开全文 >></a>
         </p>
       
 
