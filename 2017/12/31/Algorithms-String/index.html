@@ -7,17 +7,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>Archives | Cyani&#39;s Blog</title>
+  <title>「学习笔记」字符串の黑魔法 | Cyani&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This Cyani&apos;s Bolg.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cyani&#39;s Blog">
-<meta property="og:url" content="https://xuzhean.github.io/archives/index.html">
+  <meta name="description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「学习笔记」字符串の黑魔法">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/index.html">
 <meta property="og:site_name" content="Cyani&#39;s Blog">
-<meta property="og:description" content="This Cyani&apos;s Bolg.">
+<meta property="og:description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF30E.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbabd_1.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/ParentTree.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/2.jpg">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/3.jpg">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/a.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aa.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aab.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabb.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabba.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbab.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/aabbabd.png">
+<meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/233.png">
+<meta property="og:updated_time" content="2018-04-29T08:56:46.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cyani&#39;s Blog">
-<meta name="twitter:description" content="This Cyani&apos;s Bolg.">
+<meta name="twitter:title" content="「学习笔记」字符串の黑魔法">
+<meta name="twitter:description" content="怎样AC—— 字符串の黑魔法[TOC] _例题挑一些做！_ _习题别做！_ Part 1 基础字符串算法####HASH 在 $seed$ 进制下取模，快速判断两个串是否相等 维护集合。能支持简单的删减 维护前缀。能支持简单的修改，提取子串 双模数 HASH ，自然溢出 维护动态串 HASH ：线段树 or 平衡树 一道简单题？一道难题？区间修改，查询区间是否是周期为 $c$ 的串 思考5min…">
+<meta name="twitter:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
   
     <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
   
@@ -163,198 +180,596 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Algorithms-String" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/01/Solutions-BZOJ/" class="archive-article-date">
-  	<time datetime="2017-12-31T16:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/01/Solutions-BZOJ/">「切题记录」BZOJ</a>
+    <h1 class="article-title" itemprop="name">
+      「学习笔记」字符串の黑魔法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/01/Solutions-Codeforces/" class="archive-article-date">
-  	<time datetime="2017-12-31T16:00:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/01/Solutions-Codeforces/">「切题记录」Codeforces</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/01/Solutions-AtCoder/" class="archive-article-date">
-  	<time datetime="2017-12-31T16:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/01/Solutions-AtCoder/">「切题记录」AtCoder</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-Tree/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-Tree/">「学习笔记」Prufer 序列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-String/" class="archive-article-date">
+        
+        <a href="/2017/12/31/Algorithms-String/" class="archive-article-date">
   	<time datetime="2017-12-31T15:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-String/">「学习笔记」字符串の黑魔法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2><p>[TOC]</p>
+<p><strong>_例题挑一些做！_</strong></p>
+<p><strong>_习题别做！_</strong></p>
+<h2 id="Part-1-基础字符串算法"><a href="#Part-1-基础字符串算法" class="headerlink" title="Part 1 基础字符串算法"></a>Part 1 基础字符串算法</h2><p>####HASH</p>
+<p>在 $seed$ 进制下取模，快速判断两个串是否相等</p>
+<p>维护集合。能支持简单的删减</p>
+<p>维护前缀。能支持简单的修改，提取子串</p>
+<p>双模数 <code>HASH</code> ，自然溢出</p>
+<p>维护动态串 <code>HASH</code> ：线段树 <code>or</code> 平衡树</p>
+<h5 id="一道简单题？一道难题？"><a href="#一道简单题？一道难题？" class="headerlink" title="一道简单题？一道难题？"></a>一道简单题？一道难题？</h5><p>区间修改，查询区间是否是周期为 $c$ 的串</p>
+<p>思考5min…</p>
+<p><strong>比较难的一道题</strong></p>
+<blockquote>
+<p><strong>CF452F Permutation</strong> 给定一个长度为 $n$ 的置换，问是否存在 $a,b\;(a \not=b,a\equiv b \pmod 2)$ 满足 $\large c = \frac {a+b} 2$ 的位置在 $a,b$ 之间</p>
+<p>$n \leq 300000$</p>
+</blockquote>
+<p>思考10min…</p>
+<p>考虑从左至右枚举 $c$ ，如果不存在 $a,b$ </p>
+<p>那么一定满足 $a,b$ 在 $c$ 的同一边</p>
+<p>即 $a,b$ 要么都在 $c$ 前出现，要么都在后面出现</p>
+<p>也就是数值 $c$ 两边的出现情况是否对称</p>
+<p>考虑正着倒着各维护一个 <code>HASH</code> 值</p>
+<p>即可判断是否对称</p>
+<h4 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h4><p>求出所有位置结尾的最长匹配长度</p>
+<p>常见套路：作为DP的状态，最小周期串 ，名次匹配</p>
+<p>没啥好说的</p>
+<h4 id="ExKMP"><a href="#ExKMP" class="headerlink" title="ExKMP"></a>ExKMP</h4><p>求 <code>S</code> 的后缀与 <code>T</code> 的LCP，记为 $EX_{S,T}[i]$</p>
+<p>考虑先求出 $EX_{T,T}[i]$ ，保存当前最大的 $k+ex[k]-1$ ，在范围内的，直接用之前的信息求出，否则暴力匹配，复杂度线性</p>
+<p>如何理解第 5 行代码？</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//此模版下标从0开始</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exKMP</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">char</span> t[], <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>; f[<span class="number">0</span>] = m;</div><div class="line">	rep (i, <span class="number">1</span>, m<span class="number">-1</span>) &#123;</div><div class="line">		f[i] = max(<span class="number">0</span>, min(f[i-mx], mx+f[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+f[i] &lt; m &amp;&amp; t[i+f[i]] == t[f[i]]) f[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + f[i] &gt; mx + f[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">	mx = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>) &#123;</div><div class="line">		g[i] = max(<span class="number">0</span>, min(f[i-mx], mx+g[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+g[i] &lt; n &amp;&amp; s[i+g[i]] == t[g[i]]) g[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + g[i] &gt; mx + g[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><blockquote>
+<p><strong>51Nod1638 字符串重组</strong> $s$ 是一个长度为 $n$ 的字符串，定义</p>
+<p>$$f(s,i,j) = s_{i+1…j−1} + r(s_{j…n−1}) + r(s_{0…i})\;(0 \le i&lt;j&lt;n)$$</p>
+<p>给定 $a$ 和 $b$ 。找出相应的 $i$ 和 $j$ ，使得 $f(a,i,j) =b$ </p>
+<p>取 $i$ 最大，其次 $j$ 最小的方案</p>
+</blockquote>
+<p>思考7min…</p>
+<p>将 $a$ 反向与 $b$ 进行 <code>KMP</code>，得到 $i,j$ 的值</p>
+<p>用 <code>ExKMP</code> 判 $a[i+1],b$ 的最长公共前缀</p>
+<p>需要预处理一下 $i$ 的上界 $\mathrm{limit}$</p>
+<p>注意细节</p>
+<h4 id="Manachar"><a href="#Manachar" class="headerlink" title="Manachar"></a>Manachar</h4><p>求出 $r[i]$ ，表示以 $i$ 为回文中心的最长回文半径</p>
+<p>与 <code>ExKMP</code> 类似，保存扩展的最右边节点。范围内利用已有信息，否则暴力扩展。<br>为了处理长度为偶数的回文串，在所有中间字符插入 <code>#</code> ，两端插入其它字符</p>
+<p>复杂度 $O(n)$ </p>
+<p>观察其扩展的方式，不难得到：任意一串的本质不同的回文串最多有 $O(n)$ 个</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200009</span>;</div><div class="line"><span class="keyword">char</span> s[maxn], str[maxn];</div><div class="line"><span class="keyword">int</span> r[maxn], n;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">manachar</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>, p = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123; </div><div class="line">		str[i&lt;&lt;<span class="number">1</span>] = s[i]; str[i&lt;&lt;<span class="number">1</span>|<span class="number">1</span>] = <span class="string">'#'</span>;</div><div class="line">	&#125;</div><div class="line">	str[<span class="number">0</span>] = <span class="string">'$'</span>; str[<span class="number">1</span>] = <span class="string">'#'</span>; str[(n+<span class="number">1</span>)&lt;&lt;<span class="number">1</span>] = <span class="string">'@'</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=(n&lt;&lt;<span class="number">1</span>|<span class="number">1</span>); i++) &#123;</div><div class="line">		r[i] = max(<span class="number">1</span>, min(r[<span class="number">2</span>*p-i], mx-i));</div><div class="line">		<span class="keyword">while</span> (str[i+r[i]] == str[i-r[i]]) r[i]++;</div><div class="line">		<span class="keyword">if</span> (i + r[i] &gt; mx) &#123; p = i; mx = i + r[i]; &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="一道题"><a href="#一道题" class="headerlink" title="一道题"></a>一道题</h5><blockquote>
+<p><strong>BZOJ2342 [SHOI2011]双倍回文</strong> 给定一个字符串，求最长的一个形如 $ww^rww^r$  的子串</p>
+<p>$n \leq 500000$</p>
+</blockquote>
+<p>思考10min…</p>
+<p>考虑枚举大回文中心 $i$ ，而$j$ 满足条件当且仅当 $i-r[i]/2\le j&lt;i,\;j + r[j] \ge i$</p>
+<p>对于每一个 $i$ ，我们要求出最小的 $j$ </p>
+<p>注意到第二个不等式右边单调递增，并查集维护</p>
+<p><strong>exercise</strong></p>
+<p><code>BZOJ2565 最长双回文串</code></p>
+<p><code>BZOJ3103 Palindromic Equivalence</code></p>
+<h4 id="最小表示法"><a href="#最小表示法" class="headerlink" title="最小表示法"></a>最小表示法</h4><p>$O(n)$ 求出字符串的最小字典序的循环同构。两个指针单调移动</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span>; j = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</div><div class="line">	k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (a[i+k&gt;=n?i+k-n:i+k] == a[j+k&gt;=n?j+k-n:j+k]) k++;</div><div class="line">	<span class="keyword">if</span> (k == n) <span class="keyword">break</span>;</div><div class="line">	<span class="keyword">if</span> (a[i+k&gt;=n?i+k-n:i+k] &lt; a[j+k&gt;=n?j+k-n:j+k]) j = max(j+k+<span class="number">1</span>, i+<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> i = max(i+k+<span class="number">1</span>, j+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">res = min(i, j);</div></pre></td></tr></table></figure>
+<p>裸题：BZOJ2176 Strange string</p>
+<p>最小表示法思想：简化状态的表示</p>
+<h5 id="红红火火恍恍惚惚哈哈哈"><a href="#红红火火恍恍惚惚哈哈哈" class="headerlink" title="红红火火恍恍惚惚哈哈哈"></a>红红火火恍恍惚惚哈哈哈</h5><blockquote>
+<p><strong>Codeforces 524F</strong> 给出一个仅由 <code>(</code> 和 <code>)</code> 构成的字符串，现在可以加入若干字符，或者把末尾的字符移到最前面。求一个长度最短的合法括号序列，如果有多个输出长度最短的且字典序最小。</p>
+</blockquote>
+<p>思考10min…</p>
+<p>长度是否能确定？</p>
+<p>是原长加上两种括号的差值 $t=\mathrm{cnt\;<code>)</code>}-\mathrm{cnt\;<code>(</code>}$，$t$ 也是需要加上的左括号数量</p>
+<p>所有位置都能成为左端点吗？</p>
+<p>如果一个括号序列可以匹配，当且仅当 <strong>所有位置的前缀 <code>(</code> 数量大于 <code>)</code> 的数量</strong></p>
+<p>单调队列维护 <code>)</code> 与 <code>(</code> 差值的前缀和单调递减，判断 $t$ 个左括号是否够用</p>
+<p>循环同构，字典序最小？</p>
+<p>最小表示法即可</p>
+<p><del>随便一写就可以秒 SA 做法了</del></p>
+<blockquote>
+<p><strong>Codeforces 46F</strong></p>
+<p><img src="CF46F.png" alt="CF46F"></p>
+</blockquote>
+<p>思考3min…</p>
+<p>操作可逆，达到极大/极小的状态，<code>bellman-ford</code></p>
+<p><strong>ExKMP，Manachar</strong></p>
+<blockquote>
+<p><strong>Codeforces 30E</strong> </p>
+<p><img src="CF30E.png" alt="CF30E"></p>
+</blockquote>
+<p>思考10min…</p>
+<p>是否有 $O(n)$ 做法？</p>
+<p>套路，将串反向与原串ExKMP</p>
+<p>一个重要性质，$T[x+1,n-x]$ 一定越长越好</p>
+<p>枚举回文中心，预处理前缀最大值</p>
+<h2 id="Part-2-基础字符串数据结构"><a href="#Part-2-基础字符串数据结构" class="headerlink" title="Part 2 基础字符串数据结构"></a>Part 2 基础字符串数据结构</h2><h4 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h4><p>常常与前缀相关</p>
+<p>类似于主席树，可以可持久化</p>
+<p>小优化：如果一个节点只有一个孩子，那么可以把这个节点省略</p>
+<p> <code>Compacted-trie</code> ，节点数量降为 $O(n) $</p>
+<h5 id="两个简单应用"><a href="#两个简单应用" class="headerlink" title="两个简单应用"></a>两个简单应用</h5><blockquote>
+<p><strong>Codeforces 178F</strong> 给你 $n$ 个串 $a_i$ ，要求选择 $k$ 个串，求</p>
+<p>$$\begin{eqnarray} \large \min \left\{ \sum _ {i=1} ^ {k-1} \sum _ {j=i+1} ^ {k} lcp(a_i,a_j) \right\} \end{eqnarray}$$</p>
+</blockquote>
+<p>思考5min…</p>
+<p>建出 <code>Copacted-trie</code> ，暴力树形背包DP，复杂度 $O(n^2)$</p>
+<blockquote>
+<p><strong>BZOJ4546 [CodeChef]XRQRS</strong> 给定一个初始时为空的整数序列（元素由 <code>1</code> 开始标号）以及一些询问：</p>
+<ol>
+<li>在数组后面就加入数字 $x$</li>
+<li>在区间 $[L,R]$ 中找到 $y$ ，最大化 $x \oplus y$</li>
+<li>删除数组最后 $k$ 个元素</li>
+<li>在区间 $[L,R]$ 中，统计小于等于 $x$ 的元素个数</li>
+<li>在区间 $[L,R]$ 中，找到第 $k$ 小的数</li>
+</ol>
+</blockquote>
+<p>思考 5min…</p>
+<p><code>可持久化Tire</code> 裸题，不说了</p>
+<p><del>卡内存差评</del></p>
+<p><strong>exercise</strong></p>
+<p><code>BZOJ4523 [CQOI2016]路由表</code></p>
+<p><code>BZOJ2741 [FOTILE模拟赛]L</code></p>
+<h4 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h4><p><code>KMP</code> 的 <code>Trie</code> 版本。两种构造方式：</p>
+<ul>
+<li>暴力跳 <code>Fail</code>，复杂度不够优</li>
+<li><code>Trie图</code> ！$p[i]$ 保存加入 $i$ 后会到达的节点，$p$ 和 $Fail$ 相互计算</li>
+</ul>
+<p><strong>Fail树</strong></p>
+<ul>
+<li><code>AC自动机</code>中，<code>Fail</code> 指针指向深度比它小的一个节点，构成了一棵树</li>
+<li>一个点在 <code>Fail</code> 上的祖先是所有能和这个后缀匹配的前缀节点</li>
+<li><code>Fail树</code> 上的 <code>LCA</code> 是两个前缀的最长公共后缀，并且在前缀中出现</li>
+</ul>
+<p>常见套路：自动机状态作为 <code>DP</code> 状态，矩阵快速幂优化，<code>Fail树</code>搞搞</p>
+<h5 id="经典题"><a href="#经典题" class="headerlink" title="经典题"></a>经典题</h5><blockquote>
+<p><strong>51Nod1440 迈克打电话</strong> 有 $n$ 只熊，从 $1$ 到 $n$ 进行编号。第 $i$ 只熊的电话号码是$s_i$。每只熊会给那些电话号码是他的子串的熊打电话（可能会给自己打）。</p>
+<p>$call(i, j)$ 表示第 $i$ 只熊给第 $j$ 只熊打电话的次数，也就是第 $j$ 个串在第 $i$ 个串中出现的次数。</p>
+<p>迈克会有 $q$ 次询问。每个询问中给出 $l,r,k$</p>
+<p>然后请您计算一下 $\sum ^r _{i=l} call(i,k)$</p>
+</blockquote>
+<p>思考7min…</p>
+<p>简单套路</p>
+<p>离线，<code>Fail</code>树，<code>DFS</code>序</p>
+<p><strong>exercise</strong></p>
+<p><code>BZOJ3881 [COCI2015]Divljak</code></p>
+<h4 id="回文自动机-PAM"><a href="#回文自动机-PAM" class="headerlink" title="回文自动机 PAM"></a>回文自动机 PAM</h4><p>提取所有本质不同的回文串，是 $O(n)$ 的</p>
+<p>回文自动机的每一个节点都是原串的一个回文子串，状态只记它的长度</p>
+<p><code>PAM</code> 的有符号边 <code>x-trans</code>：首尾各添加一个字符 <code>x</code> 到达的状态</p>
+<p><code>PAM</code> 的无符号边 <code>Fail</code>：这个回文串的最大真回文后缀</p>
+<p>在线构造，维护 <code>last</code> 表示当前的最大回文后缀</p>
+<p>令 $p=last$ ，加入一个字符 $x$ 之后，$p$ 不断跳 <code>Fail</code>，直到个这个回文子串的前一个字符为 $x$ </p>
+<p>如果不存在 <code>x-trans</code> ，新建一个节点，新状态的 <code>Fail</code> 就是 <code>p</code> 继续跳 <code>Fail</code> 知道这个回文子串的前一个字符为 <code>x</code> 为止</p>
+<h5 id="裸题"><a href="#裸题" class="headerlink" title="裸题"></a>裸题</h5><blockquote>
+<p><strong>BZOJ3676 [APIO2014]回文串</strong> 假设 $cnt[i]$ 是回文串 $i$ 在 $s$ 中出现的次数，求</p>
+<p>$$\large \max \{ cnt[i] \cdot i \}$$</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300009</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PalindromicTree</span> &#123;</span></div><div class="line">    <span class="keyword">int</span> p[<span class="number">26</span>], fail, cnt, len;</div><div class="line">&#125; T[maxn];</div><div class="line"><span class="keyword">int</span> n, size, last, cur;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</div><div class="line"><span class="keyword">char</span> s[maxn]; </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	T[size].len = x; <span class="keyword">return</span> size++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">	newNode(<span class="number">0</span>); newNode(<span class="number">-1</span>);</div><div class="line">	s[<span class="number">0</span>] = <span class="string">'#'</span>; T[<span class="number">0</span>].fail = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> o)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (s[n-T[o].len<span class="number">-1</span>] != s[n]) o = T[o].fail;</div><div class="line">	<span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	gets(s+<span class="number">1</span>); build();</div><div class="line">	<span class="keyword">for</span> (n=<span class="number">1</span>; s[n]; n++) &#123;</div><div class="line">		cur = get(last);</div><div class="line">		<span class="keyword">if</span> (!T[cur].p[s[n]-<span class="string">'a'</span>]) &#123;</div><div class="line">			last = newNode(T[cur].len + <span class="number">2</span>);</div><div class="line">			T[last].fail = T[get(T[cur].fail)].p[s[n]-<span class="string">'a'</span>];</div><div class="line">			T[cur].p[s[n]-<span class="string">'a'</span>] = last;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> last = T[cur].p[s[n]-<span class="string">'a'</span>];</div><div class="line">		T[last].cnt++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=size<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--) &#123;</div><div class="line">		T[T[i].fail].cnt += T[i].cnt;</div><div class="line">		ans = max(ans, <span class="number">1L</span>L * T[i].cnt * T[i].len);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>execise</strong></p>
+<p><code>Gym 100543G</code></p>
+<p>更多应用请参考 翁文涛 的 <code>2017集训队论文</code></p>
+<h2 id="Part-3-后缀三兄弟"><a href="#Part-3-后缀三兄弟" class="headerlink" title="Part 3 后缀三兄弟"></a>Part 3 后缀三兄弟</h2><p><strong>注意，这是本次讲课最重要的内容！</strong></p>
+<p>发现前面很多东西只能处理前缀，那么如何处理子串？</p>
+<p>每个子串都是某个后缀的前缀！那么就提取所有后缀！</p>
+<h4 id="后缀数组-SA"><a href="#后缀数组-SA" class="headerlink" title="后缀数组 SA"></a>后缀数组 SA</h4><h5 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h5><p>定义三个数组：<code>SA</code>  ，<code>Rank</code>  ，<code>height</code></p>
+<ul>
+<li><code>SA</code> ，第 <code>i</code> 小的后缀的编号</li>
+<li><code>Rank</code>，后缀 <code>i</code> 的排名</li>
+<li>于是有 <code>Rank[SA[i]]=i, SA[Rank[i]]</code></li>
+<li><code>height[i]</code> ，后缀 <code>SA[i-1]</code> 和 后缀 <code>SA[i]</code> 的 <code>LCP</code></li>
+</ul>
+<p>求 <code>Rank</code></p>
+<ul>
+<li>倍增，进行 $O(\log n)$ 次基数排序。常用的算法</li>
+<li><code>DC3</code>，线性求，但是常数大 <del>没有用</del></li>
+</ul>
+<p>求 <code>height</code> </p>
+<ul>
+<li>直接暴力求，复杂度为线性</li>
+<li>原因：<code>height[Rank[i]] &gt;= height[Rank[i-1]] - 1</code></li>
+</ul>
+<blockquote>
+<p>假设 <code>SA[Rank[i-1]-1] = k</code>，考虑删除后缀 <code>i-1</code> 和 <code>k</code> 的第一个字符</p>
+<p>于是得到 <code>k+1</code> 和 <code>i</code> 的 <code>LCP</code> 至少是 <code>height[Rank[i-1]] - 1</code></p>
+<p>而 <code>k+1</code> 的排名比 <code>i</code> 小，所以有 <code>height[Rank[i]] &gt;= height[Rank[i-1]] - 1</code></p>
+</blockquote>
+<h5 id="后缀数组模板"><a href="#后缀数组模板" class="headerlink" title="后缀数组模板"></a>后缀数组模板</h5><p>其中 $tax$ 表示桶，$tmp[i]$ 表示第二关键字排名为 $i$ 对应的后缀标号</p>
+<p>基数排序的过程：</p>
+<ul>
+<li><p>统计每一个后缀排名的个数，并求出前缀和</p>
+</li>
+<li><p>然后按照第二关键字的排名从大到小处理</p>
+</li>
+<li><p>$tax[Rank[tmp[i]]]–]$ 就是 $tmp[i]$ 的新排名</p>
+</li>
+</ul>
+<p>一开始， $Rank[i]$ 就是后缀i的第一个字符，第二关键字就是它的位置</p>
+<p>考虑每一次倍增子串的长度 $w$，考虑一次完整的循环</p>
+<ul>
+<li><p>首先是没有后半部分的串，那么它们的第二关键字为0，所以按照位置是排在最前面的那几个</p>
+</li>
+<li><p>之后在是利用 <code>SA</code> 来求出剩下的第二关键字，<code>SA[i]-w</code> 是其对应的子串</p>
+</li>
+<li><p>再是一次基数排序。用 <code>tmp</code> 临时存储 <code>rank</code> 的值</p>
+</li>
+<li><p>最后重新离散化</p>
+</li>
+</ul>
+<p>按照 <code>i</code>，升序暴力求 $height[rank[i]]$ 即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100009</span>;</div><div class="line"><span class="keyword">int</span> SA[maxn], rank[maxn], height[maxn], tax[maxn], tmp[maxn], n, m;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> s[x] == s[y] &amp;&amp; s[x+w] == s[y+w];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=m; i++) tax[i] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) tax[rank[i]]++;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;=<span class="number">1</span>; i--) SA[tax[rank[tmp[i]]]--] = tmp[i];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SuffixArray</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		rank[i] = s[i]; tmp[i] = i;</div><div class="line">	&#125;</div><div class="line">	m = <span class="number">127</span>; Sort();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> w=<span class="number">1</span>,p=<span class="number">1</span>,i; p&lt;n; w+=w,m=p) &#123;</div><div class="line">		<span class="keyword">for</span> (p=<span class="number">0</span>,i=n-w+<span class="number">1</span>; i&lt;=n; i++) tmp[++p] = i;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="keyword">if</span> (SA[i] &gt; w) tmp[++p] = SA[i] - w;</div><div class="line">		Sort(); swap(rank, tmp); rank[SA[<span class="number">1</span>]] = p = <span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) rank[SA[i]] = cmp(tmp, SA[i], SA[i<span class="number">-1</span>], w) ? p : ++p;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> j, k = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; height[rank[i++]]=k)</div><div class="line">		<span class="keyword">for</span> (k=k?k<span class="number">-1</span>:k,j=SA[rank[i]<span class="number">-1</span>]; s[i+k]==s[j+k]; ++k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>模版：UOJ #35 后缀排序</strong></p>
+<p> 回顾一下 <code>SA[],Rank[]</code> 的性质，我们来看一道题</p>
+<blockquote>
+<p><strong>BZOJ4319 [CERC2008]Suffix reconstruction</strong> 给定 <code>SA[]</code> ，构造一个原字符串，只能包含小写字母</p>
+</blockquote>
+<p>贪心？</p>
+<p>按照 <code>SA[]</code> 的顺序，每个位置能小就尽量小</p>
+<p>如何知道一个位置是否要增大 <code>1</code> ？</p>
+<p><strong>exercise</strong></p>
+<p><strong>LOJ Hello 2018 的 B</strong> ，同样是一道利用 <code>SA[],Rank[]</code> 性质的题</p>
+<h5 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h5><ul>
+<li><p>二分答案</p>
+</li>
+<li><p><strong>利用 <code>height</code> 对后缀分组</strong></p>
+</li>
+<li><p>重复出现的子串变为两个后缀的 <code>LCP</code></p>
+</li>
+<li><p><strong>两个后缀的LCP就是对应 <code>Rank</code> 的 <code>height</code> 的 <code>左开右闭区间min</code></strong></p>
+</li>
+<li><p><strong>多个串，合并为一个长的串，中间用特殊字符隔开</strong></p>
+</li>
+<li><p>本质不同的子串数目：所有子串个数减去所有 $height$</p>
+</li>
+<li><p>不重叠：$SA$ 的最大与最小值</p>
+</li>
+<li><p><strong>单调栈，<code>RMQ</code></strong></p>
+</li>
+</ul>
+<p>更多内容请参考文件夹内 <code>罗穗骞</code> 的集训队论文</p>
+<p><del>具体这些套路的模版题不展开介绍</del></p>
+<h5 id="常用技巧选讲"><a href="#常用技巧选讲" class="headerlink" title="常用技巧选讲"></a>常用技巧选讲</h5><p><del>我怎么敢不讲啊QAQ</del></p>
+<ol>
+<li><strong>可重叠最长重复子串</strong> 给定一个字符串，求最长重复子串，这两个子串可以重叠</li>
+</ol>
+<p>—— <code>height</code> 最大值</p>
+<ol>
+<li><strong>不可重叠最长重复子串</strong> 不可重叠</li>
+</ol>
+<p>—— 二分答案，按 <code>height</code> 分组，组内 <code>SA</code> 的 <code>min,max</code></p>
+<ol>
+<li><strong>可重叠的 $k$  次最长重复子串</strong> 要求重复 $k$ 次</li>
+</ol>
+<p>—— 二分答案，分组，后缀个数</p>
+<ol>
+<li><strong>最长回文子串</strong> </li>
+</ol>
+<p>—— 对称，用特殊字符隔开</p>
+<ol>
+<li><strong>连续重复子串</strong> 给定 <code>S</code> ，求最大的 <code>R</code> 使得 <code>S</code> 为某个字符串重复 <code>R</code> 次得到</li>
+</ol>
+<p>—— 枚举答案 <code>R</code> ，判断 <code>suffix(1),suffix(k+1)</code> 的最长公共前缀是否等于 $n-k$ ，只需求 <code>height[]</code> 的每一个数到 <code>height[rank[1]]</code> 的最小值</p>
+<ol>
+<li><strong>重复次数最多的连续重复子串 （一定要记住的经典套路）</strong> </li>
+</ol>
+<p>—— 考虑枚举答案长度 <code>L</code> ，注意到一个性质，如果一个长度为 $L$ 的字符串重复出现，那么他肯定经过了 <code>s[0],s[L],s[2L],S[3L],...</code>  ，枚举 $i$ ，只要看字符 <code>s[Li],s[L(i+1)]</code> 往前往后各能匹配多远即可，如果长度为 <code>k</code> ，那么就出现了 <code>k/L+1</code> 次，复杂度 $O(n \log n)$ ！</p>
+<ol>
+<li><strong>两个串の最长公共子串</strong> </li>
+</ol>
+<p>—— 考虑拼接起来，中间用特殊字符隔开，考虑求 <strong>排名相邻且不再同一个字符串的 <code>height</code> 最大值</strong> </p>
+<p>思考：为什么只要考虑排名相邻的？</p>
+<ol>
+<li><strong>两个串の长度不小于 $k$ 的公共子串对数</strong> </li>
+</ol>
+<p>—— 考虑 <code>A</code> 和 <code>B</code> 所有后缀的最长公共前缀的长度，单调栈实现，细节自己yy</p>
+<ol>
+<li><strong>多个串の出现在不小于 $k$ 个字符串中的最长子串</strong> </li>
+</ol>
+<p>—— 二分答案，分组</p>
+<h5 id="一些🌰"><a href="#一些🌰" class="headerlink" title="一些🌰"></a>一些🌰</h5><blockquote>
+<p><strong>UOJ#219 [NOI2016]优秀的拆分</strong> 如果一个字符串可以被拆分为 $AABB$ 的形式，其中 $AA$ 和 $BB$ 是任意 <strong>非空</strong> 字符串，则我们称该字符串的这种拆分是优秀的。</p>
+<p>现在给出一个长度为 $n$ 的字符串 $S$，我们需要求出，在它 <strong>所有子串</strong> 的所有拆分方式中，优秀拆分的总个数</p>
+<p>$T \leq 10, n \leq 30000$</p>
+</blockquote>
+<p>思考10min…</p>
+<p>显然，我们可以统计每个前缀的后缀 <code>AA</code> 的个数，后缀同理</p>
+<p>用之前的第 6 个技巧即可</p>
+<p>求 <code>LCP</code> 用 <code>ST</code> 表即可</p>
+<p>区间修改，差分即可</p>
+<p><del>（如果泥萌二分＋<code>hash</code> ，也可以卡过）</del></p>
+<blockquote>
+<p><strong>Codeforces 802I</strong> 求一个串中，所有本质不同子串的出现次数的平方和 </p>
+</blockquote>
+<p>思考5min…</p>
+<p><del>不久？</del>之前 <code>vp</code> 中的一道题</p>
+<p>显然可以单调栈，考虑求出所有 <code>LCP</code> 的出现次数，细节比较多，请自己yy</p>
+<p><strong>很多这种单调栈+后缀数组的题都可以用后缀树做</strong> </p>
+<h5 id="更多的练习"><a href="#更多的练习" class="headerlink" title="更多的练习"></a>更多的练习</h5><p>习题不多不多 <del>据说有些用 <code>SAM</code> 做更简单</del></p>
+<p><code>BZOJ        3172        [TJOI2013]单词</code></p>
+<p><code>BZOJ        3230        相似子串</code></p>
+<p><code>BZOJ        2119        股市的预测</code></p>
+<p><code>BZOJ        4278        [ONTAK2015]Tasowanie</code></p>
+<p><code>BZOJ        4516        [SDOI2016]生成魔咒</code></p>
+<p><code>BZOJ        4556        [TJOI2016]字符串</code></p>
+<p><code>BZOJ        2534        L-gap字符串</code></p>
+<p><code>BZOJ        3796        Mushroom追妹纸</code></p>
+<p><code>BZOJ        3682        Phorni</code></p>
+<p><code>CodeChef     STRQUERY    String Query</code></p>
+<h4 id="后缀自动机-SAM"><a href="#后缀自动机-SAM" class="headerlink" title="后缀自动机 SAM"></a>后缀自动机 SAM</h4><p>如何理解 <code>SAM</code> ？</p>
+<p>确保理解后缀自动机的结构，<strong>特别是 <code>Right集合</code> 的意义</strong></p>
+<p>在讲之前，先来感性理解一下 <code>SAM</code> 的结构</p>
+<p><img src="aabbabd_1.png" alt="aabbabd_1"></p>
+<h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><ol>
+<li>串 <code>S</code> 的后缀自动机能识别 <strong>且仅能识别</strong>  <code>S</code> 的所有 <strong>后缀</strong></li>
+<li>同时，所有子串包含在 <code>SAM</code> 的某个状态</li>
+<li>如果暴力对后缀建 <code>Tire</code>，复杂度是 $O(n^2)$ 发现很多状态是重复的，考虑 <strong>最小化 </strong> <code>SAM</code> ，合并所有的重复状态</li>
+</ol>
+<h6 id="状态的优化"><a href="#状态的优化" class="headerlink" title="状态的优化"></a>状态的优化</h6><p>一个节点的到根路径必然是 <strong>一些</strong> 子串，这个节点所能够识别的后缀是这些子串出现的所有位置对应的后缀</p>
+<p>假设一个子串 <code>s</code> 在 $\{[l_i,r_i]\}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
+<p><strong>可以发现，节点 <code>A,B</code> 能合并，当且仅当 <code>A,B</code> 在字符串中出现的结束位置完全一样</strong></p>
+<p>定义 <code>Right(sub)</code> 表示 <code>sub</code> <strong>右端</strong> 在 <code>S</code> 中出现的集合</p>
+<p>考虑将所有相同 <code>Right()</code> 的状态合并为一个节点</p>
+<p>.【一个 <code>Right</code> 集合 <code>+</code> 一个长度】能够对应一些相同的子串</p>
+<p>显然合法的长度是一个区间，记为 <code>[min(u),max(u)]</code></p>
+<p><strong>_深刻理解 <code>Right集合</code> 的意义_</strong></p>
+<p>考虑从串 <code>S</code> 的 <code>i</code> 位置开始走，走到了位置 <code>j</code> ，当前状态为 <code>u</code></p>
+<p>那么 <code>Right(u)</code> 包含 <code>j</code> ，同时 <code>min(u) &lt;= i-j+1 &lt;= max(u)</code></p>
+<p><strong>当走到某个状态时，已经匹配的串已经失去原有的信息，它可以是满足这个状态的任意串，因为在 <code>SAM</code> 中这些串都是等价的</strong></p>
+<h6 id="状态数的线性性"><a href="#状态数的线性性" class="headerlink" title="状态数的线性性"></a>状态数的线性性</h6><p>若 <code>Right(a)，Right(b) (|a|&gt;|b|)</code>中有公共元素</p>
+<p>那么 <strong>串 <code>a</code> 是串 <code>b</code> 的后缀</strong> ，<code>Right(b)</code> 是 <code>Right(a)</code> 的 <strong>真</strong> 子集</p>
+<p>所以任意两个节点 <strong>要么没有交集，要么是真包含</strong></p>
+<p>令 <code>Right(par[u])</code> 是 <code>Right(u)</code> 的最小超集</p>
+<p>这种关系构成一棵 <strong><code>Parent树</code></strong> （满足 <strong>任意节点至少两个子节点，性质显然</strong>）</p>
+<p>节点数 $O(n)$</p>
+<p><strong>例如串 <code>aaabbabd</code> 的 <code>ParentTree</code> </strong></p>
+<p>注意那些叶子节点还有其他含义</p>
+<p><img src="ParentTree.png" alt="ParentTree"></p>
+<h6 id="一个重要性质"><a href="#一个重要性质" class="headerlink" title="一个重要性质"></a>一个重要性质</h6><p><code>max[parent[u]] + 1 = min[u]</code></p>
+<h6 id="转移数的线性性"><a href="#转移数的线性性" class="headerlink" title="转移数的线性性"></a>转移数的线性性</h6><p>考虑搞一棵有向生成树</p>
+<p>对于一条非连续的边 $(a,b)$</p>
+<p>构造从根到状态 <code>a</code> 的路径 <code>+ (a-&gt;b) +</code> <code>b</code> 到任意一个 <code>end状态</code></p>
+<p>这必然是一个后缀 <del>（不然这条边有什么用）</del></p>
+<p>显然一个非树边至少被一个后缀所对应</p>
+<p>而后缀至多对应到一条非树边</p>
+<p>所以非树边的数量不会超过后缀的数量</p>
+<p><strong>边也是 $O(n)$ 的，SAM是个线性结构</strong></p>
+<h6 id="其他的性质"><a href="#其他的性质" class="headerlink" title="其他的性质"></a>其他的性质</h6><ol>
+<li>子串的个数，就是状态中 <code>Right集合</code> 的大小</li>
+<li>一个节点的 <code>Right集合</code> 是对应子孙的所有叶子节点的并集 （+ 前缀）</li>
+<li>按照 <code>dfs序</code> 排列，一个节点的 <code>Right集合</code> 就是一段区间，可以快速求出一个子串的所有出现位置</li>
+<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 $\{r_1,r_2,r_3,\cdots,r_k\}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 $\{r_i+1\}$</li>
+<li>那么如果 <code>s</code> 出发有标号为 <code>x</code> 的边，那么 <code>Parent(s)</code> 出发必然也有</li>
+<li>反证法可以证明：$\mathrm{Right}(\mathrm{trans}(s,c)) \subset \mathrm{Right}(\mathrm{trans}(\mathrm{Parent}(s),c))$</li>
+<li>如果有 <code>s-&gt;t</code> ，<code>Max(t) &gt; Max(s)</code> （根据 <code>Right集合</code>  的定义，这条性质显然，同时能够保证 <code>SAM</code> 是个 <code>DAG</code> ）</li>
+</ol>
+<h5 id="线性构造-SAM，前方高能！掉线用户请重连！"><a href="#线性构造-SAM，前方高能！掉线用户请重连！" class="headerlink" title="线性构造 SAM，前方高能！掉线用户请重连！"></a>线性构造 SAM，前方高能！掉线用户请重连！</h5><p>每次添加一个字符，并更新 <code>SAM</code> 使得它包含这个新字符</p>
+<p>令当前字符串为 <code>T</code> ，新字符为 <code>x</code></p>
+<p>考虑所有表示  <code>T</code> 的后缀（也就是 <code>Right集合</code> 中包含 <code>|T|</code> ）的节点 $v_1,v_2,v_3,\cdots,v_k$</p>
+<p>必然 <strong>存在 <code>Right(p)</code> $=\{|T|\}$ 的节点 <code>p</code></strong></p>
+<p> $v_1,v_2,v_3,\cdots,v_k$ 由于 <code>Right集合</code> 都含有 <code>|T|</code> ，那么它们在 <code>Parent树</code> 中必然全是 <code>p的祖先</code></p>
+<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $=\{|T|+1\}$ 的节点</strong></p>
+<p>不妨让他们从后代到祖先排为 $v_1=p,v_2,v_3,\cdots,v_k=root$</p>
+<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，$\{r_1,r_2,\cdots,r_n=|T|\}$</p>
+<p>如果它没有标号为 <code>x</code> 的边，它的 <code>Right集合</code> 没有 $r_i$ 满足 $s[r_i+1]=x$</p>
+<p>也就是只能达到 $\mathrm{Right(u)} = {|T|+1}$ 的状态 $u$ </p>
+<p>于是让它连一条到 <code>np</code> ，标号为 <code>x</code> 的边</p>
+<p><img src="2.jpg" alt="2"> $$\Large \Longrightarrow$$   <img src="3.jpg" alt="3"></p>
+<p><strong>这一部分请仔细体会</strong></p>
+<p>假设 $v_p$ 是第一个存在标号 $x$ 的边，其中 $\mathrm{trans}(v_p,x)=q$</p>
+<p>那么 <code>q</code> 的 <code>Right集合</code> 是 $\{r_i+1 : S[r_i + 1]=x\}$</p>
+<p><strong>但是我们不一定能够直接插入 $|T|+1$ 到 $q$</strong></p>
+<p>接下来分成两种情况：</p>
+<p>$\max(q)=\max(v_p)+1$ ，$np$ 满足条件范围为 $[\max(v_p)+1,|T|+1]$ </p>
+<p>此时 $q$ 代表的所有串的 <code>right集合</code> 仍然相同</p>
+<p>那么直接令 $\mathrm{parent}(np)=q$</p>
+<p>可以发现 $v_p$ 及其祖先的 <code>x</code> 转移的 <code>Right集合</code> 都并上了 <code>|T|+1</code></p>
+<p>否则 $\max(q)&gt;\max(v_p)+1$ </p>
+<p>这种情况下 $q$ 代表的串中，长度不超过 $\max(v_p)+1$ 的串的 <code>Right集合</code> 会多出一个值 <code>|T|+1</code> ，而长度更大的其他串不会</p>
+<p>于是我们新建一个节点 <code>nq</code> ，代表原来 $q$ 中长度不超过 $\max(v_p)+1$ 的串，于是</p>
+<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup \{|T|+1\},\;\max(nq)=\max(vp)+1$</p>
+<p>$\mathrm{parent}(nq)=\mathrm{parent}(q)，\mathrm{parent}(q)=\mathrm{parent}(np)=nq$</p>
+<p>$|T|+1$ 开始不能转移，所以 $nq$ 的转移可以从 $q$ 复制过来</p>
+<p>会存在 $v_p, \cdots, v_e$，$\mathrm{trans}(v,x)=q$，那么把它设置为 $nq$ 即可</p>
+<p>（显然 $\max(\mathrm{trans}(v_t)) \leq \max(v_p)=\max(nq)$ ，可以转移）</p>
+<p>如果始终不存在这样的点，令 <code>parent(np)=root</code> 即可</p>
+<p><strong>SAM模板</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span> <span class="keyword">int</span> p[<span class="number">26</span>], pa, val; &#125; t[maxn&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> size = <span class="number">1</span>, root = <span class="number">1</span>, last = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> p = last, np = ++size, q, nq;</div><div class="line">    t[np].val = t[p].val + <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(; p &amp;&amp; !t[p].p[c]; p = t[p].pa) t[p].p[c] = np;</div><div class="line">    <span class="keyword">if</span> (!p) t[np].pa = root;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        q = t[p].ch[c];</div><div class="line">        <span class="keyword">if</span> (t[q].val == t[p].val + <span class="number">1</span>) t[np].pa = q;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            nq = ++size;</div><div class="line">            t[nq] = t[q]; t[nq].val = t[p].val + <span class="number">1</span>;</div><div class="line">            t[q].pa = t[np].pa = nq;</div><div class="line">            <span class="keyword">for</span>(; p &amp;&amp; t[p].p[c] == q; p = t[p].pa) t[p].p[c] = nq;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    last = np;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以串 <code>aabbabd</code> 为例，我们看一下它是如何构造的，此处的 <code>len</code> 即为 $\max(u)$，<strong>重点为图3至图4</strong> </p>
+<p><img src="a.png" alt="a"><img src="aa.png" alt="aa"><img src="aab.png" alt="aab"><img src="aabb.png" alt="aabb"></p>
+<p>我们来考虑图3至图4的改变，泥萌可能会说：</p>
+<p>不是只要把 5 接在 4 后面就好了嘛….</p>
+<p>但是会发现此时 4 的 <code>Right集合</code> 为 $\{3,4\}$ ，$[\min,\max]=[1,3]$ </p>
+<p>也就是说能代表状态 <code>aab,ab,b,abb,bb,b</code> ？</p>
+<p>但是实际上只能代表 <code>abb,ab,b,b</code></p>
+<p>所以我们不能把 <code>|T|+1</code> 放入 4，必须要新建一个 6 ，6 是 4 和 5 的并集</p>
+<p>剩下的构造过程自行体会….</p>
+<p><img src="aabba.png" alt="aabba"><img src="aabbab.png" alt="aabbab"><img src="aabbabd.png" alt="aabbabd"></p>
+<h5 id="常见套路"><a href="#常见套路" class="headerlink" title="常见套路"></a>常见套路</h5><h6 id="拓扑序DP"><a href="#拓扑序DP" class="headerlink" title="拓扑序DP"></a>拓扑序DP</h6><p>在 <code>SAM</code> 上走，是拓扑序正序</p>
+<p>在 <code>parent树</code> 上走，是拓扑序逆序</p>
+<p>如何求出拓扑序？</p>
+<h6 id="如何求-right集合-？"><a href="#如何求-right集合-？" class="headerlink" title="如何求 right集合 ？"></a>如何求 <code>right集合</code> ？</h6><p>首先，在所有前缀所在状态的 <code>Right集合</code> 中加入 $i$</p>
+<p>可以按照 <code>parent树</code> ，平衡树启发式合并 <code>or</code> 线段树合并得到 <code>right集合</code></p>
+<h6 id="利用-parent树"><a href="#利用-parent树" class="headerlink" title="利用 parent树"></a>利用 <code>parent树</code></h6><p>由于是一棵树，所以就可以干很多事情…</p>
+<p>树上倍增、<code>LCT</code>、点分治…</p>
+<p>自行想象</p>
+<h6 id="建出后缀树"><a href="#建出后缀树" class="headerlink" title="建出后缀树"></a>建出后缀树</h6><p>这个之后再讲</p>
+<p><del>不就是反串的 <code>Parent树</code> 嘛</del></p>
+<h5 id="一些简单的经典应用"><a href="#一些简单的经典应用" class="headerlink" title="一些简单的经典应用"></a>一些简单的经典应用</h5><p>泥萌赶紧来秒题！</p>
+<p>一些简单小应用，<code>SAM</code> 可以用来…</p>
+<ol>
+<li>求最小循环同构！Hint：倍长，走标号最小的转移</li>
+<li>求所有长度为 <code>1..|S|</code> 的子串的出现次数最大值！Hint：<code>Right集合</code> 大小即为出现次数</li>
+</ol>
+<blockquote>
+<p><strong>SPOJ SUBLEX</strong> 给定一个字符串，问所有本质不同的非空子串中，字典序第 $K$ 大的</p>
+<p>$n \leq 90000, Q \leq 500$</p>
+</blockquote>
+<p>思考5min…</p>
+<p>考虑建出 <code>SAM</code> ，$f[i]$ 表示从状态 $i$ 出发的方案数</p>
+<p>正着贪心即可求出第 $K$ 大</p>
+<p><code>SAM</code> 是个 <code>DAG</code> ，那么如何求出拓扑序？</p>
+<p>注意到一个重要性质</p>
+<p><strong><code>SAM</code> 中的转移一定是从 <code>Max</code> 较小的状态 到 <code>Max</code> 严格大于它的状态</strong></p>
+<p>类似后缀数组，用一个桶记录一下即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for (int i=(a); i&lt;=(b); i++)</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200005</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SAM</span> &#123;</span> <span class="keyword">int</span> p[<span class="number">26</span>], pa, val; &#125; t[maxn];</div><div class="line"><span class="keyword">int</span> tax[maxn], cur[maxn], n, Q, now, v;</div><div class="line"><span class="keyword">int</span> root = <span class="number">1</span>, size = <span class="number">1</span>, last = <span class="number">1</span>;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[maxn], K;</div><div class="line"><span class="keyword">char</span> s[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123; &#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;s); n = <span class="built_in">strlen</span>(s);</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>)  extend(s[i]-<span class="string">'a'</span>);</div><div class="line">	rep (i, <span class="number">1</span>, size) ++tax[t[i].val], f[i] = <span class="number">1</span>;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	rep (i, <span class="number">1</span>, size) cur[size+<span class="number">1</span>-(tax[t[i].val]--)] = i;	<span class="comment">//注意这是拓扑序的倒序</span></div><div class="line">	rep (i, <span class="number">1</span>, size) rep (j, <span class="number">0</span>, <span class="number">25</span>) f[cur[i]] += f[t[cur[i]].p[j]];</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;Q);</div><div class="line">	<span class="keyword">while</span> (Q--) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;K); now = <span class="number">1</span>;</div><div class="line">		<span class="keyword">while</span> (K) &#123;</div><div class="line">			rep (i, <span class="number">0</span>, <span class="number">25</span>) <span class="keyword">if</span> (v = t[now].p[i])</div><div class="line">				<span class="keyword">if</span> (f[v] &gt;= K) &#123; <span class="built_in">putchar</span>(<span class="string">'a'</span>+i); now = v; --K; <span class="keyword">break</span>; &#125;</div><div class="line">				<span class="keyword">else</span> K -= f[v];</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>SPOJ LCS</strong> 给两个长度小于 <code>100000</code> 的字符串 <code>A</code> 和 <code>B</code> ，求出他们的最长公共连续子串</p>
+</blockquote>
+<p>思考5min…</p>
+<p>对 <code>A</code> 建 <code>SAM</code> ，读入 <code>B</code> <del>放进 <code>SAM</code> 跑就好了</del></p>
+<p>严肃.jpg</p>
+<blockquote>
+<p>令当前状态为 <code>s</code> ，同时最大匹配长度为 <code>len</code></p>
+<p>我们读入字符 <code>x</code> 。如果 <code>s</code> 有标号为 <code>x</code> 的边，<code>s=Trans(s,x),len = len+1</code></p>
+<p>否则我们找到<code>s</code>的第一个祖先<code>anc</code>，它有标号为<code>x</code>的边</p>
+<p>令 <code>s=Trans(anc,x),</code> <strong><code>len=Max(anc)+1</code></strong></p>
+<p>如果没有这样的祖先，那么令 <code>s=root,len=0</code></p>
+<p>在过程中更新状态的最大匹配长度</p>
+</blockquote>
+<p>思考：如果是 $n\;(n \leq10)$ 个串呢？ <strong>SPOJ LCS2</strong></p>
+<p>同样建出其中一个串的 <code>SAM</code></p>
+<p>考虑一个状态 $s$，如果 <code>A</code>之外其它串对它的匹配长度分别是</p>
+<p>$a_1,a_2,\cdots,a_{n-1}$</p>
+<p>用 $\min(a_1,a_2,\cdots,a_{n-1},\max(s))$ 更新答案</p>
+<h5 id="更多例题"><a href="#更多例题" class="headerlink" title="更多例题"></a>更多例题</h5><blockquote>
+<p><strong>BZOJ1396 识别子串</strong> 给定一个字符串，对于每一个位置，求包含这个位置，同时只在串中出现一次的最短的串的长度</p>
+<p>$|S| \leq 10^5$</p>
+</blockquote>
+<p>思考10min…</p>
+<p>注意到 <strong>只出现 $1$ 次</strong> 这个性质，我们可以找出所有 <code>Right集合</code> 元素个数为 1 的状态</p>
+<p>按照拓扑序倒着转移，得到所有 <code>Right集合</code> 的元素个数</p>
+<p>右端点固定，左端点可以移动</p>
+<p>两个线段树维护，直接标记永久化，最后 $O(n)$ 递归即可</p>
+<blockquote>
+<p> <strong>Codeforces 316G3 Good Substrings</strong> 求字符串 $s$ 有多少本质不同的子串是好的，一个字符串 $t$ 是好的，当且仅当它满足所有的 $n$ 条规则，$t$ 在 $p_i$ 中出现了 $l_i$ 到 $r_i$ 次</p>
+<p>$|s|,|p_i| \leq 50000, n \leq 10$</p>
+</blockquote>
+<p>此题难度较大，我直接讲…</p>
+<p>考虑把 $s$ 和 $p_i$ 用特殊字符隔开，连成一个字符串（注意 $s$ ，一定要放在最前面），建 <code>SAM</code></p>
+<p>按照拓扑序倒着 <code>DP</code> 即可得到 <code>SAM</code> 在所有子串中的出现次数，记 <code>cnt[i][j]</code> 表示自动机状态 $i$ 在 $p_i$ 中的出现次数，其中 $p_0=s$</p>
+<p>我们考虑所有满足 <code>cnt[i][0] &gt; 0</code> 的状态 <code>u</code> ，只要 $\forall i, l[i] \leq cnt[u][i] \leq r[i]$ ，就要把答案加上 $\max(u) - \min(u)+1$ </p>
+<p>我们为什么一定要把 $s$ 放在最前面呢？</p>
+<p>如果状态 $u$ 的 $cnt[0]$ 不为 $0$ ，那么状态 $u$ 所代表的子串 <strong>一定不会横跨分隔字符</strong> ！</p>
+<p>这也就保证了：如果一个状态 <code>Right集合</code> 的某个元素（注意这仅仅只是右端点）在某个匹配串中，整个串一定在这个匹配串中</p>
+<p>代码同样简单易懂</p>
+<p>比 <code>SA</code> 高到不知道哪里去了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> pos)</span> </span>&#123;</div><div class="line">	... cnt[np][pos] = <span class="number">1</span>; ...		<span class="comment">//注意 cnt 不要放在结构体里！</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%d"</span>, &amp;s, &amp;n);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; s[i]; i++) extend(s[i] - <span class="string">'a'</span>, <span class="number">0</span>);</div><div class="line">	extend(<span class="number">26</span>, n+<span class="number">1</span>); </div><div class="line">	rep (j, <span class="number">1</span>, n) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s%d%d"</span>, &amp;s, &amp;l[j], &amp;r[j]);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; s[i]; i++) extend(s[i] - <span class="string">'a'</span>, j);</div><div class="line">		extend(<span class="number">26</span>, n+<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[t[i].val]++;</div><div class="line">	rep (i, <span class="number">1</span>, size) tax[i] += tax[i<span class="number">-1</span>];</div><div class="line">	per (i, size, <span class="number">1</span>) cur[tax[t[i].val]--] = i;</div><div class="line">	per (i, size, <span class="number">1</span>) &#123;</div><div class="line">		u = cur[i]; </div><div class="line">		rep (j, <span class="number">0</span>, n) cnt[t[u].pa][j] += cnt[u][j];</div><div class="line">		<span class="keyword">if</span> (!cnt[u][<span class="number">0</span>]) <span class="keyword">continue</span>; flag = <span class="number">1</span>;</div><div class="line">		rep (j, <span class="number">1</span>, n) flag &amp;= (l[j] &lt;= cnt[u][j] &amp;&amp; cnt[u][j] &lt;= r[j]);</div><div class="line">		<span class="keyword">if</span> (flag) ans += t[u].val - t[t[u].pa].val;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="引入广义后缀自动机"><a href="#引入广义后缀自动机" class="headerlink" title="引入广义后缀自动机"></a>引入广义后缀自动机</h6><p>平常的 <code>SAM</code> 都是只能搞一个串的，但是我们也可以将多个字符串建成 <code>Tire</code>  再造广义 <code>SAM</code> </p>
+<p>在这里，<code>right集合</code> 的定义变为在每个串中出现的位置之并。通常用来维护多个独立的串（没写过不知道）或者一棵 <code>Trie树</code></p>
+<p><del>考虑建立多个串的 <code>SAM</code> ，构造时一个一个串插入，插入完一个串后将 <code>last</code> 设为 <code>root</code> 再重新开始</del></p>
+<p>考虑建立 <code>Trie</code> 的 <code>SAM</code> 。插入完 <code>Trie</code> 节点 <code>u</code> 的时候记录一下 <code>tmp = last</code> ，然后插入完 <code>u</code> 的某个子树<br>后，再将 <code>last</code> 赋为 <code>tmp</code> ，再插入另一个子树。</p>
+<p>也就是每个节点将父节点所在前缀的状态作为 <code>last</code></p>
+<p>但是 <code>广义SAM</code> 插入字符 <code>w</code> 时可能会发现 <code>last</code> 的 <code>w</code> 转移边已经存在，设转移到的状态为 $q$ ，假如 $\max(q) = \max(last) + 1$ ，那说明当前前缀处于状态 <code>q</code> 中，就不作任何操作。否则新建一个状态 <code>nq</code> ，当前这个前缀处于 <code>nq</code> 中，然后类似构造普通 <code>SAM</code> 的时候一样更新一下 <code>q</code> 和 <code>nq</code> 的信息</p>
+<p>也就是说，不用任何改变…</p>
+<p>正确性自行想象 <del>我也不会</del></p>
+<blockquote>
+<p><strong>BZOJ 3926 [ZJOI2015]诸神眷顾的幻想乡</strong> 给定一棵树，每个节点都有一个字符，满足树的叶子节点数不超过 $20$ ，问这棵树的所有路径中所有本质不同的子串个数</p>
+<p>$n \leq 100000$</p>
+</blockquote>
+<p>考虑以所有叶子节点作为根，<code>DFS</code> 插入字典树</p>
+<p><code>广义SAM</code> 跑一下即可</p>
+<p>放了 <code>std</code></p>
+<p>（此处应展示代码）</p>
+<p>来看一道<del>比较</del>难的题</p>
+<blockquote>
+<p><strong>Codeforces 700E Cool Slogans</strong> 给你一个长度为 $n$ 的字符串 $S$ ，求最长的一个字符串序列 $a[1..k]$ 满足序列中的每一个字符串都是 $S$ 的子串，且对于任意的$1&lt;i \leq k$ 都有 $a[i−1]$ 在 $a[i]$ 中至少出现两次。两次出现允许重叠。 问最大满足条件的 $k$ 是多少</p>
+<p>$n \leq 200000$</p>
+</blockquote>
+<p>思考20min…</p>
+<p>Hint:</p>
+<p>一个重要性质：$a[i-1]$ 必定为 $a[i]$ 的后缀（前缀同理）</p>
+<p>否则后面那些字符都是没用的，可以删去</p>
+<p>发现选择的字符串一定是 <code>SAM</code> 一条链上的</p>
+<p>还有一个性质：因为状态中 <code>Right集合</code> 所代表的所有字符串等价（短串能去转移，长串也一定能去转移）</p>
+<p>所以我们可以考虑选择长度为 $\max(u)$ 的串，而且更长的串更任意被转移到</p>
+<p><del>说实话，我似乎想了2h还是不太懂….</del></p>
+<p><del>泥萌如果能yy出来的话教一下我啊QAQ</del></p>
+<p><img src="233.png" alt="233"></p>
+<p><del>似乎有人有同样的疑问，假装是对的。。。</del></p>
+<p>是的，我用了删除线，那么我就来口胡一波！<del>其实是问了某位 <code>dalao</code> + 自己好好整理过了</del></p>
+<p><strong>结论：当前状态 $S$ 到其他状态最长串的转移一定是最优的</strong> </p>
+<p>考虑数学归纳法，显然对于 $\max$ 为 $|S|$ 的状态，结论是满足的</p>
+<p>假设对于 $|b|&gt;k$ 满足条件</p>
+<p>对于 $|b|=k$ 不满足，当且仅当某个状态 $S’$ 只能由较短串 $a\;(|a|&lt;|b|)$ 转移，不能由某个状态的最长串 $b$ 转移，满足 $f[a] \leq f[b]$ </p>
+<p>（也就是 $S’$ 可以由两个 $a$ 构成，只能由一个 $b$ 构成，且 $S’$ 的某个前缀是 $b$ 的后缀）</p>
+<p>我们考虑这样一个串 $S’’$ ，是由 $S’$ 左端点左移得到的，且满足 $b$ 是它的前缀</p>
+<p>显然 $f[S’’] \geq f[S’]$ ，考虑他们能转移的状态</p>
+<ul>
+<li>如果能转移到的最优状态相同，结论成立</li>
+<li>否则就变成了之前的情况，根据假设，结论成立</li>
+</ul>
+<p>也就是  $|b|=k$ 时满足条件</p>
+<p><del>可能还需要好好理解</del></p>
+<p>于是可以考虑 <code>DP[x]</code> 表示 <code>x</code> 到根这条链上选若干个字符串出来组成 <code>a</code> 数组的最大长度，<code>pos[x]</code> 表示 <code>a[dp[x]]</code> 具体是哪一个位置 （显然，长度相同的，越靠前越好）</p>
+<p>考虑 <code>x</code> 从 <code>pos[pa[x]]</code> 转移</p>
+<p>只需要判断一下它的 <code>Right集合</code> 即可</p>
+<p>用线段树合并求出</p>
+<p>感谢 <a href="http://blog.csdn.net/qq_33229466/article/details/79140428" target="_blank" rel="external">题解</a></p>
+<p><del>此题还有 SA 做法</del></p>
+<h5 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h5><p>大概 <code>Codeforces</code> 更好一点？</p>
+<p><code>BZOJ    2806    [CTSC2012]Cheat</code></p>
+<p><code>BZOJ    1921    [CTSC2010]珠宝商</code></p>
+<p><code>BZOJ    3998    [TJOI2015]弦论</code></p>
+<p><code>BZOJ    4032    [HEOI2015]最短不公共子串</code></p>
+<p><code>BZOJ    4566    [HAOI2016]找相同字符</code></p>
+<p><code>CF    616F    Expensive Strings</code></p>
+<p><code>CF    235C    Cyclical Quest</code></p>
+<p><code>CC    TSUBSTR    Substrings on a Tree</code></p>
+<p><code>CC    TMP01    To Queue or not to Queue</code></p>
+<p><code>广义</code></p>
+<p><code>BZOJ    2780    [SPOJ8093]Sevenk Love Oimaster</code></p>
+<p><code>BZOJ    3473    字符串</code></p>
+<p><code>51Nod    1869    那些年，我们一起讲的故事</code></p>
+<p>更多应用可以参考 <code>张天扬的集训队论文</code></p>
+<h4 id="后缀树"><a href="#后缀树" class="headerlink" title="后缀树"></a>后缀树</h4><p>（此处应手画 <code>aabbabd</code> 的后缀树）</p>
+<p>几个重要性质：</p>
+<ol>
+<li>反串构造一个 <code>SAM</code> ，那么它的 <code>parent树</code> 就是原串的后缀树</li>
+<li>后缀树上一个点的父亲到它的转移串，就是这个点在 <code>parent树</code> 上对应区间的逆序串</li>
+<li>如果再 <code>DFS</code> 一遍后缀树，就可以得到后缀数组</li>
+</ol>
+<p>为什么第一个性质成立？</p>
+<p>考虑 <code>S</code> 的 <code>parent树</code> ，叶子节点一定包含 <code>S</code> 的某个前缀，从叶子节点往上走，节点里的串长度越来越小，直到走到根（包含一个空串），并且父亲节点中的串是儿子节点中的串的后缀。如果将这个过程反过来考虑，正好像是在 $S_r$ 的后缀 <code>Trie</code> 上从上往下走</p>
+<p>哇！看起来很简单的样子</p>
+<p>那么，我们来做题辣！</p>
+<h5 id="小🌰"><a href="#小🌰" class="headerlink" title="小🌰"></a>小🌰</h5><blockquote>
+<p><strong>Codechef  KILLKTH <a href="https://www.codechef.com/JAN18/problems/KILLKTH" target="_blank" rel="external">Killjee and k-th letter</a> </strong> 给定一个字符串 $S$ ，将这个字符串的所有子串按照字典序排列，得到一个更长的串，每次询问第 $k$ 个字符，强制在线。</p>
+<p>$|S|,Q \leq 2 \times 10 ^ 5$</p>
+</blockquote>
+<p>思考 10min…</p>
+<p>来自 <code>RXDoi</code> 的纯正题解！</p>
+<blockquote>
+<p>任轩笛 2018/1/8 星期一 下午 1:47:53<br>搞个后缀树</p>
+<p>任轩笛 2018/1/8 星期一 下午 1:47:55<br>求个前缀和</p>
+<p>任轩笛 2018/1/8 星期一 下午 1:47:59<br>二分以下</p>
+<p>任轩笛 2018/1/8 星期一 下午 1:48:09<br>再在树上倍增一下就行了吧</p>
+</blockquote>
+<p><del>当然 SA 也是可以做的</del></p>
+<p>二分答案可以找到是由那个节点做出贡献</p>
+<p>树上倍增用于找到对应的位置</p>
+<p>比较麻烦是提取所有树边上的串</p>
+<p>考虑最终为区间 $[l[i],r[i]]$ </p>
+<p>一开始建状态的时候，默认 $r[i]=n$ </p>
+<p>然后 <code>BFS</code> ，<del>似乎还有一个结论可以找到，并不是很懂</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=size; i++) in[T[i].pa] += (T[i].pa != <span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=size; i++) <span class="keyword">if</span> (!in[i]) q[qr++] = i;</div><div class="line"><span class="keyword">while</span> (ql &lt; qr) &#123;</div><div class="line">	u = q[ql++]; tmp = T[u].pa;</div><div class="line">	<span class="keyword">if</span> (!(--in[tmp])) q[qr++] = tmp;</div><div class="line">	l[u] = r[u] - (T[u].val - T[tmp].val) + <span class="number">1</span>;</div><div class="line">	r[tmp] = min(r[tmp], l[u] - <span class="number">1</span>);</div><div class="line">	e[tmp][s[l[u]]-<span class="string">'a'</span>] = u;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>记得当时写了 5h？</p>
+<h5 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h5><p><code>BZOJ    3413    匹配</code></p>
+<p><code>BZOJ    3238    [AHOI2013]差异</code></p>
+<p><code>BZOJ    3879    SvT</code></p>
+<p><code>Codeforces 917E Upside Down</code></p>
+<p><code>std才9KB...</code></p>
+<h1 id="编不下去了-gt-lt"><a href="#编不下去了-gt-lt" class="headerlink" title="编不下去了 &gt;.&lt;"></a>编不下去了 &gt;.&lt;</h1><h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END."></a>THE END.</h1>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -366,212 +781,97 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuzhean.github.io/2017/12/31/Algorithms-String/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-Divide-and-Conquer/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-Divide-and-Conquer/">「学习笔记」线性分治</a>
-    </h1>
+    <a href="/2017/12/31/Algorithms-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          「学习笔记」Prufer 序列
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/31/Algorithms-Divide-and-Conquer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「学习笔记」线性分治</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+   
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-Number-Theoretic-Function/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-Number-Theoretic-Function/">「学习笔记」数论函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-Flows/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-Flows/">「学习笔记」网络流相关</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-SegmentTree/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-SegmentTree/">「学习笔记」线段树进阶</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/Algorithms-Calculous/" class="archive-article-date">
-  	<time datetime="2017-12-31T15:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Algorithms-Calculous/">「切题记录」微积分基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -595,8 +895,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

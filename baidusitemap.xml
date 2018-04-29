@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2018/01/26/Training-CF/</loc>
-    <lastmod>2018-01-30T01:58:20.993Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Calculous/</loc>
+    <lastmod>2018-04-29T09:03:09.824Z</lastmod>
     <data>
         <display>
-        <title>「训练记录」奇怪的东西</title>
-        <pubTime>2018-01-26T04:00:00.000Z</pubTime>
+        <title>「切题记录」微积分基础</title>
+        <pubTime>2017-12-31T15:59:52.000Z</pubTime>
         
-        <tag>训练</tag>
+        <tag>题解</tag>
          
          
            
@@ -21,29 +21,12 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/07/01/AtCoder/</loc>
-    <lastmod>2018-01-30T00:06:06.054Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-SegmentTree/</loc>
+    <lastmod>2018-04-29T09:01:01.641Z</lastmod>
     <data>
         <display>
-        <title>「AtCoder」比赛记录&题解</title>
-        <pubTime>2017-07-01T14:00:00.000Z</pubTime>
-        
-        <tag>比赛</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/01/25/Algorithms-String/</loc>
-    <lastmod>2018-01-25T08:52:27.135Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」字符串</title>
-        <pubTime>2017-01-25T10:00:00.000Z</pubTime>
+        <title>「学习笔记」线段树进阶</title>
+        <pubTime>2017-12-31T15:59:53.000Z</pubTime>
         
         <tag>笔记</tag>
          
@@ -55,506 +38,12 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2018/01/24/Training-CF-Round3/</loc>
-    <lastmod>2018-01-25T02:11:09.400Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-第三轮</title>
-        <pubTime>2018-01-24T00:08:08.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/19/BZOJ-ZJOI/</loc>
-    <lastmod>2018-01-07T00:42:11.474Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」ZJOI</title>
-        <pubTime>2017-12-19T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/19/BZOJ-SDOI/</loc>
-    <lastmod>2018-01-07T00:33:32.037Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」SDOI</title>
-        <pubTime>2017-12-19T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/20/BZOJ-COCI/</loc>
-    <lastmod>2018-01-07T00:26:09.867Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」COCI</title>
-        <pubTime>2017-12-20T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/19/BZOJ-APIO/</loc>
-    <lastmod>2018-01-06T13:51:25.045Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」APIO</title>
-        <pubTime>2017-12-19T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/19/BZOJ-SCOI/</loc>
-    <lastmod>2018-01-06T13:01:32.214Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」SCOI</title>
-        <pubTime>2017-12-19T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/14/BZOJ-JSOI/</loc>
-    <lastmod>2018-01-06T10:49:17.463Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」JSOI</title>
-        <pubTime>2017-12-14T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/20/BZOJ-Baltic/</loc>
-    <lastmod>2018-01-06T10:36:23.079Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」Baltic</title>
-        <pubTime>2017-12-20T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2018/01/06/BZOJ-NOI/</loc>
-    <lastmod>2018-01-06T10:28:58.343Z</lastmod>
-    <data>
-        <display>
-        <title>NOI找虐记</title>
-        <pubTime>2018-01-06T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/11/13/BZOJ-POI/</loc>
-    <lastmod>2018-01-06T10:16:47.953Z</lastmod>
-    <data>
-        <display>
-        <title>POI切题记</title>
-        <pubTime>2017-11-13T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/19/BZOJ-Other/</loc>
-    <lastmod>2018-01-06T09:51:21.507Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」杂</title>
-        <pubTime>2017-12-19T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/01/CodeForces/</loc>
-    <lastmod>2018-01-05T12:56:56.587Z</lastmod>
-    <data>
-        <display>
-        <title>「CodeForces」比赛记录&题解</title>
-        <pubTime>2017-07-01T02:00:00.000Z</pubTime>
-        
-        <tag>比赛</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/23/Training-CF-Number-theory/</loc>
-    <lastmod>2017-12-28T02:57:18.492Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-数论</title>
-        <pubTime>2017-08-23T02:00:00.000Z</pubTime>
-        
-        <tag>数论</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/02/Algorithms-Divide-and-Conquer/</loc>
-    <lastmod>2017-12-28T02:34:04.064Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」分治</title>
-        <pubTime>2017-12-02T10:00:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/11/19/Algorithms-Number-Theoretic-Function/</loc>
-    <lastmod>2017-12-28T02:30:02.953Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」数论函数</title>
-        <pubTime>2017-11-19T00:00:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/10/BZOJ-USACO/</loc>
-    <lastmod>2017-12-27T23:52:23.303Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」USACO月赛の金组</title>
-        <pubTime>2017-12-10T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/14/BZOJ-SHOI/</loc>
-    <lastmod>2017-12-27T23:51:46.495Z</lastmod>
-    <data>
-        <display>
-        <title>「BZOJ泛做」SHOI</title>
-        <pubTime>2017-12-14T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/12/24/Algorithms-Persistent-Data-Structures/</loc>
-    <lastmod>2017-12-27T23:48:09.674Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」可持久化数据结构</title>
-        <pubTime>2017-12-24T02:00:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/01/CodeChef/</loc>
-    <lastmod>2017-12-17T08:52:51.277Z</lastmod>
-    <data>
-        <display>
-        <title>「CodeChef」比赛记录&题解</title>
-        <pubTime>2017-07-01T02:00:00.000Z</pubTime>
-        
-        <tag>比赛</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/10/05/Algorithms-Flows/</loc>
-    <lastmod>2017-12-17T04:22:19.377Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」网络流相关</title>
-        <pubTime>2017-10-05T10:00:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/25/Training-CF-Tree/</loc>
-    <lastmod>2017-12-01T07:07:37.776Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-树相关</title>
-        <pubTime>2017-08-25T04:00:00.000Z</pubTime>
-        
-        <tag>树相关</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/09/04/Training-CF-Round2/</loc>
-    <lastmod>2017-12-01T07:07:22.510Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-第二轮</title>
-        <pubTime>2017-09-04T00:08:08.000Z</pubTime>
-        
-        <tag>训练</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/08/Training-CF-Round1/</loc>
-    <lastmod>2017-12-01T07:06:56.764Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-第一轮</title>
-        <pubTime>2017-08-08T00:08:08.000Z</pubTime>
-        
-        <tag>训练</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/27/Training-CF-Graphs/</loc>
-    <lastmod>2017-12-01T07:06:00.278Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-图论</title>
-        <pubTime>2017-08-27T02:00:00.000Z</pubTime>
-        
-        <tag>图论</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/22/Training-CF-Educational/</loc>
-    <lastmod>2017-12-01T07:05:42.440Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-Educational-Round泛做&记录</title>
-        <pubTime>2017-08-22T02:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/27/Training-CF-DP/</loc>
-    <lastmod>2017-12-01T07:05:00.730Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-动态规划</title>
-        <pubTime>2017-08-27T02:00:00.000Z</pubTime>
-        
-        <tag>动态规划</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/26/Training-CF-Data-Structures/</loc>
-    <lastmod>2017-12-01T07:04:32.444Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces-数据结构</title>
-        <pubTime>2017-08-26T02:00:00.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/24/Training-CF-Combinatorial-Mathematics/</loc>
-    <lastmod>2017-12-01T07:04:19.526Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」CodeForces 组合计数</title>
-        <pubTime>2017-08-24T02:00:00.000Z</pubTime>
-        
-        <tag>组合</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/15/Training-ARC-068-076/</loc>
-    <lastmod>2017-12-01T07:03:13.869Z</lastmod>
-    <data>
-        <display>
-        <title>「泛做」AtCoder Regular Contest</title>
-        <pubTime>2017-07-14T16:00:00.000Z</pubTime>
-        
-        <tag>泛做</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/07/01/Hello-World!/</loc>
-    <lastmod>2017-12-01T07:01:12.702Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/12/31/Hello-World!/</loc>
+    <lastmod>2018-04-29T08:58:15.271Z</lastmod>
     <data>
         <display>
         <title>Hello World!</title>
-        <pubTime>2017-06-30T16:00:00.000Z</pubTime>
+        <pubTime>2017-12-31T15:59:50.000Z</pubTime>
         
          
            
@@ -564,29 +53,12 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/10/27/Contest-NOIP2017/</loc>
-    <lastmod>2017-12-01T06:59:57.797Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Flows/</loc>
+    <lastmod>2018-04-29T08:57:30.560Z</lastmod>
     <data>
         <display>
-        <title>「复习」NOIP2017</title>
-        <pubTime>2017-10-27T12:00:00.000Z</pubTime>
-        
-        <tag>复习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://xuzhean.github.io/2017/08/04/Algorithms-Tree-count/</loc>
-    <lastmod>2017-12-01T06:52:47.767Z</lastmod>
-    <data>
-        <display>
-        <title>「学习笔记」prufer序列</title>
-        <pubTime>2017-08-04T10:00:00.000Z</pubTime>
+        <title>「学习笔记」网络流相关</title>
+        <pubTime>2017-12-31T15:59:54.000Z</pubTime>
         
         <tag>笔记</tag>
          
@@ -598,14 +70,14 @@
 
     
   <url>
-    <loc>https://xuzhean.github.io/2017/07/02/Training-2017.7/</loc>
-    <lastmod>2017-10-03T06:34:34.289Z</lastmod>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Number-Theoretic-Function/</loc>
+    <lastmod>2018-04-29T08:57:07.940Z</lastmod>
     <data>
         <display>
-        <title>2017年7月NOIP集训总结</title>
-        <pubTime>2017-07-02T12:00:00.000Z</pubTime>
+        <title>「学习笔记」数论函数</title>
+        <pubTime>2017-12-31T15:59:56.000Z</pubTime>
         
-        <tag>集训</tag>
+        <tag>笔记</tag>
          
          
            
@@ -613,4 +85,109 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Divide-and-Conquer/</loc>
+    <lastmod>2018-04-29T08:56:51.688Z</lastmod>
+    <data>
+        <display>
+        <title>「学习笔记」线性分治</title>
+        <pubTime>2017-12-31T15:59:57.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-String/</loc>
+    <lastmod>2018-04-29T08:56:46.548Z</lastmod>
+    <data>
+        <display>
+        <title>「学习笔记」字符串の黑魔法</title>
+        <pubTime>2017-12-31T15:59:58.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2017/12/31/Algorithms-Tree/</loc>
+    <lastmod>2018-04-29T08:54:00.422Z</lastmod>
+    <data>
+        <display>
+        <title>「学习笔记」Prufer 序列</title>
+        <pubTime>2017-12-31T15:59:59.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2018/01/01/Solutions-AtCoder/</loc>
+    <lastmod>2018-04-29T08:53:00.771Z</lastmod>
+    <data>
+        <display>
+        <title>「切题记录」AtCoder</title>
+        <pubTime>2017-12-31T16:00:01.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2018/01/01/Solutions-Codeforces/</loc>
+    <lastmod>2018-04-29T08:47:48.729Z</lastmod>
+    <data>
+        <display>
+        <title>「切题记录」Codeforces</title>
+        <pubTime>2017-12-31T16:00:02.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xuzhean.github.io/2018/01/01/Solutions-BZOJ/</loc>
+    <lastmod>2018-04-29T07:55:22.572Z</lastmod>
+    <data>
+        <display>
+        <title>「切题记录」BZOJ</title>
+        <pubTime>2017-12-31T16:00:03.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
 </urlset>
