@@ -317,7 +317,7 @@
 <p>H，毒瘤。</p>
 <p>I，树上莫队。</p>
 <h5 id="Manthan-Codefest-16"><a href="#Manthan-Codefest-16" class="headerlink" title="Manthan, Codefest 16"></a><a href="http://codeforces.com/contest/633" target="_blank" rel="external">Manthan, Codefest 16</a></h5><blockquote>
-<p>CF633E。给定 $ n $ 和长度为 $ n $ 的两个数组 $ v[i],c[i] $ ，定义区间的价值<br> $ \large p(l,r) = \min(100 \times \max _{k=l} ^{r} v[k],\ \min_ {k=l} ^{r} c[k]) $<br>会随机选择一些  $ li $  ，您会选择对应  $ ri(li \leq ri) $  ，使得  $ p(li,ri) $  最大。求所有最大值的最小值的期望值。<br> $ n \leq 10^6 $ </p>
+<p>CF633E。给定 $ n $ 和长度为 $ n $ 的两个数组 $ v[i],c[i] $ ，定义区间的价值<br> $ \large p(l,r) = \min(100 \times \max <em>{k=l} ^{r} v[k],\ \min</em> {k=l} ^{r} c[k]) $<br>会随机选择一些  $ li $  ，您会选择对应  $ ri(li \leq ri) $  ，使得  $ p(li,ri) $  最大。求所有最大值的最小值的期望值。<br> $ n \leq 10^6 $ </p>
 </blockquote>
 <p><strong>期望，对数转化。</strong> 注意到对于给定的 $ l $ ，我们可以预处理 $ ans[l] $ 为最大的 $ p(l,r) $ 。具体就是 $ ans[i] = \min ( \max (100 \times v[i], ans[i+1]), c[i]) $ 。</p>
 <p>发现选择的 $ K $ 个 $ ans[i] $ 中，只有最小的一个才会产生贡献。考虑所有 $ ans[i] $ 按照递增来排序，新的 $ ans[i] $ 的贡献为 $ \large \frac {C(n-i,K-1) \times ans[i]} {C(n,K)} $ 。发现 $ n $ 实在是太大了，所以可以将组合数转化为对数的运算。</p>
@@ -329,9 +329,9 @@
 <p>后来看见一种很简洁的写法。用  $ f[i][j][k] $  表示， 以  $ i $  为根的子树中，已经选择了  $ j $  条路径，当前 未确定的路径，和根向下延伸的条数。转移就变成类似背包的形式。注意一些特殊情况，还要手动完成选择。</p>
 <p><a href="http://codeforces.com/contest/633/submission/32783611" target="_blank" rel="external">Code</a></p>
 <h2 id="泛做"><a href="#泛做" class="headerlink" title="泛做"></a>泛做</h2><p>总共进行了3轮，均在 NOIP2017 前后.</p>
-<h3 id="第一轮-From-300-to-360"><a href="#第一轮-From-300-to-360" class="headerlink" title="第一轮  _From 300 to 360_"></a>第一轮  _From 300 to 360_</h3><h5 id="Codeforces-Round-301-Div-2"><a href="#Codeforces-Round-301-Div-2" class="headerlink" title="Codeforces Round #301 (Div. 2)"></a><a href="http://codeforces.com/contest/540" target="_blank" rel="external">Codeforces Round #301 (Div. 2)</a></h5><p>540C,4Y。<strong>BFS判连通。</strong>注意起始点与终点重合或相邻的情况，终点经过两次，只要有两个空格与终点相邻即可。</p>
+<h3 id="第一轮-From-300-to-360"><a href="#第一轮-From-300-to-360" class="headerlink" title="第一轮  From 300 to 360"></a>第一轮  <em>From 300 to 360</em></h3><h5 id="Codeforces-Round-301-Div-2"><a href="#Codeforces-Round-301-Div-2" class="headerlink" title="Codeforces Round #301 (Div. 2)"></a><a href="http://codeforces.com/contest/540" target="_blank" rel="external">Codeforces Round #301 (Div. 2)</a></h5><p>540C,4Y。<strong>BFS判连通。</strong>注意起始点与终点重合或相邻的情况，终点经过两次，只要有两个空格与终点相邻即可。</p>
 <p>540D,1Y。<strong>概率DP。</strong>乘上转移的概率即可。 </p>
-<p>540E,3Y。<strong>离散化+树状数组统计逆序对。</strong>设出现的数为$\{a\}$，未出现的为$\{b\}$，发现a-&gt;a，a-&gt;b，b-&gt;a有贡献，分类讨论即可。</p>
+<p>540E,3Y。<strong>离散化+树状数组统计逆序对。</strong>设出现的数为${a}$，未出现的为${b}$，发现a-&gt;a，a-&gt;b，b-&gt;a有贡献，分类讨论即可。</p>
 <p><strong>反思</strong> 把所有特殊情况考虑周全，仔细分类讨论。</p>
 <h5 id="Codeforces-Round-302-Div-2"><a href="#Codeforces-Round-302-Div-2" class="headerlink" title="Codeforces Round #302 (Div. 2)"></a><a href="http://codeforces.com/contest/544" target="_blank" rel="external">Codeforces Round #302 (Div. 2)</a></h5><p>544C,1Y。<strong>二维完全背包DP。</strong>其实挺套路的，要加个滚动数组。</p>
 <p>544D,1Y。<strong>暴力BFS。</strong>注意到两个点对的最短路径若存在交集，则一定是连续的一段。暴力枚举两点即可。</p>
@@ -404,8 +404,8 @@
 </blockquote>
 <p><strong>期望DP。</strong>考虑到直接求出小K的排名过于困难，按照定义，只要求出总分严格小于他的期望人数。于是就想到，用 $ f[i][j]$ 表示 $ i $ 场比赛之后总分为 $ j $ 的期望人数。故有 $\large f[i][j]=\sum \frac{f[i-1][j-k]} {m-1} \ (1 \leq k \leq m, k\not = a[i])$ 观察式子，考虑到可以前缀和优化转移。</p>
 <h5 id="Codeforces-Round-334-Div-1"><a href="#Codeforces-Round-334-Div-1" class="headerlink" title="Codeforces Round #334 (Div. 1)"></a><a href="http://codeforces.com/contest/603" target="_blank" rel="external">Codeforces Round #334 (Div. 1)</a></h5><p>603A,1A。<strong>贪心，DP</strong>。观察到，一个位置对答案产生了贡献，当且仅当这个位置的数与前面一个数不同。又由于只能翻转连续一段，所以DP时定义三种状态即可。</p>
-<p>603C,3A。<strong>博弈论+SG函数。</strong>考虑引入SG函数，当 $ i $ 为奇数时， $ SG[i]=mex\{ SG[i-1]\}$。当 $ i $ 为偶数时，能够进行第二种操作， $ SG[i]=mex\{SG[i-1], SG[i/2]\ xor\ SG[i/2]… \}$，共有 $ k $ 个SG[i/2]的异或和，注意到这只和 $ k $ 的奇偶性有关。</p>
-<p>考虑寻找规律。当 $ k $ 为奇数时，由于 $ SG[i]=mex\{ SG[i-1], 0\}$，所以之后的 $ SG[i]$一定是0/1间隔出现的。当 $ k $ 为偶数时， $ SG[i]=mex\{ SG[i-1], SG[i/2]\}$，并且注意到 $ i $ 为奇数时， $ SG[i]=0 $ ，所以只要 $ log\ a[i]$次递归调用即可。</p>
+<p>603C,3A。<strong>博弈论+SG函数。</strong>考虑引入SG函数，当 $ i $ 为奇数时， $ SG[i]=mex{ SG[i-1]}$。当 $ i $ 为偶数时，能够进行第二种操作， $ SG[i]=mex{SG[i-1], SG[i/2]\ xor\ SG[i/2]… }$，共有 $ k $ 个SG[i/2]的异或和，注意到这只和 $ k $ 的奇偶性有关。</p>
+<p>考虑寻找规律。当 $ k $ 为奇数时，由于 $ SG[i]=mex{ SG[i-1], 0}$，所以之后的 $ SG[i]$一定是0/1间隔出现的。当 $ k $ 为偶数时， $ SG[i]=mex{ SG[i-1], SG[i/2]}$，并且注意到 $ i $ 为奇数时， $ SG[i]=0 $ ，所以只要 $ log\ a[i]$次递归调用即可。</p>
 <h5 id="Codeforces-Round-335-Div-1"><a href="#Codeforces-Round-335-Div-1" class="headerlink" title="Codeforces Round #335 (Div. 1)"></a><a href="http://codeforces.com/contest/605" target="_blank" rel="external">Codeforces Round #335 (Div. 1)</a></h5><blockquote>
 <p>605A,1A。题意：给定 $ n $ 的一个排列，每次可以把一个数放到开头或末尾，求变为升序的最少步骤。</p>
 </blockquote>
@@ -460,7 +460,7 @@
 <p>CF618E,2A。题意：给定 $ x $ 正半轴上的 $ n $ 段线段。有 $ m $ 个操作，操作1是给定 $ x $ ，然后把第X段延长 $ y $ 。操作2是把某&gt;一个段按照原先的左端点旋转α°。每次操作询问原先最右边的端点的位置。 $ n,Q \leq 100000 $ 。</p>
 </blockquote>
 <p><strong>线段树，计算几何，矩阵。</strong>有很多方法可以解决此题。考虑使用线段树求解，考虑维护线段另一端到这端的相对位移。对于操作一，只需要求出原长，然后新的$(x’,y’)$可以通过比例求出。需要注意的是操作二，对于某一点$(x,y)$绕原点 $ O $ 逆时针旋转 $ a $ 的弧长，有如下公式<del>（窝不会证）。</del></p>
-<p>$$<br>x’=x\cdot \cos\alpha - y\cdot \sin\alpha \\<br>y’=x\cdot \sin \alpha + y \cdot \cos \alpha<br>$$</p>
+<p>$$<br>x’=x\cdot \cos\alpha - y\cdot \sin\alpha \<br>y’=x\cdot \sin \alpha + y \cdot \cos \alpha<br>$$</p>
 <p>事实上，我们需要旋转 $[x,n]$ 所有线段，这样就能解决了。</p>
 <p>还有一种方法使用<strong>矩阵</strong>。维护区间的转移矩阵即可。</p>
 <blockquote>
@@ -602,7 +602,7 @@
 <blockquote>
 <p>CF641D,1A。有两个不同的骰子，点数 $[1,n]$。得到每个点数的概率可能不同（总和一定是 $ 1 $ ）。掷出这两个骰子，得到点数 $ a,b $ 。取$\max(a,b), \min(a,b)$。给出$\max(a,b)=c $ 的概率分布，和$\min(a,b)=c $ 的概率分布。还原两个骰子点数的概率分布，所有概率之和为 $ 1 $ 。 $ n \leq 100,000 $ </p>
 </blockquote>
-<p><strong>概率，数学。</strong>假设第一个骰子的概率分别为 $ x[i]$，第二个 $ y[i]$。考虑位置 $ p $ ，不难注意到， $ P(p\ is\ \min)+P(p\ is\ \max) = x[p]+y[p]$。而根据 $ 1 $ 是最大值的概率，得到 $ x[1] \times y[1]$，能知道 $ x[1]$和 $ y[1]$。然后逐个处理每个位置 $ p $ 。根据 $ x[p] \times \sum _{i=1} ^{p-1} y[i] + y[p] \times \sum _{i=1} ^{p-1}  x[i] + x[p] \times y[p] = P(p\ is\ \max)$ ，就可以推出所有的 $ x[p],y[p]$了，需要维护 $ x[],y[]$ 的前缀和。</p>
+<p><strong>概率，数学。</strong>假设第一个骰子的概率分别为 $ x[i]$，第二个 $ y[i]$。考虑位置 $ p $ ，不难注意到， $ P(p\ is\ \min)+P(p\ is\ \max) = x[p]+y[p]$。而根据 $ 1 $ 是最大值的概率，得到 $ x[1] \times y[1]$，能知道 $ x[1]$和 $ y[1]$。然后逐个处理每个位置 $ p $ 。根据 $ x[p] \times \sum <em>{i=1} ^{p-1} y[i] + y[p] \times \sum </em>{i=1} ^{p-1}  x[i] + x[p] \times y[p] = P(p\ is\ \max)$ ，就可以推出所有的 $ x[p],y[p]$了，需要维护 $ x[],y[]$ 的前缀和。</p>
 <blockquote>
 <p>CF641E,2A。有三种操作。 $ 1\ x\ y $ ，在第 $ x $ 秒插入一个 $ y $ 。 $ 2\ x\ y $ ，在第 $ x $ 秒移走一个 $ y $ 。 $ 3\ x\ y $ ， ，问第 $ x $ 秒有多少个 $ y $ 。 $ n \leq 100000 $ </p>
 </blockquote>
@@ -640,7 +640,7 @@
 <p>CF675E,1A。有 $ n $ 个火车站，第 $ i $ 个火车站能够到$[i+1,ai]$。令 $ p[i][j]$表示从 $ i $ 到 $ j $ 的最少次数。求$\sum p[i]<a href="1 \leq i&lt;j \leq n">j</a>$。 $ n \leq 100000 $ </p>
 </blockquote>
 <p><strong>贪心，DP。</strong>令 $ f[i]$表示$\sum p[i]<a href="i&lt;j \leq n">j</a>$，我们尽可能希望，<strong>通过走两次之后，能够到达的位置最远。</strong>假设这个位置是 $ m $ 。那么 $ f[i]=f[m]+n-i-(a[i]-m)$，如何理解？对于剩下的 $ n-i $ 个位置，有 $ a[i]-m $ 是可以通过一次转移到达的，否则都是在先走到 $ m $ 的基础上再走到别的点。</p>
-<h3 id="第二轮-From-200-to-210"><a href="#第二轮-From-200-to-210" class="headerlink" title="第二轮 _From 200 to 210_"></a>第二轮 _From 200 to 210_</h3><h5 id="Codeforces-Round-200-Div-1"><a href="#Codeforces-Round-200-Div-1" class="headerlink" title="Codeforces Round #200 (Div. 1)"></a><a href="http://codeforces.com/contest/343" target="_blank" rel="external">Codeforces Round #200 (Div. 1)</a></h5><blockquote>
+<h3 id="第二轮-From-200-to-210"><a href="#第二轮-From-200-to-210" class="headerlink" title="第二轮 From 200 to 210"></a>第二轮 <em>From 200 to 210</em></h3><h5 id="Codeforces-Round-200-Div-1"><a href="#Codeforces-Round-200-Div-1" class="headerlink" title="Codeforces Round #200 (Div. 1)"></a><a href="http://codeforces.com/contest/343" target="_blank" rel="external">Codeforces Round #200 (Div. 1)</a></h5><blockquote>
 <p>CF343A。你有无限个阻值为 $ 1 $ 的电阻。需要组成(并联，串联)成一个 $ a/b $ 的电阻。求最少需要多少电阻。 $ a,b \leq 10^{18} $ </p>
 </blockquote>
 <p><strong>GCD。</strong>注意到，一个阻值为 $ a/b $ 的电阻，与 $ 1 $ 串联，得到 $ (a+b)/b $ ；与 $ 1 $ 并列，得到 $ a/(a+b) $ 。这个过程类似与GCD，只要求 $ \gcd(a,b) $ 时加上 $ a/b $ 即可。</p>
@@ -662,7 +662,7 @@
 <h5 id="Codeforces-Round-201-Div-1"><a href="#Codeforces-Round-201-Div-1" class="headerlink" title="Codeforces Round #201 (Div. 1)"></a><a href="http://codeforces.com/contest/346" target="_blank" rel="external">Codeforces Round #201 (Div. 1)</a></h5><blockquote>
 <p>CF346A。给定 $ n $ 个数，有 $ A,B $ 两个玩家轮流操作。选择集合中的数 $ x,y $ ，如果 $ |x-y| $ 没有在集合中出现，则将 $ |x-y| $ 加入集合。无法进行操作的人输。 </p>
 </blockquote>
-<p><strong>GCD。</strong>假设 $ g=\gcd\{ai\} $ ，那么对于所有小于等于 $ \max\{ai\} $ 的 $ g $ 的倍数，以后一定都能在集合中出现。只要判断当前未在最终集合出现的数的个数的奇偶性即可。</p>
+<p><strong>GCD。</strong>假设 $ g=\gcd{ai} $ ，那么对于所有小于等于 $ \max{ai} $ 的 $ g $ 的倍数，以后一定都能在集合中出现。只要判断当前未在最终集合出现的数的个数的奇偶性即可。</p>
 <p>考虑为什么这个操作不会中断。对于每一种状态，通过类似<strong>辗转相减</strong>的方式，一定能操作。在某一刻一定能得到 $ g $ ，通过每个数和 $ g $ 相减就能填补完剩下的数。</p>
 <blockquote>
 <p>CF346B。给定两个字符串 $ s1 $ 和 $ s2 $ ，以及一个病毒串 $ v $ 。求 $ s1 $ 与 $ s2 $ 的最长公共子序列，使得<strong>病毒串不是它的子串</strong>。 $ |s1|,|s2|,|v|&lt;=100  $ </p>
@@ -682,7 +682,7 @@
 <p>CF348B。给定一颗树，和所有叶子的权值。需要对于所有节点 $ u $ ， $ u $ 所有儿子 $ v $ 的权值都相等。一个节点的权值是所有叶子的权值之和。问最少减少多少叶子的权值。 $ n \leq 10^5 $ </p>
 </blockquote>
 <p><strong>GCD，树相关，贪心。</strong>考虑转化为最多保留多少权值。</p>
-<p>考虑节点 $ u $ 和他的所有子节点 $ vi $ （共 $ k $ 个）。对于每一个字节点，首先求出至少保留多少权值，记为 $ f[vi] $ ，为了使 $ u $ 满足条件，所有子节点的权值都要变为 $ lcm\{f[vi]\} $ 。那么， $ f[u]=k\times lcm\{f[vi]\} $ 。 </p>
+<p>考虑节点 $ u $ 和他的所有子节点 $ vi $ （共 $ k $ 个）。对于每一个字节点，首先求出至少保留多少权值，记为 $ f[vi] $ ，为了使 $ u $ 满足条件，所有子节点的权值都要变为 $ lcm{f[vi]} $ 。那么， $ f[u]=k\times lcm{f[vi]} $ 。 </p>
 <p>之后再进行第二次DFS。记 $ s[i] $ 为当前 $ i $ 子树中的节点数，对于 $ u $ ，我们需要选取最小 $ s[v] $ ，把所有 $ s[vi] $ 都变成 $ s[v]/(f[u]/k)*(f[u]/k) $ 。DFS过程中记录删除的总和即可。</p>
 <blockquote>
 <p>CF348C。给定一个包含 $ n $ 个数的数组 $ ai $ ，和 $ m $ 个集合 $ S1,S2,..,Sm $ 。每个集合包含若干下标 $ S<a href="1 \leq S[k,i]&lt;=n">k,i</a> $ 。有两种询问：对于集合 $ Sk $ ，求 $ S[k,i] $ 所对应的 $ a[S[k,i]] $ 之和。对于集合 $ Sk $ ，使得 $ S[k,i] $ 所对应的 $ a[S[k,i]] $ 都加上 $ x $ 。对于询问 $ 1 $ ，输出答案。</p>
@@ -777,9 +777,9 @@
 </ul>
 <p>也就是说，<strong>若 $ t[i]&gt;s[i] $ ，对答案贡献了 $ (pre+1)(n-i) $ </strong>。其中， $ pre $ 是 $ s[1..i-1], t[1..i-1] $ 的最长公共后缀。</p>
 <p> $ f[i][sum] $ 表示 $ s[i]\not =t[i] $ 时，前 $ i $ 个对答案贡献 $ sum $ 的方案数。(如果 $ s[i]=t[i] $ ，则枚举 $ pre $ 时得到错误的贡献，正是状态定义精妙之处)，枚举 $ pre $ 进行转移，于是有：</p>
-<p>当 $ t[i]&lt;s[i] $ 时， $ f[i][sum]+=f[i-1-pre][sum]_(s[i]-‘a’) $<br>当 $ t[i]&lt;s[i] $ 时， $ f[i][sum]+=f[i-1-pre][sum-(pre+1)_(n-i)]*(‘z’-s[i]) $ </p>
+<p>当 $ t[i]&lt;s[i] $ 时， $ f[i][sum]+=f[i-1-pre][sum]<em>(s[i]-‘a’) $<br>当 $ t[i]&lt;s[i] $ 时， $ f[i][sum]+=f[i-1-pre][sum-(pre+1)</em>(n-i)]*(‘z’-s[i]) $ </p>
 <p>前一部分可以通过前缀和优化，而对于后面一部分， $ pre $ 枚举量为 $ O(k/1+k/2+..+k/k)=O(k \log k) $ 。所以，总的时间复杂度为 $ O(k(n+k log k)) $ 。</p>
-<h3 id="第三轮-2013-集训队作业"><a href="#第三轮-2013-集训队作业" class="headerlink" title="第三轮   _2013 集训队作业_"></a>第三轮   _2013 集训队作业_</h3><blockquote>
+<h3 id="第三轮-2013-集训队作业"><a href="#第三轮-2013-集训队作业" class="headerlink" title="第三轮   2013 集训队作业"></a>第三轮   <em>2013 集训队作业</em></h3><blockquote>
 <p>手残选手来泛做一波<code>Codeforces</code>啦。。</p>
 <p>（其实就是因为看到了许昊然的成套题解</p>
 <p>既然有题解了嘛，那我也就懒得写啦。。</p>
@@ -821,10 +821,10 @@
 <p>就是一个简单的数学归纳法嘛..</p>
 </blockquote>
 <p><strong>187D</strong> 有些情况（最简单的单点修改，区间最值）下可以用 set 代替线段树，还不用 离散化/动态开点。</p>
-<p><strong>176E</strong> 有用的神结论：考虑一个树上 $k$ 个点 $v_1,v_2,…,v_k$ （DFS序递增）的导出子图，边权之和为$\large \frac {(d(v_1,v_2)+d(v_2,v_3)+…+d(v_{n-1},v_n)+d(v_n,v_1)} 2$ ，就变成了裸题。</p>
+<p><strong>176E</strong> 有用的神结论：考虑一个树上 $k$ 个点 $v_1,v_2,…,v_k$ （DFS序递增）的导出子图，边权之和为$\large \frac {(d(v_1,v_2)+d(v_2,v<em>3)+…+d(v</em>{n-1},v_n)+d(v_n,v_1)} 2$ ，就变成了裸题。</p>
 <p><strong>200A</strong> 在网格上，覆盖了 $K$ 个点之后，任意一个点到未被覆盖的点的最近距离为 $O(\sqrt K)$ 。并查集的经典应用：滋瓷删除点，求出每个点未被删除的前驱/后继。</p>
 <p><strong>207A</strong> 已经有序的序列可以通过归并排序合并，为这道题的构造提供了方向。</p>
-<h3 id="第四轮"><a href="#第四轮" class="headerlink" title="第四轮   _???_"></a>第四轮   _???_</h3><h5 id="001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest"><a href="#001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest" class="headerlink" title="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest"></a>#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest</h5><p>A,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。H，模拟。E，DP，输出方案。</p>
+<h3 id="第四轮"><a href="#第四轮" class="headerlink" title="第四轮   ???"></a>第四轮   <em>???</em></h3><h5 id="001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest"><a href="#001-2016-2017-ACM-ICPC-NEERC-Moscow-Subregional-Contest" class="headerlink" title="#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest"></a>#001 2016-2017 ACM-ICPC, NEERC, Moscow Subregional Contest</h5><p>A,B,F,G，签到。K，克鲁斯卡算法。L，期望，用线段树维护，或者倒着处理。H，模拟。E，DP，输出方案。</p>
 <blockquote>
 <p><strong>I.</strong> 交互题。<br>给定 $n$ ，系统生成了两个数 $0 \leq x0 &lt; m \leq n（n \leq 10^{18}）$。 第 $i$ 次询问，你可以给出一个数$ai$ 。那么 $x[i]=(x[i-1]+ai)\%m$ 。系统会返回 $x[i]$ 与 $x[i-1]$ 的大小关系。求 $x0，m$ 的值。不能有超过 $2016$ 次询问。</p>
 </blockquote>
@@ -848,10 +848,10 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (step) &#123;</div><div class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (!ask(step)) m += step, flag = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> (flag) m -= step;</div><div class="line">	<span class="keyword">if</span> (m &gt; <span class="number">0</span>) ask(m);</div><div class="line">	step &gt;&gt;= <span class="number">1</span>; </div><div class="line">&#125;</div><div class="line"><span class="keyword">while</span> (!ask(<span class="number">1</span>)) m++; m++;</div><div class="line">x = (m - (MOD % m * tot1 + tot2) % m) % m;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"0 %I64u %I64u\n"</span>, x, m);</div></pre></td></tr></table></figure>
 <h5 id="002-Bubble-Cup-8-Finals-Online-Mirror"><a href="#002-Bubble-Cup-8-Finals-Online-Mirror" class="headerlink" title="#002 Bubble Cup 8 - Finals [Online Mirror]"></a>#002 Bubble Cup 8 - Finals [Online Mirror]</h5><p>B,D,F,H签到。</p>
 <blockquote>
-<p><strong>A.</strong> 定义一个序列 $F_n$ 。满足 $F_n=s_{n-1}F_{n-1}+s_{n-2}F_{n-2}, F_0=0, F_1=1$ 。</p>
-<p>其中 $s$ 是一个近乎循环序列。给定 $N$ ，同时给出 $s_0,s_1,s_2,…,s_{n-1}$ ，满足 $s_i=s_{i \bmod n}$ 。同时存在 $m$ 个特殊位置，$si$ 的值是给定的。求 $F_K \bmod P$  的值。</p>
+<p><strong>A.</strong> 定义一个序列 $F_n$ 。满足 $F<em>n=s</em>{n-1}F<em>{n-1}+s</em>{n-2}F_{n-2}, F_0=0, F_1=1$ 。</p>
+<p>其中 $s$ 是一个近乎循环序列。给定 $N$ ，同时给出 $s_0,s_1,s<em>2,…,s</em>{n-1}$ ，满足 $s<em>i=s</em>{i \bmod n}$ 。同时存在 $m$ 个特殊位置，$si$ 的值是给定的。求 $F_K \bmod P$  的值。</p>
 </blockquote>
-<p><strong>线段树维护矩阵。</strong> 显然，我们可以预处理 $s_0,s_1,s_2,…,s_{n-1},s_0$ 构成的转移矩阵 $S$ 。然后，对于改变的 $si$ 的值，只会影响两个矩阵。对于每一个周期，会影响的也至多只有 $2m$ 个，记为 $E_1,E_2,…,E_t$ 。</p>
+<p><strong>线段树维护矩阵。</strong> 显然，我们可以预处理 $s_0,s_1,s<em>2,…,s</em>{n-1},s_0$ 构成的转移矩阵 $S$ 。然后，对于改变的 $si$ 的值，只会影响两个矩阵。对于每一个周期，会影响的也至多只有 $2m$ 个，记为 $E_1,E_2,…,E_t$ 。</p>
 <p>最终的转移矩阵类似于 $S \cdot S \cdot E_1 \cdot S \cdot …\cdot E_2\cdot S\cdot…$  。中间的可以利用快速幂，时间复杂度 $O(m \log K)$ 。考虑如何计算 $E_i$ ，显然我们需要计算一段矩阵的乘积，线段树维护即可。</p>
 <p>总的复杂度 $O(m \log K + m \log K)$ 。</p>
 <p><strong>C.</strong>  爆搜+匈牙利算法。直接这样是 $O(\binom n {n/2} n^3)$ 的，可以减少一个 $n$ 。未理解。</p>
@@ -898,7 +898,7 @@
 <p>$$y = y_0 - kl \geq 1$$</p>
 <p>转化为关于 $k$ 的不等式组，求 $k$ 的整数解个数即可。</p>
 <p>如何求 $x_0,y_0$ ？<code>ExGCD</code> ？显然要 T，发现 $y_0 = S \bmod l$ 就是一个可行解。当然这种做法会因为常数过大而超时。</p>
-<p>更好做法是直接求出 $x_{\min}, x_{\max}$ ，剩下的留给大家思考。</p>
+<p>更好做法是直接求出 $x<em>{\min}, x</em>{\max}$ ，剩下的留给大家思考。</p>
 <p>（参考自<code>zyy</code>的代码，虽然我没有看懂，但是还是给了我启发。。可以参考我的代码？）</p>
 <h5 id="006-2015-2016-ACM-ICPC-NEERC-Southern-Subregional-Contest"><a href="#006-2015-2016-ACM-ICPC-NEERC-Southern-Subregional-Contest" class="headerlink" title="#006-2015-2016 ACM-ICPC, NEERC, Southern Subregional Contest"></a>#006-2015-2016 ACM-ICPC, NEERC, Southern Subregional Contest</h5><p>A,B,D,F,I,J，签到。G，主席树。C，递归处理，折半。 K，性质，暴力。H，构造，随便搞一棵生成树，然后贪心。</p>
 <h2 id="专题训练"><a href="#专题训练" class="headerlink" title="专题训练"></a>专题训练</h2><h3 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h3><blockquote>
@@ -969,7 +969,7 @@
 </blockquote>
 <p><strong>$ k $ 进制下模 $ k-1 $ 的性质。</strong>注意到一个性质：对于一个 $ k $ 进之下的数，模 $ k-1 $ 后的余数等于，各个数码之和模 $ k-1 $ 的余数。考虑用 $ ans[i] $ 表示前 $ i $ 个数之和模 $ k-1 $ 后的余数，若满足 $ ans[i]-ans[j-1] $ 模 $ k-1=b $ 则 $ [j,i] $ 是符合答案的，于是在扫描过程中记录一个数组 $ cnt[i] $ 表示 $ ans[j] \mod k-1=i $ 的 $ j $ 的个数。注意特殊处理 $ b=0,k-1 $ 的情况。</p>
 <blockquote>
-<p>CF703E。给定 $ n,k $ ，和 $ n $ 个数 $ a[] $ 。求任意一个最短的序列 $ \{i\} $ 满足 $ a[i1]\times a[i2] \times … \times a[im] $ 是 $ k $ 的倍数。输出方案，当存在多种方案时，选择 $ \sum i $ 最小的序列。 $ n \leq 1000,k \leq 10^{12} $ 。</p>
+<p>CF703E。给定 $ n,k $ ，和 $ n $ 个数 $ a[] $ 。求任意一个最短的序列 $ {i} $ 满足 $ a[i1]\times a[i2] \times … \times a[im] $ 是 $ k $ 的倍数。输出方案，当存在多种方案时，选择 $ \sum i $ 最小的序列。 $ n \leq 1000,k \leq 10^{12} $ 。</p>
 </blockquote>
 <p><strong>GCD,动态规划。</strong>考虑到对于一个 $ 10^{12} $ 数量级的数，其因数个数不超过 $ 10^4 $ ，而且本题中 $ a[] $ 是否满足条件是其乘积与 $ k $ 的GCD决定的。首先，预处理出所有 $ k $ 的因数 $ d[] $ ，定义状态 $ f[i][j] $ 表示前 $ i $ 个数中，乘积与 $ k $ 的GCD为 $ d[j] $ 所需要选择的最少数字。按照 $ i+1 $ 是否选择转移即可。</p>
 <h3 id="组合数学"><a href="#组合数学" class="headerlink" title="组合数学"></a>组合数学</h3><blockquote>
@@ -986,7 +986,7 @@
 <p><strong>概率，动态规划。</strong>注意到，一个房间内原来有多少人到达最长是无法记录在状态中的，所以直接求概率十分困难。考虑<strong>概率的原始定义：方案数除以总方案数</strong>。也就是说我们求出状态的方案数即可。</p>
 <p>用 $ f(i,j,l) $ 表示已经分配了前 $ i $ 个房间和 $ j $ 个人，最长队列长度为 $ l $ 的方案数。首先 $ f(i,0,0)=1 $ 。</p>
 <p>状态可以有两种决策转移，一种是当前房间队列到达 $ l $ ，前面的房间任意；另一种是前面有房间队列到达 $ l $ ，但当前的房间任意，于是，</p>
-<p>$$<br>\large f(i,j,l) = \sum _{k=0} ^{l}  \left( ^{n-j+p} _{\ \ \ \  p}  \right)  f(i-1,j-p,k) \\ \large + \sum _{k=0} ^{\min p -1} \left( ^{n-j+k} _{\ \ \ \ \ k} \right) f(i-1,j-k,l)<br>$$</p>
+<p>$$<br>\large f(i,j,l) = \sum <em>{k=0} ^{l}  \left( ^{n-j+p} </em>{\ \ \ \  p}  \right)  f(i-1,j-p,k) \ \large + \sum <em>{k=0} ^{\min p -1} \left( ^{n-j+k} </em>{\ \ \ \ \ k} \right) f(i-1,j-k,l)<br>$$</p>
 <p>其中 $ p $ 为使得第 $ i $ 个房间队列长度为 $ l $ 的数的集合，需要枚举。</p>
 <blockquote>
 <p>CF15E。给定一个整数 $ N $ ，当 $ N=12 $ 的时候是这样一幅图：</p>

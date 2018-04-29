@@ -293,7 +293,7 @@
 <blockquote>
 <p><strong>E - RGB Sequence</strong> 您需要构造一个长度为$n$， 由R,G,B构成的序列，满足以下$m$个限制。对于限制$i$，满足$[li,ri]$间不同的颜色种数恰好为$xi$。求满足条件的序列数。$n,m \leq 300$</p>
 </blockquote>
-<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max\{R,G,B\}$。考虑暴力转移，转以后判断是否冲突即可。</p>
+<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max{R,G,B}$。考虑暴力转移，转以后判断是否冲突即可。</p>
 <p><a href="http://arc074.contest.atcoder.jp/submissions/1482395" target="_blank" rel="external">Code</a></p>
 <h5 id="AtCoder-Regular-Contest-075"><a href="#AtCoder-Regular-Contest-075" class="headerlink" title="AtCoder Regular Contest 075"></a>AtCoder Regular Contest 075</h5><blockquote>
 <p><strong>D - Widespread</strong> 有$n$只怪兽，第$i$只怪兽初始血量$hi$。每次可以选定一只怪兽攻击，造成$A$点血量的伤害。同时其他怪兽受到$B$点血量的伤害。求最少的攻击次数。$n \leq 100000$</p>
@@ -313,9 +313,9 @@
 <h5 id="AtCoder-Regular-Contest-077"><a href="#AtCoder-Regular-Contest-077" class="headerlink" title="AtCoder Regular Contest 077"></a>AtCoder Regular Contest 077</h5><blockquote>
 <p><strong>D - 11</strong> 给定$n$和长度为$n+1$的子序列，每个数都在$[1,n]$，且恰有一个数出现两次。对于$k=1,2,…,n+1$，求出长度为$k$的互异子序列个数。$n \leq 10^5$</p>
 </blockquote>
-<p>首先找出相同的两个数$x$的位置$l,r$，可以发现剩下的数都是等价的。对于每个$k$，分类讨论计数。按照选取$x$个数，就是$C_{n-1}^k+2C_{n-1}^{k-1}+C_{n-1}^{k-2}$。注意到，如果在$(l,r)$内没有选数，选择$l$和选择$r$会被当作同一情况，于是答案还要减去$C_{u+v}^{k-1}$。</p>
+<p>首先找出相同的两个数$x$的位置$l,r$，可以发现剩下的数都是等价的。对于每个$k$，分类讨论计数。按照选取$x$个数，就是$C<em>{n-1}^k+2C</em>{n-1}^{k-1}+C<em>{n-1}^{k-2}$。注意到，如果在$(l,r)$内没有选数，选择$l$和选择$r$会被当作同一情况，于是答案还要减去$C</em>{u+v}^{k-1}$。</p>
 <blockquote>
-<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a_1$，接下来$n-1$次，你需要将亮度从$a_{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m \leq 10^5$</p>
+<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a<em>1$，接下来$n-1$次，你需要将亮度从$a</em>{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m \leq 10^5$</p>
 </blockquote>
 <p>记$f(x_0)$为：当$x=x_0$时，需要调节的总次数。考虑亮度$s\Rightarrow t$ 对$f(x)$的贡献（假设$s&lt;t$， 其他情况同样处理）。</p>
 <ul>
@@ -327,7 +327,7 @@
 <blockquote>
 <p><strong>F - SS</strong> 定义“双串”，由两个相同的字符串拼接而成。定义$f(S)$，在双串S后追加最少字符得到的双串。给定$S0S0$和$l,r$。求$f^{10^{100}}(S0S0)$在$[l,r]$内，26个字母分别出现的个数。$|S|&lt;=2*10^5,l,r \leq 10^{18}$</p>
 </blockquote>
-<p><strong>_有待更深入理解。_</strong>用KMP预处理Next[]，可以的到S0的最短相同前后缀T，设$f(S0S0)=STST$。通过画图发现，若$|T|$是$|S|$的因数，那么S就是由一些T拼成的，$f(STST)=STTSTT$。否则，$f(STST)=STSTST$。设$g(S)g(S)=f(SS)$ ，能得到$g^{i+2}(S)=g^{i+1}(S)+g^i(S)$（显然，对于$i$无限大时也满足第一种情况）。考虑求出前缀的贡献，按照类似fib数列的递推方式计算即可。</p>
+<p><strong><em>有待更深入理解。</em></strong>用KMP预处理Next[]，可以的到S0的最短相同前后缀T，设$f(S0S0)=STST$。通过画图发现，若$|T|$是$|S|$的因数，那么S就是由一些T拼成的，$f(STST)=STTSTT$。否则，$f(STST)=STSTST$。设$g(S)g(S)=f(SS)$ ，能得到$g^{i+2}(S)=g^{i+1}(S)+g^i(S)$（显然，对于$i$无限大时也满足第一种情况）。考虑求出前缀的贡献，按照类似fib数列的递推方式计算即可。</p>
 
       
 

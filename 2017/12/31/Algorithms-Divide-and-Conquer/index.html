@@ -192,7 +192,7 @@
 <p>一般地，一个分治的时间复杂度可以表示为：</p>
 <p>$$\large T(n) = a \times T(n/b) + f(n)$$</p>
 <p>画出递归树，或者暴力展开就会发现：</p>
-<p>$$\large T(n) = O(n ^ {\log _ b a} + \sum _ {i=0} ^ {\log _ b n - 1} a ^ i f( \frac n {b ^ i}))$$</p>
+<p>$$\large T(n) = O(n ^ {\log <em> b a} + \sum </em> {i=0} ^ {\log _ b n - 1} a ^ i f( \frac n {b ^ i}))$$</p>
 <p>其中左边是递归底层的总复杂度，右边是非底层的复杂度。要计算 $T(n)$ 的渐进复杂度，就要比较 $f(n)$ 与 $O(n ^ {\log _ b a})$ 的阶。</p>
 <h5 id="情况一，-f-n-lt-O-n-log-b-a"><a href="#情况一，-f-n-lt-O-n-log-b-a" class="headerlink" title="情况一， $f(n) &lt; O(n ^ {\log _ b a})$"></a>情况一， $f(n) &lt; O(n ^ {\log _ b a})$</h5><p>可以证明得到：</p>
 <p>$$\large T(n) = O(n ^ {\log _ b a})$$</p>
