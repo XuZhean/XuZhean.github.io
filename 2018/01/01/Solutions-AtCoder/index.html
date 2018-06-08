@@ -7,14 +7,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「切题记录」AtCoder | Cyani&#39;s Blog</title>
+  <title>「切题记录」AtCoder | Cyanic&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一个小清新OJ. 题意简短，超赞！ 题目新颖，超赞！ 解法巧妙，超赞！ 标程简洁，超赞！">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「切题记录」AtCoder">
 <meta property="og:url" content="https://xuzhean.github.io/2018/01/01/Solutions-AtCoder/index.html">
-<meta property="og:site_name" content="Cyani&#39;s Blog">
+<meta property="og:site_name" content="Cyanic&#39;s Blog">
 <meta property="og:description" content="一个小清新OJ. 题意简短，超赞！ 题目新颖，超赞！ 解法巧妙，超赞！ 标程简洁，超赞！">
 <meta property="og:image" content="https://xuzhean.github.io/img/ARC072F-1.PNG">
 <meta property="og:image" content="https://xuzhean.github.io/img/ARC072F-2.PNG">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="一个小清新OJ. 题意简短，超赞！ 题目新颖，超赞！ 解法巧妙，超赞！ 标程简洁，超赞！">
 <meta name="twitter:image" content="https://xuzhean.github.io/img/ARC072F-1.PNG">
   
-    <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyanic&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -54,10 +54,10 @@
 			<img src="/assets/img/face.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Cyani</a></h1>
+		  <h1 class="header-author"><a href="/">Cyanic</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Love the cruel world.</p>
+		<p class="header-subtitle">Envision the whole of you</p>
 		
 
 		<nav class="header-menu">
@@ -65,9 +65,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+				<li><a href="http://codeforces.com/">CodeForces</a></li>
 	        
-				<li><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+				<li><a href="http://atcoder.jp/">AtCoder</a></li>
 	        
 			</ul>
 		</nav>
@@ -116,10 +116,10 @@
 				<img src="/assets/img/face.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Cyani</h1>
+			  <h1 class="header-author js-header-author">Cyanic</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Love the cruel world.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Envision the whole of you<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -151,9 +151,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://codeforces.com/">CodeForces</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://atcoder.jp/">AtCoder</a></li>
 		        
 				</ul>
 			</nav>
@@ -234,7 +234,7 @@
 <p>看了官方题解才知道如何证明充分性。首先主要到所有的操作都是可逆的：$A\rightarrow BB\rightarrow AAAA\rightarrow A$。且$A,B$可以任意地加3个或减3个。考虑将$S$和$T$中的$B$全变为$A$。如果$S,T$的$A$个个数关于3同余，则一定能变换。就证明了结论。</p>
 <p><a href="http://arc071.contest.atcoder.jp/submissions/1440206" target="_blank" rel="external">Code</a></p>
 <blockquote>
-<p><strong>F - Infinite Sequence</strong> 给定$n\ (n \leq 10^6)$，问存在多少个无穷序列满足：1.每个数都在1到$n$之间。2.对于任意$n \leq i,j$，都有$a_i=a_j$。3.对于任意的$i$，若存在$i+1 \leq j&lt;k \leq i+a_i$，都有$a_j=a_k$。</p>
+<p><strong>F - Infinite Sequence</strong> 给定$n (n \leq 10^6)$，问存在多少个无穷序列满足：1.每个数都在1到$n$之间。2.对于任意$n \leq i,j$，都有$a_i=a_j$。3.对于任意的$i$，若存在$i+1 \leq j&lt;k \leq i+a_i$，都有$a_j=a_k$。</p>
 </blockquote>
 <p>发现只有前$n$位是有用的，考虑到动态规划更容易向前转移，定义$f(i)$为子序列$[i,n]$满足条件的个数，于是我们考虑$a_i$的值即可转移。</p>
 <ul>
@@ -251,7 +251,7 @@
 <li>对于$(X,Y)=(0,0),(0,1),(1,0),(1,1)$，满足$|X-Y|&lt;=1$，是必败态。</li>
 </ul>
 <ul>
-<li>对于必胜态，设$|X-Y|=3k+r&gt;=2\ (r=0,1,-1,\ k&gt;=1)$ ，取$i=k$，即可转移到必败态。</li>
+<li>对于必胜态，设$|X-Y|=3k+r&gt;=2 (r=0,1,-1, k&gt;=1)$ ，取$i=k$，即可转移到必败态。</li>
 <li>对于必败态，操作后$X-Y$至少改变3，一定会转移到必胜态。</li>
 </ul>
 <p><a href="http://arc072.contest.atcoder.jp/submissions/1453534" target="_blank" rel="external">Code</a></p>
@@ -276,7 +276,7 @@
 </blockquote>
 <p>假设所有权值中的最大值为$Max$，最小值$Min$。不失一般性地，有两种情况：</p>
 <p>$Rmax=Max,Bmin=Min$，此时需要最大化$Rmin$，最小化$Bmax$，于是将两个球中较大的涂为红色，较小的涂为蓝色。</p>
-<p>$Rmax=Max,Rmin=Min$（Min和Max不在同一包里），此时需要最小化$Bmax$，最大化$Bmin$，令$xi \leq yi$，之后按照$x$升序排序。我们说，最优方案一定是，排序后，前$k\ (1 \leq k \leq n)$个的$xi$涂为红色，后$n-k$个涂为蓝色。如何证明，考虑反证法。</p>
+<p>$Rmax=Max,Rmin=Min$（Min和Max不在同一包里），此时需要最小化$Bmax$，最大化$Bmin$，令$xi \leq yi$，之后按照$x$升序排序。我们说，最优方案一定是，排序后，前$k (1 \leq k \leq n)$个的$xi$涂为红色，后$n-k$个涂为蓝色。如何证明，考虑反证法。</p>
 <p>假设第$p(p&gt;=k+2)$涂为了红色，那么$Bmin$并不会增大，而$Bmax$并不会减小，所以一定不会是更优解。于是简单证明了结论。</p>
 <p><a href="http://arc073.contest.atcoder.jp/submissions/1482509" target="_blank" rel="external">Code</a></p>
 <blockquote>
@@ -293,7 +293,7 @@
 <blockquote>
 <p><strong>E - RGB Sequence</strong> 您需要构造一个长度为$n$， 由R,G,B构成的序列，满足以下$m$个限制。对于限制$i$，满足$[li,ri]$间不同的颜色种数恰好为$xi$。求满足条件的序列数。$n,m \leq 300$</p>
 </blockquote>
-<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max{R,G,B}$。考虑暴力转移，转以后判断是否冲突即可。</p>
+<p>考虑到如果存在不满足的情况，一定是DP过程中最后的R,G,B发生冲突。于是考虑状态$f[R][G][B]$表示$R,G,B$最后的位置，发现当前位置$p=max\{R,G,B\}$。考虑暴力转移，转以后判断是否冲突即可。</p>
 <p><a href="http://arc074.contest.atcoder.jp/submissions/1482395" target="_blank" rel="external">Code</a></p>
 <h5 id="AtCoder-Regular-Contest-075"><a href="#AtCoder-Regular-Contest-075" class="headerlink" title="AtCoder Regular Contest 075"></a>AtCoder Regular Contest 075</h5><blockquote>
 <p><strong>D - Widespread</strong> 有$n$只怪兽，第$i$只怪兽初始血量$hi$。每次可以选定一只怪兽攻击，造成$A$点血量的伤害。同时其他怪兽受到$B$点血量的伤害。求最少的攻击次数。$n \leq 100000$</p>
@@ -303,7 +303,7 @@
 <blockquote>
 <p><strong>F - Mirrored</strong> 对于一个正整数$n$，记$rev(n)$为$n$的倒置，例如$rev(123)=321,rev(4000)=4$。给定$D$，求存在多少$n$满足$rev(n)=n+D$。$D \leq 10^9$</p>
 </blockquote>
-<p>以5位数为例，$\overline{edcba}-\overline{abcde}=9999(e-a)+990(d-b)$ 考虑到如果$D$不是9的倍数，一定无解，否则我们考虑现将$D$除以9。然后DFS，发现$(e-a)\ mod\ 10$可以确定，同样可以逐位确定剩余的位，最后乘法原理确定总方案数即可。注意奇偶分类。</p>
+<p>以5位数为例，$\overline{edcba}-\overline{abcde}=9999(e-a)+990(d-b)$ 考虑到如果$D$不是9的倍数，一定无解，否则我们考虑现将$D$除以9。然后DFS，发现$(e-a) mod 10$可以确定，同样可以逐位确定剩余的位，最后乘法原理确定总方案数即可。注意奇偶分类。</p>
 <p><a href="http://arc075.contest.atcoder.jp/submissions/1497584" target="_blank" rel="external">Code</a></p>
 <h5 id="AtCoder-Regular-Contest-075-1"><a href="#AtCoder-Regular-Contest-075-1" class="headerlink" title="AtCoder Regular Contest 075"></a>AtCoder Regular Contest 075</h5><blockquote>
 <p><strong>E - Connected?</strong> 给定$R \times C$棋盘上的$n$对点，要求这$n$对点彼此连线，保证这些线不相交。求是否存在方案满足。</p>
@@ -313,9 +313,9 @@
 <h5 id="AtCoder-Regular-Contest-077"><a href="#AtCoder-Regular-Contest-077" class="headerlink" title="AtCoder Regular Contest 077"></a>AtCoder Regular Contest 077</h5><blockquote>
 <p><strong>D - 11</strong> 给定$n$和长度为$n+1$的子序列，每个数都在$[1,n]$，且恰有一个数出现两次。对于$k=1,2,…,n+1$，求出长度为$k$的互异子序列个数。$n \leq 10^5$</p>
 </blockquote>
-<p>首先找出相同的两个数$x$的位置$l,r$，可以发现剩下的数都是等价的。对于每个$k$，分类讨论计数。按照选取$x$个数，就是$C<em>{n-1}^k+2C</em>{n-1}^{k-1}+C<em>{n-1}^{k-2}$。注意到，如果在$(l,r)$内没有选数，选择$l$和选择$r$会被当作同一情况，于是答案还要减去$C</em>{u+v}^{k-1}$。</p>
+<p>首先找出相同的两个数$x$的位置$l,r$，可以发现剩下的数都是等价的。对于每个$k$，分类讨论计数。按照选取$x$个数，就是$C_{n-1}^k+2C_{n-1}^{k-1}+C_{n-1}^{k-2}$。注意到，如果在$(l,r)$内没有选数，选择$l$和选择$r$会被当作同一情况，于是答案还要减去$C_{u+v}^{k-1}$。</p>
 <blockquote>
-<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a<em>1$，接下来$n-1$次，你需要将亮度从$a</em>{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m \leq 10^5$</p>
+<p><strong>E - guruguru</strong> 有一盏灯具有$1,2,…,m$种亮度。遥控板可以一次操作可以将亮度加一（为$m$时，变为$1$）或跳转到固定的亮度$x$。一开始亮度为$a_1$，接下来$n-1$次，你需要将亮度从$a_{i-1}$调节到$a_i$。选取一个$x$，使得调节的总次数最小。$n,m \leq 10^5$</p>
 </blockquote>
 <p>记$f(x_0)$为：当$x=x_0$时，需要调节的总次数。考虑亮度$s\Rightarrow t$ 对$f(x)$的贡献（假设$s&lt;t$， 其他情况同样处理）。</p>
 <ul>
@@ -327,7 +327,7 @@
 <blockquote>
 <p><strong>F - SS</strong> 定义“双串”，由两个相同的字符串拼接而成。定义$f(S)$，在双串S后追加最少字符得到的双串。给定$S0S0$和$l,r$。求$f^{10^{100}}(S0S0)$在$[l,r]$内，26个字母分别出现的个数。$|S|&lt;=2*10^5,l,r \leq 10^{18}$</p>
 </blockquote>
-<p><strong><em>有待更深入理解。</em></strong>用KMP预处理Next[]，可以的到S0的最短相同前后缀T，设$f(S0S0)=STST$。通过画图发现，若$|T|$是$|S|$的因数，那么S就是由一些T拼成的，$f(STST)=STTSTT$。否则，$f(STST)=STSTST$。设$g(S)g(S)=f(SS)$ ，能得到$g^{i+2}(S)=g^{i+1}(S)+g^i(S)$（显然，对于$i$无限大时也满足第一种情况）。考虑求出前缀的贡献，按照类似fib数列的递推方式计算即可。</p>
+<p><strong>_有待更深入理解。_</strong>用KMP预处理Next[]，可以的到S0的最短相同前后缀T，设$f(S0S0)=STST$。通过画图发现，若$|T|$是$|S|$的因数，那么S就是由一些T拼成的，$f(STST)=STTSTT$。否则，$f(STST)=STSTST$。设$g(S)g(S)=f(SS)$ ，能得到$g^{i+2}(S)=g^{i+1}(S)+g^i(S)$（显然，对于$i$无限大时也满足第一种情况）。考虑求出前缀的贡献，按照类似fib数列的递推方式计算即可。</p>
 
       
 
@@ -448,7 +448,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Cyani
+    		&copy; 2018 Cyanic
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -551,11 +551,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
             
             <div class="clearfix"></div>
@@ -607,10 +611,6 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>以下神犇必须膜</a>
-            </li>
-          
-            <li class="search-li">
               <a href="http://wjmzbmr.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>WJMZBMR</a>
             </li>
           
@@ -647,7 +647,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>啊，大佬好强</a>
+              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>...</a>
             </li>
           
             <li class="search-li">
@@ -659,11 +659,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://szoorz.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>srO-CQZ-Orz</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://emoairx.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
+              <a href="https://emoairx.github.top/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
             </li>
           
             <li class="search-li">
@@ -682,7 +678,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">ZJSX某初三蒟蒻&lt;br&gt;梦想进ZJ省队&lt;br&gt;希望与大家互相学习☺</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Cyanic,MOer,OIer</div>
   	  	
     	</section>
     

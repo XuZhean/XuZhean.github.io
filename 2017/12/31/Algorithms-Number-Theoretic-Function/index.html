@@ -7,21 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「学习笔记」数论函数 | Cyani&#39;s Blog</title>
+  <title>「学习笔记」数论函数 | Cyanic&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="UPD 2017.12.26 重新学了一发莫比乌斯反演，算是会一些套路了？ UPD 2017-12.28 完结，撒花！ 其实数论真的很优美毒，不是吗？">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」数论函数">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-Number-Theoretic-Function/index.html">
-<meta property="og:site_name" content="Cyani&#39;s Blog">
+<meta property="og:site_name" content="Cyanic&#39;s Blog">
 <meta property="og:description" content="UPD 2017.12.26 重新学了一发莫比乌斯反演，算是会一些套路了？ UPD 2017-12.28 完结，撒花！ 其实数论真的很优美毒，不是吗？">
 <meta property="og:updated_time" content="2018-04-29T08:57:07.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「学习笔记」数论函数">
 <meta name="twitter:description" content="UPD 2017.12.26 重新学了一发莫比乌斯反演，算是会一些套路了？ UPD 2017-12.28 完结，撒花！ 其实数论真的很优美毒，不是吗？">
   
-    <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyanic&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -51,10 +51,10 @@
 			<img src="/assets/img/face.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Cyani</a></h1>
+		  <h1 class="header-author"><a href="/">Cyanic</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Love the cruel world.</p>
+		<p class="header-subtitle">Envision the whole of you</p>
 		
 
 		<nav class="header-menu">
@@ -62,9 +62,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+				<li><a href="http://codeforces.com/">CodeForces</a></li>
 	        
-				<li><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+				<li><a href="http://atcoder.jp/">AtCoder</a></li>
 	        
 			</ul>
 		</nav>
@@ -113,10 +113,10 @@
 				<img src="/assets/img/face.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Cyani</h1>
+			  <h1 class="header-author js-header-author">Cyanic</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Love the cruel world.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Envision the whole of you<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -148,9 +148,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://codeforces.com/">CodeForces</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://atcoder.jp/">AtCoder</a></li>
 		        
 				</ul>
 			</nav>
@@ -194,13 +194,13 @@
 <p><strong>完全积性函数。</strong> 对于 <strong>任意</strong> 的 $a,b$， $f(ab) = f(a)f(b)$ 。</p>
 <p>在实际应用中，用到的大多都是 <strong>积性函数</strong>。</p>
 <h3 id="积性函数的性质"><a href="#积性函数的性质" class="headerlink" title="积性函数的性质"></a>积性函数的性质</h3><p><strong>积性。</strong> 若 $f,g$ 为积性函数， 那么 $(fg)(n) = f(n)g(n), (\frac f g)(n) = \frac {f(n)} {g(n)}$ 也都是积性函数。</p>
-<p><strong>用线性筛求 $[1,n]$ 的积性函数。</strong> 令 $n = \prod p <em> {i} ^ {k</em> i}$ ,那么 $f(n) = \prod f(p <em> {i} ^ {k</em> i})$ 。</p>
+<p><strong>用线性筛求 $[1,n]$ 的积性函数。</strong> 令 $n = \prod p _ {i} ^ {k_ i}$ ,那么 $f(n) = \prod f(p _ {i} ^ {k_ i})$ 。</p>
 <p>所以在线性筛的时候，有一种方法就是 <strong>计算所有 $f(p_i) ^{k_i}$ 再相乘</strong> 。</p>
 <p>另一种方法是，<strong>考虑增加一个最小质因子后的变化。</strong></p>
 <h3 id="常见的积性函数及其性质"><a href="#常见的积性函数及其性质" class="headerlink" title="常见的积性函数及其性质"></a>常见的积性函数及其性质</h3><p><strong>欧拉函数，积性。</strong> $\varphi(n) = \sum _ {i=1} ^n [\gcd(n,i)=1]$ 表示 $[1,n]$ 中与 $n$ 互质的数的个数。</p>
 <p>直接根据欧拉函数的定义就可以得到一些有用的式子。比如：（注意利用 $\gcd(n,i) = \gcd(n,n-i)$，以及 $n=1$ 时少算了一次 ）</p>
-<p>$$\sum <em> {i=1} ^ n i \cdot [\gcd(n,i)=1] = \frac 1 2 \times (n \cdot \sum </em> {i=1} ^{n}  [\gcd(n,i)=1] + [n=1]) = \frac {n \cdot \varphi(n) + [n=1]} 2 \tag 1$$</p>
-<p>$$\sum <em> {i=1} ^ n \sum </em> {j=1} ^ n [\gcd (i, j) = 1] =2 \sum _ {i=1} ^n \varphi(i) - 1 \tag {2}$$</p>
+<p>$$\sum _ {i=1} ^ n i \cdot [\gcd(n,i)=1] = \frac 1 2 \times (n \cdot \sum _ {i=1} ^{n}  [\gcd(n,i)=1] + [n=1]) = \frac {n \cdot \varphi(n) + [n=1]} 2 \tag 1$$</p>
+<p>$$\sum _ {i=1} ^ n \sum _ {j=1} ^ n [\gcd (i, j) = 1] =2 \sum _ {i=1} ^n \varphi(i) - 1 \tag {2}$$</p>
 <p><strong>莫比乌斯函数，积性。</strong> 当 $n$ 含有平方因子 $\mu(n) = 0$ , 否则 $n$ 为 $k$ 个不同的质因子乘积， $\mu(n) = -1 ^{k}$ 。</p>
 <p><strong>除数函数，积性。</strong> $\sigma _ {k} (n)$ 表示 $n$ 的所有因数的 $k$ 次幂之和。</p>
 <p>特别的，$d(n) = \sigma _ {0} (n)$ ，表示 $n$ 的因数个数。</p>
@@ -222,8 +222,8 @@
 <h3 id="常见的Dirichlet卷积"><a href="#常见的Dirichlet卷积" class="headerlink" title="常见的Dirichlet卷积"></a>常见的Dirichlet卷积</h3><p><strong>一个函数的约数和可以卷上1。</strong></p>
 <p>$$d(n) = \sum _ {d|n} 1 \Rightarrow d = 1 \ast 1 \tag{4}$$</p>
 <p>$$\sigma (n) = \sum _ {d|n} d \Rightarrow \sigma = d \ast 1 \tag{5}$$</p>
-<p><strong><em>极其重要的，莫比乌斯反演的基础</em></strong></p>
-<p>$$\large \sum <em> {d|n} \mu(d) = \sum </em> {i=0} ^{k} (-1) ^{i} \times \binom k i = (1-1) ^{k} = e(n) \Longrightarrow e = \mu * 1 \tag{6}$$</p>
+<p><strong>_极其重要的，莫比乌斯反演的基础_</strong></p>
+<p>$$\large \sum _ {d|n} \mu(d) = \sum _ {i=0} ^{k} (-1) ^{i} \times \binom k i = (1-1) ^{k} = e(n) \Longrightarrow e = \mu * 1 \tag{6}$$</p>
 <p><strong>另一个常用的卷积。</strong> 因为 $\varphi(d)$ 表示与 $n$ 的最大公约数为 $\frac n d$ 的数的个数，它们的和显然为 $n$ 。</p>
 <p>$$\large \sum _ {d|n} \varphi (d) = n \Longrightarrow \varphi \ast 1 = id \tag{7}$$</p>
 <h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h3 id="形式一：因数反演"><a href="#形式一：因数反演" class="headerlink" title="形式一：因数反演"></a>形式一：因数反演</h3><p>如果两个数论函数 $f,g$ 满足 $f = g \ast 1$ ，也即</p>
@@ -241,7 +241,7 @@
 <p>$$\large g \ast 1 = f \ast \mu \ast 1 = f \ast e = f$$</p>
 <p><strong>本质？</strong> $1$ 与 $\mu$ 在 Dirichlet卷积意义下互为逆元。</p>
 <h3 id="形式二：倍数反演"><a href="#形式二：倍数反演" class="headerlink" title="形式二：倍数反演"></a>形式二：倍数反演</h3><p>这就不是Dirichlet卷积了，不过也是对的。</p>
-<p>$$\large g(n) = \sum <em> {n|d} f(d) \Longrightarrow f(n) \sum </em> {n|d} \mu( \frac d n) g(d) \tag {10}$$</p>
+<p>$$\large g(n) = \sum _ {n|d} f(d) \Longrightarrow f(n) \sum _ {n|d} \mu( \frac d n) g(d) \tag {10}$$</p>
 <h2 id="变换技巧"><a href="#变换技巧" class="headerlink" title="变换技巧"></a>变换技巧</h2><p>一些基本套路，多推推就熟练了。</p>
 <p>1.枚举 $\gcd$ 取值</p>
 <p>2.交换枚举倍数与约数</p>
@@ -252,30 +252,30 @@
 <h4 id="一"><a href="#一" class="headerlink" title="一"></a>一</h4><blockquote>
 <p>有一个 <strong>积性函数</strong> $f$，它与恒等函数 $1$ 的Dirichlet卷积 $g = f*1$ 如何计算？</p>
 </blockquote>
-<p>假设 $n = \prod <em> {i=1} ^{t} p </em> {i} ^{ki}$ ，$g(n) = \sum _ {d|n} f(n)$ 。那么就有</p>
-<p>$$\large g(n) = \prod <em> {i=1} ^{t} \sum </em> {j=0} ^{ki} f(p _ {i} ^{j}) \tag{11}$$</p>
+<p>假设 $n = \prod _ {i=1} ^{t} p _ {i} ^{ki}$ ，$g(n) = \sum _ {d|n} f(n)$ 。那么就有</p>
+<p>$$\large g(n) = \prod _ {i=1} ^{t} \sum _ {j=0} ^{ki} f(p _ {i} ^{j}) \tag{11}$$</p>
 <h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p><strong>整数分块技巧。</strong> 求 $\sum _ {i=1} ^{n} f(i) \times \lfloor \frac n i \rfloor$</p>
 <p>注意到 $\large \lfloor \frac n i \rfloor$ 只有 $O(\sqrt n)$ 种取值。对于固定的 $\lfloor \frac n i \rfloor$ ， $i$ 的取值为</p>
 <p>$$\large \left[ \left \lfloor \frac n {\lfloor \frac n i \rfloor+1} \right \rfloor+1, \left \lfloor \frac n {\lfloor \frac n i \rfloor} \right \rfloor \right] \tag{12}$$</p>
 <p>对于相同的 $\lfloor \frac n i \rfloor$ ，我们只需要计算 <strong>$f(i)$ 的前缀和</strong> 即可。复杂度即是 $O(\sqrt n)$。</p>
 <p>同时有 $n,m$ 时同理。</p>
 <h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>假设 $a \ast b$ 已经是Dirichlet卷积，那么</p>
-<p>$$\large id <em> {k} \times (a \ast b) = (id </em> {k} \times a) \ast (id _ {k} \times b) \tag{13}$$</p>
+<p>$$\large id _ {k} \times (a \ast b) = (id _ {k} \times a) \ast (id _ {k} \times b) \tag{13}$$</p>
 <p>再根据常用卷积 $id = \varphi \ast 1$ ，发现 $\varphi$ 是连接两个相邻 $id$ 的桥梁，即</p>
-<p>$$\large (\varphi \times id <em> {k}) \ast id </em> {k} = id _ {k+1} \tag{14}$$</p>
+<p>$$\large (\varphi \times id _ {k}) \ast id _ {k} = id _ {k+1} \tag{14}$$</p>
 <h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>可以由两个常用卷积推出，</p>
 <p>$$\large \varphi (n) = \sum _ {d|n} \mu (d) \times \frac n d \Longrightarrow \varphi = \mu \ast id \tag{15}$$</p>
 <h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><p>常见变换方式：约数与倍数的互换。</p>
 <p>对于 $d,e,D=d \times e$ 三项贡献的这种，可以枚举 $D$ 将其化为狄利克雷卷积，也可以枚举 $d$和 $e$ 化成带下取整的式子；一般来讲前者往往易于预处理，可以应付多组询问，后者则在单次询问中有优秀表现。</p>
 <h3 id="六"><a href="#六" class="headerlink" title="六"></a>六</h3><p>最最最容易碰到的莫比乌斯套路。<strong>以后就直接作为结论</strong> 了：</p>
 <p>现在有一个奇怪的函数 $f(n)$ ，不妨设 $n \leq m$ ，那么，</p>
-<p>$$\large { \sum <em> {i=1} ^ n  \sum </em> {j=1} ^ m f(\gcd(i,j)) \ = \sum <em> {d=1} ^ n f(d) \sum </em> {i=1} ^ {\lfloor \frac n d \rfloor} \sum <em> {j=1} ^ {\lfloor \frac m d \rfloor } [\gcd(i,j)=1] \ = \sum </em> {d=1} ^ n f(d) \sum <em> {i=1} ^ {\lfloor \frac n d \rfloor} \sum </em> {j=1} ^ {\lfloor \frac m d \rfloor } \sum <em> {p|i,p|j} \mu(p) \ = \sum </em> {d=1}  ^ n f(d) \sum <em> {p=1} ^ {\lfloor \frac n d \rfloor} \mu(p) \cdot \lfloor \frac n {pd} \rfloor \cdot  \lfloor \frac m {pd} \rfloor \ = \sum </em> {D=1} ^ n \sum _ {d|D} f(d) \cdot \mu(\frac D d) \cdot \lfloor \frac n D \rfloor \cdot \lfloor \frac m D \rfloor \tag{16}}$$</p>
+<p>$$\large { \sum _ {i=1} ^ n  \sum _ {j=1} ^ m f(\gcd(i,j)) \ = \sum _ {d=1} ^ n f(d) \sum _ {i=1} ^ {\lfloor \frac n d \rfloor} \sum _ {j=1} ^ {\lfloor \frac m d \rfloor } [\gcd(i,j)=1] \ = \sum _ {d=1} ^ n f(d) \sum _ {i=1} ^ {\lfloor \frac n d \rfloor} \sum _ {j=1} ^ {\lfloor \frac m d \rfloor } \sum _ {p|i,p|j} \mu(p) \ = \sum _ {d=1}  ^ n f(d) \sum _ {p=1} ^ {\lfloor \frac n d \rfloor} \mu(p) \cdot \lfloor \frac n {pd} \rfloor \cdot  \lfloor \frac m {pd} \rfloor \ = \sum _ {D=1} ^ n \sum _ {d|D} f(d) \cdot \mu(\frac D d) \cdot \lfloor \frac n D \rfloor \cdot \lfloor \frac m D \rfloor \tag{16}}$$</p>
 <p>就变成要求 $f \ast \mu$ 的前缀和了，再套用分块即可。</p>
 <h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><h3 id="问题的一般形式"><a href="#问题的一般形式" class="headerlink" title="问题的一般形式"></a>问题的一般形式</h3><p>给出一个奇怪的数论函数 $f(x)$ （simple一点像 $\mu, \varphi$ ）。接着给出了一个 $n$ ，一般有 $10^{10}$ 的范围。需要求 $S(n) = \sum _ {i=1} ^{n} f(i)$ 模一个大数的值。</p>
 <h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>求出 $S(n)$ 会非常困难，考虑找出另一个函数 $g(x)$ ，考虑 $(f*g)(x)$ 的前缀和。</p>
-<p>$$\large  \sum <em> {i=1} ^{n} \sum </em> {j|i} f(i) g(\frac i j) = \sum <em> {ij \leq n} f(i) g(j) = \sum </em> {i=1} ^{n} g(i) S(\lfloor \frac n i \rfloor) $$</p>
+<p>$$\large  \sum _ {i=1} ^{n} \sum _ {j|i} f(i) g(\frac i j) = \sum _ {ij \leq n} f(i) g(j) = \sum _ {i=1} ^{n} g(i) S(\lfloor \frac n i \rfloor) $$</p>
 <p>于是，</p>
-<p>$$\large g(1)S(n) = \sum <em> {i=1} ^{n} (f*g)(i) - \sum </em> {i=2} ^{n} g(i) S(\lfloor \frac n i \rfloor)$$</p>
+<p>$$\large g(1)S(n) = \sum _ {i=1} ^{n} (f*g)(i) - \sum _ {i=2} ^{n} g(i) S(\lfloor \frac n i \rfloor)$$</p>
 <h3 id="要求-amp-amp-时间复杂度-amp-amp-Trick"><a href="#要求-amp-amp-时间复杂度-amp-amp-Trick" class="headerlink" title="要求&amp;&amp;时间复杂度&amp;&amp;Trick"></a>要求&amp;&amp;时间复杂度&amp;&amp;Trick</h3><p>需要保证 $(f*g)(x),g(x)$ 的前缀和都比较容易计算。</p>
 <p>可以直接记忆化搜索，复杂度 $O(n^{\frac 3 4})$ 。</p>
 <p>可以预处理前 $k$ 个前缀和，复杂度 $O(k + \frac n {\sqrt k})$ 。取 $k=n^{\frac 2 3}$ 最优，复杂度 $O(n ^ {\frac 2 3})$ 。</p>
@@ -290,26 +290,26 @@
 <p>有时候， $f(x)$ 本身就是两个函数的积/Dirichlet卷积，通常令 $g(x) = 1$ ，可以进一步化简。</p>
 <h2 id="推柿子啦啦啦"><a href="#推柿子啦啦啦" class="headerlink" title="推柿子啦啦啦"></a>推柿子啦啦啦</h2><p><strong>来看一些有意思的题目。顺便…..</strong></p>
 <blockquote>
-<p><strong>BZOJ3560 DZY Loves Math V</strong> 求 $\sum _ {i_1|a<em>1} \sum </em> {i_2|a<em>2} … \sum </em> {i_n|a_n}$ 。</p>
+<p><strong>BZOJ3560 DZY Loves Math V</strong> 求 $\sum _ {i_1|a_1} \sum _ {i_2|a_2} … \sum _ {i_n|a_n}$ 。</p>
 </blockquote>
 <p><strong>欧拉函数的性质。</strong> 考虑统计每一个质因子出现的次数，再相乘即可。注意 $p^0=1$ 要特殊考虑。</p>
 <p>空间开不下？注意到一个 $ai$ 最多只会存在一个 $p &gt; \sqrt {a_{max}}$ 。</p>
 <blockquote>
-<p><strong><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1675" target="_blank" rel="external">51Nod1675 序列变换</a></strong> 给定序列 $a,b$ ，求存在多少对 $x,y$ 满足 $\gcd(x,y)=1,a_{b<em>x}=b</em>{a_x}$。</p>
+<p><strong><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1675" target="_blank" rel="external">51Nod1675 序列变换</a></strong> 给定序列 $a,b$ ，求存在多少对 $x,y$ 满足 $\gcd(x,y)=1,a_{b_x}=b_{a_x}$。</p>
 </blockquote>
 <p><strong>莫比乌斯反演的第二形式。</strong> 定义 $f(k)$ 为 $gcd(x,y)=k$ 的个数，定义 $F(k)$ 为 $k|\gcd(x,y)$ 的个数。显然 $F(k)$ 很容易求，于是用 $(10)$ 就好了。</p>
 <blockquote>
-<p><strong>BZOJ3561 DZY Loves Math VI</strong> 求 $\sum <em> {i=1} ^ n \sum </em> {j=1} ^ m lcm (i,j) ^ {\gcd(i, j)}$ 。</p>
+<p><strong>BZOJ3561 DZY Loves Math VI</strong> 求 $\sum _ {i=1} ^ n \sum _ {j=1} ^ m lcm (i,j) ^ {\gcd(i, j)}$ 。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，暴力。</strong> 虽然不是 $(16)$ 的形式，也可以用类似的套路，反演得到：</p>
-<p>$$\sum <em> {d = 1} ^ {n} d ^ d \cdot \sum </em> {p = 1} ^ {\lfloor \frac n d \rfloor} \mu(p) \cdot p ^ {2d} \cdot \sum <em> {i=1}  ^ {\lfloor \frac m {pd} \rfloor} i ^ d \cdot \sum </em> {j=1} ^ {\lfloor \frac n {pd} \rfloor } j ^ d$$</p>
+<p>$$\sum _ {d = 1} ^ {n} d ^ d \cdot \sum _ {p = 1} ^ {\lfloor \frac n d \rfloor} \mu(p) \cdot p ^ {2d} \cdot \sum _ {i=1}  ^ {\lfloor \frac m {pd} \rfloor} i ^ d \cdot \sum _ {j=1} ^ {\lfloor \frac n {pd} \rfloor } j ^ d$$</p>
 <p>这个东西直接暴力嘛。。</p>
 <blockquote>
-<p><strong>BZOJ4816 [SDOI2017]数字表格</strong> 求 $\prod <em> {i=1} ^ n \prod  </em> {j=1} ^ m fib(gcd(i,j))$ ，其中 $fib(n)$ 是斐波那契数。</p>
+<p><strong>BZOJ4816 [SDOI2017]数字表格</strong> 求 $\prod _ {i=1} ^ n \prod  _ {j=1} ^ m fib(gcd(i,j))$ ，其中 $fib(n)$ 是斐波那契数。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，前缀积。</strong> 同样也是 $(16)$ 的套路，只不过到了指数上面。同时前缀和变成了前缀积，同样也是 $O(n \log n)$ 暴力预处理。</p>
 <blockquote>
-<p><strong>BZOJ3529 [SDOI2014]数表</strong> 求 $\sum <em> {i=1} ^ n \sum </em> {j=1} ^ m \sigma _ 1(\gcd(i,j)) \cdot [\sigma_1(\gcd(i,j)) \leq a]$ 。多组询问。</p>
+<p><strong>BZOJ3529 [SDOI2014]数表</strong> 求 $\sum _ {i=1} ^ n \sum _ {j=1} ^ m \sigma _ 1(\gcd(i,j)) \cdot [\sigma_1(\gcd(i,j)) \leq a]$ 。多组询问。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，离线。</strong> 哈哈哈，又是 $(16)$ 的套路。。于是就是要求：</p>
 <p>$$\large \sum _ {d|D} \sigma_1 (d) \cdot \mu(\frac D d)$$</p>
@@ -317,28 +317,28 @@
 <p>然后这个 $a$ 的限制似乎有些难搞？注意到有多组数据，所以可以离线，按照 $a$ 排序。修改和求前缀和就交给树状数组了。</p>
 <p>复杂度？ $O(n \log ^2 n + T \cdot \sqrt n \cdot \log n)$。</p>
 <blockquote>
-<p><strong>BZOJ4407 于神之怒加强版</strong> 求 $\sum <em> {i=1} ^ n \sum </em> {j=1} ^ m \gcd(i,j) ^ k$ 。</p>
+<p><strong>BZOJ4407 于神之怒加强版</strong> 求 $\sum _ {i=1} ^ n \sum _ {j=1} ^ m \gcd(i,j) ^ k$ 。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，积性函数前缀和。</strong> 又是 $(16)$ 的套路（这句话说了多少遍了）。就是要求：</p>
 <p>$$\sum _ {d|D} d ^ k \cdot \mu (\frac D d)$$</p>
 <p>的前缀和。</p>
 <p>然后这个是积性函数的狄利克雷卷积，可以线性筛。<strong>往往就需要利用 $\mu$</strong> ，可以直接分情况。或者推公式，展开 $g(D)$ （这个方法比较万能）：</p>
-<p>$$\large {g(n)  \ = \sum <em> {d|n} d ^ k \mu(\frac n d)  \ = \prod </em> {p_i} g(p_i ^{x<em>i}) \ = \prod </em>{p_i} (p_i ^{kx_i} \cdot \mu(1) + p_i ^{k(x_i-1)} \cdot \mu(p<em>i)) \ = \prod </em> {p_i} p_i ^ {k(x_i-1)} \cdot (p_i ^k -1)}$$</p>
+<p>$$\large {g(n)  \ = \sum _ {d|n} d ^ k \mu(\frac n d)  \ = \prod _ {p_i} g(p_i ^{x_i}) \ = \prod _{p_i} (p_i ^{kx_i} \cdot \mu(1) + p_i ^{k(x_i-1)} \cdot \mu(p_i)) \ = \prod _ {p_i} p_i ^ {k(x_i-1)} \cdot (p_i ^k -1)}$$</p>
 <blockquote>
-<p><strong>BZOJ3994 [SDOI2015]约数个数和</strong> 求 $\sum <em>{i=1} ^n \sum </em>{j=1} ^m \sigma_0(i,j)$ 。</p>
+<p><strong>BZOJ3994 [SDOI2015]约数个数和</strong> 求 $\sum _{i=1} ^n \sum _{j=1} ^m \sigma_0(i,j)$ 。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，$\sigma_0$ 的性质。</strong> 这题需要利用 $\sigma_0$ 的性质：</p>
-<p>$$\large \sigma<em>0 (n,m) = \sum </em> {i|n} \sum _ {j|m} [\gcd(i,j)=1]$$</p>
+<p>$$\large \sigma_0 (n,m) = \sum _ {i|n} \sum _ {j|m} [\gcd(i,j)=1]$$</p>
 <p>证明：考虑一个质因子 $p$ ，假设 $n$ 中有 $x$ 个，$m$ 中有 $y$ 个。那么根据约数个数定理，$\sigma_0(n,m) = \prod (x+y-1)$。而如果要使 $\gcd(i,j)=1$ ,每个质因子同样有 $x+y-1$ 种取法（$x$ 或 $y$ 为 $0$ ）。恰好是约数定理的形式。</p>
 <p>接下来就是套路变换啦。</p>
 <blockquote>
-<p><strong>BZOJ3309 DZY Loves Math</strong> 对于正整数 $n$，定义 $f(n)$ 为 $n$ 所含质因子的最大幂指数。例如 $f(1960)=f(2^3 \times  5^1 \times  7^2)=3, f(10007)=1, f(1)=0$ 。给定正整数 $a,b$ ，求 $\sum  <em> {i=1} ^a \sum </em> {j=1} ^m f( \gcd(i,j))$ 。</p>
+<p><strong>BZOJ3309 DZY Loves Math</strong> 对于正整数 $n$，定义 $f(n)$ 为 $n$ 所含质因子的最大幂指数。例如 $f(1960)=f(2^3 \times  5^1 \times  7^2)=3, f(10007)=1, f(1)=0$ 。给定正整数 $a,b$ ，求 $\sum  _ {i=1} ^a \sum _ {j=1} ^m f( \gcd(i,j))$ 。</p>
 </blockquote>
 <p><strong>莫比乌斯反演，特殊性质函数的前缀和。</strong> 根据 $(16)$ ，我们只需要求 $g(D) = \sum _ {d|D} f(d) \mu ( \frac D d )$ 的前缀和即可。</p>
 <p>但是，发现这个 $f(d)$ 不是积性函数，似乎就无法线性筛了。<strong>于是就要利用 $\mu(n)$ 的特殊性质。</strong></p>
 <p>将 $D$ 表示为质因数乘积的形式，<strong>如果 $\frac D d$ 对 $g(D)$ 有贡献，每个质因子的次数不会超过 $1$ 。</strong> 如果一个质因子 $p$ 在 $\frac D d$ 中，我们称选择 $p$ 。</p>
 <blockquote>
-<p> <strong>引理：对于一个包含 $n\ (1 \leq n)$ 个元素的集合，选择奇数个元素的方案数的等于选择偶数个元素的方案数。</strong></p>
+<p> <strong>引理：对于一个包含 $n (1 \leq n)$ 个元素的集合，选择奇数个元素的方案数的等于选择偶数个元素的方案数。</strong></p>
 <p> 归纳法很容易证明。</p>
 </blockquote>
 <p>我们知道，$\mu(D) = (-1) ^ k$ ，其中 $k$ 是选择的个数。</p>
@@ -350,11 +350,11 @@
 <p><strong>同时也可以发现，</strong> 第一种情况没必要特殊考虑，同第三种情况。</p>
 <p><strong>最后，这个东西也是可以线性筛的。</strong> 利用 <strong>每个数只会被最小的质因子筛</strong> 用 $a[]$ 记录每一个数最小质因子的次数，$b[]$ 记录最小质因子的 $a[]$ 次，就可以递推了。</p>
 <blockquote>
-<p><strong>BZOJ3512 DZY Loves Math IV</strong> 求 $\sum <em> {i = 1} ^ n \sum </em> {j = 1} ^ m \varphi (ij)$ ，$n \leq 10^5, m \leq 10^9$</p>
+<p><strong>BZOJ3512 DZY Loves Math IV</strong> 求 $\sum _ {i = 1} ^ n \sum _ {j = 1} ^ m \varphi (ij)$ ，$n \leq 10^5, m \leq 10^9$</p>
 </blockquote>
 <p><strong>欧拉函数的性质，莫比乌斯反演，杜教筛。</strong> <a href="http://duxyz.github.io/solution/2014/04/03/DZY-Loves-Math-4/" target="_blank" rel="external">大爷的姿势</a>。</p>
 <p>令 $S(n,m) = \sum _ {i=1} ^ m \varphi (ni)$ 。</p>
-<p>$$\large { S(n,m) \ = \sum <em> {i=1} ^ m \varphi (ni) \ = \sum </em> {i=1} ^ m \varphi ( \frac n {\gcd(i,n)}) \cdot \varphi(i) \cdot \gcd(i,n) \ = \sum <em> {i=1} ^ m \varphi(\frac n {\gcd(i,n)}) \cdot \varphi(i) \cdot \sum </em> {d|i,d|n} \varphi(d) \ = \sum <em> {i=1} ^ m \varphi(i) \cdot \sum </em> {d|i,d|n} \varphi(\frac n d) \ = \sum <em> {d|n} \varphi(\frac n d ) \cdot \sum </em> {i=1} ^ {\lfloor \frac  m d \rfloor } \varphi(di) \ = \sum _ {d | n} \varphi(\frac n d) \cdot S(d, \lfloor \frac m d \rfloor )}$$</p>
+<p>$$\large { S(n,m) \ = \sum _ {i=1} ^ m \varphi (ni) \ = \sum _ {i=1} ^ m \varphi ( \frac n {\gcd(i,n)}) \cdot \varphi(i) \cdot \gcd(i,n) \ = \sum _ {i=1} ^ m \varphi(\frac n {\gcd(i,n)}) \cdot \varphi(i) \cdot \sum _ {d|i,d|n} \varphi(d) \ = \sum _ {i=1} ^ m \varphi(i) \cdot \sum _ {d|i,d|n} \varphi(\frac n d) \ = \sum _ {d|n} \varphi(\frac n d ) \cdot \sum _ {i=1} ^ {\lfloor \frac  m d \rfloor } \varphi(di) \ = \sum _ {d | n} \varphi(\frac n d) \cdot S(d, \lfloor \frac m d \rfloor )}$$</p>
 <p>第二步，由于 $n,i$ 不一定互质，所以单独提出了 $\gcd$ ；第三步，巧妙地运用了 $(7)$ ；第四步，由于 $\frac n {\gcd(i,n)},d$ 互质，所以可以直接合并；第五步应该及其套路。</p>
 <p>当 $n=1$ 时，需要大力杜教筛搞一搞。</p>
 <p>嘛..</p>
@@ -363,21 +363,21 @@
 <p>还要<code>HASH</code>一下，同时，根据 $\varphi$ 的性质，可以先把 $n$ 中额外的质因子搞出来。</p>
 <p><strong>UPD</strong> 注意，第四步的推导是错误的，必须要满足 $|\mu(n)|=1$ ，这样才能保证互质（因为每个质因子都只有一个，只能存在于 $\frac n {\gcd(i,n)}$ 或者 $\gcd(i,n)$ ）。所以搞出额外的质因子是必须的。</p>
 <blockquote>
-<p><strong>51Nod1238 最小公倍数之和</strong> $\sum <em> {i=1} ^{n} \sum </em> {j=1} ^{n} lcm(i,j)$</p>
+<p><strong>51Nod1238 最小公倍数之和</strong> $\sum _ {i=1} ^{n} \sum _ {j=1} ^{n} lcm(i,j)$</p>
 </blockquote>
 <p><strong>只是杜教筛。</strong></p>
 <p>两维的嘛..要先拆开来啦..</p>
-<p>$$\large {f(n) \ = \sum <em> {i=1} ^{n} lcm(n,i)\ = n \times \sum </em> {i=1} ^{n} \frac i {\gcd (i, n)}\ = n \times \sum <em> {d|n} ^{n} \sum </em> {id \leq n} i \times e(\gcd (i, \frac n d))\ = n \times \sum <em> {d|n} ^{n} \frac 1 2 \times (e(d) + d \times \varphi(d))\ = \frac n 2 + \frac 1 2 \times n \times \sum </em> {d|n} d \times \varphi(d)\ }$$</p>
-<p>最主要是搞出 $S(n) = \sum <em> {i=1} ^n i \times \sum </em> {d|i} d \times \varphi(d)$ 也就是 $id \times [(id \times \varphi) \ast 1] = (id _ 2 \times \varphi) \ast id$ 的前缀和。考虑如何消去难以计算的 $\varphi$ 。</p>
-<p>我们需要卷上一个新的东西。考虑利用 $(7)$ 来消去。考虑卷上 $id <em> 2$ 来提出括号中的 $id </em> 2$ ，于是</p>
-<p>$$\large id <em> 2 \ast (id </em> 2 \times \varphi) \ast id = id <em> 2 \times (1 * \varphi) \ast id = id </em> 3 \ast id$$</p>
+<p>$$\large {f(n) \ = \sum _ {i=1} ^{n} lcm(n,i)\ = n \times \sum _ {i=1} ^{n} \frac i {\gcd (i, n)}\ = n \times \sum _ {d|n} ^{n} \sum _ {id \leq n} i \times e(\gcd (i, \frac n d))\ = n \times \sum _ {d|n} ^{n} \frac 1 2 \times (e(d) + d \times \varphi(d))\ = \frac n 2 + \frac 1 2 \times n \times \sum _ {d|n} d \times \varphi(d)\ }$$</p>
+<p>最主要是搞出 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 也就是 $id \times [(id \times \varphi) \ast 1] = (id _ 2 \times \varphi) \ast id$ 的前缀和。考虑如何消去难以计算的 $\varphi$ 。</p>
+<p>我们需要卷上一个新的东西。考虑利用 $(7)$ 来消去。考虑卷上 $id _ 2$ 来提出括号中的 $id _ 2$ ，于是</p>
+<p>$$\large id _ 2 \ast (id _ 2 \times \varphi) \ast id = id _ 2 \times (1 * \varphi) \ast id = id _ 3 \ast id$$</p>
 <p>这个前缀和就比较好求辣。令 $h(i)$ 表示这个柿子的前缀和，于是（考虑展开后每个 $d$ 的贡献次数）</p>
-<p>$$\large h(n) = \sum <em> {d=1} ^{n} d \sum </em> {id \leq n} i ^ 3$$</p>
+<p>$$\large h(n) = \sum _ {d=1} ^{n} d \sum _ {id \leq n} i ^ 3$$</p>
 <p>注意到不同 $i$ 的上限只有 $O(\sqrt n)$ 个，所以这个前缀和也可以分块！$g(x) = id _ 2$ 的前缀和也很容易计算。由于把 $S$ 划分为 $O(\sqrt n)$ 个子问题时也需要 $O(\sqrt n)$ 的时间复杂度，所以总的复杂度不变。仍然为 $O(n ^ {\frac 2 3})$ 。</p>
 <p>发现很神奇的， $ANS = s(n)$ 。</p>
-<p><strong>另一种方法。</strong> 得到 $S(n) = \sum <em> {i=1} ^n i \times \sum </em> {d|i} d \times \varphi(d)$ 后，可以改变形式使得更容易筛。改为枚举 $i$ 是 $d$ 的多少倍。</p>
-<p>$$\large {S(n) = \sum <em> {i=1} ^n i \times \sum </em> {d|i} d \times \varphi(d) \ = \sum <em> {i=1} ^ n i \times \sum </em> {d=1} ^ {\lfloor \frac n d \rfloor} d ^ 2 \times \varphi (d)}$$</p>
-<p>嗯，那么要求的就是 $id <em> 2 \times \varphi$ 的前缀和，再分块。卷上 $id</em> 2$ 。要求 $id_ 3$ 的前缀和。</p>
+<p><strong>另一种方法。</strong> 得到 $S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d)$ 后，可以改变形式使得更容易筛。改为枚举 $i$ 是 $d$ 的多少倍。</p>
+<p>$$\large {S(n) = \sum _ {i=1} ^n i \times \sum _ {d|i} d \times \varphi(d) \ = \sum _ {i=1} ^ n i \times \sum _ {d=1} ^ {\lfloor \frac n d \rfloor} d ^ 2 \times \varphi (d)}$$</p>
+<p>嗯，那么要求的就是 $id _ 2 \times \varphi$ 的前缀和，再分块。卷上 $id_ 2$ 。要求 $id_ 3$ 的前缀和。</p>
 <p><strong>题外话。</strong> <code>51Nod1227</code>也是同样的方法，只是一开始得到的为 $(\varphi \times id) \ast 1$ 。<code>51Nod1237</code>大致方向差不多，只是推的过程简单很多。</p>
 <p>如果用方法二，卷起来得到了 $id _ 2$ ，十分容易计算！</p>
 <p>如果直接卷 $id$ 得到 $1 \ast id _ 2$ ，也可以应用方法一，里面套一层分块。</p>
@@ -502,7 +502,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Cyani
+    		&copy; 2018 Cyanic
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -605,11 +605,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
             
             <div class="clearfix"></div>
@@ -661,10 +665,6 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>以下神犇必须膜</a>
-            </li>
-          
-            <li class="search-li">
               <a href="http://wjmzbmr.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>WJMZBMR</a>
             </li>
           
@@ -701,7 +701,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>啊，大佬好强</a>
+              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>...</a>
             </li>
           
             <li class="search-li">
@@ -713,11 +713,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://szoorz.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>srO-CQZ-Orz</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://emoairx.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
+              <a href="https://emoairx.github.top/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
             </li>
           
             <li class="search-li">
@@ -736,7 +732,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">ZJSX某初三蒟蒻&lt;br&gt;梦想进ZJ省队&lt;br&gt;希望与大家互相学习☺</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Cyanic,MOer,OIer</div>
   	  	
     	</section>
     

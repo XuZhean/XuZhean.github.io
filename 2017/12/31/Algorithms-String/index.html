@@ -7,14 +7,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <title>「学习笔记」字符串の黑魔法 | Cyani&#39;s Blog</title>
+  <title>「学习笔记」字符串の黑魔法 | Cyanic&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="怎样AC—— 字符串の黑魔法">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」字符串の黑魔法">
 <meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/index.html">
-<meta property="og:site_name" content="Cyani&#39;s Blog">
+<meta property="og:site_name" content="Cyanic&#39;s Blog">
 <meta property="og:description" content="怎样AC—— 字符串の黑魔法">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
 <meta property="og:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF30E.png">
@@ -36,7 +36,7 @@
 <meta name="twitter:description" content="怎样AC—— 字符串の黑魔法">
 <meta name="twitter:image" content="https://xuzhean.github.io/2017/12/31/Algorithms-String/CF46F.png">
   
-    <link rel="alternative" href="/atom.xml" title="Cyani&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyanic&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -66,10 +66,10 @@
 			<img src="/assets/img/face.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Cyani</a></h1>
+		  <h1 class="header-author"><a href="/">Cyanic</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Love the cruel world.</p>
+		<p class="header-subtitle">Envision the whole of you</p>
 		
 
 		<nav class="header-menu">
@@ -77,9 +77,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+				<li><a href="http://codeforces.com/">CodeForces</a></li>
 	        
-				<li><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+				<li><a href="http://atcoder.jp/">AtCoder</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,10 +128,10 @@
 				<img src="/assets/img/face.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Cyani</h1>
+			  <h1 class="header-author js-header-author">Cyanic</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Love the cruel world.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Envision the whole of you<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,9 +163,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/CodeForces/">CodeForces</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://codeforces.com/">CodeForces</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/07/01/AtCoder/">AtCoder</a></li>
+					<li style="width: 33.333333333333336%"><a href="http://atcoder.jp/">AtCoder</a></li>
 		        
 				</ul>
 			</nav>
@@ -202,8 +202,8 @@
       
         <h1 id="怎样AC"><a href="#怎样AC" class="headerlink" title="怎样AC"></a>怎样AC</h1><h2 id="——-字符串の黑魔法"><a href="#——-字符串の黑魔法" class="headerlink" title="—— 字符串の黑魔法"></a>—— 字符串の黑魔法</h2><a id="more"></a>
 <p>[TOC]</p>
-<p><strong><em>例题挑一些做！</em></strong></p>
-<p><strong><em>习题别做！</em></strong></p>
+<p><strong>_例题挑一些做！_</strong></p>
+<p><strong>_习题别做！_</strong></p>
 <h2 id="Part-1-基础字符串算法"><a href="#Part-1-基础字符串算法" class="headerlink" title="Part 1 基础字符串算法"></a>Part 1 基础字符串算法</h2><p>####HASH</p>
 <p>在 $seed$ 进制下取模，快速判断两个串是否相等</p>
 <p>维护集合。能支持简单的删减</p>
@@ -233,7 +233,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//此模版下标从0开始</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exKMP</span><span class="params">(<span class="keyword">char</span> s[], <span class="keyword">char</span> t[], <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>; f[<span class="number">0</span>] = m;</div><div class="line">	rep (i, <span class="number">1</span>, m<span class="number">-1</span>) &#123;</div><div class="line">		f[i] = max(<span class="number">0</span>, min(f[i-mx], mx+f[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+f[i] &lt; m &amp;&amp; t[i+f[i]] == t[f[i]]) f[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + f[i] &gt; mx + f[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">	mx = <span class="number">0</span>;</div><div class="line">	rep (i, <span class="number">0</span>, n<span class="number">-1</span>) &#123;</div><div class="line">		g[i] = max(<span class="number">0</span>, min(f[i-mx], mx+g[mx]-i));</div><div class="line">		<span class="keyword">while</span> (i+g[i] &lt; n &amp;&amp; s[i+g[i]] == t[g[i]]) g[i]++;</div><div class="line">		<span class="keyword">if</span> (!mx || i + g[i] &gt; mx + g[mx]) mx = i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><blockquote>
 <p><strong>51Nod1638 字符串重组</strong> $s$ 是一个长度为 $n$ 的字符串，定义</p>
-<p>$$f(s,i,j) = s<em>{i+1…j−1} + r(s</em>{j…n−1}) + r(s_{0…i})\;(0 \le i&lt;j&lt;n)$$</p>
+<p>$$f(s,i,j) = s_{i+1…j−1} + r(s_{j…n−1}) + r(s_{0…i})\;(0 \le i&lt;j&lt;n)$$</p>
 <p>给定 $a$ 和 $b$ 。找出相应的 $i$ 和 $j$ ，使得 $f(a,i,j) =b$ </p>
 <p>取 $i$ 最大，其次 $j$ 最小的方案</p>
 </blockquote>
@@ -296,7 +296,7 @@
 <p> <code>Compacted-trie</code> ，节点数量降为 $O(n) $</p>
 <h5 id="两个简单应用"><a href="#两个简单应用" class="headerlink" title="两个简单应用"></a>两个简单应用</h5><blockquote>
 <p><strong>Codeforces 178F</strong> 给你 $n$ 个串 $a_i$ ，要求选择 $k$ 个串，求</p>
-<p>$$\begin{eqnarray} \large \min \left{ \sum <em> {i=1} ^ {k-1} \sum </em> {j=i+1} ^ {k} lcp(a_i,a_j) \right} \end{eqnarray}$$</p>
+<p>$$\begin{eqnarray} \large \min \left\{ \sum _ {i=1} ^ {k-1} \sum _ {j=i+1} ^ {k} lcp(a_i,a_j) \right\} \end{eqnarray}$$</p>
 </blockquote>
 <p>思考5min…</p>
 <p>建出 <code>Copacted-trie</code> ，暴力树形背包DP，复杂度 $O(n^2)$</p>
@@ -348,7 +348,7 @@
 <p>如果不存在 <code>x-trans</code> ，新建一个节点，新状态的 <code>Fail</code> 就是 <code>p</code> 继续跳 <code>Fail</code> 知道这个回文子串的前一个字符为 <code>x</code> 为止</p>
 <h5 id="裸题"><a href="#裸题" class="headerlink" title="裸题"></a>裸题</h5><blockquote>
 <p><strong>BZOJ3676 [APIO2014]回文串</strong> 假设 $cnt[i]$ 是回文串 $i$ 在 $s$ 中出现的次数，求</p>
-<p>$$\large \max { cnt[i] \cdot i }$$</p>
+<p>$$\large \max \{ cnt[i] \cdot i \}$$</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300009</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PalindromicTree</span> &#123;</span></div><div class="line">    <span class="keyword">int</span> p[<span class="number">26</span>], fail, cnt, len;</div><div class="line">&#125; T[maxn];</div><div class="line"><span class="keyword">int</span> n, size, last, cur;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</div><div class="line"><span class="keyword">char</span> s[maxn]; </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	T[size].len = x; <span class="keyword">return</span> size++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">	newNode(<span class="number">0</span>); newNode(<span class="number">-1</span>);</div><div class="line">	s[<span class="number">0</span>] = <span class="string">'#'</span>; T[<span class="number">0</span>].fail = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> o)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (s[n-T[o].len<span class="number">-1</span>] != s[n]) o = T[o].fail;</div><div class="line">	<span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	gets(s+<span class="number">1</span>); build();</div><div class="line">	<span class="keyword">for</span> (n=<span class="number">1</span>; s[n]; n++) &#123;</div><div class="line">		cur = get(last);</div><div class="line">		<span class="keyword">if</span> (!T[cur].p[s[n]-<span class="string">'a'</span>]) &#123;</div><div class="line">			last = newNode(T[cur].len + <span class="number">2</span>);</div><div class="line">			T[last].fail = T[get(T[cur].fail)].p[s[n]-<span class="string">'a'</span>];</div><div class="line">			T[cur].p[s[n]-<span class="string">'a'</span>] = last;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> last = T[cur].p[s[n]-<span class="string">'a'</span>];</div><div class="line">		T[last].cnt++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=size<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--) &#123;</div><div class="line">		T[T[i].fail].cnt += T[i].cnt;</div><div class="line">		ans = max(ans, <span class="number">1L</span>L * T[i].cnt * T[i].len);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>execise</strong></p>
@@ -510,13 +510,13 @@
 <li>如果暴力对后缀建 <code>Tire</code>，复杂度是 $O(n^2)$ 发现很多状态是重复的，考虑 <strong>最小化 </strong> <code>SAM</code> ，合并所有的重复状态</li>
 </ol>
 <h6 id="状态的优化"><a href="#状态的优化" class="headerlink" title="状态的优化"></a>状态的优化</h6><p>一个节点的到根路径必然是 <strong>一些</strong> 子串，这个节点所能够识别的后缀是这些子串出现的所有位置对应的后缀</p>
-<p>假设一个子串 <code>s</code> 在 ${[l_i,r_i]}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
+<p>假设一个子串 <code>s</code> 在 $\{[l_i,r_i]\}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
 <p><strong>可以发现，节点 <code>A,B</code> 能合并，当且仅当 <code>A,B</code> 在字符串中出现的结束位置完全一样</strong></p>
 <p>定义 <code>Right(sub)</code> 表示 <code>sub</code> <strong>右端</strong> 在 <code>S</code> 中出现的集合</p>
 <p>考虑将所有相同 <code>Right()</code> 的状态合并为一个节点</p>
 <p>.【一个 <code>Right</code> 集合 <code>+</code> 一个长度】能够对应一些相同的子串</p>
 <p>显然合法的长度是一个区间，记为 <code>[min(u),max(u)]</code></p>
-<p><strong><em>深刻理解 <code>Right集合</code> 的意义</em></strong></p>
+<p><strong>_深刻理解 <code>Right集合</code> 的意义_</strong></p>
 <p>考虑从串 <code>S</code> 的 <code>i</code> 位置开始走，走到了位置 <code>j</code> ，当前状态为 <code>u</code></p>
 <p>那么 <code>Right(u)</code> 包含 <code>j</code> ，同时 <code>min(u) &lt;= i-j+1 &lt;= max(u)</code></p>
 <p><strong>当走到某个状态时，已经匹配的串已经失去原有的信息，它可以是满足这个状态的任意串，因为在 <code>SAM</code> 中这些串都是等价的</strong></p>
@@ -542,7 +542,7 @@
 <li>子串的个数，就是状态中 <code>Right集合</code> 的大小</li>
 <li>一个节点的 <code>Right集合</code> 是对应子孙的所有叶子节点的并集 （+ 前缀）</li>
 <li>按照 <code>dfs序</code> 排列，一个节点的 <code>Right集合</code> 就是一段区间，可以快速求出一个子串的所有出现位置</li>
-<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 ${r_1,r_2,r_3,\cdots,r_k}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 ${r_i+1}$</li>
+<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 $\{r_1,r_2,r_3,\cdots,r_k\}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 $\{r_i+1\}$</li>
 <li>那么如果 <code>s</code> 出发有标号为 <code>x</code> 的边，那么 <code>Parent(s)</code> 出发必然也有</li>
 <li>反证法可以证明：$\mathrm{Right}(\mathrm{trans}(s,c)) \subset \mathrm{Right}(\mathrm{trans}(\mathrm{Parent}(s),c))$</li>
 <li>如果有 <code>s-&gt;t</code> ，<code>Max(t) &gt; Max(s)</code> （根据 <code>Right集合</code>  的定义，这条性质显然，同时能够保证 <code>SAM</code> 是个 <code>DAG</code> ）</li>
@@ -550,18 +550,18 @@
 <h5 id="线性构造-SAM，前方高能！掉线用户请重连！"><a href="#线性构造-SAM，前方高能！掉线用户请重连！" class="headerlink" title="线性构造 SAM，前方高能！掉线用户请重连！"></a>线性构造 SAM，前方高能！掉线用户请重连！</h5><p>每次添加一个字符，并更新 <code>SAM</code> 使得它包含这个新字符</p>
 <p>令当前字符串为 <code>T</code> ，新字符为 <code>x</code></p>
 <p>考虑所有表示  <code>T</code> 的后缀（也就是 <code>Right集合</code> 中包含 <code>|T|</code> ）的节点 $v_1,v_2,v_3,\cdots,v_k$</p>
-<p>必然 <strong>存在 <code>Right(p)</code> $={|T|}$ 的节点 <code>p</code></strong></p>
+<p>必然 <strong>存在 <code>Right(p)</code> $=\{|T|\}$ 的节点 <code>p</code></strong></p>
 <p> $v_1,v_2,v_3,\cdots,v_k$ 由于 <code>Right集合</code> 都含有 <code>|T|</code> ，那么它们在 <code>Parent树</code> 中必然全是 <code>p的祖先</code></p>
-<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $={|T|+1}$ 的节点</strong></p>
+<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $=\{|T|+1\}$ 的节点</strong></p>
 <p>不妨让他们从后代到祖先排为 $v_1=p,v_2,v_3,\cdots,v_k=root$</p>
-<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，${r_1,r_2,\cdots,r_n=|T|}$</p>
+<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，$\{r_1,r_2,\cdots,r_n=|T|\}$</p>
 <p>如果它没有标号为 <code>x</code> 的边，它的 <code>Right集合</code> 没有 $r_i$ 满足 $s[r_i+1]=x$</p>
 <p>也就是只能达到 $\mathrm{Right(u)} = {|T|+1}$ 的状态 $u$ </p>
 <p>于是让它连一条到 <code>np</code> ，标号为 <code>x</code> 的边</p>
 <p><img src="2.jpg" alt="2"> $$\Large \Longrightarrow$$   <img src="3.jpg" alt="3"></p>
 <p><strong>这一部分请仔细体会</strong></p>
 <p>假设 $v_p$ 是第一个存在标号 $x$ 的边，其中 $\mathrm{trans}(v_p,x)=q$</p>
-<p>那么 <code>q</code> 的 <code>Right集合</code> 是 ${r_i+1 : S[r_i + 1]=x}$</p>
+<p>那么 <code>q</code> 的 <code>Right集合</code> 是 $\{r_i+1 : S[r_i + 1]=x\}$</p>
 <p><strong>但是我们不一定能够直接插入 $|T|+1$ 到 $q$</strong></p>
 <p>接下来分成两种情况：</p>
 <p>$\max(q)=\max(v_p)+1$ ，$np$ 满足条件范围为 $[\max(v_p)+1,|T|+1]$ </p>
@@ -571,7 +571,7 @@
 <p>否则 $\max(q)&gt;\max(v_p)+1$ </p>
 <p>这种情况下 $q$ 代表的串中，长度不超过 $\max(v_p)+1$ 的串的 <code>Right集合</code> 会多出一个值 <code>|T|+1</code> ，而长度更大的其他串不会</p>
 <p>于是我们新建一个节点 <code>nq</code> ，代表原来 $q$ 中长度不超过 $\max(v_p)+1$ 的串，于是</p>
-<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup {|T|+1},\;\max(nq)=\max(vp)+1$</p>
+<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup \{|T|+1\},\;\max(nq)=\max(vp)+1$</p>
 <p>$\mathrm{parent}(nq)=\mathrm{parent}(q)，\mathrm{parent}(q)=\mathrm{parent}(np)=nq$</p>
 <p>$|T|+1$ 开始不能转移，所以 $nq$ 的转移可以从 $q$ 复制过来</p>
 <p>会存在 $v_p, \cdots, v_e$，$\mathrm{trans}(v,x)=q$，那么把它设置为 $nq$ 即可</p>
@@ -583,7 +583,7 @@
 <p><img src="a.png" alt="a"><img src="aa.png" alt="aa"><img src="aab.png" alt="aab"><img src="aabb.png" alt="aabb"></p>
 <p>我们来考虑图3至图4的改变，泥萌可能会说：</p>
 <p>不是只要把 5 接在 4 后面就好了嘛….</p>
-<p>但是会发现此时 4 的 <code>Right集合</code> 为 ${3,4}$ ，$[\min,\max]=[1,3]$ </p>
+<p>但是会发现此时 4 的 <code>Right集合</code> 为 $\{3,4\}$ ，$[\min,\max]=[1,3]$ </p>
 <p>也就是说能代表状态 <code>aab,ab,b,abb,bb,b</code> ？</p>
 <p>但是实际上只能代表 <code>abb,ab,b,b</code></p>
 <p>所以我们不能把 <code>|T|+1</code> 放入 4，必须要新建一个 6 ，6 是 4 和 5 的并集</p>
@@ -634,8 +634,8 @@
 <p>思考：如果是 $n\;(n \leq10)$ 个串呢？ <strong>SPOJ LCS2</strong></p>
 <p>同样建出其中一个串的 <code>SAM</code></p>
 <p>考虑一个状态 $s$，如果 <code>A</code>之外其它串对它的匹配长度分别是</p>
-<p>$a_1,a<em>2,\cdots,a</em>{n-1}$</p>
-<p>用 $\min(a_1,a<em>2,\cdots,a</em>{n-1},\max(s))$ 更新答案</p>
+<p>$a_1,a_2,\cdots,a_{n-1}$</p>
+<p>用 $\min(a_1,a_2,\cdots,a_{n-1},\max(s))$ 更新答案</p>
 <h5 id="更多例题"><a href="#更多例题" class="headerlink" title="更多例题"></a>更多例题</h5><blockquote>
 <p><strong>BZOJ1396 识别子串</strong> 给定一个字符串，对于每一个位置，求包含这个位置，同时只在串中出现一次的最短的串的长度</p>
 <p>$|S| \leq 10^5$</p>
@@ -883,7 +883,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Cyani
+    		&copy; 2018 Cyanic
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -986,11 +986,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1042,10 +1046,6 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>以下神犇必须膜</a>
-            </li>
-          
-            <li class="search-li">
               <a href="http://wjmzbmr.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>WJMZBMR</a>
             </li>
           
@@ -1082,7 +1082,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>啊，大佬好强</a>
+              <a href="/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>...</a>
             </li>
           
             <li class="search-li">
@@ -1094,11 +1094,7 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://szoorz.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>srO-CQZ-Orz</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://emoairx.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
+              <a href="https://emoairx.github.top/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EMOAIRX</a>
             </li>
           
             <li class="search-li">
@@ -1117,7 +1113,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">ZJSX某初三蒟蒻&lt;br&gt;梦想进ZJ省队&lt;br&gt;希望与大家互相学习☺</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Cyanic,MOer,OIer</div>
   	  	
     	</section>
     
