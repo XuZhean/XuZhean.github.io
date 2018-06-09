@@ -7,7 +7,6 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <link href="//cdn.staticfile.org/KaTeX/0.7.1/katex.min.css"rel="stylesheet">
   <title>「学习笔记」字符串の黑魔法 | Cyanic&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="怎样AC—— 字符串の黑魔法">
@@ -507,7 +506,7 @@
 <li>如果暴力对后缀建 <code>Tire</code>，复杂度是 $O(n^2)$ 发现很多状态是重复的，考虑 <strong>最小化 </strong> <code>SAM</code> ，合并所有的重复状态</li>
 </ol>
 <h6 id="状态的优化"><a href="#状态的优化" class="headerlink" title="状态的优化"></a>状态的优化</h6><p>一个节点的到根路径必然是 <strong>一些</strong> 子串，这个节点所能够识别的后缀是这些子串出现的所有位置对应的后缀</p>
-<p>假设一个子串 <code>s</code> 在 ${[l_i,r_i]}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
+<p>假设一个子串 <code>s</code> 在 $\{[l_i,r_i]\}$ 出现，那么 <strong>从 <code>s</code> 出发</strong>，能识别子串 $[r_i+1,|S|]$</p>
 <p><strong>可以发现，节点 <code>A,B</code> 能合并，当且仅当 <code>A,B</code> 在字符串中出现的结束位置完全一样</strong></p>
 <p>定义 <code>Right(sub)</code> 表示 <code>sub</code> <strong>右端</strong> 在 <code>S</code> 中出现的集合</p>
 <p>考虑将所有相同 <code>Right()</code> 的状态合并为一个节点</p>
@@ -539,7 +538,7 @@
 <li>子串的个数，就是状态中 <code>Right集合</code> 的大小</li>
 <li>一个节点的 <code>Right集合</code> 是对应子孙的所有叶子节点的并集 （+ 前缀）</li>
 <li>按照 <code>dfs序</code> 排列，一个节点的 <code>Right集合</code> 就是一段区间，可以快速求出一个子串的所有出现位置</li>
-<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 ${r_1,r_2,r_3,\cdots,r_k}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 ${r_i+1}$</li>
+<li>考虑一个状态 <code>s</code> ，它的 <code>Right集合</code> 为 $\{r_1,r_2,r_3,\cdots,r_k\}$。 加入有一条 <code>s-&gt;t</code> 标号为 <code>c</code> 的边，考虑 <code>t</code> 的 <code>Right</code> 集合，由于多了一个字符，<code>s</code> 的 <code>Right</code> 集合中，只有$S[r_i+1]=c$ 的 $r_i$ 符合要求，于是 <code>t</code> 的 <code>Right</code> 集合为 $\{r_i+1\}$</li>
 <li>那么如果 <code>s</code> 出发有标号为 <code>x</code> 的边，那么 <code>Parent(s)</code> 出发必然也有</li>
 <li>反证法可以证明：$\mathrm{Right}(\mathrm{trans}(s,c)) \subset \mathrm{Right}(\mathrm{trans}(\mathrm{Parent}(s),c))$</li>
 <li>如果有 <code>s-&gt;t</code> ，<code>Max(t) &gt; Max(s)</code> （根据 <code>Right集合</code>  的定义，这条性质显然，同时能够保证 <code>SAM</code> 是个 <code>DAG</code> ）</li>
@@ -547,18 +546,18 @@
 <h5 id="线性构造-SAM，前方高能！掉线用户请重连！"><a href="#线性构造-SAM，前方高能！掉线用户请重连！" class="headerlink" title="线性构造 SAM，前方高能！掉线用户请重连！"></a>线性构造 SAM，前方高能！掉线用户请重连！</h5><p>每次添加一个字符，并更新 <code>SAM</code> 使得它包含这个新字符</p>
 <p>令当前字符串为 <code>T</code> ，新字符为 <code>x</code></p>
 <p>考虑所有表示  <code>T</code> 的后缀（也就是 <code>Right集合</code> 中包含 <code>|T|</code> ）的节点 $v_1,v_2,v_3,\cdots,v_k$</p>
-<p>必然 <strong>存在 <code>Right(p)</code> $={|T|}$ 的节点 <code>p</code></strong></p>
+<p>必然 <strong>存在 <code>Right(p)</code> $=\{|T|\}$ 的节点 <code>p</code></strong></p>
 <p> $v_1,v_2,v_3,\cdots,v_k$ 由于 <code>Right集合</code> 都含有 <code>|T|</code> ，那么它们在 <code>Parent树</code> 中必然全是 <code>p的祖先</code></p>
-<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $={|T|+1}$ 的节点</strong></p>
+<p>同时我们添加一个字符 <code>x</code> 后，<strong>令 <code>np</code> 表示 <code>Right(np)</code> $=\{|T|+1\}$ 的节点</strong></p>
 <p>不妨让他们从后代到祖先排为 $v_1=p,v_2,v_3,\cdots,v_k=root$</p>
-<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，${r_1,r_2,\cdots,r_n=|T|}$</p>
+<p>考虑其中一个 <code>v</code>，其 <code>Right集合</code>，$\{r_1,r_2,\cdots,r_n=|T|\}$</p>
 <p>如果它没有标号为 <code>x</code> 的边，它的 <code>Right集合</code> 没有 $r_i$ 满足 $s[r_i+1]=x$</p>
 <p>也就是只能达到 $\mathrm{Right(u)} = {|T|+1}$ 的状态 $u$ </p>
 <p>于是让它连一条到 <code>np</code> ，标号为 <code>x</code> 的边</p>
 <p><img src="2.jpg" alt="2"> <script type="math/tex">\Large \Longrightarrow</script>   <img src="3.jpg" alt="3"></p>
 <p><strong>这一部分请仔细体会</strong></p>
 <p>假设 $v_p$ 是第一个存在标号 $x$ 的边，其中 $\mathrm{trans}(v_p,x)=q$</p>
-<p>那么 <code>q</code> 的 <code>Right集合</code> 是 ${r_i+1 : S[r_i + 1]=x}$</p>
+<p>那么 <code>q</code> 的 <code>Right集合</code> 是 $\{r_i+1 : S[r_i + 1]=x\}$</p>
 <p><strong>但是我们不一定能够直接插入 $|T|+1$ 到 $q$</strong></p>
 <p>接下来分成两种情况：</p>
 <p>$\max(q)=\max(v_p)+1$ ，$np$ 满足条件范围为 $[\max(v_p)+1,|T|+1]$ </p>
@@ -568,7 +567,7 @@
 <p>否则 $\max(q)&gt;\max(v_p)+1$ </p>
 <p>这种情况下 $q$ 代表的串中，长度不超过 $\max(v_p)+1$ 的串的 <code>Right集合</code> 会多出一个值 <code>|T|+1</code> ，而长度更大的其他串不会</p>
 <p>于是我们新建一个节点 <code>nq</code> ，代表原来 $q$ 中长度不超过 $\max(v_p)+1$ 的串，于是</p>
-<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup {|T|+1},\;\max(nq)=\max(vp)+1$</p>
+<p>$\mathrm{Right}(nq)=\mathrm{Right}(q) \cup \{|T|+1\},\;\max(nq)=\max(vp)+1$</p>
 <p>$\mathrm{parent}(nq)=\mathrm{parent}(q)，\mathrm{parent}(q)=\mathrm{parent}(np)=nq$</p>
 <p>$|T|+1$ 开始不能转移，所以 $nq$ 的转移可以从 $q$ 复制过来</p>
 <p>会存在 $v_p, \cdots, v_e$，$\mathrm{trans}(v,x)=q$，那么把它设置为 $nq$ 即可</p>
@@ -580,7 +579,7 @@
 <p><img src="a.png" alt="a"><img src="aa.png" alt="aa"><img src="aab.png" alt="aab"><img src="aabb.png" alt="aabb"></p>
 <p>我们来考虑图3至图4的改变，泥萌可能会说：</p>
 <p>不是只要把 5 接在 4 后面就好了嘛….</p>
-<p>但是会发现此时 4 的 <code>Right集合</code> 为 ${3,4}$ ，$[\min,\max]=[1,3]$ </p>
+<p>但是会发现此时 4 的 <code>Right集合</code> 为 $\{3,4\}$ ，$[\min,\max]=[1,3]$ </p>
 <p>也就是说能代表状态 <code>aab,ab,b,abb,bb,b</code> ？</p>
 <p>但是实际上只能代表 <code>abb,ab,b,b</code></p>
 <p>所以我们不能把 <code>|T|+1</code> 放入 4，必须要新建一个 6 ，6 是 4 和 5 的并集</p>
@@ -631,8 +630,8 @@
 <p>思考：如果是 $n\;(n \leq10)$ 个串呢？ <strong>SPOJ LCS2</strong></p>
 <p>同样建出其中一个串的 <code>SAM</code></p>
 <p>考虑一个状态 $s$，如果 <code>A</code>之外其它串对它的匹配长度分别是</p>
-<p>$a<em>1,a_2,\cdots,a</em>{n-1}$</p>
-<p>用 $\min(a<em>1,a_2,\cdots,a</em>{n-1},\max(s))$ 更新答案</p>
+<p>$a_1,a_2,\cdots,a_{n-1}$</p>
+<p>用 $\min(a_1,a_2,\cdots,a_{n-1},\max(s))$ 更新答案</p>
 <h5 id="更多例题"><a href="#更多例题" class="headerlink" title="更多例题"></a>更多例题</h5><blockquote>
 <p><strong>BZOJ1396 识别子串</strong> 给定一个字符串，对于每一个位置，求包含这个位置，同时只在串中出现一次的最短的串的长度</p>
 <p>$|S| \leq 10^5$</p>
@@ -891,7 +890,7 @@
     </div>
     <script>
 	var yiliaConfig = {
-		mathjax: true,
+		mathjax: [object Object],
 		isHome: false,
 		isPost: true,
 		isArchive: false,
@@ -983,11 +982,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">

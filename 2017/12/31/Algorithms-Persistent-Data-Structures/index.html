@@ -7,7 +7,6 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuzhean.github.io">
-  <link href="//cdn.staticfile.org/KaTeX/0.7.1/katex.min.css"rel="stylesheet">
   <title>「学习笔记」可持久化数据结构 | Cyanic&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 $\log$ 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 $O(log n)$，但是空间为 $O(n log n)$。 从第 $i$ 个根开始访问即可得到第 $i$ 次修改后的历史版本。">
@@ -364,7 +363,7 @@
     </div>
     <script>
 	var yiliaConfig = {
-		mathjax: true,
+		mathjax: [object Object],
 		isHome: false,
 		isPost: true,
 		isArchive: false,
@@ -456,11 +455,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
