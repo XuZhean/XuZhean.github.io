@@ -1,6 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <meta name="baidu-site-verification" content="2eoY7zDVaA" />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="https://xuzhean.github.io">
+  <title>「学习笔记」可持久化数据结构 | Cyanic&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 log\loglog 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 O(logn)O(log n)O(logn)，但是空间为 O(nlogn)O(n log n)O(nlogn)。 从第 iii 个根开始访问即可得到第 iii">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「学习笔记」可持久化数据结构">
+<meta property="og:url" content="https://xuzhean.github.io/2017/12/31/Algorithms-Persistent-Data-Structures/index.html">
+<meta property="og:site_name" content="Cyanic&#39;s Blog">
+<meta property="og:description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 log\loglog 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 O(logn)O(log n)O(logn)，但是空间为 O(nlogn)O(n log n)O(nlogn)。 从第 iii 个根开始访问即可得到第 iii">
+<meta property="og:updated_time" content="2018-06-09T04:39:43.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「学习笔记」可持久化数据结构">
+<meta name="twitter:description" content="可持久化线段树常见的一个实现是主席树，由HJT主席引入中国OI界。 基本思想考虑一颗不同的线段树，进行单点修改。注意到每一次只会修改 log\loglog 个节点。 引入函数式编程的思想，我们不进行修改，而是新建节点。操作的时间复杂度仍然为 O(logn)O(log n)O(logn)，但是空间为 O(nlogn)O(n log n)O(nlogn)。 从第 iii 个根开始访问即可得到第 iii">
+  
+    <link rel="alternative" href="/atom.xml" title="Cyanic&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/img/favicon.ico">
+  
+  <link rel="stylesheet" type="text/css" href="/./main.b3331d.css">
+  <style type="text/css">
+  
+    #container.show {
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+    }
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+  
+
+</head>
 
 <body>
-  <div id="container" q-class="show:isCtnShow">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
@@ -421,11 +461,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,6 +661,23 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
